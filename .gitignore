@@ -5,3 +5,5 @@ Documents/VSCode programs/codewithharry/apnacollegeprograms/tut4.1/qno5.exe
 
  *.out 
  !spec/*.out
+
+!spec/*.ccls-cache
