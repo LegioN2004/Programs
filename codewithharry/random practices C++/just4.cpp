@@ -18,3 +18,4 @@ int main()
     cout << "value of the addition of " << a << " and  " << b << " is " << c << endl;
     return 0;
   }
+}
