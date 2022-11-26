@@ -1,0 +1,11 @@
+meta tags are used for optimizing the ranking of your website basically SEO 
+it is written as character set UTF-8 (not necessary)
+
+content="width=device-width" i.e to fit with the type of device which you use
+such as mobile, laptops, jate page accha dikhe , comes under the meta tags
+
+meta tag with name description shows the description of the website 
+meta tag with name keywords to add keywords to the website 
+meta tag with name robots to decide if the search engine wants to index the website
+or not
+
