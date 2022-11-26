@@ -1,6 +1,0 @@
-drawBox(red)
-drawBox(white)
-drawBox(blue)
-drawBox(red)
-drawBox(white)
-drawBox(blue)
