@@ -1,0 +1,54 @@
+body {
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+}
+
+h1, h2, p {
+  text-align: center;
+}
+
+<<<<<<< HEAD:freeCodeCamp.org/learn-basic-css-CafeMenu/style.css
+.menu {
+  width: 80%;
+  background-color: burlywood;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.item p {
+  display: inline-block;
+}
+
+.flavor {
+  text-align: left;
+  width: 75%;
+}
+
+.price {
+  text-align: right;
+  width: 25%
+=======
+h1, h2, p{
+	text-align: center;
+}
+
+.menu{
+	/*   width: 300px; */
+	width: 80%;
+	background-color: burlywood;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.item p{
+	display: inline-block;
+}
+
+.flavor{
+    text-align: left;
+	 width: 75%;
+}
+.price{
+    text-align: right;
+	 width: 25%;
+>>>>>>> 4e7b474f4c1d01954396a54cf153a2f76be02e67:freeCodeCamp.org/responsive-web-design/learn-basic-css-CafeMenu/style.css
+}
