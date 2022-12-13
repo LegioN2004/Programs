@@ -11,11 +11,20 @@
     <!-- this form action will give the form details filled in by the user to backend.php -->
     <form action="backend.php">
       <!-- input can be many as given by the options from lsp -->
-      Name: <input type="text" /> Role: <input type="text" />
+      <!-- the following just keeps input tags in the same line I just commented out -->
+      <!-- Name: <input type="text" /> Role: <input type="text" /> -->
       <!-- to get spaces use div or br div is more preferable -->
-
-      <div>Name: <input type="text" /></div>
+      <!-- dont use br tag just using for now -->
+      <div>Name: <input type="text" name="myName" /></div>
+      <br />
+      <!-- we can give/take corresponding values after we get a backend -->
       <div>Role: <input type="text" /></div>
+      <br />
+      <div>Email: <input type="email" name="myEmail" /></div>
+      <br />
+      <div>
+        <input type="submit" value="Submit now" />
+      </div>
     </form>
   </body>
 </html>

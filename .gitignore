@@ -8,3 +8,4 @@ justcasualjava/.idea
 
 !spec/*.ccls-cache
 
+*.exe
