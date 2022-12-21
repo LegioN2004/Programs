@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Forms</title>
   </head>
+  <aoritn> oairnt <aoritn>
 
   <body>
     <h2>This is HTML forms tutorial</h2>
@@ -22,9 +23,37 @@
       <br />
       <div>Email: <input type="email" name="myEmail" /></div>
       <br />
+      <div>Date: <input type="date" name="myDate" /></div>
+      <br />
+      <div>Bonus: <input type="number" name="myBonus" /></div>
+      <br />
+      <div>
+        Are you eligible? : <input type="checkbox" name="myEligility" checked />
+        <!-- use checked to keep the checkbox checked automatically -->
+      </div>
+      <br />
+      <div>
+        Gender : Male <input type="radio" name="myGender" /> Female
+        <input type="radio" name="myGender" /> Other
+        <input type="radio" name="myGender" />
+        <!-- if checkbox name is the same then we will be able to check only one checkbox among the two  -->
+      </div>
+      <br />
+      <div>
+        Write about yourself :
+        <textarea name="myText" cols="30" rows="10"></textarea>
+        <!-- text area is the rectangular space to write some text related change rows and columns accordingly-->
+      </div>
+      <br />
+      <div>
+        Are you eligible? : <input type="checkbox" name="myEligility" />
+      </div>
+      <br />
       <div>
         <input type="submit" value="Submit now" />
+        <input type="reset" value="Reset now" />
       </div>
+      <br />
     </form>
   </body>
 </html>
