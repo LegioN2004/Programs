@@ -13,50 +13,60 @@
 	<form action="backend.php">
 		<label for="name"> Name</label>
 		<!-- this is the label of the id name what happens here is that by giving the for label we can start writing in the the box just by clicking on the name itself instead of clicking on the box (for convenience in forms) -->
-		<div><input type="text" name="myName" id="name" /></div>
+		<div>
+			<input type="text" name="myName" id="name">
+		</div>
 		<!-- input can be many as given by the options from lsp -->
 		<!-- the following just keeps input tags in the same line I just commented out -->
 		<!-- Name: <input type="text" /> Role: <input type="text" /> -->
 		<!-- to get spaces use div or br div is more preferable -->
 		<!-- dont use br tag just using for now -->
-		<br />
+		<br>
 		<!-- we can give/take corresponding values after we get a backend -->
 		<div>Role: <input type="text" /></div>
-		<br />
+		<br>
 		<div>Email: <input type="email" name="myEmail" /></div>
-		<br />
+		<br>
 		<div>Date: <input type="date" name="myDate" /></div>
-		<br />
+		<br>
 		<div>Bonus: <input type="number" name="myBonus" /></div>
-		<br />
+		<br>
 		<div>
 			Are you eligible? : <input type="checkbox" name="myEligility" checked />
 			<!-- use checked to keep the checkbox checked automatically -->
 		</div>
-		<br />
+		<br>
 		<div>
 			Gender : Male <input type="radio" name="myGender" /> Female
 			<input type="radio" name="myGender" /> Other
 			<input type="radio" name="myGender" />
 			<!-- if checkbox name is the same then we will be able to check only one checkbox among the two  -->
 		</div>
-		<br />
+		<br>
 		<div>
 			Write about yourself :
 			<textarea name="myText" cols="30" rows="10"></textarea>
 			<!-- text area is the rectangular space to write some text related change rows and columns accordingly-->
 		</div>
-		<br />
+		<br>
+		<div>
+			<label for="car">Car</label>
+			<select name="myCar" id="Car"></select>
+			<option value="Indica">Indica</option>
+			<option value="Swift" selected>Swift</option>
+		</div>
+		<br>
 		<div>
 			Are you eligible? : <input type="checkbox" name="myEligility" />
 		</div>
-		<br />
+		<br>
 		<div>
 			<input type="submit" value="Submit now" />
 			<input type="reset" value="Reset now" />
 		</div>
-		<br />
+		<br>
 	</form>
+	<!-- this is the label of the id name what happens here is that by giving the for label we can start writing in the the box just by clicking on the name itself instead of clicking on the box (for convenience in forms) -->
 </body>
 
 </html>
