@@ -10,8 +10,10 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:/msys64/mingw64/bin/gcc.exe",
-            "intelliSenseMode": "windows-msvc-x64"
+            "compilerPath": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
+            "intelliSenseMode": "windows-msvc-x64",
+            "cppStandard": "c++23",
+            "cStandard": "c17"
         }
     ],
     "version": 4
