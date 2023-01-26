@@ -4,12 +4,13 @@ justcasualjava/.idea
  !spec/*.exe
 
  *.out 
- !spec/*.out
 
 !spec/*.ccls-cache
 
 *.exe
 
+*.out
 
+!spec/*.out
 
 .vs/
