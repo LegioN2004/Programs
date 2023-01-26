@@ -51,7 +51,7 @@
       {
 			"type": "cppbuild",
 			"label": "Build with MSVC",
-			"command": "cl.exe",
+			"command": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
 			"args": [
 				"/Zi",
 				"std:c++latest",
@@ -67,7 +67,7 @@
 				"$msCompile"
 			],
 			"group": "build",
-			"detail": "compiler: cl.exe"
+			"detail": "compiler: D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe"
 		}
    ],
 }
