@@ -1,7 +1,5 @@
 #include<iostream>
 #include<iomanip> // to use the keyword setw which is used to shift characters to the right
-#include< 
-#include
 using namespace std;
 int main()
 {

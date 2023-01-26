@@ -1,4 +1,5 @@
 {
+   "version": "2.0.0",
    "tasks": [
       {
          "type": "cppbuild",
@@ -23,7 +24,30 @@
             "isDefault": true
          },
          "detail": "compiler: D:\\msys64\\mingw64\\bin\\g++.exe "
-      }
+      },
+      {
+         "type": "cppbuild",
+         "label": "C/C++: clang++.exe Build with clang v12 active file",
+         "command": "C:\\Users\\sunny\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
+         "args": [
+            "-fdiagnostics-color=always",
+            "-g",
+            "${file}",
+            "-o",
+            "${fileDirname}\\${fileBasenameNoExtension}.exe"
+         ],
+         "options": {
+            "cwd": "${fileDirname}"
+         },
+         "problemMatcher": [
+            "$gcc"
+         ],
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "detail": "compiler: C:\\Users\\sunny\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe"
+      },
+      
    ],
-   "version": "2.0.0"
 }
