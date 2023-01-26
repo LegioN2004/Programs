@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "iostream": "cpp"
     },
     "livePreview.defaultPreviewPath": "/home/sunny/ghq/github.com/legion2004/programs/codewithharry/codewithharryWebDev/codewithharryHTML,CSS&JS/tut7/tut7.html"
 }
