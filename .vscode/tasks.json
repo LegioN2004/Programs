@@ -4,7 +4,7 @@
       {
          "type": "cppbuild",
          "label": "C/C++: g++.exe Build with GCC 12",
-         "command": "D:\\msys64\\mingw64\\bin\\g++.exe",
+         "command": "D:\\mingw64\\bin\\g++.exe",
          "args": [
             "-fdiagnostics-color=always",
             "-g",
@@ -23,12 +23,12 @@
             "kind": "build",
             "isDefault": true
          },
-         "detail": "compiler: D:\\msys64\\mingw64\\bin\\g++.exe "
+         "detail": "compiler: D:\\mingw64\\bin\\g++.exe "
       },
       {
          "type": "cppbuild",
          "label": "C/C++: clang++.exe Build with clang v12",
-         "command": "C:\\Users\\sunny\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
+         "command": "D:\\downloads IDM\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
          "args": [
             "-fdiagnostics-color=always",
             "-g",
@@ -46,7 +46,7 @@
             "kind": "build",
             "isDefault": true
          },
-         "detail": "compiler: C:\\Users\\sunny\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe"
+         "detail": "compiler: D:\\downloads IDM\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe"
       },
       {
 			"type": "cppbuild",
