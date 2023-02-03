@@ -1,9 +1,12 @@
 #include <iostream>
+#include <stdio.h>
 using namespace std;
 
 int main() {
   cout << "this is the first output from the first example of the book";
-  cout << endl;
+  printf("tis is nothign");
+  cout << enl;
   cout << "this is the second output from the first example of the book";
-  return 0;
+  // cin.get();
+  return 0; 
 }
