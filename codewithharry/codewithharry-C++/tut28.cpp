@@ -22,6 +22,8 @@ void add(X o1, Y o2) {
   cout << "adding datas of X and Y objects gives me " << o1.data + o2.num;
 }
 int main() {
+  int a1,b1;
+
   X a;
   a.setValue(3);
 
