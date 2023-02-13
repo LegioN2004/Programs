@@ -14,3 +14,7 @@ justcasualjava/.idea
 !spec/*.out
 
 .vs/
+
+# *
+# !*.*
+# !*/
