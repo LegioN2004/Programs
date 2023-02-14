@@ -8,9 +8,9 @@ int main() {
     int x;
     cin >> x;
     if (x < 80) {
-      cout << "No" << endl;
+      cout << "No\n";
     } else
-      cout << "Yes" << endl;
+      cout << "Yes\n";
   }
   return 0;
 }
