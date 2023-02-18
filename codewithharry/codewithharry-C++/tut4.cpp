@@ -17,11 +17,11 @@ int main()
 	float pi = 3.14;	  // for decimal no we use float data type
 	char c = 'h';		  // char is used to input characters, only one at a time can be used and declaration must be within single quotes
 	bool hello_h = false; /* variable names in C++ can range from 1 to 255, must begin with letter or underscore but not a number
-						  variable names are case sensitive, capital letters and small letter are considered different
-						  no spcaes,sybols or special characters are allowed and no C++ keyword are allowed
-						   sum();
-						   cout<<"This is tutorial 4. The value of a is "<<a<< " and the value of b is "<<b;
-						   cout<<"\n The value of pi is "<<pi; // for writing output in a new line like using enter we can use \n
-						   cout<<"\n The value of c is "<<c; */
+	variable names are case sensitive, capital letters and small letter are considered different
+    no spcaes,sybols or special characters are allowed and no C++ keyword are allowed
+    sum();
+    cout<<"This is tutorial 4. The value of a is "<<a<< " and the value of b is "<<b;
+    cout<<"\n The value of pi is "<<pi; // for writing output in a new line like using enter we can use \n
+    cout<<"\n The value of c is "<<c; */
 	cout << glo << hello_h;
 }
