@@ -12,6 +12,7 @@
                 "-ggdb",
                 "-O2",
                 "-DNDEBUG",
+                "-pedantic-errors",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
