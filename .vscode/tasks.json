@@ -9,6 +9,9 @@
                 "-fdiagnostics-color=always",
                 "-g",
                 "-std=c++20",
+                "-ggdb",
+                "-O2",
+                "-DNDEBUG",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
