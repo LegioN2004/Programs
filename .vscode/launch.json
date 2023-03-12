@@ -4,15 +4,15 @@
          "name": "(gdb) Launch",
          "type": "cppdbg",
          "request": "launch",
-         "program": "${fileDirname}\\${fileBasenameNoExtension}",
+         "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
          "args": [
          ],
          "stopAtEntry": false,
          "cwd": "${fileDirname}",
          "environment": [],
-         "externalConsole": false,
+         "externalConsole": true,
          "MIMode": "gdb",
-         "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe",
+         "miDebuggerPath": "D:\\downloads IDM\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\gdb.exe",
          "setupCommands": [
             {
                "description": "Enable pretty-printing for gdb",
