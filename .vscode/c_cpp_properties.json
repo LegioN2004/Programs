@@ -3,8 +3,7 @@
         {
             "name": "Win32",
             "includePath": [
-                "${workspaceFolder}/**",
-                "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\include"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -24,8 +23,13 @@
                 "/usr/local/include",
                 "${workspaceRoot}"
             ],
-            "defines": [],
-            "intelliSenseMode": "clang-x64",
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "/usr/bin/gcc",
+            "intelliSenseMode": "gcc-x64",
             "browse": {
                 "path": [
                     "/usr/include",
