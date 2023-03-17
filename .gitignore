@@ -9,6 +9,8 @@ justcasualjava/.idea
 
 *.exe
 
+*.class
+
 *.out
 
 !spec/*.out
@@ -20,3 +22,4 @@ justcasualjava/.idea
 # !*/
 
 build
+JAVA/DSA-bootcamp-kunal-kush/lecture1/Main.class
