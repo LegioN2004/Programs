@@ -1,8 +1,9 @@
-* hello hello
-** my name is nothing
-** my name is nothing
+* this is a level 1 heading
+*** this is a level 2 heading
 ** hi
 **** ## helairnte
-*** 
-* 
+**** this is a level 3 headings
 
+* this is a second headline
+** this is the level 2 heading of the second headline
+*** this is the level 3 heading of the second headline
