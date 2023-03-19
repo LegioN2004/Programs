@@ -20,8 +20,7 @@
             "name": "Linux",
             "includePath": [
                 "/usr/include",
-                "/usr/local/include",
-                "${workspaceRoot}"
+                "${workspaceFolder}/**"
             ],
             "defines": [
                 "_DEBUG",
@@ -33,7 +32,6 @@
             "browse": {
                 "path": [
                     "/usr/include",
-                    "/usr/local/include",
                     "${workspaceRoot}"
                 ],
                 "limitSymbolsToIncludedHeaders": true,
