@@ -2,9 +2,7 @@
     "configurations": [
         {
             "name": "Win32",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
+            "includePath": [],
             "defines": [
                 "_DEBUG",
                 "UNICODE",
@@ -13,14 +11,20 @@
             "compilerPath": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
             "intelliSenseMode": "windows-msvc-x64",
             "cppStandard": "c++23",
-            "cStandard": "c17",
-            "configurationProvider": "ms-vscode.cmake-tools"
+            "cStandard": "c23",
+            "configurationProvider": "ms-vscode.cmake-tools",
+            "mergeConfigurations": false,
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/**"
+                ],
+                "limitSymbolsToIncludedHeaders": true
+            }
         },
         {
             "name": "Linux",
             "includePath": [
-                "/usr/include",
-                "${workspaceFolder}/**"
+                "/usr/include"
             ],
             "defines": [
                 "_DEBUG",
@@ -28,15 +32,17 @@
                 "_UNICODE"
             ],
             "compilerPath": "/usr/bin/gcc",
-            "intelliSenseMode": "gcc-x64",
+            "intelliSenseMode": "linux-gcc-x64",
             "browse": {
                 "path": [
                     "/usr/include",
                     "${workspaceRoot}"
                 ],
-                "limitSymbolsToIncludedHeaders": true,
-                "databaseFilename": ""
-            }
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c23",
+            "cppStandard": "c++23",
+            "mergeConfigurations": false
         }
     ],
     "version": 4
