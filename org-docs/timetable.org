@@ -1,6 +1,6 @@
 * Time Table
 
-** TODO study physics<2023-03-20 Mon 10:25> 
+** DONE study physics<2023-03-20 Mon 10:25> 
+CLOSED: [2023-03-20 Mon 19:31]
 ** TODO study chemistry 
 ** TODO study maths
-
