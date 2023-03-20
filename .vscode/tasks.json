@@ -9,7 +9,7 @@
                 "-fdiagnostics-color=always",
                 "-g3",
                 "-Wall",
-                "-std=c++23",
+                "-std=c++2a",
                 "-ggdb",
                 "-O2",
                 "-DNDEBUG",
@@ -32,7 +32,7 @@
         {
             "type": "shell",
             "label": "C/C++: Run Simple build and execute cpp file ",
-            "command": "D:\\msys64\\mingw64\\bin\\g++.exe -g3 -Wall -O2 -DNDEBUG -Werror \"${file}\" -o \"${fileDirname}\\a.exe\" &&\"${fileDirname}\\a.exe\"",
+            "command": "D:\\msys64\\mingw64\\bin\\g++.exe -std=c++2a -g3 -Wall -O2 -DNDEBUG -Werror \"${file}\" -o \"${fileDirname}\\a.exe\" &&\"${fileDirname}\\a.exe\"",
           // use these type of double quotes with back slashes for removing runtime errors of filenames with spaces
             "options": {
                 "cwd": "${fileDirname}"
@@ -70,7 +70,9 @@
             "command": "D:\\downloads IDM\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
             "args": [
                 "-fdiagnostics-color=always",
-                "-g",
+                "-g3",
+                "-Werror",
+                "-std=c++2a",
                 "${file}",
                 "-o",
                 "${fileDirname}\\${fileBasenameNoExtension}.exe"
@@ -90,7 +92,9 @@
             "command": "/usr/bin/g++",
             "args": [
                 "-fdiagnostics-color=always",
-                "-g",
+                "-g3",
+                "-Werror",
+                "-std=c++2a",
                 "${file}",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
