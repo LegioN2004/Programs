@@ -8,14 +8,13 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g3",
-                "-Wall",
                 "-std=c++2a",
                 "-ggdb", // this is used for debug build of your executable
                 // use this below two args for using in the release builds of your cpp executable
                 //"-O2",
                 //"-DNDEBUG",
                 "-pedantic-errors",
-                "-Werror",
+                "-Wall",
                 "${file}",
                 "-o",
                 //use anything in the line after $ to . to give any name to the executable
