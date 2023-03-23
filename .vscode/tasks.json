@@ -4,7 +4,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: Build with GCC v12",
-            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\bin\\g++.exe",
+            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g3",
@@ -27,12 +27,12 @@
                 "$gcc"
             ],
             "group": "build",
-            "detail": "compiler: C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\bin\\g++.exe "
+            "detail": "compiler: C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\g++.exe"
         },
         {
             "type": "shell",
             "label": "C/C++: Run Simple build and execute cpp file ",
-            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\bin\\g++.exe -std=c++2a -g3 -Wall -ggdb -Werror \"${file}\" -o \"${fileDirname}\\a.exe\" &&\"${fileDirname}\\a.exe\"",
+            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\g++.exe -std=c++2a -g3 -Wall -ggdb -Werror \"${file}\" -o \"${fileDirname}\\a.exe\" &&\"${fileDirname}\\a.exe\"",
           // use these type of double quotes with back slashes for removing runtime errors of filenames with spaces
             "options": {
                 "cwd": "${fileDirname}"
@@ -43,7 +43,7 @@
         {
             "type": "cppbuild",
             "label": "C/C++: Build with MSVC",
-            "command": "D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
+            "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
             "args": [
                 "/Zi",
                 //"${command:workbench.action.tasks.runTask}",
@@ -62,12 +62,12 @@
             "group": {
                 "kind": "build"
             },
-            "detail": "compiler: D:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe"
+            "detail": "compiler: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe"
         },
         {
             "type": "cppbuild",
             "label": "C/C++: Build with clang v15",
-            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\bin\\clang++.exe",
+            "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g3",
