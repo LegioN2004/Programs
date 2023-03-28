@@ -1,12 +1,13 @@
 #include<iostream>
 using namespace std;
     
-int Multitply(int a , int b, int result){
-    result = a + b ;
-    cout << result << endl;
+void Multitply(int a , int b){
+    int c;
+    c = a + b ;
+    cout << c << endl;
 }
 int main(){
-
+    Multitply(1,2);
     cout << "Hello world" << endl ;
     return 0;
 }
