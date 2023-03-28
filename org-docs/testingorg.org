@@ -9,4 +9,4 @@
 
 * this is a second headline
 ** this is the level 2 heading of the second headline
-*** this is the level 3 heading of the second headline		
+*** this is the level 3 heading of the second headline
