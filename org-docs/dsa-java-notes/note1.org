@@ -1,0 +1,49 @@
+* #more things to be added#
+
+* stack and heap memory
+** for example: a = 10
+*** a (reference variable) is stored in stack memory of the above example .
+*** heap memory is where 10 (object) is stored of the above example .
+*** And a is only pointing to that object in heap memory but 10 is the actual value, pointing to the address of 10 in the memory(in computer)
+**** 1. more than 1 reference variables can point to the same object
+**** 2. if original object is changed by a reference variable then it will be reflected to all the other variables
+*** when an object with no reference variable is found then it is removed from the memory using garbage collection (it happens automatically) all the objects
+
+
+
+
+* intro to java
+** how java code executes
+*** .java  file has the source code which is in the human readable  format
+*** it gets into the compiler and converts the entire file to .class format
+*** .class (which is a BYTE CODE) is a file which is a java intermediary language / something else in the java stuff
+**** it doesn't run in directly on a system
+**** it needs a jvm(Java virtual machine) to run
+**** it is the reason why Java is platform independent
+***** note jvm is platform dependent we need to execute the .class file again in different platform using the platform dependent jvm
+***** this bytecode can run on any machine , the executable is dependent in platform and architecture
+***  then the interpreter(line by line) converts it into machine code
+**** interpreter compiles the file line by line eg python which is a interpreted language can be excuted line by line
+
+** JDK vs JRE vs JVM vs JIT
+*** JDK is java dev kit , it consists of JRE + Dev tools
+****  provides package to run and develop java program
+**** it is a package that includes
+				1. dev tools = to provide an environment to develop your program
+				2. JRE = to execute your program
+				3. javac = a java compiler
+				4. jar = java archiver
+				5. javadoc = doc generator
+				6. interpreter / loader
+
+*** JRE is java runtime environment, it consists of JVM + library classes
+**** It is an installation package that provides environment to only run the program . It consists of :-
+				1. Deployment technology
+				2. User interface toolkit
+				3. Integration libraries
+				4. Base libraries
+				5. JVM :- Java virtual Machine
+*****  After we get the .class file the next thing happen at runtime :
+							1. Class loader loads all classes needed to execute the program.
+							2. JVM sends code to bytecode verifier to check the format of code.
+*** JVM is java virtual machine it consists of JIT just in time compiler

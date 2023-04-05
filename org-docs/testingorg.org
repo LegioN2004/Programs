@@ -8,10 +8,14 @@
 ******** this is a level 8 heading
 * this is the second level 1 heading
 ** hi
-*** bye
+** bye
 **** goodnight
-*****
+***** hello
 
 * this is a third level 1 heading
 ** this is the level 2 heading of the second headline
 *** this is the level 3 heading of the second headline
+**** hello hi byeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
+
+#-*- mode: org -*-
+#+STARTUP: showall
