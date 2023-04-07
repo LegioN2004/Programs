@@ -47,3 +47,6 @@
 							1. Class loader loads all classes needed to execute the program.
 							2. JVM sends code to bytecode verifier to check the format of code.
 *** JVM is java virtual machine it consists of JIT just in time compiler
+
+** how the all of the above works JDK, JRE, JVM, JIT
+*** at compile time [.java file] --(javac compilation)-----> [.class file]
