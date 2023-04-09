@@ -10,19 +10,24 @@
 *** function is a block/collection of code which can be used again and again
 ** you can run with javac _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable with java you can use the name only to run
 ** explanation of the main.java file
+
+#+begin_src java
  public class main { // inside this block of {} is the int main of java as found in cpp
 	public static void main(String[] args) {
 		System.out.println("hello world!!");
 	}
 }
+#+end_src
 
-** here class is name group of properties and functions , in the above eg's class we have this function 
-	<s public static void main(String[] args) {
+** here class is name group of properties and functions , in the above eg's class we have this function
+#+begin_src java
+	 public static void main(String[] args) {
 		System.out.println("hello world!!");
 	}
->
+#+end_src
+
 ** all the functions that are in the classes are knows as methods
-** also the function name has to be main only <s public static void main(String[] args) > it is reserved to be here if it is not main it will not run
+** also the function name has to be main only #+begin_src public static void main(String[] args) #+end_src  it is reserved to be here if it is not main it will not run
 ** here public means the same as in the class name part <s public static void main(String[] args) > since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid
 *** main function is the entry point of the function
 *** here static means:this main function/method is a part of the -Main- class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there

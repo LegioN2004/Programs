@@ -12,10 +12,10 @@
     --prune 'here includes (fetches) the deleted stuff which --all doesn't pull maybe'
 
 *** git reset --hard upstream/main
-		this resets the origin/main branch of the forked repo with the upstream/main branch of the main repo so as to sync the repo fully 
+this resets the origin/main branch of the forked repo with the upstream/main branch of the main repo so as to sync the repo fully
 **** then push in the origin/main branch in the local system or 
 **** to reduce the 2 commands above you can use
-		git pull upstream main
+git pull upstream main
 
 *** upstream here pulls from the upstream url and main means from the main branch of the upstream url
 **** then you can push the changes to the origin/main branch so as to make the forked repo's main branch in sync with the upstream branch's main

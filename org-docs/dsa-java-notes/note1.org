@@ -63,4 +63,3 @@
 
 ** how everything points to work like that
 *** java source code -> JDK (has the javac compiler converts it into .class file) -> Bytecode -> JVM(converts the bytecode to an executable) -> JRE(then we run that executable in this)
-                                                                                                 here^^ somewhere lies the hardware
