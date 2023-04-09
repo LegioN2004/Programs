@@ -1,27 +1,34 @@
-* First java program input/output debugging and datatypes
-** structure of a java file
-*** every file that ends with an extensions .java is a class itself; eg: main.java
-*** since it's name is main.java(or something before .java) it should contain a class with that name (as in before the extension) in the file itself
-*** all the code that we'll be writing will be in this class main/name
-*** remember if a variable name starts with a capital letter then it is a class name (by convention)
-*** if the class with the name of the file is in the file then that will be a class of the public type , in this case main is the public class type
-**** public class means that this class will be accessible by all other files , classes, etc
-*** like cpp , java also has a main function (by convention) from where the program starts
-**** function is a block/collection of code which can be used again and again
-*** you can run with javac _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable with java you can use the name only to run
+#+TITLE: First java program input/output debugging and datatypes
+* structure of a java file
+** every file that ends with an extensions .java is a class itself; eg: main.java
+** since it's name is main.java(or something before .java) it should contain a class with that name (as in before the extension) in the file itself
+** all the code that we'll be writing will be in this class main/name
+** remember if a variable name starts with a capital letter then it is a class name (by convention)
+** if the class with the name of the file is in the file then that will be a class of the public type , in this case main is the public class type
+** public class means that this class will be accessible by all other files , classes, etc
+** like cpp , java also has a main function (by convention) from where the program starts , whenever we run the program the compiler will look for main , if it is not present then the compiler will throw error
+*** function is a block/collection of code which can be used again and again
+** you can run with javac _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable with java you can use the name only to run
 ** explanation of the main.java file
-<s public class main { // inside this block of {} is the int main of java as found in cpp
+ public class main { // inside this block of {} is the int main of java as found in cpp
 	public static void main(String[] args) {
 		System.out.println("hello world!!");
 	}
 }
->
-*** here class is name group of properties and functions , in the above eg's class we have this function 
+
+** here class is name group of properties and functions , in the above eg's class we have this function 
 	<s public static void main(String[] args) {
 		System.out.println("hello world!!");
 	}
 >
-*** all the functions that are in the classes are knows as methods
-*** also the function name has to be main only <s public static void main(String[] args) > it is reserved to be here if it is not main it will not run
-*** here public means the same as the class name <s public static void main(String[] args) > " does it not make sense to make it available to be executed from anywhere
-*** here static means
+** all the functions that are in the classes are knows as methods
+** also the function name has to be main only <s public static void main(String[] args) > it is reserved to be here if it is not main it will not run
+** here public means the same as in the class name part <s public static void main(String[] args) > since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid
+*** main function is the entry point of the function
+*** here static means:this main function/method is a part of the -Main- class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there
+*** so static variables and functions are the variables and functions that don't depend on the object
+*** void is the return type of the function, since we don't want any value here so we have used void(like in cpp)
+*** (String[] args) are the arguments , collection of strings
+*** here args is the arguments given in the terminal with java command (like java Main 50 100 ...) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array
+*** javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file
+*** package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder
