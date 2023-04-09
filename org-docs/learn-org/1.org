@@ -1,5 +1,4 @@
-learning org mode from the orgmode.org/word/org-tutorials/org4beginners.html
-
+#+TITLE: learning org mode from the orgmode.org/word/org-tutorials/org4beginners.html
 
 #-*- mode: org -*-
 #+STARTUP: showall
