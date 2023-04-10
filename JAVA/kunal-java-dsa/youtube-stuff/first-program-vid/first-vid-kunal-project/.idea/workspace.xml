@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="" />
+    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com.mili/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mili/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +23,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jrt:///usr/lib/jvm/java-19-openjdk!/java.base/java/io/PrintStream.class" root0="SKIP_INSPECTION" />
+  </component>
   <component name="ProjectId" id="2O8iqmih4C1okusgdcE2kJemFnP" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
@@ -28,7 +40,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/home/sunny/ghq/github.com/LegioN2004/programs/JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
   <component name="RunManager">
@@ -52,4 +64,15 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
 </project>
