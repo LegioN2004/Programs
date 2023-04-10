@@ -12,18 +12,18 @@
 ** explanation of the main.java file
 
 #+begin_src java
- public class main { // inside this block of {} is the int main of java as found in cpp
-	public static void main(String[] args) {
-		System.out.println("hello world!!");
-	}
+public class main { // inside this block of {} is the int main of java as found in cpp
+    public static void main(String[] args) {
+        System.out.println("hello world!!");
+    }
 }
 #+end_src
 
 ** here class is name group of properties and functions , in the above eg's class we have this function
 #+begin_src java
-	 public static void main(String[] args) {
-		System.out.println("hello world!!");
-	}
+public static void main(String[] args) {
+    System.out.println("hello world!!");
+}
 #+end_src
 
 ** all the functions that are in the classes are knows as methods
@@ -37,32 +37,33 @@
 *** here args is the arguments given in the terminal with java command (like java Main 50 100 ...) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array
 ** if you use javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file
 ** package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder
+** then comes = System.out.println("hello world!!"); = this prints a string , if we use ctrl/cmd+click on this we get
 
-** then comes " System.out.println("hello world!!"); " this prints a string , if we use ctrl/cmd+click on this we get
 #+begin_src java
-public void println(String x)
-#+end_src
-*** Prints a String and then terminates the line. This method behaves as though it invokes print(String) and then println().
-**** Parameters: x - The String to be printed.
-*** javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file
-*** package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder
-*** this is what happens in the 
-#+begin_src java
-    /**
-     * Prints a String and then terminate the line.  This method behaves as
-     * though it invokes {@link #print(String)} and then
-     * {@link #println()}.
-     *
-     * @param x  The {@code String} to be printed.
-     */
-    public void println(String x) {
-        if (getClass() == PrintStream.class) {
-            writeln(String.valueOf(x));
-        } else {
-            synchronized (this) {
-                print(x);
-                newLine();
-            }
+/**
+ ,* Prints a String and then terminate the line.  This method behaves as
+ ,* though it invokes {@link #print(String)} and then
+ ,* {@link #println()}.
+ ,*
+ ,* @param x  The {@code String} to be printed.
+ ,*/
+public void println(String x) {
+    if (getClass() == PrintStream.class) {
+        writeln(String.valueOf(x));
+    } else {
+        synchronized (this) {
+            print(x);
+            newLine();
         }
     }
+}
 #+end_src
+
+*** to print stuff we have the _System_ class , it is in file called System.java(since System starts with a capital letter hence we know it is a class) in the java.lang package. All the stuff available in the lang package can be accessed in the files created by the people who made java
+*** _println_ in the above src says that you will give a string and it'll print that string
+*** _out_ is a variable contained in the System class, it is basically a type of PrintStream(will be expained later), and PrintStream has something called println. out is like a reference variable for PrintStream and by default value of the standard output stream i.e the out is the commandline i.e laptop (idk what that means) or the place where the output will be shown, out's original value is null (like this here) = public static final PrintStream out = null; which means that the output will be in the commandline but if we declare out = _some file or anything_ then it will take the output of that println into that file or something
+*** ## so it means System has a variable called out which is of type PrintStream and this out has a method/function called println, since out is of type PrintStream so println is also in PrintStream : in the standard output stream print something
+
+**  *NOTE* some of the reference  which can be added to the code itself instead of here are done in the file mentioned here
+
+*** for input in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  Scanner is a public class which is a simplet text scanner which can parse primitive types and strings using regular expressions, then the input is a variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard) (the standard input System.in refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning

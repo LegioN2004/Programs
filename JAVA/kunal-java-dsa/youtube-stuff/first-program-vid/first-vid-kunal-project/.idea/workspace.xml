@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com.mili/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/mili/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,15 +33,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "/home/sunny/ghq/github.com/LegioN2004/programs/JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project",
-    "settings.editor.selected.configurable": "preferences.lookFeel","settings.sync"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sunny/ghq/github.com/LegioN2004/programs/JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,&quot;settings.sync&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mili.Main" />
