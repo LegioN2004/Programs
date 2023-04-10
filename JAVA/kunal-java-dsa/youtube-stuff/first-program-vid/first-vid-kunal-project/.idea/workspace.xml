@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
   <component name="ProjectId" id="2O8iqmih4C1okusgdcE2kJemFnP" />
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
@@ -29,7 +32,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "/home/sunny/ghq/github.com/LegioN2004/programs/JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "settings.sync"
   }
 }]]></component>
   <component name="RunManager">
