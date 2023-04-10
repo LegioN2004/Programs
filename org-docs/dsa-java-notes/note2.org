@@ -37,3 +37,25 @@
 *** here args is the arguments given in the terminal with java command (like java Main 50 100 ...) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array
 *** javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file
 *** package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder
+
+
+#+begin_src java
+    /**
+     * Prints a String and then terminate the line.  This method behaves as
+     * though it invokes {@link #print(String)} and then
+     * {@link #println()}.
+     *
+     * @param x  The {@code String} to be printed.
+     */
+    public void println(String x) {
+        if (getClass() == PrintStream.class) {
+            writeln(String.valueOf(x));
+        } else {
+            synchronized (this) {
+                print(x);
+                newLine();
+            }
+        }
+    }
+#+end_src
+
