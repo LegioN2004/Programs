@@ -69,7 +69,8 @@ public void println(String x) {
 *** for input in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  Scanner is a public class (it allows us to take input in simple sense) which is a simplet text scanner which can parse primitive types and strings using regular expressions, then the input is a variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard) (the standard input System.in refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input
 
 **** every class in java extends the object class , eg: Scanner ; important concept
+
 #+begin_src java
-System.out.println(input.nextInt());
+System.out.println(input.nextInt()); //whatever input we got , it is passed into the print statement
 #+end_src
-**** input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever out will be given by the input it will be shown in output
+**** input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever out will be given by the input it will be shown in output 

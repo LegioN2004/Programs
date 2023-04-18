@@ -11,6 +11,8 @@ public class Main {
         System.out.println("using the aliases or shortcut written code"); // println prints a line and creates a new line
         System.out.println(10274); // doesn't need apostrophes for numbers
         Scanner input = new Scanner(System.in); // taking input look into note2.org for more details
-        System.out.println(input.nextInt());
+        System.out.println(input.nextInt()); // this takes integer as input
+        System.out.println(input.next()); // this takes a or first string(word) of a sentence as an input
+        System.out.println(input.nextLine()); // this takes the full sentence as an input
     }
 }
