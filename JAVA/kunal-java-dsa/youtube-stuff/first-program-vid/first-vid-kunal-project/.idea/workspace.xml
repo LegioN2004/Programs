@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya">
+      <change afterPath="$PROJECT_DIR$/src/com/mili/primitives.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mili/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../random-practices/random-cpp-files/fibonaccitesting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../random-practices/random-cpp-files/fibonaccitesting.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,&quot;settings.sync&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.primitives">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mili.Main" />
       <module name="first-vid-kunal-project" />
@@ -56,8 +58,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="primitives" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mili.primitives" />
+      <module name="first-vid-kunal-project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mili.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.primitives" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

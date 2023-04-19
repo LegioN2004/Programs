@@ -1,15 +1,16 @@
 #+TITLE: First java program input/output debugging and datatypes
 * structure of a java file
-** every file that ends with an extensions .java is a class itself; eg: main.java
-** since it's name is main.java(or something before .java) it should contain a class with that name (as in before the extension) in the file itself
-** all the code that we'll be writing will be in this class main/name
-** remember if a variable name starts with a capital letter then it is a class name (by convention)
-** if the class with the name of the file is in the file then that will be a class of the public type , in this case main is the public class type
-** public class means that this class will be accessible by all other files , classes, etc
-** like cpp , java also has a main function (by convention) from where the program starts , whenever we run the program the compiler will look for main , if it is not present then the compiler will throw error
-*** function is a block/collection of code which can be used again and again
-** you can run with javac _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable with java you can use the name only to run
-** explanation of the main.java file
+** Name: every file that ends with an extensions .java is a class itself; eg: main.java
+*** since it's name is main.java(or some name before ___.java) it should contain a class with that name (as in before the extension) in the file itself
+*** all the code that we'll be writing will be in this class main/name
+** the Class in the name: remember if a variable name starts with a capital letter then it is a class name (by convention)
+*** if the class with the name of the file is in the file then that will be a class of the public type , in this case main is the public class type
+*** public class means that this class will be accessible by all other files , classes, etc
+*** like cpp , java also has a main function (by convention) from where the program starts , whenever we run the program the compiler will look for main , if it is not present then the compiler will throw error
+** function is a block/collection of code which can be used again and again
+** you can run with the java compiler "javac" _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable(class file) with java you can use the class name only
+
+* explanation of the main.java file
 
 #+begin_src java
 public class main { // inside this block of {} is the int main of java as found in cpp
@@ -25,10 +26,8 @@ public static void main(String[] args) {
     System.out.println("hello world!!");
 }
 #+end_src
-
 ** all the functions that are in the classes are knows as methods
-*** also the function name has to be main only like here " public static void main(String[] args) " it is reserved to be here if it is not main it will not run
-** since main function is the entry point of the function
+*** also the function name has to be main only like here " public static void main(String[] args) " it is reserved to be here if it is not main it will not run since main function is the entry point of the function
 ** here public means the same as in the class name part " public static void main(String[] args) " since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid
 ** here static means:this main function/method is a part of the -Main- class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there
 *** so static variables and functions are the variables and functions that don't depend on the object
@@ -68,9 +67,19 @@ public void println(String x) {
 
 *** for input in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  Scanner is a public class (it allows us to take input in simple sense) which is a simplet text scanner which can parse primitive types and strings using regular expressions, then the input is a variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard) (the standard input System.in refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input
 
-**** every class in java extends the object class , eg: Scanner ; important concept
+*** every class in java extends the object class , eg: Scanner ; important concept
 
 #+begin_src java
 System.out.println(input.nextInt()); //whatever input we got , it is passed into the print statement
+System.out.println(input.next()); //whatever input we got , it is passed into the print statement
+System.out.println(input.nextln()); //whatever input we got , it is passed into the print statement
 #+end_src
-**** input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever out will be given by the input it will be shown in output 
+
+***** nextInt prints the integer output
+***** next prints the first string(/word) of a sentence of the input in the output
+***** nextln prints the whole string of a sentence of the input in the output
+
+**** input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output
+
+* Datatypes
+*** primitive data types are the ones which cannot be further broken into other datatypes . eg: "Kunal" this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
