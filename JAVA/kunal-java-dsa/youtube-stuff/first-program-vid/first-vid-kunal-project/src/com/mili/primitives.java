@@ -10,5 +10,6 @@ public class primitives {
         float marks = 98.18f; // for short decimal numbers , need to add a small case f (reason in note2)
         double largeDecimalNumbers = 9801784.1813481247f; // used for declaring long decimal numbers
         long largeIntegerValues = 123412344234L; // for declaring long integer numbers, need to add a upper case L (reason in note2)
+        boolean check = true; // or false
     }
 }

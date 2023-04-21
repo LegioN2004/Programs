@@ -82,4 +82,18 @@ System.out.println(input.nextln()); //whatever input we got , it is passed into 
 **** input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output
 
 * Datatypes
-*** primitive data types are the ones which cannot be further broken into other datatypes . eg: "Kunal" this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
+*** Primitive data types are the ones which cannot be further broken into other datatypes . eg: "Kunal" this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
+*** To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators )
+**** for now the size are : int and float has 4 bytes, double and long has 8 bytes
+*** All the decimal values are of the type double by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
+**** as to why use double instead of float: float gives errors sometimes floating point error so to get more accurate value we use double
+**** also we can  store larger decimal values using the double type
+*** And the by default declaration type of integer values is "int" so we use 'L' (remember upper case L only) at the end of the long type
+**** why use long instead of int: it can store more/long integer values
+
+*** There contains a class for every data type known as wrapper classes for giving additional funtionality to the primitive datatypes, and they are written as
+#+begin_src java
+Integer rollno = 8;
+String name = "tera baap hu";
+#+end_src
+**** as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )

@@ -14,5 +14,6 @@ public class Main {
         System.out.println(input.nextInt()); // this takes integer as input
         System.out.println(input.next()); // this takes a or first string(word) of a sentence as an input
         System.out.println(input.nextLine()); // this takes the full sentence as an input
+                                              // and then the taken input is given out directly as output 
     }
 }

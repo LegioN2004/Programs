@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya">
-      <change afterPath="$PROJECT_DIR$/src/com/mili/primitives.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/mili/inputs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/turmurtu/hellonew2nd.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../random-practices/random-cpp-files/fibonaccitesting.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../random-practices/random-cpp-files/fibonaccitesting.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mili/primitives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/primitives.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +28,9 @@
     <setting file="jrt:///usr/lib/jvm/java-19-openjdk!/java.base/java/io/PrintStream.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="2O8iqmih4C1okusgdcE2kJemFnP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
