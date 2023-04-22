@@ -29,7 +29,7 @@ public static void main(String[] args) {
 ** all the functions that are in the classes are knows as methods
 *** also the function name has to be main only like here " public static void main(String[] args) " it is reserved to be here if it is not main it will not run since main function is the entry point of the function
 ** here public means the same as in the class name part " public static void main(String[] args) " since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid
-** here static means:this main function/method is a part of the -Main- class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there
+** here static means: this main function/method is a part of the _Main_ class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there
 *** so static variables and functions are the variables and functions that don't depend on the object
 ** void is the return type of the function, since we don't want any value here so we have used void(like in cpp)
 ** (String[] args) are the arguments , collection of strings
@@ -66,6 +66,7 @@ public void println(String x) {
 **  *NOTE* some of the reference  which can be added to the code itself instead of here are done in the file mentioned here
 
 *** for input in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  Scanner is a public class (it allows us to take input in simple sense) which is a simplet text scanner which can parse primitive types and strings using regular expressions, then the input is a variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard) (the standard input System.in refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input
+**** regarding the new keyword , it is used to
 
 *** every class in java extends the object class , eg: Scanner ; important concept
 
