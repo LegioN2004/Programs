@@ -34,7 +34,7 @@ Here class is name group of properties and functions , in the above eg's class w
 9. if you use javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file.
 10. package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder.
 11. then comes = System.out.println("hello world!!"); = this prints a string , if we use ctrl/cmd+click on this we get.
-#+begin_src java
+    #+begin_src java
 /**
  ,* Prints a String and then terminate the line.  This method behaves as
  ,* though it invokes {@link #print(String)} and then
@@ -52,7 +52,7 @@ public void println(String x) {
         }
     }
 }
-#+end_src
+    #+end_src
 
 12. to print stuff we have the _System_ class , it is in file called System.java(since System starts with a capital letter hence we know it is a class) in the java.lang package. All the stuff available in the lang package can be accessed in the files created by the people who made java
 13. _println_ in the above src says that you will give a string and it'll print that string
@@ -61,22 +61,23 @@ public void println(String x) {
 
 16. *NOTE* some of the reference  which can be added to the code itself instead of here are done in the file mentioned here
 
-17. for input in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  Scanner is a public class (it allows us to take input in simple sense) which is a simplet text scanner which can parse primitive types and strings using regular expressions, then the input is a variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard) (the standard input System.in refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input
+17. for _input_ in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  _Scanner_ is a public class (it allows us to take input in simple sense) which is a simple text scanner which can parse primitive types and strings using regular expressions, then the _input_ is a normal declared variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard), we pass the System.in which is used to pass standard input or output (_.in_ part refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input.
+    /also look for the main documentation in the IntellijIdea by ctrl+click/
+
+    - better explanation of the System class: The System class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the System class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.
+    - and of the .in part: The "standard" input stream. This stream is already open and ready to supply input data. Typically this stream corresponds to keyboard input or another input source specified by the host environment or user. In case this stream is wrapped in a java.io.InputStreamReader, Console.charset() should be used for the charset, or consider using Console.reader().
+
 18.  regarding the new keyword , it is used to
 
-14. every class in java extends the object class , eg: Scanner ; important concept
+19. every class in java extends the object class , eg: Scanner ; important concept
+20. about the different next( ,Int,ln) variants
+    #+begin_src java
+System.out.println(input.nextInt()); // = nextInt prints the integer output
+System.out.println(input.next()); // = next prints the first string(/word) of a sentence of the input in the output
+System.out.println(input.nextln()); // = nextln prints the whole string of a sentence of the input in the output
+    #+end_src
 
-#+begin_src java
-System.out.println(input.nextInt()); //whatever input we got , it is passed into the print statement
-System.out.println(input.next()); //whatever input we got , it is passed into the print statement
-System.out.println(input.nextln()); //whatever input we got , it is passed into the print statement
-#+end_src
-
-a. nextInt prints the integer output
-b. next prints the first string(/word) of a sentence of the input in the output
-c. nextln prints the whole string of a sentence of the input in the output
-
-   /input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output/
+    /input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output/
 
 ** All about the datatypes
 1. Primitive data types are the ones which cannot be further broken into other datatypes . eg: "Kunal" this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
@@ -92,4 +93,13 @@ c. nextln prints the whole string of a sentence of the input in the output
 Integer rollno = 8;
 String name = "tera baap hu";
 #+end_src
-   a. as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )
+a. as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )
+
+4. how to _comment_:  you can add single line comments using "/" and multi line comments using the following
+   #+begin_src java
+/* this is a multi line
+   comment
+,*/
+   #+end_src
+
+- explanation for the inputs.java file in the file itself
