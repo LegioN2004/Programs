@@ -1,0 +1,1 @@
+C:\Users\hp\Documents\dotfiles\LegioN2004-githubthings\programs\RUST\random-rust-stuff\firststproj\target\debug\firststproj.exe: C:\Users\hp\Documents\dotfiles\LegioN2004-githubthings\programs\RUST\random-rust-stuff\firststproj\src\main.rs

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mili/inputs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/inputs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mili/sum2nos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/sum2nos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.tex" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.tex" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/random.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/random.org" afterDir="false" />
-    </list>
+    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
