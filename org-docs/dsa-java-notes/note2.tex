@@ -1,4 +1,4 @@
-% Created 2023-04-26 Wed 15:12
+% Created 2023-04-26 Wed 19:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -20,7 +20,7 @@
  pdftitle={First java program input/output debugging and datatypes},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 28.2 (Org mode 9.6.1)}, 
+ pdfcreator={Emacs 28.1 (Org mode 9.6.1)}, 
  pdflang={English}}
 \begin{document}
 
@@ -29,7 +29,7 @@
 
 
 \section{structure of a java file}
-\label{sec:org1679466}
+\label{sec:org2bcd449}
 
 \begin{itemize}
 \item Name: every file that ends with an extensions .java is a class itself; eg: main.java
@@ -46,7 +46,7 @@
 \end{itemize}
 
 \subsection{explanation of the main.java file}
-\label{sec:org2644570}
+\label{sec:org8ea099d}
 
 \begin{verbatim}
 public class main { // inside this block of {} is the int main of java as found in cpp
@@ -57,13 +57,13 @@ public class main { // inside this block of {} is the int main of java as found 
 \end{verbatim}
 Here class is name group of properties and functions , in the above eg's class we have this function
 \subsubsection{\emph{all about the function}}
-\label{sec:org3b29c9e}
+\label{sec:org347575f}
 \begin{enumerate}
 \item All the functions that are in the classes are knows as methods.
 \item Also the function name has to be main only like here `` public static void main(String[] args) '' it is reserved to be here if it is not main it will not run since main function is the entry point of the function. c) Function is a block/collection of code which can be used again and again.
 \end{enumerate}
 \subsubsection{\emph{then rest of the code explanation}}
-\label{sec:org54b8c77}
+\label{sec:org832c970}
 \begin{enumerate}
 \item Here public means the same as in the class name part `` public static void main(String[] args) '' since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid.
 \item Here static means: this main function/method is a part of the \uline{Main} class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there.
@@ -71,7 +71,7 @@ Here class is name group of properties and functions , in the above eg's class w
 \item void is the return type of the function, since we don't want any value here so we have used void(like in cpp).
 \end{enumerate}
 \subsubsection{\emph{how to run}}
-\label{sec:orgfe08ef2}
+\label{sec:orgf80812d}
 \begin{enumerate}
 \item (String[] args) are the arguments , collection of strings.
 \item here args is the arguments given in the terminal with java command (like java Main 50 100 \ldots{}) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array.
@@ -127,7 +127,7 @@ System.out.println(input.nextln()); // = nextln prints the whole string of a sen
 \end{enumerate}
 
 \subsection{All about the datatypes}
-\label{sec:orgeab7576}
+\label{sec:org4d1114b}
 \begin{enumerate}
 \item Primitive data types are the ones which cannot be further broken into other datatypes . eg: ``Kunal'' this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
 \item To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),

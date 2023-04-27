@@ -64,18 +64,18 @@ public void println(String x) {
 17. for _input_ in Main.java the code: ~ Scanner input = new Scanner(System.in); ~  _Scanner_ is a public class (it allows us to take input in simple sense) which is a simple text scanner which can parse primitive types and strings using regular expressions, then the _input_ is a normal declared variable and by using Scanner , this input will read everything we want ,then we add a new object i.e 'new' which is a keyword then Scanner(), in the brackets here we need to pass from where we will pass the input (can be a file or keyboard), we pass the System.in which is used to pass standard input or output (_.in_ part refers to the keyboard input) also the default value of System.in is null we can also define it to be something else . object is a type of scanner and it has a value of System.in whenever input asks for something you will take the value from the keyboard this is the meaning ; again scanner is basically a class that specifies an input stream and using the variable (object) of the class we can take input.
     /also look for the main documentation in the IntellijIdea by ctrl+click/
 
-    - better explanation of the System class: The System class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the System class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.
-    - and of the .in part: The "standard" input stream. This stream is already open and ready to supply input data. Typically this stream corresponds to keyboard input or another input source specified by the host environment or user. In case this stream is wrapped in a java.io.InputStreamReader, Console.charset() should be used for the charset, or consider using Console.reader().
+    - better explanation of the *System* class: The System class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the System class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.
+    - and of the *.in* part: The "standard" input stream. This stream is already open and ready to supply input data. Typically this stream corresponds to keyboard input or another input source specified by the host environment or user. In case this stream is wrapped in a java.io.InputStreamReader, Console.charset() should be used for the charset, or consider using Console.reader().
 
 18.  regarding the new keyword , it is used to
 
 19. every class in java extends the object class , eg: Scanner ; important concept
 20. about the different next( ,Int,ln) variants
-    #+begin_src java
-System.out.println(input.nextInt()); // = nextInt prints the integer output
-System.out.println(input.next()); // = next prints the first string(/word) of a sentence of the input in the output
-System.out.println(input.nextln()); // = nextln prints the whole string of a sentence of the input in the output
-    #+end_src
+        #+begin_src java
+        System.out.println(input.nextInt()); // = nextInt prints the integer output
+        System.out.println(input.next()); // = next prints the first string(/word) of a sentence of the input in the output
+        System.out.println(input.nextln()); // = nextln prints the whole string of a sentence of the input in the output
+        #+end_src
 
     /input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output/
 
@@ -84,22 +84,33 @@ System.out.println(input.nextln()); // = nextln prints the whole string of a sen
 2. To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),
    for now the size are : int and float has 4 bytes, double and long has 8 bytes
    a. All the decimal values are of the type double by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
-      /as to why use double instead of float: float gives errors sometimes floating point error so to get more accurate value we use double/
+      /as to why use double instead of float: float gives floating point errors sometimes by rounding off numbers, so to get more accurate value we use double/
       also we can  store larger decimal values using the double type
    b. And the by default declaration type of integer values is "int" so we use 'L' (remember upper case L only) at the end of the long type,
       /why use long instead of int: because it can store more/long integer values/
 3. There contains a class for every data type known as wrapper classes for giving additional funtionality to the primitive datatypes, and they are written as
-#+begin_src java
-Integer rollno = 8;
-String name = "tera baap hu";
-#+end_src
-a. as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )
+        #+begin_src java
+        Integer rollno = 8;
+        String name = "tera baap hu";
+        #+end_src
+   a. as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )
 
-4. how to _comment_:  you can add single line comments using "/" and multi line comments using the following
-   #+begin_src java
-/* this is a multi line
-   comment
-,*/
-   #+end_src
+   b. how to _comment_:  you can add single line comments using "/" and multi line comments using the following
+        #+begin_src java
+        /* this is a multi line
+        comment
+        ,*/
+        #+end_src
 
-- explanation for the inputs.java file in the file itself
+** explanation for the inputs.java file (some are in the file itself)
+1. you can use debugging to see how each line is executed one by one, also add breakpoints to make sure which lines you want to debug
+2. about literals and identifiers:
+        #+begin_src java
+            int a = 10;
+        #+end_src
+   - here 10 is a _literal_, so in primitive datatypes literals are the syntactical representation of datatypes, i.e it can be used to represent specific values of a datatype and
+   - and a, the _reference variable_ is known as the _identifier_, so it's basically the name of the identifier, variable, class, packages, or other stuff like interfaces in java, etc
+3. int values can be given in a long form by adding some underscores (eg 100_100_09707) which gets ignored while running
+4. nextFloat() takes float values, just like that you can end the after next___ underline part with the datatype which you want to get some input about, see completion for some help
+5. + is used to join the sentences or strings together in "" as well as with the value of the variable ( as shown in the sum2nos.java file )
+6. when we give int values in float datatype casting and

@@ -1,4 +1,14 @@
-#+title: Random
+
 * first heading
 ** second heading
+* Learning org mode
+** IDEA chuppppppp
+pepepepepekkkkkkkkkk pepppppppppppkkkkkkkk
 * TODO todo like this
+** hello
+*** bye
+*** bye2
+haaaaaaaaaaaaaaaaaattttttttttttttttttttttt
+**** goodnight
+****** bhaaaaaaaaaaaagggggggggg
+******* chupppppppppppppp
