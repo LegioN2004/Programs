@@ -1,0 +1,1 @@
+C:\Users\hp\Documents\dotfiles\LegioN2004-githubthings\programs\RUST\projects\addingno-pr\target\debug\addingno-pr.exe: C:\Users\hp\Documents\dotfiles\LegioN2004-githubthings\programs\RUST\projects\addingno-pr\src\main.rs
