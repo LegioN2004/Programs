@@ -1,4 +1,4 @@
-% Created 2023-04-26 Wed 19:40
+% Created 2023-04-29 Sat 12:50
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -20,7 +20,7 @@
  pdftitle={First java program input/output debugging and datatypes},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 28.1 (Org mode 9.6.1)}, 
+ pdfcreator={Emacs 28.2 (Org mode 9.6.1)}, 
  pdflang={English}}
 \begin{document}
 
@@ -29,7 +29,7 @@
 
 
 \section{structure of a java file}
-\label{sec:org2bcd449}
+\label{sec:org643ef35}
 
 \begin{itemize}
 \item Name: every file that ends with an extensions .java is a class itself; eg: main.java
@@ -46,7 +46,7 @@
 \end{itemize}
 
 \subsection{explanation of the main.java file}
-\label{sec:org8ea099d}
+\label{sec:org1b2b843}
 
 \begin{verbatim}
 public class main { // inside this block of {} is the int main of java as found in cpp
@@ -57,13 +57,13 @@ public class main { // inside this block of {} is the int main of java as found 
 \end{verbatim}
 Here class is name group of properties and functions , in the above eg's class we have this function
 \subsubsection{\emph{all about the function}}
-\label{sec:org347575f}
+\label{sec:org7f6fc2d}
 \begin{enumerate}
 \item All the functions that are in the classes are knows as methods.
 \item Also the function name has to be main only like here `` public static void main(String[] args) '' it is reserved to be here if it is not main it will not run since main function is the entry point of the function. c) Function is a block/collection of code which can be used again and again.
 \end{enumerate}
 \subsubsection{\emph{then rest of the code explanation}}
-\label{sec:org832c970}
+\label{sec:orgc8acd20}
 \begin{enumerate}
 \item Here public means the same as in the class name part `` public static void main(String[] args) '' since main is necessary to run the program so it makes sense to make it available to be executed from anywhere i.e public class type , if we make it private then it will not be available like the public class and hence it will not be valid.
 \item Here static means: this main function/method is a part of the \uline{Main} class also main is required to be run without creating an object of this Main class ,so we use the static type . Since nothing is running before the main() function then there is no use of making an object there.
@@ -71,7 +71,7 @@ Here class is name group of properties and functions , in the above eg's class w
 \item void is the return type of the function, since we don't want any value here so we have used void(like in cpp).
 \end{enumerate}
 \subsubsection{\emph{how to run}}
-\label{sec:orgf80812d}
+\label{sec:org4ceb646}
 \begin{enumerate}
 \item (String[] args) are the arguments , collection of strings.
 \item here args is the arguments given in the terminal with java command (like java Main 50 100 \ldots{}) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array.
@@ -109,8 +109,8 @@ public void println(String x) {
 \emph{also look for the main documentation in the IntellijIdea by ctrl+click}
 
 \begin{itemize}
-\item better explanation of the System class: The System class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the System class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.
-\item and of the .in part: The ``standard'' input stream. This stream is already open and ready to supply input data. Typically this stream corresponds to keyboard input or another input source specified by the host environment or user. In case this stream is wrapped in a java.io.InputStreamReader, Console.charset() should be used for the charset, or consider using Console.reader().
+\item better explanation of the \textbf{System} class: The System class contains several useful class fields and methods. It cannot be instantiated. Among the facilities provided by the System class are standard input, standard output, and error output streams; access to externally defined properties and environment variables; a means of loading files and libraries; and a utility method for quickly copying a portion of an array.
+\item and of the \textbf{.in} part: The ``standard'' input stream. This stream is already open and ready to supply input data. Typically this stream corresponds to keyboard input or another input source specified by the host environment or user. In case this stream is wrapped in a java.io.InputStreamReader, Console.charset() should be used for the charset, or consider using Console.reader().
 \end{itemize}
 
 \item regarding the new keyword , it is used to
@@ -118,43 +118,81 @@ public void println(String x) {
 \item every class in java extends the object class , eg: Scanner ; important concept
 \item about the different next( ,Int,ln) variants
 \begin{verbatim}
-System.out.println(input.nextInt()); // = nextInt prints the integer output
-System.out.println(input.next()); // = next prints the first string(/word) of a sentence of the input in the output
-System.out.println(input.nextln()); // = nextln prints the whole string of a sentence of the input in the output
+        System.out.println(input.nextInt()); // = nextInt prints the integer output
+        System.out.println(input.next()); // = next prints the first string(/word) of a sentence of the input in the output
+        System.out.println(input.nextln()); // = nextln prints the whole string of a sentence of the input in the output
 \end{verbatim}
 
 \emph{input is a variable pointing to the object of scannner class so it'll contain all the functions provided by the scanner class ; whatever input will be given it will be shown in output}
 \end{enumerate}
 
 \subsection{All about the datatypes}
-\label{sec:org4d1114b}
+\label{sec:org634e419}
 \begin{enumerate}
 \item Primitive data types are the ones which cannot be further broken into other datatypes . eg: ``Kunal'' this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
-\item To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),
+\item \textbf{NOTE} To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),
 for now the size are : int and float has 4 bytes, double and long has 8 bytes
 \begin{enumerate}
-\item All the decimal values are of the type double by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
-\emph{as to why use double instead of float: float gives errors sometimes floating point error so to get more accurate value we use double}
+\item All the decimal values are of the type \uline{double} by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
+\emph{as to why use double instead of float: float gives floating point errors sometimes by rounding off numbers, so to get more accurate value we use double}
 also we can  store larger decimal values using the double type
-\item And the by default declaration type of integer values is ``int'' so we use 'L' (remember upper case L only) at the end of the long type,
+\item And the by default declaration type of integer values is \uline{``int''} so we use 'L' (remember upper case L only) at the end of the long type,
 \emph{why use long instead of int: because it can store more/long integer values}
 \end{enumerate}
 \item There contains a class for every data type known as wrapper classes for giving additional funtionality to the primitive datatypes, and they are written as
-\end{enumerate}
 \begin{verbatim}
-Integer rollno = 8;
-String name = "tera baap hu";
+        Integer rollno = 8;
+        String name = "tera baap hu";
 \end{verbatim}
 \begin{enumerate}
 \item as you can see it contains the capital first letter which by convention means classes so all the other datatypes are written like the above example ( more on that later on OOPs )
 
 \item how to \uline{comment}:  you can add single line comments using ``/'' and multi line comments using the following
 \begin{verbatim}
-/* this is a multi line
-   comment
-*/
+        /* this is a multi line
+        comment
+        */
 \end{verbatim}
+\end{enumerate}
+\end{enumerate}
 
-\item explanation for the inputs.java file in the file itself
+\subsection{explanation for the inputs.java file (some are in the file itself)}
+\label{sec:orgc309dd5}
+\begin{enumerate}
+\item you can use debugging to see how each line is executed one by one, also add breakpoints to make sure which lines you want to debug
+\item about literals and identifiers:
+\begin{verbatim}
+            int a = 10;
+\end{verbatim}
+\begin{itemize}
+\item here 10 is a \uline{literal}, so in primitive datatypes literals are the syntactical representation of datatypes, i.e it can be used to represent specific values of a datatype and
+\item and a, the \uline{reference variable} is known as the \uline{identifier}, so it's basically the name of the identifier, variable, class, packages, or other stuff like interfaces in java, etc
+\end{itemize}
+\item int values can be given in a long form by adding some underscores (eg 100\textsubscript{100}\textsubscript{09707}) which gets ignored while running
+\item nextFloat() takes float values, just like that you can end the after next\_\_\_ underline part with the datatype which you want to get some input about, see completion for some help
+\item + is used to join the sentences or strings together in ``'' as well as with the value of the variable ( as shown in the sum2nos.java file )
+\end{enumerate}
+\subsection{explanation for the sum2nos.java file (some are in the file itself)}
+\label{sec:org62d84f1}
+\begin{verbatim}
+public static void main(String[] args){
+    Scanner num = new Scanner(System.in);
+    float input = num.nextFloat();
+    System.out.println(input);
+}
+\end{verbatim}
+\subsubsection{TypeCasting and TypeConversion}
+\label{sec:org7af905f}
+When we give int values in float datatype and after getting the output we see the result as 105.0 ( for c = 5).Because the int input is being converted to float, this is auto type conversion.
+\begin{enumerate}
+\item So when one type of data is assigned to another type of variable, then auto type conversion will take place if the following conditions are met
+\begin{enumerate}
+\item the two types should be compatible, for ex = int and float, etc.
+\item the destination type should be greater than the source type be it in the declaration value or the input value, for ex = here int is smaller than float so float converts to int but vice versa is false. Asking for int but giving float won't work since int<float
+\item java does auto type conversion when it stores an integer constant into a variable of types like byte, short, long, and char sometimes , takes the ascii value of that
+\begin{itemize}
+\item so how to convert int to float, this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs, for example - if you want to assign an integer variable to a byte variable or a float value to an integer variable(this will not happen auto, since they are greater than the other). This is sometimes called narrowing conversion since it tells the float value to narrow down the float value to integer
+\end{itemize}
+\end{enumerate}
 \end{enumerate}
 \end{document}

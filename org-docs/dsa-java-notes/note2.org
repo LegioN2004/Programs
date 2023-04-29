@@ -81,12 +81,12 @@ public void println(String x) {
 
 ** All about the datatypes
 1. Primitive data types are the ones which cannot be further broken into other datatypes . eg: "Kunal" this word can be further divided into individual letters i.e the string can be divided into char , but the char cannot be further divided into other data types, this last datatype which cannot be divided into further data type is known as primitive
-2. To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),
+2. *NOTE* To know why we are adding f to float and L to long at their respective end of the data type declaration value , we need to know the size of the bitwise operators ( also the range of them will be in the bitwise operators ),
    for now the size are : int and float has 4 bytes, double and long has 8 bytes
-   a. All the decimal values are of the type double by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
+   a. All the decimal values are of the type _double_ by default so if there is a need to store them in float then we need to add an 'f' (remember lower case f only) after the end of the value
       /as to why use double instead of float: float gives floating point errors sometimes by rounding off numbers, so to get more accurate value we use double/
       also we can  store larger decimal values using the double type
-   b. And the by default declaration type of integer values is "int" so we use 'L' (remember upper case L only) at the end of the long type,
+   b. And the by default declaration type of integer values is _"int"_ so we use 'L' (remember upper case L only) at the end of the long type,
       /why use long instead of int: because it can store more/long integer values/
 3. There contains a class for every data type known as wrapper classes for giving additional funtionality to the primitive datatypes, and they are written as
         #+begin_src java
@@ -123,8 +123,8 @@ public static void main(String[] args){
 #+end_src
 *** TypeCasting and TypeConversion
 When we give int values in float datatype and after getting the output we see the result as 105.0 ( for c = 5).Because the int input is being converted to float, this is auto type conversion.
-1. So when one type of data is assigned to another type of variable, then auto type conversion will take place if the following conditions are met :
+1. So when one type of data is assigned to another type of variable, then auto type conversion will take place if the following conditions are met
    a. the two types should be compatible, for ex = int and float, etc.
    b. the destination type should be greater than the source type be it in the declaration value or the input value, for ex = here int is smaller than float so float converts to int but vice versa is false. Asking for int but giving float won't work since int<float
-   c. java does auto type conversion when it stores an integer constant into a variable of types like byte, short, long, and char sometimes ; takes the ascii value of that
-   - so how to convert int to float, this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs
+   c. java does auto type conversion when it stores an integer constant into a variable of types like byte, short, long, and char sometimes , takes the ascii value of that
+      - so how to convert int to float, this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs, for example - if you want to assign an integer variable to a byte variable or a float value to an integer variable(this will not happen auto, since they are greater than the other). This is sometimes called narrowing conversion since it tells the float value to narrow down the float value to integer
