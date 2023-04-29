@@ -113,4 +113,18 @@ public void println(String x) {
 3. int values can be given in a long form by adding some underscores (eg 100_100_09707) which gets ignored while running
 4. nextFloat() takes float values, just like that you can end the after next___ underline part with the datatype which you want to get some input about, see completion for some help
 5. + is used to join the sentences or strings together in "" as well as with the value of the variable ( as shown in the sum2nos.java file )
-6. when we give int values in float datatype casting and
+** explanation for the sum2nos.java file (some are in the file itself)
+#+begin_src java
+public static void main(String[] args){
+    Scanner num = new Scanner(System.in);
+    float input = num.nextFloat();
+    System.out.println(input);
+}
+#+end_src
+*** TypeCasting and TypeConversion
+When we give int values in float datatype and after getting the output we see the result as 105.0 ( for c = 5).Because the int input is being converted to float, this is auto type conversion.
+1. So when one type of data is assigned to another type of variable, then auto type conversion will take place if the following conditions are met :
+   a. the two types should be compatible, for ex = int and float, etc.
+   b. the destination type should be greater than the source type be it in the declaration value or the input value, for ex = here int is smaller than float so float converts to int but vice versa is false. Asking for int but giving float won't work since int<float
+   c. java does auto type conversion when it stores an integer constant into a variable of types like byte, short, long, and char sometimes ; takes the ascii value of that
+   - so how to convert int to float, this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs
