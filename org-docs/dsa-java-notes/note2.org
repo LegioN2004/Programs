@@ -127,4 +127,45 @@ When we give int values in float datatype and after getting the output we see th
    a. the two types should be compatible, for ex = int and float, etc.
    b. the destination type should be greater than the source type be it in the declaration value or the input value, for ex = here int is smaller than float so float converts to int but vice versa is false. Asking for int but giving float won't work since int<float
    c. java does auto type conversion when it stores an integer constant into a variable of types like byte, short, long, and char sometimes , takes the ascii value of that
-      - so how to convert int to float, this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs, for example - if you want to assign an integer variable to a byte variable or a float value to an integer variable(this will not happen auto, since they are greater than the other). This is sometimes called narrowing conversion since it tells the float value to narrow down the float value to integer
+   d. *so how to convert int to float* - this is known as typecasting or casting in compatible types. It is used as the auto type conversion is helpful but it might not fulfill all the needs, for example - if you want to assign an integer variable to a byte variable or a float value to an integer variable(this will not happen auto, since they are greater than the other). This is sometimes called narrowing conversion since it tells the float value to narrow down the float value to integer
+      - it is done as in the following block of code . It is compressing a bigger number into a smaller type explicitly, it says convert it into an integer hence the decimal part will get removed. The following is in the case of integers
+        #+begin_src java
+            int num = (int)(89.5f);
+        #+end_src
+      - also if a datatype can't handle the value as given to it, then it will print the modulo of the given value to the one that it can store. eg = for a given value 257 to byte , it will give 257 % 256 = _1_
+   e. In the following code block, the byte format is converted to the int type first due to the following reasons
+      #+begin_src java
+            byte a = 40;
+            byte b = 50;
+            byte c = 100;
+            int d = (a * b) / c;
+      #+end_src
+      In the code provided, the expressions a * b and (a * b) / c involve operands of type byte. However, the result of these expressions is automatically promoted to type int before being assigned to the variable d. This is because the Java language specifies that arithmetic operations involving byte, short, or char operands are performed using int arithmetic, and the result is automatically promoted to type int.
+
+      So, in the line int d = (a * b) / c;, the expression (a * b) is evaluated first, and the result of this expression is an int value, since the operands a and b are promoted to type int before the multiplication is performed. The result of this multiplication, which is 2000, is then divided by the byte value 100, resulting in an int value of 20.
+
+      The result of the expression (a * b) / c is an int value, and this value is assigned to the int variable d. The fact that d is declared as an int does not affect the promotion of the byte operands to int before the arithmetic operations are performed.
+
+      So, the value of d is 20, which is an int value. The fact that a, b, and c are declared as byte variables does not affect the type of the result, which is automatically promoted to int.
+   f. In the code ' int number = 'A', it converts the int type to the ascii value equivalent, so the this is also an example of the auto type conversion
+   g. java following unicode principles, so any type of language/emoji/other unicode characters can be printed using java
+
+**** Rules for the type conversion
+1. all the byte, short and chararcter are promoted to integer types
+2. if any one of the operands (i.e + / - / division/ x ) has the long type then the whole operation will be promoted to long, if it is float then the whole operation will be promoted to float, and if double then it will be promoted to double.
+   eg : System.out.println(3 * 5.620389472987f); // prints output 16.861168 (since the f flag is added after the decimal number so it'll print float value so the value is rounded off, but if f flag is not given then the output will not be rounded off since it is double by default)
+
+** explanation of the summary.java file ( summary of the whole video )
+#+begin_src java
+double result = (f * b) + (i / c) - (d - s); // two individual results of the operations
+System.out.println((f * b) + " " + (i / c) + " " + (d - s));
+System.out.println(result); // main output
+#+end_src
+here the float, byte, integer, char, double, short are declared and the result stores the value of the operation, first system.out prints the individual results of the operations separated by + and - and then the next system.out prints the total result of the whole
+1. here in f * b prints the biggest of the two, so the float value is printed
+2. here in i / c prints the biggest of the two, so the int value is printed
+3. here in d - s prints the biggest of the two, so the double value is printed
+4. *here* in short the if we have multiple types then all the others are converted to the biggest one
+   in the main output , we got "float + int - double = double" we see that the result gets converted to double i.e the biggest one
+
+** explanation of the Basics.java file ( summary of the whole video )
