@@ -33,7 +33,7 @@ Here class is name group of properties and functions , in the above eg's class w
 8. here args is the arguments given in the terminal with java command (like java Main 50 100 ...) after compiling with the javac(like javac Main(class/file name)) and the no inside the [] is the index of the array to which the values given with the java command will be printed , the values given with the java command is stored in the String[] array.
 9. if you use javac -d _directory_ _name_: this -d flag is used to give a directory to store the .class file.
 10. package is the folder where the java file will lie, eg package com.kunal , this com.kunal is a subfolder in the com folder (you can make more of those subfolders) , '.' period means subfolder.
-11. then comes = System.out.println("hello world!!"); = this prints a string , if we use ctrl/cmd+click on this we get.
+11. then comes = System.out.println("hello world!!"); this line means (System.out) in the command line do a (.print(_string_)) this prints a string in the command line, if we use ctrl/cmd+click on this we get.
     #+begin_src java
 /**
  ,* Prints a String and then terminate the line.  This method behaves as
@@ -169,3 +169,7 @@ here the float, byte, integer, char, double, short are declared and the result s
    in the main output , we got "float + int - double = double" we see that the result gets converted to double i.e the biggest one
 
 ** explanation of the Basics.java file ( summary of the whole video )
+1. exp of if condition is in the file itself
+2. exp of while condition is in the file itself
+3. when you don't know how many times the loop is going to run use the while loop
+4. when you know how many times the loop is going to run use the for loop
