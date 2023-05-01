@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya">
-      <change afterPath="$PROJECT_DIR$/src/com/mili/Basics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/mili/summary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mili/TypeCasting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/TypeCasting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/note2.org" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/mili/egTemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/egTemp.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +49,7 @@
       <command value="ls" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Basics">
+  <component name="RunManager" selected="Application.egTemp">
     <configuration name="Basics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mili.Basics" />
       <module name="first-vid-kunal-project" />
@@ -79,8 +76,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="inputs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.inputs" />
+    <configuration name="egTemp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mili.egTemp" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
@@ -120,11 +117,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.egTemp" />
         <item itemvalue="Application.Basics" />
         <item itemvalue="Application.summary" />
         <item itemvalue="Application.TypeCasting" />
         <item itemvalue="Application.sum2nos" />
-        <item itemvalue="Application.inputs" />
       </list>
     </recent_temporary>
   </component>
@@ -155,11 +152,6 @@
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/mili/Basics.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
