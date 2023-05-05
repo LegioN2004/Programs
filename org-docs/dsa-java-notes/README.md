@@ -4,6 +4,7 @@
 - Link to the GitHub repo of the course [kunal-kushwaha/DSA-Bootcamp-Java](https://github.com/kunal-kushwaha/DSA-Bootcamp-Java) and I have forked the course as well you can also take a look at that.
 
 ## Videos completed watching and pending
+
     - [x] complete git and github kunal kushwaha
     - [x] INTRO to programming
     - [x] Flow of program
