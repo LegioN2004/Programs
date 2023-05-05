@@ -1,5 +1,5 @@
 #+TITLE: all the stuff learned from the [[https://www.youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ][JAVA-DSA-Course from Kunal Kushwaha]] course. He has taught some amazing stuff and im continuing with the course ( the files are in the respective files as notes and assignments as in the github repo of the course).
-Link to the GitHub repo of the course [[https://github.com/kunal-kushwaha/DSA-Bootcamp-Java][kunal-kushwaha/DSA-Bootcamp-Java] and I have forked the course as well you can also take a look at that.
+Link to the GitHub repo of the course [[https://github.com/kunal-kushwaha/DSA-Bootcamp-Java][kunal-kushwaha/DSA-Bootcamp-Java]] and I have forked the course as well you can also take a look at that.
 
 * DONE : complete git and github kunal kushwaha
 * DONE : INTRO to programming
