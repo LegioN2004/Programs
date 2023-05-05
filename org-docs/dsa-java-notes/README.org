@@ -6,5 +6,5 @@
   - [X] INTRO to programming
   - [X] Flow of program
   - [X] Introduction to JAVA
-  - [X] First java program and basics
+  - [ ] First java program and basics
   - [ ] Conditionals and loops
