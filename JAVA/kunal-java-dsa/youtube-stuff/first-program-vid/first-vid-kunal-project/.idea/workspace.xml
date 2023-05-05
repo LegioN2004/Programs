@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="dekh tera baap idea aaya">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/mili/egTemp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/mili/egTemp.java" afterDir="false" />
-    </list>
+    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="some java stuff learned and added" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -139,7 +136,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="dekh tera baap idea aaya" />
-    <option name="LAST_COMMIT_MESSAGE" value="dekh tera baap idea aaya" />
+    <MESSAGE value="some java stuff learned and added" />
+    <option name="LAST_COMMIT_MESSAGE" value="some java stuff learned and added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
