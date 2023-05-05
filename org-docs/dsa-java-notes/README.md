@@ -5,10 +5,10 @@
 
 ## Videos completed watching and pending
 
-    - [x] complete git and github kunal kushwaha
-    - [x] INTRO to programming
-    - [x] Flow of program
-    - [x] Introduction to JAVA
-    - [x] First java program and basics
-    - [ ] Conditionals and loops
+  - [x] complete git and github kunal kushwaha
+  - [x] INTRO to programming
+  - [x] Flow of program
+  - [x] Introduction to JAVA
+  - [x] First java program and basics
+  - [ ] Conditionals and loops
 
