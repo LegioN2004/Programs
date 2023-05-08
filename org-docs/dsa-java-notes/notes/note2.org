@@ -8,7 +8,7 @@
 - the Class in the name: remember if a variable name starts with a capital letter then it is a class name (by convention)
   1. If the class with the name of the file is in the file then that will be a class of the public type , in this case main is the public class type , public class means that this class will be accessible by all other files , classes, etc.
   2. Like cpp , java also has a main function (by convention) from where the program starts , whenever we run the program the compiler will look for main , if it is not present then the compiler will throw error.
-  3. You can run with the java compiler "javac" _name_.java and then java _name_ (where name is the class as well as the file name) , also while running the executable(class file) with java you can use the class name only.
+  3. You can run with the java compiler "javac" _name_.java and then java _name_ (where name is the class as well as the file name) but now it seems to work only for ide's so go for java then filename , also while running the executable(class file) with java you can use the class name only.
 
 ** explanation of the main.java file
 
