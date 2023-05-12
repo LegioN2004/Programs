@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="some java stuff learned and added" />
+    <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="some java stuff learned and added">
+      <change afterPath="$PROJECT_DIR$/src/Assignments/fifth.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/first.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/second.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/third.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -41,18 +49,23 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,&quot;settings.sync&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hp\Documents\dotfiles\LegioN2004-githubthings\programs\JAVA\kunal-java-dsa\youtube-stuff\first-program-vid\first-vid-kunal-project\src" />
+    </key>
+  </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="ls" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.egTemp">
-    <configuration name="Basics" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.Basics" />
+  <component name="RunManager" selected="Application.fourth">
+    <configuration name="fifth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.fifth" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mili.*" />
+          <option name="PATTERN" value="Assignments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -60,12 +73,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TypeCasting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.TypeCasting" />
+    <configuration name="first" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.first" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mili.*" />
+          <option name="PATTERN" value="Assignments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -73,12 +86,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="egTemp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.egTemp" />
+    <configuration name="fourth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.fourth" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mili.*" />
+          <option name="PATTERN" value="Assignments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -86,12 +99,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sum2nos" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.sum2nos" />
+    <configuration name="second" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.second" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mili.*" />
+          <option name="PATTERN" value="Assignments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -99,12 +112,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="summary" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.mili.summary" />
+    <configuration name="third" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.third" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.mili.*" />
+          <option name="PATTERN" value="Assignments.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.egTemp" />
-        <item itemvalue="Application.Basics" />
-        <item itemvalue="Application.summary" />
-        <item itemvalue="Application.TypeCasting" />
-        <item itemvalue="Application.sum2nos" />
+        <item itemvalue="Application.fourth" />
+        <item itemvalue="Application.fifth" />
+        <item itemvalue="Application.third" />
+        <item itemvalue="Application.first" />
+        <item itemvalue="Application.second" />
       </list>
     </recent_temporary>
   </component>
@@ -135,6 +148,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="dekh tera baap idea aaya" />
     <MESSAGE value="some java stuff learned and added" />
     <option name="LAST_COMMIT_MESSAGE" value="some java stuff learned and added" />

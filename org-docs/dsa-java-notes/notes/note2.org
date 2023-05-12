@@ -174,3 +174,5 @@ here the float, byte, integer, char, double, short are declared and the result s
 2. exp of while condition is in the file itself
 3. when you don't know how many times the loop is going to run use the while loop
 4. when you know how many times the loop is going to run use the for loop
+** misc stuff
+1. the assignment operator uses '=' sign whereas the equals operator uses '==' sign
