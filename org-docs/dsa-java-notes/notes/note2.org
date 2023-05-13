@@ -176,3 +176,6 @@ here the float, byte, integer, char, double, short are declared and the result s
 4. when you know how many times the loop is going to run use the for loop
 ** misc stuff
 1. the assignment operator uses '=' sign whereas the equals operator uses '==' sign
+2. don't use the if-else statments to run a loop(it is too complicated), you will need to use recursive concept with a for loop, too much for the beginner
+3. while loop runs the whole code block until the conditional test(the condition written in the braces) remains true and doesn't become false
+4. use this to give a input string to a variable " string a = x.next(); " i.e use _next()_

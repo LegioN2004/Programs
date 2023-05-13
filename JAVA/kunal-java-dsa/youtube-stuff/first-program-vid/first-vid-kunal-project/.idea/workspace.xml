@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="some java stuff learned and added">
-      <change afterPath="$PROJECT_DIR$/src/Assignments/fifth.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignments/first.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignments/second.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Assignments/third.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/eight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/seventh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Assignments/sixth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/notes/note2.org" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,9 +57,9 @@
       <command value="ls" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.fourth">
-    <configuration name="fifth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Assignments.fifth" />
+  <component name="RunManager" selected="Application.eight">
+    <configuration name="eight" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.eight" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
@@ -73,8 +71,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="first" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Assignments.first" />
+    <configuration name="fifth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.fifth" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
@@ -99,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="second" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Assignments.second" />
+    <configuration name="seventh" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.seventh" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
@@ -112,8 +110,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="third" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Assignments.third" />
+    <configuration name="sixth" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Assignments.sixth" />
       <module name="first-vid-kunal-project" />
       <extension name="coverage">
         <pattern>
@@ -127,11 +125,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.fourth" />
+        <item itemvalue="Application.eight" />
+        <item itemvalue="Application.seventh" />
+        <item itemvalue="Application.sixth" />
         <item itemvalue="Application.fifth" />
-        <item itemvalue="Application.third" />
-        <item itemvalue="Application.first" />
-        <item itemvalue="Application.second" />
+        <item itemvalue="Application.fourth" />
       </list>
     </recent_temporary>
   </component>
