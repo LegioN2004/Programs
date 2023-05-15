@@ -10,4 +10,8 @@ public class eight {
         System.out.println(a);
         b = a;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> fb75e5dba436fa6080e75dabda4d1b8268a758fe

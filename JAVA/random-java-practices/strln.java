@@ -12,4 +12,3 @@ public class strln {
         System.out.println("The reversed string is " + reversedString);
     }
 }
-
