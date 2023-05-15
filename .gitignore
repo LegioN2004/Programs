@@ -183,3 +183,39 @@ fabric.properties
 # modules.xml
 JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project/.idea/misc.xml
 JAVA/kunal-java-dsa/youtube-stuff/first-program-vid/first-vid-kunal-project/.idea/misc.xml
+
+
+# Ignore compiled object files for C++
+*.o
+*.out
+*.exe
+
+# Ignore build directories
+build/
+bin/
+target/
+
+# Ignore generated files and directories for Rust
+Cargo.lock
+**/target/
+**/Cargo.toml.orig
+
+# Ignore generated files and directories for Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Ignore generated files and directories for Java
+*.class
+*.jar
+**/target/
+
+# Ignore editor-specific files
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
