@@ -1,0 +1,22 @@
+* All about the reverseAstring.java file
+ ** How to reverse a string
+   - 1st method: reversing is done using the predefined class known as StringBuffer found in the java library it contains a method which it helps to reverse a string
+       - How to do:
+          a) First make an object of the StringBuffer class using the same way as it is done in Scanner class object creation, eg: StringBuffer x = new StringBuffer("Hello, How are you");
+          b) Then add the string object inside the double quotes in the brackets, eg: ("Hello, How are you");
+          c) Then add the reverse() method of the StringBuffer class to reverse the string that is given inside the quotes, remember the StringBuffer class's reverse() method only reverses the string given in the quotes of the StringBuffer class as written above
+          d) Then call the reverse() method in the System.println() using '(r._method()_)' to reverse the string and then it will reverse the string
+       - so it'll print the String given as "Hello, How are you" in reversed as "uoy era woH ,olleH"
+
+   - 2nd method: Also you can use StringBuilder which contains the same reverse() method used to reverse the string
+   - 3rd method: Using own logic by writing more code
+           a) Declare a variable to store the string (taken input/already given input)
+           b) Declare a variable to store the reverse order of the value of the given string, eg: String r2 = "";
+           b) Find the length of the variable using the for loop
+           c) In for loop, always run the for loop reverse to make the string reverse
+           d) Also declare a variable to take the length of the string
+           e) The for loop starts from 0th index so l-1 will start it from 0 and ends at position minus 1 so 'l-1' is used
+           f) 'i > 0' since bc string starting point is 0 then use 'i--'
+           g) r.charAt(i); : this method takes string one by one from the string
+* Voila! Done
+
