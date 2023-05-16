@@ -4,6 +4,7 @@ public class strln {
         String originalString = "Hello, World!";
         StringBuilder reversedString = new StringBuilder();
         System.out.println(originalString.length());
+        System.out.println("helloiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
 
         for (int i = originalString.length() - 1; i >= 0; i--) {
             reversedString.append(originalString.charAt(i));
