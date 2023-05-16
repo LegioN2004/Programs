@@ -1,4 +1,3 @@
-Documents/VSCode programs/codewithharry/apnacollegeprograms/tut4.1/qno5.exe
 justcasualjava/.idea
  *.exe  
  !spec/*.exe
@@ -23,9 +22,6 @@ justcasualjava/.idea
 
 build
 JAVA/DSA-bootcamp-kunal-kush/lecture1/Main.class
-
-# Compiled class file
-*.class
 
 # Log file
 *.log
@@ -219,3 +215,44 @@ Cargo.lock
 # Ignore system-specific files
 .DS_Store
 Thumbs.db
+
+# Compiled object files
+*.o
+*.pyc
+*.class
+
+# Compiled binaries/executables
+*.exe
+*.out
+
+# Dependency directories
+/node_modules/
+/vendor/
+/.venv/
+/.bundle/
+/Gemfile.lock
+/Pipfile.lock
+/.gradle/
+/.idea/
+
+# Build directories
+/build/
+/dist/
+/out/
+/.build/
+/.bin/
+/.cache/
+
+# Package files
+*.tar.gz
+*.tar.bz2
+*.zip
+
+# Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Editor and IDE files
+*.sublime-project
+*.sublime-workspace
