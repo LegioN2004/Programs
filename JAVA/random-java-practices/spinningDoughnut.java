@@ -1,4 +1,4 @@
-public class Doughnut {
+public class spinningDoughnut {
     public static void main(String[] args) {
         int width = 75;
         int height = 25;

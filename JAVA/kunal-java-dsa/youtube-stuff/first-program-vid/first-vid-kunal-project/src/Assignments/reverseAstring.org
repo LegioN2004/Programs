@@ -1,5 +1,5 @@
 * All about the reverseAstring.java file
- ** How to reverse a string
+** How to reverse a string
    - 1st method: reversing is done using the predefined class known as StringBuffer found in the java library it contains a method which it helps to reverse a string
        - How to do:
           a) First make an object of the StringBuffer class using the same way as it is done in Scanner class object creation, eg: StringBuffer x = new StringBuffer("Hello, How are you");
@@ -7,16 +7,34 @@
           c) Then add the reverse() method of the StringBuffer class to reverse the string that is given inside the quotes, remember the StringBuffer class's reverse() method only reverses the string given in the quotes of the StringBuffer class as written above
           d) Then call the reverse() method in the System.println() using '(r._method()_)' to reverse the string and then it will reverse the string
        - so it'll print the String given as "Hello, How are you" in reversed as "uoy era woH ,olleH"
+         #+begin_src java
+        StringBuffer x = new StringBuffer("This is the first string");
+        System.out.println(x.reverse());
+         #+end_src
 
    - 2nd method: Also you can use StringBuilder which contains the same reverse() method used to reverse the string
+         #+begin_src java
+        StringBuilder y = new StringBuilder("This is the second string"); // changed ref var
+        System.out.println(y.reverse());
+         #+end_src
+
    - 3rd method: Using own logic by writing more code
            a) Declare a variable to store the string (taken input/already given input)
            b) Declare a variable to store the reverse order of the value of the given string, eg: String r2 = "";
            b) Find the length of the variable using the for loop
            c) In for loop, always run the for loop reverse to make the string reverse
-           d) Also declare a variable to take the length of the string
+           d) Also declare a variable to take the length of the string(remember in length of the string space is also as 1 string)
            e) The for loop starts from 0th index so l-1 will start it from 0 and ends at position minus 1 so 'l-1' is used
-           f) 'i > 0' since bc string starting point is 0 then use 'i--'
-           g) r.charAt(i); : this method takes string one by one from the string
+           f) 'i >= 0' since bc string starting point is 0 then use 'i--'
+           g) r2 = r2 + r1.charAt(i); : this method takes character one by one from the main string and puts it into the r2
+           h) Store the reverse string in the variable which was previously declared to store the reverse string
+         #+begin_src java
+        String r1 = "This is the third string";
+        String r2 = ""; // this is to store the reverse order of the value of the r1 string
+        int l = r1.length(); // to find the length of the variable
+        for (int i = l-1; i>=0; i--) { // always run the for loop reverse to make the string reverse
+        r2 = r2+r1.charAt(i);
+        }
+        System.out.println(r2);
+         #+end_src
 * Voila! Done
-
