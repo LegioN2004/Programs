@@ -1,3 +1,4 @@
+// print whether  the no is odd or even by taking input from the user
 package Assignments;
 
 import java.util.Scanner;
@@ -8,9 +9,10 @@ public class first{
         Scanner num = new Scanner(System.in);
         long a = num.nextInt();
         c = a%2;
-        if (c==0)
-        System.out.print(a + " is an even number");
-        else
-        System.out.print(a + " is an odd number");
+        if (c==0) {
+            System.out.print(a + " is an even number");
+        } else {
+            System.out.print(a + " is an odd number");
+        }
     }
 }

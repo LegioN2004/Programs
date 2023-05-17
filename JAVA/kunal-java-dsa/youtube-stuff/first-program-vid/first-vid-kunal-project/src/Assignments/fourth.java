@@ -1,3 +1,4 @@
+//Take in two numbers and an operator (+, -, *, /) and calculate the value. (Use if conditions)::
 package Assignments;
 import java.util.Scanner;
 public class fourth {

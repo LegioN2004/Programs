@@ -1,21 +1,26 @@
+// find if given string is palindrome or not
 package Assignments;
-
 import java.util.Scanner;
-
 public class eight {
     public static void main(String[] args) {
-        Scanner x = new Scanner(System.in);
-        String a = x.next();
-        String b = "";
-        System.out.println(a);
-        b = a;
+        Scanner str = new Scanner(System.in);
+        System.out.print("Write the string: ");
+
+        String r1 = str.next(); // remember index starts from 0
+        String r2 = "";
+        int l = r1.length();
+        for (int m = l - 1; m >= 0; m--) {
+            r2 = r2 + r1.charAt(m); // i.e why here we get i for 7th index
+        }
+        System.out.println("String reversed is " + r2);
+        if (r1.equals(r2)) { // always use == instead of = to show equality and here use
+            // .equals(_variable_) for equality of strings . In Java, the == operator checks for
+            // reference equality for objects, not the content equality of strings. To check if two
+            // strings have the same content, you should use the .equals() method instead.
+            System.out.println("string is palindrome");
+        }
+        else {
+            System.out.println("string is not palindrome");
+        }
     }
-<<<<<<< HEAD
 }
-=======
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> fb75e5dba436fa6080e75dabda4d1b8268a758fe
->>>>>>> bd4b0609176d257f6530a611334fb2ab791a33da
