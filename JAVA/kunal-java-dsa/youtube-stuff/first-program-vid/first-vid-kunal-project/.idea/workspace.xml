@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="476dcaf7-6bd3-4b52-aada-8718fab3d0f7" name="Changes" comment="finish the assignment of the 9 program after watching the 2nd java vid conditionals and loops">
-      <change afterPath="$PROJECT_DIR$/src/Assignments/tenth.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/eight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/eight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/fifth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/fifth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/first.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/first.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/fourth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/fourth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/ninth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/ninth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/second.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/second.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/seventh.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/seventh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/sixth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/sixth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Assignments/third.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/third.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Assignments/reverseAstring.org" beforeDir="false" afterPath="$PROJECT_DIR$/src/Assignments/reverseAstring.org" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/notes/note2.org" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../org-docs/dsa-java-notes/notes/note2.org" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
