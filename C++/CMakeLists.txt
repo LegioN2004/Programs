@@ -7,4 +7,4 @@ set (source_dir "${PROJECT_SOURCE_DIR}/src/")
 
 file (GLOB source_files "${source_dir}/*.cpp")
 
-add_executables (HelloWorld ${source_files})
+add_executable(HelloWorld ${source_files})
