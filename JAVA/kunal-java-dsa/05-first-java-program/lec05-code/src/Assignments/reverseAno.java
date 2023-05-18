@@ -8,10 +8,10 @@ public class reverseAno {
         System.out.print("Print the number: ");
         int n = x.nextInt(), r;
 //        reverse no logic can use while or do while loop
-        while(n > 0){ // here condition is given that the loop will run only in caes of +ve numbers
+        while(n > 0){ // here condition is given that the loop will run only in case of +ve numbers
             r = n % 10; // always find the remainder then finding the remainder, dividing with 10 removes
             // the numbers one by one so we divide it by 10
-//            System.out.println("Reverese order is " + r); // the reverse order line is added to show the steps in which it is printed
+//            System.out.println("Reverse order is " + r); // the reverse order line is added to show the steps in which it is printed
             System.out.print(r);
             n = n / 10; // then this part removes the last no we just reversed and printed to get the next
             //one using a decimal and due to int datatype the decimal part gets ignored and then the loop prints

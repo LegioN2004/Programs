@@ -1,0 +1,22 @@
+#+title: Conditionals and loops
+
+** If-else statements
+#+begin_src java
+/* syntax of if statments
+   if (boolean expression: True/False){
+   code body do this
+   } else-if{
+   or do this
+   } else-if{
+   or do this
+   } else-if{
+   or do this
+   } else{
+   do this
+   }
+*/
+#+end_src
+1. In an if else statments only the code block of one of the statments run
+2. The condition in the brackets gives a true or false condition, the code runs according to that T/F
+3. We can use else-if statments to run multiple else's if necessary
+4. Else condition will always remain in the end, it means if none of the above conditions are true then execute this condition
