@@ -1,4 +1,4 @@
-#+TITLE: DSA JAVA notes stuff from the first two vids; Intro to Programming and Flow of Program
+#+TITLE: DSA JAVA notes from the videos 2,3,4; Intro to Programming and Flow of Program and Intro to java
 * #more things to be added#
 
 * stack and heap memory
