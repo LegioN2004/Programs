@@ -20,3 +20,7 @@
 2. The condition in the brackets gives a true or false condition, the code runs according to that T/F
 3. We can use else-if statments to run multiple else's if necessary
 4. Else condition will always remain in the end, it means if none of the above conditions are true then execute this condition
+
+** Loops
+   *** For loops
+         
