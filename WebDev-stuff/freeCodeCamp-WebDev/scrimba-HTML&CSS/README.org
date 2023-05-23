@@ -1,0 +1,19 @@
+#+TITLE: HTML and CSS
+
+* *HTML*
+** h1 tag
+- It is the first level header tag
+- The number will go down and the header tag will decrease in level
+** img tag
+- It is used to show images in the html doc
+- It is used with src="_link of the image_" to source the image file
+- You can adjust width using the width param ' width="" ' as inline styling to make it the size you want( bad practice will be done using css in a different file )
+** div tag
+- It short for divider.
+- It remains invisible so there is no change visible if this is used.
+- It gives us the ability to target the whole article(or anything) under the div tag.
+- All the elements under this tag is children of the div tag. It is used to group all the elements down here and so it also nests these elements
+- It is useful for styling a whole article or whole lot of something written as a child of the div tag
+- It behaves like a nested family tree known as html document tree having 'branches' i.e all the children(like img, h3, a, p, etc tags) or more divs having individually more child or children attached to a parent div
+** Button tag
+-
