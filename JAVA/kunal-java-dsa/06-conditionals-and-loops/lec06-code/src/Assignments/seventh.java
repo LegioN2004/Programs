@@ -2,7 +2,7 @@
 package Assignments;
 public class seventh {
     public static void main(String[] args) {
-        long n = 100000;
+        long n = 1000000;
         int a = 0;
         int b = 1;
         int c = 0;

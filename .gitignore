@@ -238,6 +238,7 @@ Thumbs.db
 *.sln
 *.sw?
 *.env
+*.obsidian
 
 
 # Package managers
