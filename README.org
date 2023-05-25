@@ -1,20 +1,20 @@
 #+title: About this REPO
 
-* Constantly changing repo for now, lots of changes to be made so don't mind me imma just do my stuff and leave, excuse me pls.
+** Constantly changing repo for now, lots of changes to be made so don't mind me imma just do my stuff and leave, excuse me pls.
 *thank you for the stars*
 
 * TODO JAVA directory
 - the java directory contains the java programs that I have written.
-- I am documenting my notes, assignments and the follow up code of the videos whilst learning the JAVA programming language and DSA concepts taught in YouTube by Kunal Kushwaha in this playlist [Java + DSA + Interview Preparation Course](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ) (links may change)
-  so go to this [dir](https://github.com/LegioN2004/Programs/tree/main/JAVA/kunal-java-dsa) to see the notes and stuff
+- I am documenting my notes, assignments and the follow up code of the videos whilst learning the JAVA programming language and DSA concepts taught in YouTube by Kunal Kushwaha in this playlist [[https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ][Java + DSA + Interview Preparation Course]] (links may change)
+  so go to this [[https://github.com/LegioN2004/Programs/tree/main/JAVA/kunal-java-dsa][directory]] to see the notes and other stuff
   - I have used the Intellij Idea IDE, so you may see some .idea dir and xml files here and there, I have a .gitignore for those but ignore if  there is still some leftout.
 - [ ] more stuffs to be added
   - [ ] leetcode problems maxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 * TODO C++ directory
 - as you know it contains a lot of the cpp files that i have done throughout my 11th and 12th standard.
-- it has a lot of stuff from [freecodecamp.org](https://www.freecodecamp.org) (*THE GOAT*), various websites such as [learncpp.com](https://www.learncpp.com) and also from the YT channels such as [codewithharry](https://www.youtube.com/codewithharry), [apnacollege](https://www.youtube.com/apnacollege)(too pro)
-  it also has some [Hackerrank-cpp](https://www.hackerrank.com/domains/cpp)
+- it has a lot of stuff from [[https://www.freecodecamp.org][freecodecamp.org]] (*THE GOAT*), various websites such as [[https://www.learncpp.com][learncpp.com]] and also from the YT channels such as [[https://www.youtube.com/codewithharry][codewithharry]], [[https://www.youtube.com/apnacollege][apnacollege]](too pro)
+  it also has some [[https://www.hackerrank.com/domains/cpp][Hackerrank-cpp]]
 - [ ] still a lot of stuff left to learn, main concepts.
   - [ ] leetcode problems maxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -23,10 +23,10 @@
 - These are some documentation formats.
 - I have a lot of things to learn here such as markdown/org mode for documenting stuff for git repo readmes, documentation, wiki, etc.
 - [ ] learning Markdown for documentation in GitHub or GitLab repos, has a very good support. Not much to do btw.
-- Also org mode has a good support in those two above sites, so confused between the two.
+- Also org mode maybe has bad support in those two above sites, so confused between the two.
   - Org is too good to compare to md, Org has almost everything.
-  - I use doom emacs for better org mode documentation [Doomemacs](https://www.github.com/doomemacs/doomemacs)
-- This neorg is the meta neovim version of org with better support, still evolving, planning to use as i am a full time neovim user  and it looks promising but doesn't support in git hosting sites, better for self notes, time table etc stuff. Wanna contribute or have a look, go to [nvim-neorg/neorg](https://github.com/nvim-neorg/neorg)
+  - I use doom emacs for better org mode documentation [[https://www.github.com/doomemacs/doomemacs][Doomemacs]]
+- This neorg is the meta neovim version of org with better support, still evolving, planning to use as i am a full time neovim user  and it looks promising but doesn't support in git hosting sites, better for self notes, time table etc stuff. Wanna contribute or have a look, go to [[https://github.com/nvim-neorg/neorg][nvim-neorg/neorg]]
 
 * Extras and testing folder
 some random testing files such as benchmarking (more like stressing) cpu using matrixstress.py, some whatsapp spam bot, autoclicker bot, keyboard-layout-analyzer, johntheripper(those who know knows this thing). Highly buggy stuff, some are copied, some are made by "knowledge" stuff shared in websites.
