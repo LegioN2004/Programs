@@ -13,7 +13,7 @@
 
 * TODO C++ directory
 - as you know it contains a lot of the cpp files that i have done throughout my 11th and 12th standard.
-- it has a lot of stuff from [[https://www.freecodecamp.org][freecodecamp.org]] (*THE GOAT*), various websites such as [[https://www.learncpp.com][learncpp.com]] and also from the YT channels such as [[https://www.youtube.com/codewithharry][codewithharry]], [[https://www.youtube.com/apnacollege][apnacollege]](too pro)
+- it has a lot of stuff from [[https://www.freecodecamp.org][freecodecamp.org]] (*THE GOAT*), various websites such as [[https://www.learncpp.com][learncpp.com]] and also from the playlis of some youtube channels such as [[https://youtube.com/playlist?list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL][CodeWithHarry-cpp]], [[https://youtube.com/playlist?list=PLfqMhTWNBTe0b2nM6JHVCnAkhQRGiZMSJ][apnacollege]](too pro)
   it also has some [[https://www.hackerrank.com/domains/cpp][Hackerrank-cpp]]
 - [ ] still a lot of stuff left to learn, main concepts.
   - [ ] leetcode problems maxxxxxxxxxxxxxxxxxxxxxxxxxxxx
