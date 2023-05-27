@@ -1,0 +1,30 @@
+#+title: IMAGES and ANCHOR
+
+** About Images and anchor tags
+ - About _anchor_ tags in the html file itself ~<a href = "**the link to the website**"> _the button~
+ - _image_ tag is written as ~<img src="name of the image" alt="describe the content of the image if image can't be loaded or processed"><br>~
+ - Use ~target="_blank"~ inside the opening anchor tag after the href part, it gives a property to the html file to go to new tab whenever the link button is clicked, also im using some line breaks, eg : ~<a href="https://github.com/LegioN2004" target="_blank">Go to google </a><br>~ <br> here is for line breaks
+ - Search engines also rely on the _alt_ attribute to understand and index the content of images. Providing descriptive and relevant alternative text can improve the accessibility and discoverability of your website's images in search engine result
+ - *href* attribute is used to link a file or a website to a tag
+ - In the image tag ~<img src="https://source.unsplash.com/random" alt="random images from unsplash" width="the no" height="the no"><br>~ you can add src attrb to show the link or the location of the image file, then alt to prov info if img not shown, and width and height if image of the web is resizeable or forcefully resize in the html file itself. *this is not the recommended method to style the page ca use*
+*** DO NOT USE HTML for STYLING, ONLY CSS IS USED FOR STYLING USE HTML FOR THE SKELETON ONLY
+
+*** Main difference between /href/ and /src/ attributes :
+The *src* attribute is used in elements like *<img>*, *<script>*, and *<iframe>*. It specifies the source URL of the resource that should be embedded or displayed in the element. For example, in the case of an <img> tag, the src attribute specifies the URL of the image that should be loaded and displayed on the webpage.
+
+Example:
+#+begin_src html
+<img src="image.jpg" alt="Image">
+#+end_src
+
+
+On the other hand, the *href* attribute is used in elements like *<a>*, *<link>*, and *<area>*. It specifies the destination URL or location of the linked resource. In the case of an <a> (anchor) tag, the href attribute specifies the URL of the webpage or resource that should be linked to.
+
+Example:
+#+begin_src html
+<a href="https://www.example.com">Visit Example.com</a>
+#+end_src
+
+While both src and href deal with URLs, they are used in different contexts and have different behaviors.
+
+** difference between attribute and tags

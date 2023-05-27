@@ -1,3 +1,6 @@
+TITLE, SCRIPT, LINK and META tags
+==============
+
 ## meta tags
  - meta tags are self closing tags so no closing tag
  - meta tags are used in SEO(search engine optimization)
@@ -15,6 +18,7 @@
 ## how to link external css in html
  - use the emmet abbrs link:css i.e `<link rel = "stylesheet" href = "style.css"`.
  - it is a template and the href contains the file name
+ - href attribute is used to link a file or a website to a tag
 
 ## how to add javascript in html
  - use `<script src = "script.js"></script>` to link the local js file in the html doc

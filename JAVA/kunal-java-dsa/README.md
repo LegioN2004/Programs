@@ -13,4 +13,3 @@
   
 ## and pending
   - [ ] Conditionals and loops
-
