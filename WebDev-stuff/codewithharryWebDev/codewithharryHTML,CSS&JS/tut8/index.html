@@ -16,14 +16,12 @@
 		<div>
 			<input type="text" name="myName" id="name">
 		</div>
-		<!-- input can be many as given by the options from lsp -->
 		<!-- the following just keeps input tags in the same line I just commented out -->
 		<!-- Name: <input type="text" /> Role: <input type="text" /> -->
-		<!-- to get spaces use div or br div is more preferable -->
-		<!-- dont use br tag just using for now -->
+		<!-- dont use br tag just using it for now -->
 		<br>
 		<!-- we can give/take corresponding values after we get a backend -->
-		<div>Role: <input type="text" /></div>
+		<div>Role: <input type="text" name="myRole" /></div>
 		<br>
 		<div>Email: <input type="email" name="myEmail" /></div>
 		<br>
@@ -38,15 +36,15 @@
 		<br>
 		<div>
 			Gender : Male <input type="radio" name="myGender" /> Female
-			<input type="radio" name="myGender" /> Other
-			<input type="radio" name="myGender" />
+			<input type="radio" name="myGender"> Other
+			<input type="radio" name="myGender">
 			<!-- if checkbox name is the same then we will be able to check only one checkbox among the two  -->
 		</div>
 		<br>
 		<div>
-			Write about yourself :
-			<textarea name="myText" cols="30" rows="10"></textarea>
+			Write about yourself : <br><textarea name="myText" cols="30" rows="10"></textarea>
 			<!-- text area is the rectangular space to write some text related change rows and columns accordingly-->
+			<!-- I have added a br tag in the middle of the heading and before the text area to make the text box in the next line which is a dirty method don't do this-->
 		</div>
 		<br>
 		<div>
