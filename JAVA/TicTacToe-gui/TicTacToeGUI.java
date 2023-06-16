@@ -102,14 +102,3 @@ public class TicTacToeGUI {
         return false;
     }
 }
-
-// ```
-
-// To run the program, save the code in a file named `TicTacToeGUI.java`, then compile and run it using the following commands:
-
-// ```bash
-// javac TicTacToeGUI.java
-// java TicTacToeGUI
-// ```
-
-// This will open a window with the Tic Tac Toe game.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  This will open a window with the Tic Tac Toe game.

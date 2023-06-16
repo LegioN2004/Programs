@@ -87,8 +87,10 @@ do{
 - They are not much complex so it should be easy to understand just by the video itself, if not use the debugger or anything else but do it by yourself only otherwise progress will not be possible
 - Some stuff to be noted from the questions solving
 
-- From Q1 Largest no
+- From Q1 largestno.java
   - `Math.max(_int_ a, _int_ b)` Math.max class is used to find the max between two values. The values whose max is to be found should be given in the brackets with the correct type and the max value need to be stored in another var with the correct type , and we can use more of those classes in a nested manner with other values like here `Math.max(c ,(Math.max(a, b)))`.
 
-- From Q2 Case check : code `System.out.println(in.next().trim());`  
-  - here `in` will take `input` from `System.in` and give it to the `next()` class to choose the first word and then the `trim()` class 
+- From Q2 CaseCheck.java : code `System.out.println(in.next().trim());`  
+  - here `in` will take `input` from `System.in` and give it to the `next()` class which chooses the first word and then the `trim()` class just removes the extra spaces that come after the word/input. 
+  - Here we also have `charAt(0)`; it means give the character at the 0th index(can be any position of index acc to the no in the brackets) of the input.
+  - **It will only take string input but not char, if it gets char then it will convert it to string using the `charAt()` class**.

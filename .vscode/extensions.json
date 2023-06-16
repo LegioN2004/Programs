@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "patbenatar.advanced-new-file",
+        "dsznajder.es7-react-js-snippets",
+        "ms-vscode.vscode-typescript-next",
+        "s-nlf-fh.glassit",
+        "ecmel.vscode-html-css",
+        "htmlhint.vscode-htmlhint",
+        "oderwat.indent-rainbow",
+        "yzhang.markdown-all-in-one",
+        "equinusocio.vsc-community-material-theme",
+        "llvm-vs-code-extensions.vscode-clangd",
+        "github.vscode-pull-request-github",
+        "bradlc.vscode-tailwindcss",
+        "golang.go",
+        "wallabyjs.quokka-vscode"
+    ]
+}
