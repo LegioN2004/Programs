@@ -91,16 +91,26 @@ do{
   - `Math.max(_int_ a, _int_ b)` Math.max class is used to find the max between two values. The values whose max is to be found should be given in the brackets with the correct type and the max value need to be stored in another var with the correct type , and we can use more of those classes in a nested manner with other values like here `Math.max(c ,(Math.max(a, b)))`.
 
 - From Q2 CaseCheck.java : code `System.out.println(in.next().trim());`  
-  - here `in` will take `input` from `System.in` and give it to the `next()` class which chooses the first word and then the `trim()` class just removes the extra spaces that come after/before the word/input. 
+  - here `in` will take `input` from `System.in` and give it to the `next()` class which chooses the first word and then the `trim()` class just removes the extra spaces that come after/before the word/input.
   - Here we also have `charAt(0)`; it means give the character at the 0th index(can be any position of index acc to the no in the brackets) of the input.
   - **It will only take string input but not char, if it gets char then it will convert it to string using the `charAt()` class**. So we can store it in a char type. That's why we can declare the ch variable as char type due to the above
   - Now to check the case type, we can use the if condition statement with the declared variable to see if the letters lie in between a to z
     - _(Check the operators.java file for any doubts regarding operators, using directly here)_
+
   ``` java
-		if (ch >= 'a' && ch <= 'z') { // here we are using the && operator to show if both the conditions are true or not. This condition is valid only if both the conditions before and after the && is true
-			System.out.println("letter " + ch + " is lowercase");
-		} else {
-			System.out.println("letter " + ch + " is uppercase");
-		} // if a word is given only the first letter will be taken or else just add a letter to find uppercase or lowercase.
+    if (ch >= 'a' && ch <= 'z') { // here we are using the && operator to show if both the conditions are true or not. This condition is valid only if both the conditions before and after the && is true
+        System.out.println("letter " + ch + " is lowercase");
+    } else {
+        System.out.println("letter " + ch + " is uppercase");
+    } // if a word is given only the first letter will be taken or else just add a letter to find uppercase or lowercase.
   ```
+
 - From Q3 fibonacci.java : The fibonacci series
+  - Didn't undestand fully how this code worked, it just directly printed the value of the nth fibonacci number as given by the input. I'll need to dig in more.
+  1. first take an input from the user using system.in
+  2. Then take the values as given in the file, remember to take the value of count as 2 so that
+  3. Then go for the while loop.
+  4. Take a temp variable to store the value of 'b' such that the value of 'a' req to give to 'b' doesn't get overwritten when directly assigned the value 'b' i.e when written like 'a = b'.
+  5. ..........................
+
+- From Q4 Counting occurences of a number(or letter):

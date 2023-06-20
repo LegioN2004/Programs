@@ -1,7 +1,6 @@
 {
     "recommendations": [
         "patbenatar.advanced-new-file",
-        "dsznajder.es7-react-js-snippets",
         "ms-vscode.vscode-typescript-next",
         "s-nlf-fh.glassit",
         "ecmel.vscode-html-css",
@@ -13,6 +12,16 @@
         "github.vscode-pull-request-github",
         "bradlc.vscode-tailwindcss",
         "golang.go",
-        "wallabyjs.quokka-vscode"
+        "wallabyjs.quokka-vscode",
+        "dbaeumer.vscode-eslint",
+        "rvest.vs-code-prettier-eslint",
+        "pranaygp.vscode-css-peek",
+        "vincaslt.highlight-matching-tag",
+        "glenn2223.live-sass",
+        "syler.sass-indented",
+        "tabnine.tabnine-vscode",
+        "gruntfuggly.todo-tree",
+        "wallabyjs.console-ninja",
+        "rangav.vscode-thunder-client"
     ]
 }
