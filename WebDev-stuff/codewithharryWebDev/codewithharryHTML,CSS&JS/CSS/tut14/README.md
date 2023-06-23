@@ -27,3 +27,5 @@
 - Btw, external css does't take priority over internal css.
 - **NOTE: And the order goes like this: The one written after gets more priority so in my style.css link and the internal css, the one written after takes effect over the other i.e the external css** . Also  this doesn't effect
 - **to give any one of the css as the priority order as 1 use the `!important` in the ending of the css styling inside the semicolon**
+- **NOTE** = So overall internal css takes precedence over the other two i.e for inline and external css and then for them the one that comes after the other takes precendence over the other and vice versa.
+   - What the browser does : The browser collects all the styles and sheets at one place, then parses and shows all the markups and after that puts styles on them, so the thing that comes afterwards overrides the previous one if important tag is not present in the tag used before
