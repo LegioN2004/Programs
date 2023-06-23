@@ -113,4 +113,9 @@ do{
   4. Take a temp variable to store the value of 'b' such that the value of 'a' req to give to 'b' doesn't get overwritten when directly assigned the value 'b' i.e when written like 'a = b'.
   5. ..........................
 
-- From Q4 Counting occurences of a number(or letter):
+- From Q4 Counting occurences of a number(or letter): refer to the countOccurrence.java file from the source code for more context
+- My solution as well as kunal's solution, (going directly towards the logic)
+  - My solution contains the usage of for loop it should be set to run according to the no of digits in the input number.
+    a. First take the loop and set the condition greater than number input (i > number) inside the for loop, where number stands for the no of digits present in the input number.
+    b. Then declare and take another variable which stores the end digit of the number by finding the modulo i.e the remainder of the number.
+
