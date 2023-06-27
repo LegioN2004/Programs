@@ -115,7 +115,112 @@ do{
 
 - From Q4 Counting occurences of a number(or letter): refer to the countOccurrence.java file from the source code for more context
 - My solution as well as kunal's solution, (going directly towards the logic)
-  - My solution contains the usage of for loop it should be set to run according to the no of digits in the input number.
-    a. First take the loop and set the condition greater than number input (i > number) inside the for loop, where number stands for the no of digits present in the input number.
-    b. Then declare and take another variable which stores the end digit of the number by finding the modulo i.e the remainder of the number.
+  - My solution contains the usage of for loop ( I have shown only the main function part
 
+   ```  java
+    public static void main(String[] args) { 
+      int n = 333300000; // 4 must be the output here
+      int c = 0, count = 0;
+      for (int i = 0; i <= 4; i++) {
+        c = n % 10; // this c will get remainder of the number till the last division of the input from n and  
+        n = n / 10; // this will make the number short by one digit from the last and overwrite n
+          if (c == 0) {
+            count++ ;
+          }
+        }
+          System.out.println(count);
+    }
+   ```
+
+  Here we'll use division by 10 to find the no of occurences since division of any number by 10 gives the individual numbers as quotient as well as the remainder which can then be reused to find answers to these questions.
+    1. First the for loop should be declared and then it should be set to run the loop according to x times where x denotes the no of digits present in the input number.
+    2. Then declare and take another variable which takes the end digit of the number by finding the modulo `%` i.e the remainder of the number as it'll help in finding the occurence of the desired number.
+    3. Also store the quotient of the number in another variable when dividing it by 10 so as to reduce the number after storing the end digit, since we don't want any repititions
+    4. Then take an if conditional statment to check which no's occurence is needed followed by a count variable which gets iterated the no of times the condition catches the desired number
+    5. Then output the count variable outside of the loop to show the no of occurences of the desired number.
+    **NOTE** The declaration and for loop syntax is in the code itself, it is not required to explain them at this point of time.
+
+  - Kunal's solution
+
+  ``` java
+  public static void main(String[] args) {
+    int n = 400000;
+    int count = 0;
+    while(n > 0){
+    int rem = n % 10; // last digit
+    if (rem == 0){
+      count++;
+    }
+    n = n / 10; // use this n /= 10 to make it shorter
+    }
+    System.out.println(count);
+  }
+  ```
+
+  He has used a while loop to solve this question
+    1. Firstly declare the required variables.
+    2. Then take a while loop that runs as long as the number given is > 0
+    3. Store the remainder in a variable as it'll help find the number of occurences.
+    4. Then in a conditional statment(here if) give the rem the number which you want to find the occurence of
+    5. Also reduce the no from the end so as to not show the same occurence in the same place again and again
+    6. Then in the conditional statment iterate the count variable to show the no of occurence which will then be printed outside of the loop.
+
+- Q5: Reverse a number:
+- My solution
+
+   ``` java
+  public class reverseNOmine {
+      public static void main(String[] args) {
+          int n = 28479;
+          while (n > 0) {
+              int a = n % 10;
+              n = n / 10;
+              System.out.print(a);
+          }
+      }
+      
+  }
+  ```
+
+  1. first take a number
+  2. take a while loop that runs as long as the number is > 0
+  3. Store the remainder value in a variable.
+  4. Also reduce the no from the end so as to not show the same occurence in the same place again and again
+  5. Print the value of remainder variable.
+  6. What happens is that the remainder variable will print from the last number and then after the reduction by n / 10, n will give the reduced number and so it'll print the numbers from the last gradually and a reverse no will be generated. Eg = firstly a will give 9 , 28479 will get reduced to 2847 and 3rd output line will print the 9, this will iterate till the last value i.e 2 and so a reverse no will be printed. **NOTE** This works only when the printing is done in the same line i.e `System.out.print(a);`
+
+- Kunal's version
+
+   ``` java
+  `public class reverseNo {
+    public static void main(String[] args) {
+        System.out.println("Kunal's version of reverse a No problem ");
+        int num = 28479;
+        int ans = 0;
+        while (num > 0) {
+            int rem = num % 10; // 9
+            num /= 10; // 2847
+            ans = ans * 10 + rem; // 90 + 7  
+        }
+        System.out.print(ans);
+    }
+    ```
+
+  1. first take a number, and also declare a variable as shown above in the code snippet
+  2. take a while loop that runs as long as the number is > 0
+  3. Store the remainder value in a variable, one that is found using modulo
+  4. Also reduce the no from the end so as to not show the same occurence in the same place again and again
+  5. Then do this: ans * 10 + remainder value
+  6. Then use the single print line of the ans variable using the `System.out.print(ans);`
+  7. Logic: the ans variable does the ans multiplied by 10 and then adds the remainder value and then outputs them outside of the loop. Eg: rem = 9, num = 2847 , ans = 0 _10 + 9 = 9 : then rem = 7 , num = 284 , ans = 9_ 10 + 7 = 97 ; so ans now stores 97 then this will iterate like that 97 _10 + 4 then 974_ 10 + 8 ....... and then we will get our desired reversed no.  
+
+**TODO** _Make the calculator program better by adding more features like scientific operations, then adding a gui (using swing) and make it beautiful using css(learn that beforehand)
+
+- Calculator program: Refer this file [calculator.java](https://github.com/LegioN2004/programs/JAVA/kunal-java-dsa/06-conditionals-and-loops/lec06-code/src/com/mili/calculator.java)_
+  1. Declare the three variables required, two for doing the operations and one for storing the answer of that operation
+  2. Then take a true while condition and in that loop take the input of the operator with `trim() and charAt(0)`
+  3. Then take an if statement with the condition where we give the input operator to the declared variable(for storing operators) with OR `||`, since we need to operate which is given as an input among the these: '+'/'*'/'/'/'-'/'%'.
+  4. Then take the numbers which we need to perform the operation, can be an input or a predefined value.
+  5. Do the operation using if statements, and it has been set like when we press x or X , it will break out of the loop basically to cancel it using an `else if()` and if there is something else written which doesn't match the type of the operator i.e the char type then it'll print "invalid operator" by using the `else`.
+  **NOTE** this x or X to cancel the operation and the invalid operator will work only for the top level if statment i.e when it is used with the condition having the operators declared other than that if it gets those type of invalid data type in the other nested if statments then it'll directly throw compiler error from javac
+  6. Then it'll print the output using the third variable which we declared earlier outside of the if statment

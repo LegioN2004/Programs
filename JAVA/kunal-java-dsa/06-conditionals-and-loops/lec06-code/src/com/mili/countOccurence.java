@@ -2,14 +2,15 @@ package com.mili;
 
 public class countOccurence {
 	public static void main(String[] args) {
-		int n = 13857597;
-		int c = 0;
-		for (int i = 0; i <= 10; i++) {
-			c = n % 10;
-			n = n / 10;
-			if (c == 7) {
-				System.out.println("This is an occurence of 7");
+		int n = 400000;
+		int count = 0;
+		while(n > 0){
+			int rem = n % 10; // last digit
+			if (rem == 0){
+				count++;
 			}
+			n = n / 10; // use this n /= 10 to make it shorter
 		}
+		System.out.println(count);
 	}
 }

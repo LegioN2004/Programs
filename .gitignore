@@ -54,6 +54,9 @@ Cargo.lock
 /.dart_tool/
 /.pub/
 /.elixir_ls/
+GO/pkg/
+GO/bin/
+
 
 
 # Build directories

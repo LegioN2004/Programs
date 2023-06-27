@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-		<head>
-				<meta charset="UTF-8">
-				<meta name="viewport" content="width=device-width, initial-scale=1">
-				<link href="css/style.css" rel="stylesheet">
-				<title>CSS selectors</title>
-				<!-- using internal css to keep everything in the file -->
-				<style> 
-p{ color : red; }
-#green{ color: green; }
-.blue{ color: blue; }
-.bgBlue{ background-color: yellow; }
-footer, span{ background-color: cyan; }
-</style>
-		</head>
-		<body>
-				<h3>CSS selectors</h3>
-				<p>This is a paragraph to demonstrate CSS selectors</p>
-				<p id="nothing" class="blue bgBlue">This is second para to demonstrate class selector</p>
-		<div>
-						<p>a para inside a div</p>
-				</div>
-				<p id="green">This is a para with id, to demonstrate id selector and I'll make it green</p>
-				<span> this is a span </span>
-				<footer>
-					This is a footer
-				</footer>
-		</body>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/style.css" rel="stylesheet">
+	<title>CSS selectors</title>
+	<!-- using internal css to keep everything in the file -->
+	<style>
+		p {
+			color: red;
+		}
+
+		#green {
+			color: green;
+		}
+
+		.blue {
+			color: blue;
+		}
+
+		.bgBlue {
+			background-color: yellow;
+		}
+		/* css comments are written like this  */
+		footer,span {
+			background-color: cyan;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>CSS selectors</h3>
+	<p>This is a paragraph to demonstrate CSS selectors</p>
+	<p id="nothing" class="blue bgBlue">This is second para to demonstrate class selector</p>
+	<div>
+		<p>a para inside a div</p>
+		<span> this is a span </span>
+	</div>
+	<p id="green">This is a para with id, to demonstrate id selector and I'll make it green</p>
+	<footer>
+		This is a footer
+	</footer>
+</body>
+
 </html>

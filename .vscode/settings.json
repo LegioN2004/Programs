@@ -1,4 +1,5 @@
 {
     "cmake.sourceDirectory": "C:/Users/hp/Documents/dotfiles/LegioN2004-githubthings/programs/C++",
-    "java.debug.settings.onBuildFailureProceed": true
+    "java.debug.settings.onBuildFailureProceed": true,
+    "cmake.configureOnOpen": true
 }
