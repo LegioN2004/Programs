@@ -1,6 +1,5 @@
 # Table of Contents
 
-
 **[ ] TODO: Fix all the readme's grammer speech style**
 
 - This folder in this repo contains my notes and solved assignments of the course taught in YouTube by Kunal Kushwaha in this playlist [Java + DSA + Interview Preparation Course](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ) (links may change)

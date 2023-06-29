@@ -2,6 +2,7 @@ package com.mili;
 
 import java.util.Scanner;
 
+// TODO: look at the readme file for extending the calculator.java more and convert it to a full fledged gui calculator, good project idea
 public class calculator {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
