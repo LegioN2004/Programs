@@ -3,9 +3,15 @@
 ## meta tags
 
 - meta tags are self closing tags so no closing tag
-- meta tags are used in SEO(search engine optimization)
+- meta tags are used in SEO(search engine optimization) i.e for optimizing the ranking of your website
   - SEO is used to increase the web traffic of your website, i.e it will help the various search engine to show your website
   - how the help is done, eg : websites on the top of the searches has various and lots of  meta tags that help them to rank their website of course the website should be good enough
+  - It is written as character set UTF-8 (not necessary for now)
+- content="width=device-width" i.e to fit with the type of device which you use such as mobile, laptops, jate page accha dikhe , comes under the meta tags
+- meta tag with name description shows the description of the website 
+- meta tag with name keywords is used to add keywords to the website 
+- meta tag with name robots is used to decide if the search engine wants to index the website or not
+
 
 - in the html file the meta tags used are:
    1. `<meta charset = "UTF-8">` : this is a must for html pages, it declares the page's character encoding.
