@@ -1,5 +1,9 @@
 {
-    "cmake.sourceDirectory": "C:/Users/hp/Documents/dotfiles/LegioN2004-githubthings/programs/C++",
-    "java.debug.settings.onBuildFailureProceed": true,
-    "cmake.configureOnOpen": true
+	"cmake.sourceDirectory": "C:/Users/hp/Documents/dotfiles/LegioN2004-githubthings/programs/C++",
+	"java.debug.settings.onBuildFailureProceed": true,
+	"cmake.configureOnOpen": true,
+	"java.project.sourcePaths": [
+		"JAVA/kunal-java-dsa/assignments/03-conditionals-loops",
+		"JAVA/kunal-java-dsa/assignments/02-first-java"
+	]
 }

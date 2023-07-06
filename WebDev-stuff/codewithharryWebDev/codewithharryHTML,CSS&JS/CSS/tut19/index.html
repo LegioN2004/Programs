@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Height, width, Borders and Backgrounds</title>
+    <style>
+        #firstPara {
+            background-color: red;
+            height: 100px;
+            width: 455px;
+            border: 4px solid green;
+            /* border-width: 4px;
+            border-color: green;
+            border-style: solid; */
+            border-radius: 10px;
+        }
+
+        #mysecondPara {
+            background-color: rgb(4, 255, 0);
+            height: 100px;
+            width: 455px;
+            /* individual border styling */
+            border-top: 4px solid violet;
+            border-right: 4px solid red;
+            border-left: 4px solid rgb(4, 77, 6);
+            border-bottom: 4px solid orange;
+            /* individual corner radius styling/making it curvy */
+            border-top-left-radius: 14px;
+            border-bottom-right-radius: 14px;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+
+        #thirdPara {
+            height: 430px;
+            width: 590px;
+            /* the following is the way to use background image */
+            background-image: url('https://cdni.autocarindia.com/Utils/ImageResizer.ashx?n=https://cdni.autocarindia.com/ExtraImages/20191105114411_2020-Honda-Rebel-500-1.jpg&w=700&q=90&c=1');
+            background-repeat: no-repeat;
+            background-position: center center;
+            /* background-position: 1px 1px; */
+            border: 3px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>this is a heading</h2>
+    <p id="firstPara">This is a paragraph</p>
+
+    <h2>this is the second heading</h2>
+    <p id="mysecondPara">This is a paragraph</p>
+
+    <h2>this is the third heading with a bike image</h2>
+    <p id="thirdPara">This is a paragraph</p>
+</body>
+
+</html>

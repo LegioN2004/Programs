@@ -8,10 +8,16 @@
 	<title>CSS selectors</title>
 	<!-- using internal css to keep everything in the file -->
 	<style>
+		/* css comments are written like this  */
+
+		/* element selector */
 		p {
+			border: 2px solid red;
+			/* applies the border as red on all the paragraphs */
 			color: red;
 		}
 
+		/* id selector */
 		#green {
 			color: green;
 		}
@@ -20,11 +26,14 @@
 			color: blue;
 		}
 
+		/* class selector */
 		.bgBlue {
 			background-color: yellow;
 		}
-		/* css comments are written like this  */
-		footer,span {
+
+		/* grouping selector */
+		footer,
+		span {
 			background-color: cyan;
 		}
 	</style>
