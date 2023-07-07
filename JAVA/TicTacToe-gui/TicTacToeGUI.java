@@ -1,6 +1,7 @@
-// Here's a simple Java program for a Tic Tac Toe game using the Swing framework for the GUI. This code creates a 3x3 grid of buttons, and players can click on the buttons to make their moves. The program checks for a win or a draw after each move.
+// A simple Java program for a Tic Tac Toe game using the Swing framework for the GUI. It creates a 3x3 grid of buttons, and players can click on the buttons to make their moves. The program checks for a win or a draw after each move.
+// TODO: add a package to add it to the directory of intellij idea
+// TODO: add more stuff like player name and fix the logic of the cross and 0 and make the gui better
 
-// ```java
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -72,14 +73,14 @@ public class TicTacToeGUI {
                 buttons[row][1].getText().equals(symbol) &&
                 buttons[row][2].getText().equals(symbol)) {
             return true;
-                }
+        }
 
         // Check column
         if (buttons[0][col].getText().equals(symbol) &&
                 buttons[1][col].getText().equals(symbol) &&
                 buttons[2][col].getText().equals(symbol)) {
             return true;
-                }
+        }
 
         // Check diagonal
         if (row == col) {
@@ -87,7 +88,7 @@ public class TicTacToeGUI {
                     buttons[1][1].getText().equals(symbol) &&
                     buttons[2][2].getText().equals(symbol)) {
                 return true;
-                    }
+            }
         }
 
         // Check anti-diagonal
@@ -96,7 +97,7 @@ public class TicTacToeGUI {
                     buttons[1][1].getText().equals(symbol) &&
                     buttons[2][0].getText().equals(symbol)) {
                 return true;
-                    }
+            }
         }
 
         return false;
