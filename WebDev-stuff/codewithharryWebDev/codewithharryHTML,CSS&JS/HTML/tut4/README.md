@@ -13,7 +13,7 @@
 - meta tag with name robots is used to decide if the search engine wants to index the website or not
 
 
-- in the html file the meta tags used are:
+- in our html file the meta tags used are:
    1. `<meta charset = "UTF-8">` : this is a must for html pages, it declares the page's character encoding.
    2. The second meta tag is used to encourage and show responsive design across different sizes of screens of devices.
    3. Third meta tag is used to expand compatibility till the IE old agedddddd browsers (no need to know more).
