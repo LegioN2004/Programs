@@ -15,7 +15,7 @@ public class reverseAstring {
         String r2 = ""; // this is to store the reverse order of the value of the r1 string
         int l = r1.length(); // to find the length of the variable
         for (int i = l-1; i>=0; i--) { // always run the for loop reverse to make the string reverse
-        r2 = r2+r1.charAt(i);
+        r2 = r2 + r1.charAt(i);
         }
         System.out.println(r2);
     }

@@ -1,6 +1,6 @@
 * All about the reverseAstring.java file
 ** How to reverse a string
-- 1st method: reversing is done using the predefined class known as StringBuffer found in the java library it contains a method which it helps to reverse a string
+- 1st method: reversing is done using the predefined class known as StringBuffer found in the java library it contains a method which helps to reverse a string
   - How to do:
     a) First make an object of the StringBuffer class using the same way as it is done in Scanner class object creation, eg: StringBuffer x = new StringBuffer("Hello, How are you");
     b) Then add the string object inside the double quotes in the brackets, eg: ("Hello, How are you");
@@ -23,7 +23,7 @@ System.out.println(y.reverse());
   b) Declare a variable to store the reverse order of the value of the given string, eg: String r2 = "";
   b) Find the length of the variable using the for loop
   c) In for loop, always run the for loop reverse to make the string reverse
-  d) Also declare a variable to take the length of the string(remember in length of the string space is also as 1 string)
+  d) Also declare a variable to take the length of the string(remember in length of the string space is also treated as 1 string)
   e) The for loop starts from 0th index so l-1 will start it from 0 and ends at position minus 1 so 'l-1' is used
   f) 'i >= 0' since bc string starting point is 0 then use 'i--'
   g) r2 = r2 + r1.charAt(i); : this method takes character one by one from the main string and puts it into the r2

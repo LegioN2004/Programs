@@ -4,7 +4,7 @@
 
 ### Basic Java Programs
 
-- Done [21/26]
+- Done [26/26]
 
 1. Area Of Circle Java Program
 2. Area Of Triangle
@@ -37,6 +37,8 @@ all.
 
 ### Intermediate Java Programs
 
+- Done [26/26]
+ 
 1. Factorial Program In Java
 2. Calculate Electricity Bill
 3. Calculate Average Of N Numbers
@@ -44,12 +46,13 @@ all.
 5. Calculate Distance Between Two Points
 6. Calculate Commission Percentage
 7. Power In Java
-8. Calculate Depreciation of Value
-9. Calculate Batting Average
+8. Calculate Depreciation of Value (Logic taken from GFG)
+9. Calculate Batting Average (Logic taken from GFG / github)
 10. Calculate CGPA Java Program
 11. Compound Interest Java Program
-12. Calculate Average Marks
+12. Calculate Average Marks (Same as the qno9)
 13. Sum Of N Numbers
+<!-- todo: fix one of the following till 16 where the if else statement provides inappropiate output even after showing the right output -->
 14. Armstrong Number In Java
 15. Find Ncr & Npr
 16. Reverse A String In Java
@@ -60,6 +63,8 @@ all.
 21. Java Program Vowel Or Consonant
 22. Perfect Number In Java
 23. Check Leap Year Or Not
-24. Sum Of A Digits Of Number
+24. Sum Of A Digits Of Number ( everyone knows this )
 25. Kunal is allowed to go out with his friends only on the even days of a given month. Write a program to count the number of days he can go out in the month of August.
 26. Write a program to print the sum of negative numbers, sum of positive even numbers and the sum of positive odd numbers from a list of numbers (N) entered by the user. The list terminates when the user enters a zero.
+
+# doneeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee boiiiiiiiiiiiiiiiiiiiiiiiii!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! letssssssssss goooooooooooooooooooooooooooo
