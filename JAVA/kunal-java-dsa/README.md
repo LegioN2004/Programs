@@ -13,7 +13,9 @@
 - [x] Flow of Program
 - [x] Introduction to JAVA
 - [x] First JAVA program and basics
+- [x] Conditionals and loops
   
 ## and pending
+- [ ] Functions / Methods in java
+- [ ] rest ......................
 
-- [ ] Conditionals and loops
