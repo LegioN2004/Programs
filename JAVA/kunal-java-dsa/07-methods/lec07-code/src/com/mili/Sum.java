@@ -5,6 +5,24 @@ import java.util.Scanner;
 public class Sum {
     public static void main(String[] args) {
         sum();
+        sum(); // add this a no of times to make it repeat that many amount of times.
+        System.out.println(sum2());
+        sum2();
+        int ans = sum2();
+        System.out.println(ans);
+    }
+
+    // now we're returning the value, not just printing it.
+    // using the int type in the function since the value returned to be int
+    static int sum2() {
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter the 1st number: ");
+        int num1 = in.nextInt();
+        System.out.print("Enter the 2nd number: ");
+        int num2 = in.nextInt();
+        int sum = num1 + num2;
+        return sum; // here "return" is used to return the value of this sum which is the return
+                    // this function to the function call
     }
 
     // method

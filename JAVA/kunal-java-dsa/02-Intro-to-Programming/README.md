@@ -1,72 +1,44 @@
-# Table of Contents
+# Introduction to Programming
 
-## more things are to be added
+- To instruct a computer do tasks we use certain languages known as **Programming languages** and at the very base of those languages they are a bunch of 0s and 1s. We know that a computer only understands and reads data in 0s and 1s and since writing instructions in 0s and 1s will be impossible so we use Programming languages to write this instructions which are more human readable and understandable and the computer just translates it to 0s and 1s.
+
+## Types Of Languages
+
+- Procedural languages:
+  - It specifies a series of well structured steps and procedures to compose a program.
+  - It contains a systematic order of statements, functions and commands to complete a task.
+  
+- Fuctional languages:
+  - Writing a program only in pure functions i.e never modify variables, but only create new ones as an output.
+  - Used in situations where we have to perform lots of different operations on the same set of data, like ML
+  - First class functions: Explaining with an example
+    taking values with some variables a = 10, b = 30, c = b; // if we print the value of c we'll get the value as 30, since the value 30 of b is being reassigned to c and so c also gets the same value.
+    So if we can do the same with functions like reassigning function variable names to other function, then these functions are known as first class functions. python is one example which has first class functions.
+
+- Object oriented languages:
+  - It revolves around objects
+  - Code + Data = **Object**. The code and the data combined together forms the object
+  - **Classes**: A class is like a template. It is a named group of properties and functions. When we need to store a no of different datatypes like that of a student (its name, roll no, DOB, etc) we need one single datatype to store all the different ones and it can be done using classes and **an instance of this class is called an object**. Eg: humans features like 2 eyes, ears, hands, legs, etc are like a template and using this template we are made and we are objects. like a = 30 , a is teh variable and 30 is the object inside the memory.
+  - OOP in a nutshell, in case of programming languages, divides the code to different chunks so that it helps us developers make the different processes like develop, debug, reuse, and maintaining software easier. Like car parts repairing where we do not change the whole car to repair or replace that one specific part but we only change that part, OOP also helps in changing only that part in a codebase which has a problem and not the whole codebase and that makes the life of a dev easier.
+
+## Static and Dynamic memory
+
+|                  Static                       |                        Dynamic                          |
+|-----------------------------------------------|---------------------------------------------------------|
+|1. Perform type checking at compile time       |1. Perform type checking at runtime                      |
+|2. Errors will show at compile time            |2. Error might not show till program is run              |
+|3. Declare datatype before using it            |3. No need to declare datatype of variables              |
+|4. More control                                |4. Saves time in writing code but might give error at    |
+|                                               | runtime                                                 |
+|                                               |                                                         |
 
 ## stack and heap memory
 
-- for example: a = 10.
-  - a (reference variable) is stored in stack memory of the above example ..
-  - heap memory is where 10 (object) is stored of the above example ..
-  - And a is only pointing to that object in heap memory but 10 is the actual value, pointing to the address of 10 in the memory(in computer). Things to **note** here :-
-    1. more than 1 reference variables can point to the same object
-    2. if original object is changed by a reference variable then it will be reflected to all the other variables
+- Explaining stack and heap memory with an example. for example: a = 10.
+  - a is a reference variable and it is stored in stack memory of the above example.
+  - heap memory of the memory/ram is where the actual value of the object 10, is stored of the above example. a is in the stack memory and it is pointing towards the heap memory.
+  - And a is only pointing to the address of the object, 10 in heap memory of the memory(in computer) but 10 is the actual value. Things to **note** here :-
+    1. Every object has an address in the memory/ram
+    2. more than 1 reference variables can point to the same object
+    3. if original object is changed by a reference variable then it will be reflected to all the other variables
   - when an object with no reference variable is found then it is removed from the memory using ***garbage collection*** (it happens automatically) all the objects
-
-## intro to java
-
-- how java code executes
-  - .java  file has the source code which is in the human readable  format
-  - it gets into the compiler and converts the entire file to .class format
-  - .class (which is a BYTE CODE) is a file which is a java intermediary language / something else in the java stuff. Things to **note** here :-
-    1. It doesn't run in directly on a system
-    2. It needs a jvm(Java virtual machine) to run
-    3. Since this byte code can run in any system as long as there is a jvm , that makes it the reason why Java is platform independent.
-       - note jvm is platform dependent we need to execute the .class file again in different platform using the platform dependent jvm
-       - this bytecode can run on any machine, but the executable that is made is dependent in platform and architecture
-  - Then the interpreter(line by line) converts it into machine code
-    - interpreter compiles the file line by line, eg: like python which is a interpreted language can be excuted line by line
-
-### JDK vs JRE vs JVM vs JIT
-
-- JDK is java dev kit , it consists of JRE + Dev tools
-  1. provides package to run and develop java program
-  2. it is a package that includes
-     - dev tools = to provide an environment to develop your program
-     - JRE = to execute your program
-     - javac = a java compiler
-     - jar = java archiver
-     - javadoc = doc generator
-     - interpreter / loader
-
-- JRE is a java runtime environment, it consists of JVM + library classes
-  - It is an installation package that provides environment to only run the program. It consists of :-
-    1. Deployment technology
-    2. User interface toolkit
-    3. Integration libraries
-    4. Base libraries
-    5. JVM :- Java virtual Machine
-
-  - After we get the .class file the next thing happen at runtime :
-    - Class loader loads all classes needed to execute the program.
-    - JVM sends code to bytecode verifier to check the format of code.
-
-- JVM is java virtual machine it consists of JIT, the just in time compiler
-
-- **how the all of the above works JDK, JRE, JVM, JIT**
-  - at compile time [.java file] -----> (javac compilation)-----> [.class file]
-- how jvm works
-  1. ***loading***: reads .class file and generates binary data of , then object of the class is created in heap
-  2. ***linking***: i. verifies the .class file | ii. allocates memory for the class variables and default values | iii. replaces symbolic references from the type with direct references (by replacing the variables and other stuff with the values directly)
-  3. ***initialization***: all static variables are assigned with their values defined in the code and static block. static variables are those variables which do not depend on the object of the classes i.e object independent
-                      jvm contains the stack and heap memory allocations , stack memory is created whenever a new program is run
-
-- JVM execution
-  - Interpreter:
-    - line by line execution (of the bytecode i.e the .class file)
-    - when one method/function(block of code) is called many times it will interpret again and again (which is a limitation)
-
-- JIT
-  - those methods/functions that are repeated again and again , the jit directly provides the machine code once converted from the main code so that re-interpretation is not required and the code execution becomes a bit faster
-    - at runtime : class loader -> byte code verifier -> interpreter -> runtime -> hardware
-  - how everything points to work like that
-    - java source code -> JDK (has the javac compiler converts it into .class file) -> Bytecode -> JVM(converts the bytecode to an executable) -> JRE(then we run that executable in this)
