@@ -4,12 +4,19 @@ import java.util.Scanner;
 
 public class Sum {
     public static void main(String[] args) {
-        sum();
-        sum(); // add this a no of times to make it repeat that many amount of times.
-        System.out.println(sum2());
-        sum2();
-        int ans = sum2();
-        System.out.println(ans);
+        // sum();
+        // sum(); // add this a no of times to make it repeat that many amount of times.
+        // System.out.println(sum2());
+        // sum2();
+        // int ans = sum2();
+        int ans1 = sum3(20, 40);
+        System.out.println(ans1);
+    }
+
+    // pass the value of the numbers when you are calling the method in main()
+    static int sum3(int a, int b) {
+        int sum = a + b;
+        return sum;
     }
 
     // now we're returning the value, not just printing it.
