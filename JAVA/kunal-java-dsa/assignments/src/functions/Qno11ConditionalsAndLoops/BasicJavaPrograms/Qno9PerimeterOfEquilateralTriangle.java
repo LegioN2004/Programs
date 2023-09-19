@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class PerimeterOfEquilateralTriangle {
+public class Qno9PerimeterOfEquilateralTriangle {
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);

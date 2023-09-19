@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class VolumeOfPrism {
+public class Qno15VolumeOfPrism {
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
 		System.out.println("Volume of Rectangular Prism Calculator");

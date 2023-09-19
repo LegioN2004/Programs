@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class VolumeOfCone {
+public class Qno14VolumeOfCone {
     public static void main(String[] args) {
         System.out.println("Give the radius and height of the cone");
         Scanner in = new Scanner(System.in);

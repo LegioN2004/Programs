@@ -1,9 +1,13 @@
-package Qno11ConditionalsAndLoops.BasicJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
 public class Qno24 {
     public static void main(String[] args) {
+        print();
+    }
+
+    static void print() {
         Scanner in = new Scanner(System.in);
         int a = -1, b = 0;
         while (a != 0) {

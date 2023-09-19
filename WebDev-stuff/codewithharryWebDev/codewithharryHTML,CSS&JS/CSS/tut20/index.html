@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+
+        *{ /* this is a universal selector */
+            box-sizing: border-box;
+            /* you can also add the following to make those default to the respective values until you want to override them specifically */
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #a996b5;
+        }
+
+        .container {
+            /* you can use the developer tools to set colors as per the requirement to get a better view directly in the webpage */
+
+            background-color: #b4c5ff;  
+            border: 3px solid darkblue;
+
+            /* we can set margin/padding direction to top, bottom, left and right in the following way */
+            /* padding: 9px; */
+            /* padding-top: 9px; to give directional(here top) padding, you can give more like right, left, top, bottom, etc */
+            margin: 12px 19px;
+            /* margin-top: 10px; same as padding to give directional(here top) margin */
+
+            /* If we want to set margin/padding direction directly to top, bottom, left and right in one line it can be done in the following way */
+            /* margin/padding = top right bottom left; this is the syntax and the following line is the code */
+            /* padding: 23px 56px 68px 23px; */
+
+            /* If we want to set same dimensions to top & bottom and left & right remember this use yx, where y denotes top or bottom and x represents left or right */
+            /* padding: y(top/bottom) x(left/right); */
+            padding: 34px 19px;
+            border-radius: 22px;
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3>This is my heading</h3>
+        <p id="first">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis laboriosam dolorum, aperiam doloribus reiciendis modi iure eos, facere omnis veniam cum eligendi quae!</p>
+    </div>
+    
+    <div class="container">
+        <h3>This is my heading</h3>
+        <p id="second">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis laboriosam dolorum, aperiam doloribus reiciendis modi iure eos, facere omnis veniam cum eligendi quae!</p>
+    </div>
+    
+    <div class="container">
+        <h3>This is my heading</h3>
+        <p id="third">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nobis laboriosam dolorum, aperiam doloribus reiciendis modi iure eos, facere omnis veniam cum eligendi quae!</p>
+    </div>
+    
+</body>
+</html>

@@ -1,7 +1,7 @@
 // TODO: extend this program to have if else statement to add as many subjects and theirs marks as desired and when the user
 // presses done it auto takes the no of subjects and calculates and  gives the avg
 
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -11,6 +11,11 @@ public class AvgMarksQno12 {
 		Scanner in = new Scanner(System.in);
 		System.out.print("Enter the number of subjects that you have taken: ");
 		int n = in.nextInt();
+		avgMarks(n);
+	}
+
+	static void avgMarks(int n) {
+		Scanner in = new Scanner(System.in);
 		double c = 0, a = 0;
 		// give the subjects for counting the average marks
 		for (int i = 1; i <= n; i++) {

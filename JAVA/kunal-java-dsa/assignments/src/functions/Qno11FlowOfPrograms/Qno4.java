@@ -13,22 +13,13 @@ public class Qno4 {
 	}
 
 	static void hcf(int a, int b) {
-		int c = 0, d = 0;
-		for (int i = 1; i <= a; i++) {
-			if (a % i == 0) {
-				c = i;
-			}
-			for (int j = 1; j <= b; j++) {
-				if (b % j == 0) {
-					d = j;
-				}
+		int hcf = 0;
+		for(int i = 1; i <= a || i <= b; i++){
+			if(a % i == 0 && b % i == 0){
+				hcf = i;
 			}
 		}
-		if (d == c) {
-			System.out.println("The hcf is: " + d);
-		} else {
-			System.out.println("Enter the correct number");
-		}
+		System.out.println("The required HCF is " + hcf);
 	}
 
 	static void lcm(int a, int b) {

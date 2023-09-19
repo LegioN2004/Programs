@@ -3,8 +3,8 @@
 	"java.debug.settings.onBuildFailureProceed": true,
 	"cmake.configureOnOpen": true,
 	"java.project.sourcePaths": [
-		"JAVA/kunal-java-dsa/assignments/03-conditionals-loops",
-		"JAVA/kunal-java-dsa/assignments/02-first-java",
-		"JAVA/kunal-java-dsa/07-methods/lec07-code/src/com/mili"
+		"JAVA/kunal-java-dsa/Assignments/src/functions/Qno11FirstJava",
+		"JAVA/kunal-java-dsa/07-methods/lec07-code/src/com/mili",
+		"JAVA/kunal-java-dsa/Assignments/src/functions/Qno11ConditionalsAndLoops/IntermediateJavaPrograms"
 	]
 }

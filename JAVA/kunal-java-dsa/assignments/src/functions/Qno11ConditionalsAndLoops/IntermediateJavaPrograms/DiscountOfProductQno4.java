@@ -1,5 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
-
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 import java.util.Scanner;
 
 public class DiscountOfProductQno4 {
@@ -9,9 +8,13 @@ public class DiscountOfProductQno4 {
         int oriPrice = in.nextInt();
         System.out.print("Also give the discount rate of the product -> ");
         int discRate = in.nextInt();
-        double disAmount = oriPrice * (discRate/100);
+        discount(oriPrice, discRate);
+    }
+
+    static void discount(int oriPrice, int discRate) {
+        int disAmount = oriPrice * (discRate / 100);
         System.out.println("The discounted amount of the product is -> " + disAmount);
-        double finalPrice = oriPrice - disAmount;
+        int finalPrice = oriPrice - disAmount;
         System.out.print("The final price of the product after the discount is -> " + finalPrice);
     }
 }

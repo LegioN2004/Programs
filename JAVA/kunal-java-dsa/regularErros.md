@@ -7,25 +7,55 @@
 - In the fibonacci series firstly take three vars and give them 0 , 1 , 0 respectively. Then in the while loop the condition should be one less than the input number. The var should be one becoming 0
 
 - Integer division in floating point context -> this error occurs when you perform division between integers inside a context where floating-point numbers are expected or involved. It indicates that you might be using integer division where floating-point division is expected or preferred. This can lead to unexpected results or loss of precision in calculations.
-   - **NOTE** remember the computer doesn' calculate like humans do like if I does this 
+  - **NOTE** remember the computer doesn' calculate like humans do like if I does this
+
    ```java
         int discRate = in.nextInt(); // discRate = 50 (%)
         double disAmount = oriPrice * (discRate/100); // oriPrice = 2000
    ```
-   here discRate is declared int type already and so if i put a number here like 5 then disay will get the value as 0, since the computer doesn't do divisions like from num to denom i.e 5 * 20 = 100 then 20 * 100 = 2000, it doesn't do like that. It will instead show 0 since it will do the division like 5 / 100 = 0.05 and since the discRate is int type it will only take the int part and remove the fractional part and so the disAmount gets the total calc as 0
-   - Also java does follow the BODMAS rule and doesn't follow this rule when the calculations are separated by brackets, separated by brackets means literally that. So while doing calculations do not do any silly mistakes such as placing brackets unnecessarily as it will not give the desired result. For eg: ((1 - 10) / 100)^2 and (1-10/100)^2 gives different results one gives 1.62 and the second gives 162, so beware of proper usage.
+
+   here discRate is declared int type already and so if i put a number here like 5 then disay will get the value as 0, since the computer doesn't do divisions like from num to denom i.e 5 *20 = 100 then 20* 100 = 2000, it doesn't do like that. It will instead show 0 since it will do the division like 5 / 100 = 0.05 and since the discRate is int type it will only take the int part and remove the fractional part and so the disAmount gets the total calc as 0
+  - Also java does follow the BODMAS rule and doesn't follow this rule when the calculations are separated by brackets, separated by brackets means literally that. So while doing calculations do not do any silly mistakes such as placing brackets unnecessarily as it will not give the desired result. For eg: ((1 - 10) / 100)^2 and (1-10/100)^2 gives different results one gives 1.62 and the second gives 162, so beware of proper usage.
+
 - In Java, you don't always need to initialize a variable with a specific value when declaring it. However, local variables (variables declared within methods, loops, or blocks) need to be explicitly initialized before you can use them.
    When you declare a variable without initializing it, Java assigns a default value to the variable based on its data type. For example:
-   - int: The default value for an int variable is 0.
-   - double: The default value for a double variable is 0.0.
-   - boolean: The default value for a boolean variable is false.
-   - char: The default value for a char variable is the null character '\u0000'.
-   - Reference types (e.g., String, custom classes): The default value is null.
+  - int: The default value for an int variable is 0.
+  - double: The default value for a double variable is 0.0.
+  - boolean: The default value for a boolean variable is false.
+  - char: The default value for a char variable is the null character '\u0000'.
+  - Reference types (e.g., String, custom classes): The default value is null.
 
    However, it's a good practice to explicitly initialize variables with meaningful values before using them to avoid unexpected behavior or errors. By initializing variables with appropriate values, you ensure that they hold the intended data.
 
    For example, if you declare an int variable to store the sum of numbers, it's common to initialize it with 0 initially, as you want the sum to start from 0 before you accumulate the actual values. `int sum = 0;` This way, you avoid any potential issues caused by using an uninitialized variable, and you establish a clear starting point for the sum.
 
+- don't forget to add the 0! = 1 in the factorial questions so that finding 0 in factorial doesn't show some unusual output
+
+   ``` java
+   static int Factorial(int n){
+           int a = 1;
+           // don't forget to add the following which is 0! = 1
+           if(n == 0){
+               a=1;
+               return a;
+           }
+           do{
+               a = n * a;
+               n = n - 1;
+           } while (n != 0);
+           return a;
+       }
+   }
+
+   ```
+
+- Also when attaching and storing the individual digits to one number, use the following logic
+
+```java
+ int digit = n % 10;
+reversed = reversed * 10 + digit; // don't forget this, this stores the no in the main form here in this case it is forming a 3 digit number after removing digit from the input 101 to find the palindrome
+n /= 10;
+```
 
 ## some string stuff
 
@@ -50,8 +80,21 @@
        }
    }
    ```
+
    In the code snippet, the error occurred because I used `b` as the index to access characters in the string `a`. However, since `b` is equal to the length of the string, it is out of bounds because the indices range from 0 to `length - 1`.
 
    To access the characters correctly, you need to adjust the index by subtracting `i` from `b` in the line `System.out.print(a.charAt(b - i));`. This ensures that you stay within the valid index range of the string.
 
 - When you use `while(true)` while loop with the true condition, then you need to have a break statement that will break out of a loop after a certain condition is met. It is necessary since the while with the true condition is an infinite loop and so we need to end it after sometime
+- You can use conditions like the ones in the brackets of if-else statements directly in the return statements to return boolean true or false if there is only one if and else statement (or accordingly), which helps to simplify and reduce code.
+- Err in the question **print a greeting messsage that specifically shows up for a particular input name**: The code you've provided uses if (greeting(a).equals("mili")) to check if the result of the greeting function is equal to the string "mili." If this code is causing an error, it's likely not due to the use of == versus .equals(). Both can be used to compare strings in Java, but they have slightly different behaviors:
+
+  - == compares the references of the two string objects. It checks if the two string variables point to the same memory location. This might work for some cases, but it's generally not used for comparing the content of strings.
+
+  - .equals() compares the actual content of the two strings. It checks if the characters in the two string objects are the same.
+
+  - The reason you should prefer .equals() when comparing strings is that it compares the content, which is usually what you want.
+
+    If your code is causing an error, it might be due to another issue, such as a NullPointerException if greeting(a) returns null. Ensure that the greeting function always returns a non-null string to avoid such errors.
+
+- You can do function calls for 2 or three or more arguments/parameters and they'll follow the order and sequence while running i.e it'll first run the first function that takes a param and passes the consecutive argument, run the function properly come back and then again run the following same function but for different arguments/parameters which has been provided after that, and it'll surely help. 

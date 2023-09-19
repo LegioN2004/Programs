@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class AreaOfTriangle {
+public class Qno2AreaOfTriangle {
     public static void main(String[] args) {
         System.out.print("Print the base and height of the triangle which you want the area of");
         Scanner in = new Scanner(System.in);

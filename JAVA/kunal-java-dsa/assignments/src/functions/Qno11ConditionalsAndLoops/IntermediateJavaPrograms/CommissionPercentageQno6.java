@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -9,9 +9,13 @@ public class CommissionPercentageQno6 {
         double salesAmt = in.nextDouble();
         System.out.print("Enter the commission rate: ");
         double comRate = in.nextDouble();
+        comPercen(salesAmt, comRate);
+    }
+
+    static void comPercen(double salesAmt, double comRate) {
         double comAmt = (comRate * salesAmt) / 100;
-        System.out.print("The commission amount is: " + comAmt);
+        System.out.println("The commission amount is: " + comAmt);
         double comPercentage = comRate / 100;
-        System.out.print("The commission percentage is: " + comPercentage);
+        System.out.println("The commission percentage is: " + comPercentage);
     }
 }

@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 public class Qno19CurvedSurfAreaCylinder {
 

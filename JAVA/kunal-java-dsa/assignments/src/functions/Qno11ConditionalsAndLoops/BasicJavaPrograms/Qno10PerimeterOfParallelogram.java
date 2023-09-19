@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class PerimeterOfParallelogram {
+public class Qno10PerimeterOfParallelogram {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.print("Give the base and side of the parallelogram");

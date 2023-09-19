@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -11,6 +11,10 @@ public class FutureInvestmentValueQno18 {
 		double b = in.nextInt();
 		System.out.print("Print the time in years the investment is held: ");
 		double c = in.nextInt();
+		future(a, b, c);
+	}
+
+	static void future(double a, double b, double c) {
 		double d = a * Math.pow((1 + b / 100), c);
 		System.out.println("The future investment value is: " + d);
 	}

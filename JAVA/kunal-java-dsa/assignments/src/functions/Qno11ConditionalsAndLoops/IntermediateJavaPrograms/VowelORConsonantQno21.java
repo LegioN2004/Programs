@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -7,9 +7,13 @@ public class VowelORConsonantQno21 {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter a letter: ");
         char letter = in.next().charAt(0);
-        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u'){
+        type(letter);
+    }
+
+    static void type(char letter) {
+        if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u') {
             System.out.print("The letter is a vowel");
-        } else{
+        } else {
             System.out.print("The letter is a consonant");
         }
     }

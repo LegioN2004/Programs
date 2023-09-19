@@ -1,0 +1,108 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+/* #main {
+	width: 20%;
+	height: 40%;
+	background-color: black;
+} */
+
+/* made a square to show the width and height */
+/* #main {
+	width: 20%;
+	height: 40%;
+	padding: 30px;
+	margin: 20px;
+	background-color: red;
+} */
+/* so what padding does is that it puts the value given to it as spacing around the main element i.e the text written or anything written under this propery class/element/id and margin gives an outside spacing */
+
+#main {
+	width: 100%;
+	height: 100%;
+	background-image: url(https://images.unsplash.com/photo-1668889716746-fd2ca90373f7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80);
+	background-size: cover;
+	background-position: center;
+}
+
+/* Position stuff explained below */
+/* NOTE: some may try to use top left etc movement without using position and that won't work */
+#car1 {
+	width: 100px;
+	height: 120px;
+	background-color: red;
+	/* top: 100%; */
+	/* you can uncomment the above and see that these top property don't work since the position value is not set in this element */
+}
+
+/* note: the by default value of position if not explicitly set, is static */
+#car2 {
+	/* position: absolute; */
+	/* now since this has position absolute so this can accept top bottom left right properties */
+	position: absolute;
+	top: 10%;
+	left: 30%;
+	width: 110px;
+	height: 90px;
+	background-color: pink;
+}
+
+#car3 {
+	width: 130px;
+	height: 110px;
+	background-color: green;
+}
+
+/* so we need to put the blue chotabox in this red box so use position relative here in this red box */
+/* #box {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background-color: red;
+} */
+/* now left 40% which is given to the blue box will apply no with respect to the screen but the red box */
+
+/* #chotabox {
+	position: absolute;
+	left: 40%;
+	width: 100px;
+	height: 100px;
+	background-color: blue;
+} */
+
+#box {
+	justify-content: space-between;
+	align-items: center;
+	width: 500px;
+	height: 500px;
+	background-color: grey;
+	display: flex;
+	/* so to apply flex so as to side by side the child elements we'll apply flex to this parent element */
+}
+
+#box1 {
+	width: 100px;
+	height: 100px;
+	background-color: brown;
+}
+
+#box2 {
+	width: 130px;
+	height: 110px;
+	background-color: pink;
+}
+
+#box3 {
+	width: 100px;
+	height: 100px;
+	background-color: yellow;
+}

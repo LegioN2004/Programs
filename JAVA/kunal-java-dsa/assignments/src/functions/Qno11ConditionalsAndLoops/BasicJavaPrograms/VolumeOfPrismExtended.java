@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.BasicJavaPrograms;// README: extended the prism to the more detailed version (usage remains dependent on the user) by adding the types of prism and their individual calculations if not known by the user
+package functions.Qno11ConditionalsAndLoops.BasicJavaPrograms;// README: extended the prism to the more detailed version (usage remains dependent on the user) by adding the types of prism and their individual calculations if not known by the user
 
 import java.util.Scanner;
 

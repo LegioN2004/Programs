@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 

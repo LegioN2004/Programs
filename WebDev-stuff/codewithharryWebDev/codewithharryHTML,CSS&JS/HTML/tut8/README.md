@@ -18,7 +18,7 @@
    - **Usage**: It gives a label btw like the name written above something heading like. As in the example for using the label tag, the `input` tag (maybe others too) is given an *`id="name"`* (*name* or any word can be used) to which the label must point and then in the label we have to add that same *'`name`'* to the *'`for="_put here value_"`'* so that the pointing completes and now what happens here is that  we can start writing in the box assigned to the name *`id`* of the same `input` tag just by clicking on the label/heading(as written on the top) itself instead of clicking on the box (for convenience in forms). But the same won't work on the other input tags since it doesn't have the label tag.
 
 4. For better line breaks use the **`div`** tags, avoid *`br`* as much as possible. This line break will be done in a better way using css.
-   - **`div`** is a block element and so it takes the whole width in an html doc and so the next element has to go down.
+   - **`div`**: div tags are one of the important tags, it is like a rectangle box which has some width but 0 height(note we'll not see a line since line has some height) so we'll see nothing. Also div's own height is 0 but the height of its children's makes up the total height of the div(by children it means the nested stuff inside that div tags) so for example if div has some children elements lets say 2, which has height 10 and 20 respectively then the overall div's height will be 30. It is a block element and so it takes the whole width in an html doc and so the next element has to go down.
 
 5. **`Input`** tags can have many options ranging from different types and values, use those accordingly from the *emmet abbrs* given by the lsp
 

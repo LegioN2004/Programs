@@ -1,8 +1,8 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class AreaOfRhombus {
+public class Qno6AreaOfRhombus {
     public static void main(String[] args) {
         System.out.print("Give the length breadth and height with some enters");
         Scanner in = new Scanner(System.in);

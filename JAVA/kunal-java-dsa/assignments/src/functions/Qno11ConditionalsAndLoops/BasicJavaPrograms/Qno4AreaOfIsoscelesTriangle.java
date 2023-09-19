@@ -1,13 +1,13 @@
-package ConditionalsAndLoops.BasicJavaPrograms;
+package Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
 import java.util.Scanner;
 
-public class AreaOfIsoscelesTriangle {
+public class Qno4AreaOfIsoscelesTriangle {
     public static void main(String[] args) {
         System.out.print("Print the base and height of the isosceles triangle which you want the area of: ");
         Scanner in = new Scanner(System.in);
         double a = in.nextInt(), c = in.nextInt();
-        area(a,c);
+        area(a, c);
     }
 
     static void area(double a, double c) {

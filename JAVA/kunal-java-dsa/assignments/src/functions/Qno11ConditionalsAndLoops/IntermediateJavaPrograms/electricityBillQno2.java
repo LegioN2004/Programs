@@ -1,17 +1,21 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
 public class electricityBillQno2 {
 	public static void main(String[] args) {
-		// details
 		Scanner in = new Scanner(System.in);
-		System.out.print("Enter your consumer no: ");
 		int conNo = in.nextInt();
 		// units
 		System.out.print("Give the number of units for the consumer no " + conNo + ": ");
-		double firstUnit = 5.3, secUnit = 6.6, thirdUnit = 7.6;
 		int totUnits = in.nextInt();
+		bill(conNo, totUnits);
+	}
+
+	static double bill(int conNo, int totUnits) {
+		// details
+		double firstUnit = 5.3, secUnit = 6.6, thirdUnit = 7.6;
+		System.out.print("Enter your consumer no: ");
 		double fir = totUnits - 120, sec = fir - 66, thir = sec - 16;
 		fir = fir * firstUnit;
 		sec = sec * secUnit;
@@ -24,5 +28,6 @@ public class electricityBillQno2 {
 		System.out.println("for looting people CGST and SGST, we'll add anything we like, 40% i.e 500");
 		double total = fir + sec + thir + fixedCharge + 500;
 		System.out.println("Total bill generated: " + total);
+		return total;
 	}
 }

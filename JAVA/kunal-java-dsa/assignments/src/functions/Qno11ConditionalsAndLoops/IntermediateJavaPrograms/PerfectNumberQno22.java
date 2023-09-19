@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -7,15 +7,19 @@ public class PerfectNumberQno22 {
         System.out.print("Give the number you want to find if it is a perfect number or not: ");
         Scanner in = new Scanner(System.in);
         int a = in.nextInt(), c = 0;
-        for(int i = 1; i < a; i++){
-            if(a % i == 0){
+        perfect(a, c);
+    }
+
+    static void perfect(int a, int c) {
+        for (int i = 1; i < a; i++) {
+            if (a % i == 0) {
                 c += i;
             }
         }
         System.out.println("The calculated number is " + c);
-        if(c == a) {
+        if (c == a) {
             System.out.println("Since it is equal to " + a + " so it is a perfect number");
-        }else {
+        } else {
             System.out.println("Since it is not equal to " + a + " so it is not a perfect number");
         }
     }

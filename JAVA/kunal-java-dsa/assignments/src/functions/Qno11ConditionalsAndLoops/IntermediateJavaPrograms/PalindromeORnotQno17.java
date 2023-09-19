@@ -1,11 +1,15 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
 public class PalindromeORnotQno17 {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
         System.out.print("Print the number you want the palindrome of: ");
+        palindrome();
+    }
+
+    static void palindrome() {
+        Scanner in = new Scanner(System.in);
         int a = in.nextInt(), b = 0, c = 0, d = a;
         while (a > 0) {
             b = a % 10;
@@ -18,5 +22,6 @@ public class PalindromeORnotQno17 {
         } else {
             System.out.println("The number is not palindrome");
         }
+
     }
 }

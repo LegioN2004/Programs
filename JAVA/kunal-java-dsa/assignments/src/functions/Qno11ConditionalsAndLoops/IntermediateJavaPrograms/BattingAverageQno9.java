@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -14,7 +14,10 @@ public class BattingAverageQno9 {
         // get bats from the user
         System.out.println("Please enter the number of bats");
         double bats = in.nextInt();
+        batAvg(hits, bats);
+    }
 
+    static void batAvg(double hits, double bats) {
         // calculate the batting average
         // double batAvg = (hits / bats) * 100; // Idk what is the correct formula and
         // what is this batting avg but nvm, I know how to do these calculations in java

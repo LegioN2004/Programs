@@ -1,7 +1,7 @@
 // TODO: extend this program to have if else statement to add as many subjects and theirs marks as desired and when the user
 // presses done it auto takes the no of subjects and calculates and  gives the avg
 
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -25,7 +25,10 @@ public class CompoundInterestQno11 {
         // System.out.print("Please enter the no of times per year that interest is
         // compounded -> ");
         // int cmpdYrs = in.nextInt(); // n
+        interest(prinAmt, intRate, years);
+    }
 
+    static void interest(double prinAmt, double intRate, int years) {
         double futValue = prinAmt * Math.pow((1 + intRate / 100), years); // A
 
         // System.out.println("The future value is: " + futValue); // don't know even if

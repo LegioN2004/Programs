@@ -1,4 +1,4 @@
-package ConditionalsAndLoops.IntermediateJavaPrograms;
+package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
@@ -11,14 +11,18 @@ public class PowerCalcQno7 {
         float a = in.nextFloat();
         System.out.print("Enter the power that you want to calculate: ");
         float b = in.nextInt();
+        calc(a, b);
+    }
+
+    static void calc(float a, float b) {
         double d = Math.pow(a, b); // using the Math class's function
         System.out.println("The calculated value of the power of the number using Math.pow() is: " + d);
         float c = 0;
         float e = a;
-        for(int i = 1; i < b; i++){
-             c = a * e;
-             a = c;
+        for (int i = 1; i < b; i++) { // the b is not running three times because
+            c = a * e;
+            a = c;
         }
-        System.out.println("The calculated value of the power of the number is: " + c);
+        System.out.println("The calculated value of the power of the number using for loop is: " + c);
     }
 }

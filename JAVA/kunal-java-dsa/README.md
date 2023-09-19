@@ -14,8 +14,9 @@
 - [x] Introduction to JAVA
 - [x] First JAVA program and basics
 - [x] Conditionals and loops
+- [x] Functions / Methods in java
   
 ## and pending
-- [ ] Functions / Methods in java
+- [ ] Arrays and ArrayLists
 - [ ] rest ......................
 

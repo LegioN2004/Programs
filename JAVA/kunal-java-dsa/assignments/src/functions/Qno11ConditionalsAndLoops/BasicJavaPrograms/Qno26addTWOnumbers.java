@@ -1,6 +1,6 @@
 package functions.Qno11ConditionalsAndLoops.BasicJavaPrograms;
 
-public class addTWOnumbers {
+public class Qno26addTWOnumbers {
     public static void main(String[] args) {
         int a = 9889, b = 100;
         int c = a + b;
