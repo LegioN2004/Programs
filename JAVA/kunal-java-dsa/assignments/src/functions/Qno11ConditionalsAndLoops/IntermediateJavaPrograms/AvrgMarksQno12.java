@@ -5,7 +5,7 @@ package functions.Qno11ConditionalsAndLoops.IntermediateJavaPrograms;
 
 import java.util.Scanner;
 
-public class AvgMarksQno12 {
+public class AvrgMarksQno12 {
 	public static void main(String[] args) {
 		System.out.println("Calculating the average marks for some subjects");
 		Scanner in = new Scanner(System.in);

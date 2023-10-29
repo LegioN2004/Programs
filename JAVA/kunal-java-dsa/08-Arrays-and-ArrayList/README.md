@@ -196,13 +196,11 @@ int[][] arr = { // (easy way) directly adding the values
   - individual size of array can vary as well because each array itself is a different object created in the memory.
   - example:
 
-    ```java
-
-{ 1, 2, 3 },
-{ 4, 5 },
-{ 7, 8, 9, 10, 11 }
-
-```
+  ```java
+    { 1, 2, 3 },
+    { 4, 5 },
+    { 7, 8, 9, 10, 11 }
+  ```
 
 - 2D array input:
 
@@ -232,6 +230,7 @@ for (int row = 0; row < 3; row++) {
 - firstly for row = 0 it will take the input, then it'll go for the column input and that is also 0 so it'll go for the first 1*1 index of the matrix and fill the value there, then it will go for the second column of the first row and fill it then the loop ends for the 0th index of the array and 0th index of the column. Now similarly row will be incremented and then the values for the second row will be added and the loop for the columns will run again as the first time. `arr[row].length`
 - Firstly we take the size of the array as the one that will continue the rows loop, then inside that loop we'll take the size of the array of the 0th index or as such as the size that will take the size of columns correctly. Now in the example total size of the array is 3, so the loop will get the value using the arr.length then it'll run till the 2nd index and then it will go to the next iteration where it'll use the size of the first index of an array using arr.row.length and using those it'll print the columns.
 - `arr[row].length` = no of columns in that index of an array. It says individual size of the rows only we need that many amount of columns. If first row has 3 columns run the for loop for the input 3 times, if it has 2 columns then run the for loop for the columns 2 only and respectively
+<!-- - **NOTE**: here row literally means the keyword row, and not row number. Same goes for col -->
 
 - Now for the output part
 

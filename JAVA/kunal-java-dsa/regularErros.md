@@ -97,4 +97,6 @@ n /= 10;
 
     If your code is causing an error, it might be due to another issue, such as a NullPointerException if greeting(a) returns null. Ensure that the greeting function always returns a non-null string to avoid such errors.
 
-- You can do function calls for 2 or three or more arguments/parameters and they'll follow the order and sequence while running i.e it'll first run the first function that takes a param and passes the consecutive argument, run the function properly come back and then again run the following same function but for different arguments/parameters which has been provided after that, and it'll surely help. 
+- You can do function calls for 2 or three or more arguments/parameters and they'll follow the order and sequence while running i.e it'll first run the first function that takes a param and passes the consecutive argument, run the function properly come back and then again run the following same function but for different arguments/parameters which has been provided after that, and it'll surely help.
+
+- The error "primitive int n doesn't have a field length in Java" means that you are trying to use the length() method on a primitive int type. Primitive types do not have methods because they are not objects in Java. To fix this error, you can use the length property of an int array instead.

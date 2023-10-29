@@ -54,5 +54,6 @@ public class CalcCGPAQno10 {
 		}
 		System.out.println(
 				"So the 1st subject, " + sub1 + "'s marks is: " + marks + " and its grade point is -> " + gradePts);
+		return gradePts;
 	}
 }
