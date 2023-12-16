@@ -9,11 +9,12 @@
 // console.log(value);
 // console.log(value2);
 
-// goal is to show everything in a single function call 
+// goal is to show everything in a single function call
 // but you are only allowed to do a single function call
-function sum(num1, num2, fnToCall) {
+function sum(num1, num2, fnToCall, secFn) {
 	let result = num1 + num2;
 	fnToCall(result); // and as such we can directly do a fnToCall(result) which will run all the functions
+	secFn(2);
 }
 
 function displayResult(data) {
@@ -24,6 +25,9 @@ function displayResultPassive(data) {
 	console.log("sum's result is: " + data);
 }
 
-const ans = sum(1, 2, displayResult); // a function goes as an argument to another function as a arg
+const ans = sum(1, 2, displayResult, function (a) {
+	console.log('this is an anonymous function result');
+	console.log(a + 1);
+}); // a function goes as an argument to another function as a arg
 // displayResult(ans);
 // why is this good: Bc now we can change what function should get called, pass it as an argument and that will get called

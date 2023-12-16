@@ -16,11 +16,10 @@ function objectMethods(obj) {
 
   let newObj = Object.assign({}, obj, { newProperty: "newValue" });
   console.log("After Object.assign():", newObj);
-
-
 }
 
 // Example Usage for Object Methods
+// so these are objects that are declared 
 const sampleObject = {
   key1: "value1",
   key2: "value2",

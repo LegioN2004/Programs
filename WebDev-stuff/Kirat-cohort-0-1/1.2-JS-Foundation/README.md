@@ -74,7 +74,7 @@ Function let you do
 
 ```javascript
 function name_of_fn(arguments, arguments, ..){ // .. means more agrs if you want to add separated by commas
-    return something_with_operation_with_args;
+  return something_with_operation_with_args;
 }
 
 const some_var = name_of_fn(arguments, arguments, ..) // to store the value of the function
@@ -82,6 +82,7 @@ console.log(some_var);
 ```
 
 - Once a function is defined, it will run and come till the function and skip till the function call and once it is called it'll check the values with the function run everything inside then return the output to the variable or directly printout.
+- **note**: functions in javascript can take numbers, strings, boolean, and even function as arguments
 
 #### Callbacks
 
@@ -140,6 +141,22 @@ const houseNumber = address["houseNumber"]
 
 This is how we create metadata inside the functions and access them, they first console-log way feels crammed with all the details but separating half of them using variables make it much easier to use when they are really big
 
+#### Anonymous functions
+
+A function that doesn't have a name is called anonymous function
+
+- This kind of function is a function which can be literally defined inside the function declaration parentheses, so we don't even need to define a function with a name outside and just call it, something like the following
+
+```js
+function sum(num1, num2, fnToCall, secFn) {
+ let result = num1 + num2;
+ fnToCall(result); // and as such we can directly do a fnToCall(result) which will run all the functions
+ secFn(2); // this prints the given sentence and 3
+}
+const ans = sum(1, 2, displayResult, function (a) {
+ console.log('this is an anonymous function result');
+ console.log(a + 1);
+}); // a function goes as an argument to another function as a arg
 ```
 
-```
+- the reason it doesn't need a name because we'll never be able to call it with its name from the outside and as such it doesn't need a name
