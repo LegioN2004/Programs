@@ -133,7 +133,7 @@ console.log(mergedArray);
 
 ### forEach()
 
-`forEach()` function says that give it a function( user defined one logThing()) that takes a string as an input and it is going to call this function for every element(if element is [1, 2, 3] then it'll call three) of this array. It is similar to a for loop but its syntax is a little complex because it expects a function as an argument i.e callbacks
+`forEach()` function says that give it a function(user defined one logThing()) that takes a string as an input and it is going to call this function for every element(if element is [1, 2, 3] then it'll call three) of this array. It is similar to a for loop but its syntax is a little complex because it expects a function as an argument i.e callbacks
 
 ```javascript
 const initArray = [1, 2, 3];
