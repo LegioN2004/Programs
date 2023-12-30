@@ -203,10 +203,15 @@ readMyFile(onDone);
 ```javascript
 // syntax of promises
 function hello() {
+  // let p = new Promise(function (resolve) { // or you can assign a variable to the object value and then return that to the call
+  // console.log("hello from inside the function");
   return new Promise(function (resolve) {
+    // console.log("hello from inside the promise");
     fs.readFile("a.txt", "utf-8", function (err, data) {
+      // console.log("hello from before resolve");
       resolve(data);
     });
+    // return p;
   });
 }
 
@@ -215,8 +220,46 @@ function onDone(data) {
 }
 
 hello().then(onDone);
+// let a = hello(); // you can assign a variable to the hello function and *
+// console.log(a);
+// a.then(onDone); // *can do this too
+
+// ------------- the output of the above code
+hello from inside the function
+hello from inside the promise
+Promise { <pending> }
+hello from before resolve
+hi there byeeeeeeeeeeeeeeeeeeeeeeeeeeee
 ```
 
-- syntax breakdown
-  - return new promise: creates an instance of the promise class i.e creating an object(with the new keyword), just like a new Date
-  - first argument: promises takes a function as an argument and that function takes "resolve" as an argument
+- **syntax breakdown**
+
+  1. When the control reaches the function call `hello()` then it will go to the function, then
+  2. return new promise: creates an instance of the promise class i.e creating an object(with the new keyword), just like a new Date
+  3. first parameter(`function(resolve)`): promises takes a "function" as a parameter and that function takes "resolve"(can be any other name) as a parameter
+  4. and a return statement with resolve which passes the param to the then as an arg to run then do the further stuff from then as a arg
+  5. It is a class(which makes callbacks and async functions slightly more readable) like Date but only when you define it then it'll need the first argument function as an argument and the first argument of function as a variable which can be of any name.
+  6. You can also define a promise outside of a function, it doesn't need a function to be used.
+  7. At a high level, promises have three stages pending, resolved and rejected
+
+  - if a promise shows "pending", it means that the function arg hasn't been called
+  - if a promise shows "undefined", then it means that the function arg has been called but hasn't returned any data.
+  - The function call returns an instance of the promise and as such it prints the `Promise { <pending> }` output in the console and it means literally waiting for the next stuff
+  - on the parent function call of promise it synchronously returns a promise to the call so we can log it, but the data of resolve comes asynchronously
+  - Then it runs the `.then()` (which says where to send that resolve argument/data) with an argument as a function which means that if the logic inside the promise is done i.e if fs has done reading the file then it'll run go to resolve (which is a callback to the then function which itself callbacks to another function that was passed as an argument to then i.e onDone and at last it logs itself out).
+  - `.then()` is called when the async function resolves
+  - Resolve and then(function/anything) is closely related, whatever passes into the resolve reaches inside the then() and then it runs the corresponding logic be it another function and its logic or data.
+
+- An example promise that immediately resovles:
+
+```javascript
+let p = new Promise(function (resovles) {
+  resovles("hi there");
+});
+
+p.then(function () {
+  console.log(p);
+});
+```
+
+- output: `Promise { 'hi there'}`

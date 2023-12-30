@@ -13,10 +13,18 @@ const fs = require("fs"); // this is how to import a module to different tasks, 
 // console.log("hi there 2");
 
 function hello() {
+  console.log("hello from inside the function");
   return new Promise(function (resolve) {
-    fs.readFile("a.txt", "utf-8", function (err, data) {
-      resolve(data);
-    });
+    console.log("hello from inside the promise");
+    // fs.readFile("a.txt", "utf-8", function (err, data) {
+    //   console.log("hello from before resolve");
+    //   resolve(data);
+    // });
+    let a = 0;
+    for (let i = 0; i < 1000000000; i++) {
+      a++;
+    }
+    resolve(a);
   });
 }
 
@@ -24,4 +32,5 @@ function onDone(data) {
   console.log(data);
 }
 
-hello().then(onDone);
+let a = hello();
+a.then(onDone);
