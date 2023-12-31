@@ -34,3 +34,26 @@ function onDone(data) {
 
 let a = hello();
 a.then(onDone);
+
+// promise that instantly resovles ----------------------------------------------------------
+let p = new Promise(function (resovles) {
+  console.log("async function that resolves instantly");
+  resovles("hi there");
+});
+
+p.then(function () {
+  console.log(p); // p stores this: Promise { 'hi there' }
+  // but if we give a value in .then() and then print that variable then it prints out: hi there
+});
+
+// async function with a promise that instantly resovles ----------------------------------------------------------
+function asyncFunction() {
+  console.log("async function that resolves instantly");
+  return new Promise(function (resovles) {
+    resovles("hi there2");
+  });
+}
+
+asyncFunction().then(function (data) {
+  console.log(data);
+});

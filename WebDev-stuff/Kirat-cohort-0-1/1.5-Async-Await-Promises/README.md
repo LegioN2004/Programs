@@ -250,7 +250,7 @@ hi there byeeeeeeeeeeeeeeeeeeeeeeeeeeee
   - `.then()` is called when the async function resolves
   - Resolve and then(function/anything) is closely related, whatever passes into the resolve reaches inside the then() and then it runs the corresponding logic be it another function and its logic or data.
 
-- An example promise that immediately resovles:
+- An example of promise that immediately resovles:
 
 ```javascript
 let p = new Promise(function (resovles) {
@@ -262,4 +262,169 @@ p.then(function () {
 });
 ```
 
-- output: `Promise { 'hi there'}`
+- output: `Promise { 'hi there'}` because the p gets an instance of the promise, so it prints out like that. If we give a param to store the value of p inside the `.then(function(param))` then printing out the var gives the actual value i.e: hi there
+
+- An example of a function having a promise inside that immediately resovles:
+
+```javascript
+// async function with a promise that instantly resovles ----------------------------------------------------------
+function asyncFunction() {
+  console.log("async function that resolves instantly");
+  return new Promise(function (resovles) {
+    resovles("hi there2");
+  });
+}
+
+asyncFunction().then(function (data) {
+  console.log(data);
+});
+```
+
+- output: `hi there` because we give a param to store the value of the promise and then return it to the asyncFunction() which uses the `.then(function(param))` to print out the var which gets the resolved value and prints out the actual value i.e: hi there
+
+- **Why even make an async function in the above, we could have used a simple function for the above**: Because that works as desired, for example: If we're to make a async function that waits for 2 secs and then resovle, in that case we can do this like the following
+
+1. Async function(promisified version of the simple function given below)
+
+```javascript
+function asyncFunction() {
+  let p = new Promise(function (resolve) {
+    setTimeout(resolve, 2000);
+  });
+  return p;
+}
+
+const value = asyncFunction();
+value.then(function () {
+  console.log("hi there");
+});
+```
+
+2. Simple function
+
+```javascript
+function asyncFunction() {
+  setTimeout(callback, 2000);
+}
+
+asyncFunction(function () {
+  console.log("hi there");
+});
+```
+
+### Async Await: The real benefit of promises, why everyone loves it
+
+- It is again syntactical sugar but it still uses callbacks/promises, call-stack, event loop and other stuff under the hood.
+
+- the normal syntax goes something like
+
+```javascript
+function asyncFunction() {
+  let p =  new Promise(function (resovles) {
+    // do some async logic here only then it makes sense to use async
+    resovles("hi there2");
+  });
+  return p;
+}
+
+function main() {
+  asyncFunction().then(function(resolve){
+    console.log(resolve);
+  })
+});
+
+main();
+```
+
+- The async await syntax goes something like the following
+
+```javascript
+function asyncFunction() {
+  let p = new Promise(function (resovles) {
+    // do some async logic here only then it makes sense to use async
+    resovles("hi there");
+  });
+  return p;
+}
+
+async function main() {
+  let value = await asyncFunction(); // if we don't add await then it prints something out of the three such as pending undefined or anything else according to the promise and the logic inside since the function call of the promise only returns an instance of the promise
+  console.log(value);
+}
+
+main();
+```
+
+- first of all we need to make the function that will contain the promise
+- Then we'll need to add the function "main" which we can specify it to be 'async' by just adding the keyword to the front, then remove the .then() and then let value = the function and in front if we add await which then prints out the final result of the resolved variable and if we don't log out then the control will not go beyond it.
+- As such we won't have to use the callbacks even if we are using an async function and the `.then()` function too
+- This is a more clearer version of promise
+- note: in the let value where the await happens, the thread gets stuck for the async stuff that is happening inside the async function but the main thread is always available for sync stuff so if there is anything synchronous outside after the main function then it'll run it first regardless of what happens with the async. But in case of `.then()` if something inside its function has some logic that can run immediately then it'll run regardless of the. (more clear exaplanation below with some examples)
+- note: When main() is called at the end of the file, it initializes the async operation and then proceeds to execute the next statement (console.log("hello out side of the main")). Since it is not inside the async function, it is executed immediately after the main() is invoked, irrespective of the asynchronous operation inside the asyncFunction.
+
+- more examples
+
+```javascript
+function asyncFunction() {
+  let p = new Promise(function (resovles) {
+    // do some async logic here only then it makes sense to use async
+    resovles("hi there1");
+    setTimeout(function () {
+      console.log("hi there2");
+    }, 3000);
+  });
+  return p;
+}
+
+async function main() {
+  let value = await asyncFunction();
+  console.log(value)
+  // asyncFunction().then(function (data) {
+  // console.log(data);
+  // });
+  console.log("hello");
+}
+
+main();
+console.log("hello out side of the main");
+
+
+// -- output --
+hello
+hello out side of the main
+hi there1 // waits here till 3 secs then runs the next
+hi there2
+```
+
+- In the above examples we are using both the async await and the promise syntax, but there is a notable difference between them
+
+  - First is that the async await waits i.e somewhere put in the webAPI, and while it is there the stack continues and the controle reaches after the main function and prints the log outside and after the promise is resolved it runs the rest of the code after the await function inside its scope, sure the logic is stuck but its a decision that the JS people made. When we do async await it is the same as the promise with .then function then its value in this case it also waits for the setTimeout timing to complete in order to print what's next in the .then function
+  - because it wants the logic after that to wait ofcourse we are talking within the scope of the braces of the promise and the async-await respectively
+
+- Again it is just syntactical sugar, makes the code more readable and than callbacks/promises and usually used on the caller side, and not on the side where we define an async function, the caller needs to be an async function with async been written explicitly so as to use await, since it needs to be used in an async function.
+
+- synchronous log does not output first, even when using a promise inside the async function, is because the asynchronous code inside the asyncFunction is non-blocking. In the code, the asyncFunction returns a Promise and schedules a setTimeout to execute after 3 seconds. The main function then executes asyncFunction() and logs "hello". However, since the asyncFunction uses setTimeout, the logging of "hi there2" will be queued to execute after 3 seconds, and the main function, being asynchronous, will continue to execute without waiting for the setTimeout to complete. This means that the "hello" log will be displayed before the "hi there2" log, even though the "hi there2" log is queued to execute after the "hello" log, due to the non-blocking nature of setTimeout. If you want to ensure that "hello" is only displayed after "hi there2", you can use the await keyword to pause the execution of the main function until the Promise returned by asyncFunction is resolved. This would ensure that "hi there2" is logged before "hello".
+
+- When using async/await and promises in JavaScript, there are several key points to keep in mind:
+
+1. Async/Await
+
+- The async keyword is used to define an asynchronous function, which enables the use of the await keyword inside it.
+- The await keyword is used to pause the execution of the async function until the promise is resolved, and it can only be used inside an async function.
+- Async functions always return a promise, and the resolved value of the promise will be the value returned by the async function.
+- Async/await simplifies the syntax for writing asynchronous code and makes it look more like synchronous code.
+  Promises
+
+2. Promises
+
+- Promises are used to handle asynchronous operations in JavaScript.
+- They represent a value that may be available now, or in the future, or never.
+- A promise can be in one of three states: pending, fulfilled, or rejected.
+- When the asynchronous operation is completed, the promise is either resolved (fulfilled) with a value, or rejected with a reason (an error).
+- Promises provide a cleaner way to organize and handle asynchronous code compared to traditional callback functions.
+
+3. Differences between async/await and Promises:
+
+- Syntax: Async/await uses a more synchronous-style syntax, making the code easier to read and maintain. Promises use a more explicit chaining syntax with .then() and .catch() methods.
+- Error Handling: With async/await, error handling is done via try/catch blocks, making it more intuitive and clearer. Promises handle errors via the .catch() method, which requires separate error handling logic.
+- Chaining: Promises are generally used with chaining .then() and .catch() for multiple asynchronous operations. Async/await makes it easier to write and understand asynchronous code by allowing sequential and easier error handling.
