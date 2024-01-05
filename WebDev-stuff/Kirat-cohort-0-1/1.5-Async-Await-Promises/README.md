@@ -428,3 +428,228 @@ hi there2
 - Syntax: Async/await uses a more synchronous-style syntax, making the code easier to read and maintain. Promises use a more explicit chaining syntax with .then() and .catch() methods.
 - Error Handling: With async/await, error handling is done via try/catch blocks, making it more intuitive and clearer. Promises handle errors via the .catch() method, which requires separate error handling logic.
 - Chaining: Promises are generally used with chaining .then() and .catch() for multiple asynchronous operations. Async/await makes it easier to write and understand asynchronous code by allowing sequential and easier error handling.
+
+### Some misc stuff found after solving the week 0 problems
+
+#### Regex
+
+Regular expressions (regex) are powerful tools for pattern matching and string manipulation. Here are some commonly used regex patterns and concepts that can be helpful in solving various problems:
+
+1. **Literal Characters:**
+
+   - Matching a specific character: `a` matches the character 'a' exactly.
+
+2. **Character Classes:**
+
+   - `[aeiou]` matches any vowel.
+   - `[^aeiou]` matches any non-vowel.
+   - `\d` matches any digit (equivalent to `[0-9]`).
+   - `\D` matches any non-digit.
+   - `\w` matches any word character (equivalent to `[a-zA-Z0-9_]`).
+   - `\W` matches any non-word character.
+   - `\s` matches any whitespace character.
+   - `\S` matches any non-whitespace character.
+
+3. **Quantifiers:**
+
+   - `*` matches 0 or more occurrences.
+   - `+` matches 1 or more occurrences.
+   - `?` matches 0 or 1 occurrence.
+   - `{n}` matches exactly n occurrences.
+   - `{n,}` matches n or more occurrences.
+   - `{n,m}` matches between n and m occurrences.
+
+4. **Anchors:**
+
+   - `^` asserts the start of a line.
+   - `$` asserts the end of a line.
+   - `\b` asserts a word boundary.
+
+5. **Escape Characters:**
+
+   - `\` is used to escape special characters. For example, `\.` matches a literal dot.
+
+6. **Grouping and Capturing:**
+
+   - `( )` is used for grouping and capturing. Captured groups can be referenced later.
+
+7. **Alternation:**
+
+   - `|` represents alternation, allowing the matching of either one pattern or another.
+
+8. **Modifiers:**
+
+   - `i` performs case-insensitive matching.
+   - `g` performs a global search, finding all matches rather than stopping after the first match.
+
+9. **Character Escapes:**
+
+   - `\t` matches a tab character.
+   - `\n` matches a newline character.
+   - `\r` matches a carriage return character.
+
+10. **Lookahead and Lookbehind:**
+    - `(?=...)` is a positive lookahead.
+    - `(?!...)` is a negative lookahead.
+    - `(?<=...)` is a positive lookbehind.
+    - `(?<!...)` is a negative lookbehind.
+
+These are some foundational regex concepts, and mastering them can greatly enhance your ability to work with strings in programming. Remember that practice and experimentation are key to becoming proficient with regular expressions. Additionally, there are online tools and websites that allow you to test and visualize your regex patterns, making the learning process more interactive.
+
+#### String equality and inequality
+
+The `===` and `!==` are strict equality and strict inequality operators in JavaScript. They are similar to the more common `==` (equality) and `!=` (inequality) operators, but with an important difference.
+
+- **`===` (Strict Equality):** This operator checks both value and type equality. It returns `true` if the operands are of the same type and have the same value. For example:
+
+  ```javascript
+  5 === "5"; // false (number and string, different types)
+  5 === 5; // true (number and number, same type and value)
+  ```
+
+- **`!==` (Strict Inequality):** This operator checks both value and type inequality. It returns `true` if the operands are of different types or have different values. For example:
+  ```javascript
+  5 !== "5"; // true (number and string, different types)
+  5 !== 5; // false (number and number, same type and value)
+  ```
+
+The key difference from `==` and `!=` is that the strict equality/inequality operators do not perform type coercion. They require both the value and the type to be the same for the comparison to be true.
+
+- **`==` (Equality):** This operator performs type coercion, meaning it tries to convert operands to the same type before making the comparison. For example:
+
+  ```javascript
+  5 == "5"; // true (number and string, after coercion)
+  ```
+
+- **`!=` (Inequality):** This operator also performs type coercion. For example:
+  ```javascript
+  5 != "5"; // false (number and string, after coercion)
+  ```
+
+Using strict equality/inequality (`===` and `!==`) is generally considered good practice in JavaScript because it avoids unexpected type coercion issues. It helps write more predictable and less error-prone code. While these operators are commonly used in JavaScript, other programming languages may have similar strict equality/inequality concepts.
+
+#### Try-Catch statements
+
+The `try...catch` statement in JavaScript is used to handle exceptions or errors that may occur during the execution of a block of code. It allows you to define a block of code to be tested for errors while providing a mechanism to handle these errors gracefully.
+
+Here's the basic syntax:
+
+```javascript
+try {
+  // Code that might throw an exception or error
+  // ...
+} catch (error) {
+  // Code to handle the exception or error
+  // ...
+} finally {
+  // Code that will be executed regardless of whether an exception occurred or not
+  // ...
+}
+```
+
+- The `try` block contains the code that you want to monitor for errors.
+- If an exception occurs within the `try` block, the control is transferred to the `catch` block.
+- The `catch` block contains the code that will be executed when an exception occurs. The `error` parameter represents the exception object and can be used to obtain information about the error.
+- The `finally` block contains code that will be executed regardless of whether an exception occurred or not. This block is optional.
+
+Here's an example:
+
+```javascript
+try {
+  // Code that might throw an exception
+  const result = 10 / 0; // This will throw a division by zero error
+  console.log(result); // This line will not be executed
+} catch (error) {
+  // Code to handle the exception
+  console.error("An error occurred:", error.message); // Print the error message
+} finally {
+  // Code that will be executed regardless of whether an exception occurred or not
+  console.log("This will always run");
+}
+```
+
+In this example, the division by zero will throw an exception, and the control will be transferred to the `catch` block, printing an error message. The `finally` block will always run, regardless of whether an exception occurred.
+
+It's important to note that catching specific types of errors is possible. You can have multiple `catch` blocks, each handling a specific type of exception. This allows you to handle different errors in different ways.
+
+#### isNaN function
+
+`isNaN` stands for "is Not-a-Number." It's a JavaScript function used to determine whether a value is not a numeric value. It returns `true` if the value is `NaN` (Not-a-Number), and `false` otherwise.
+
+Here's how you can use `isNaN`:
+
+```javascript
+isNaN(123); // false (123 is a number)
+isNaN("hello"); // true ("hello" is not a number)
+isNaN(NaN); // true (NaN itself is not a number)
+isNaN("123"); // false (the string "123" can be converted to a number)
+```
+
+Things to note:
+
+- `isNaN` tries to convert the value to a number before checking if it's `NaN`.
+- It returns `true` if the value cannot be converted to a number or is already `NaN`.
+- When you pass a non-numeric value like a string that doesn't represent a valid number, it returns `true`.
+- `NaN` is a special global value in JavaScript that represents an unrepresentable value as a number.
+
+However, there are some behaviors to be aware of:
+
+- `isNaN` can produce unexpected results when used with non-numeric values like empty strings (`""`) or objects. For example, `isNaN("")` returns `false`.
+- To check if a value is a valid number without relying on `isNaN`, you can use `Number.isNaN()` (introduced in ECMAScript 6) or `typeof` to specifically check if the type is `'number'`.
+
+Example:
+
+```javascript
+Number.isNaN(123); // false (123 is a number)
+Number.isNaN("hello"); // false ("hello" is not a number)
+Number.isNaN(NaN); // true (NaN itself is not a number)
+Number.isNaN("123"); // false (the string "123" can be converted to a number)
+
+typeof 123 === "number"; // true (123 is a number)
+typeof "hello" === "number"; // false ("hello" is not a number)
+```
+
+`Number.isNaN()` is more strict and doesn't perform type coercion, making it a more reliable method to check for `NaN`.
+
+##### fs.writeFile
+
+The `fs.writeFile` function in Node.js is used to asynchronously write data to a file. It is part of the `fs` (file system) module, which provides an API for interacting with the file system.
+
+Here's the basic syntax of `fs.writeFile`:
+
+```javascript
+const fs = require("fs");
+
+fs.writeFile(file, data, options, callback);
+```
+
+- `file`: A string representing the file name or the file descriptor.
+- `data`: The data to be written to the file. It can be a string or a buffer.
+- `options`: An optional object that can include encoding, mode, and flag options.
+- `callback`: A callback function that will be called once the file has been written or an error occurs. The callback has the signature `(err)`.
+
+Here's an example of using `fs.writeFile`:
+
+```javascript
+const fs = require("fs");
+
+const content = "Hello, this is some content!";
+const fileName = "example.txt";
+
+fs.writeFile(fileName, content, "utf8", (err) => {
+  if (err) {
+    console.error("Error writing to file:", err);
+  } else {
+    console.log("File has been written successfully.");
+  }
+});
+```
+
+In this example:
+
+- `fileName`: The name of the file to be created or updated.
+- `content`: The data to be written to the file.
+- `'utf8'`: The encoding used to write the file. Here, it's UTF-8.
+- The callback function is executed after the operation is complete. If there is an error, it will be passed to the `err` parameter.
+
+Remember that `fs.writeFile` will overwrite the file if it already exists, and if the file doesn't exist, a new file will be created. If you want to append data to a file, you might want to use `fs.appendFile`.

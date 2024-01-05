@@ -135,6 +135,20 @@ console.log(mergedArray);
 
 `forEach()` function says that give it a function(user defined one logThing()) that takes a string as an input and it is going to call this function for every element(if element is [1, 2, 3] then it'll call three) of this array. It is similar to a for loop but its syntax is a little complex because it expects a function as an argument i.e callbacks
 
+- The forEach method in JavaScript is used to iterate over the elements of an array and applies a provided function to each element. It takes a callback function as an argument, and this callback function is called once for each element in the array.
+  Here's the basic syntax of forEach:
+
+```javascript
+array.forEach(callback(currentValue, index, array) {
+  // Your logic here
+});
+```
+
+- callback: The function to execute for each element.
+- currentValue: The current element being processed in the array.
+- index: The index of the current element.
+- array: The array that forEach is being applied to.
+
 ```javascript
 const initArray = [1, 2, 3];
 function logThing(arr) {
@@ -144,5 +158,55 @@ initArray.forEach(logThing);
 ```
 
 - weird javascript logic
+
+### splice()
+
+The `splice()` function in JavaScript is used to modify the contents of an array by removing or replacing existing elements and/or adding new elements. Here are some key points about the `splice()` function:
+
+1. **Syntax:**
+
+   ```javascript
+   array.splice(start, deleteCount, item1, item2, ...);
+   ```
+
+2. **Parameters:**
+
+   - **start:** The index at which to start changing the array.
+   - **deleteCount:** The number of elements to remove from the array.
+   - **item1, item2, ...:** Elements to add to the array at the specified index.
+
+3. **Return value:**
+
+   - An array containing the deleted elements.
+
+4. **Modifying the array:**
+
+   - The `splice()` method changes the original array in place.
+
+5. **Removing elements:**
+
+   - To remove elements, set `deleteCount` to the number of elements you want to delete. If `deleteCount` is 0, no elements are removed.
+   - The index is added at first from where the deletion will start and the next arg determines how many times the deletion should happen from the specified index(note: the deletion starts from the index itself and not after the index)
+   - If there are many items that are added then it'll be added after the specified index, if the no of items are equal to the no of deletions that will happen then the new additons will just take place of the old ones and if not then it will get added after the specified index before the old elements.
+
+6. **Adding elements:**
+
+   - You can add elements by specifying them as additional arguments after `deleteCount`.
+
+7. **Example:**
+
+   ```javascript
+   const fruits = ["apple", "banana", "orange", "grape"];
+   const removed = fruits.splice(1, 2, "kiwi", "melon");
+
+   // Result:
+   // fruits: ['apple', 'kiwi', 'melon', 'grape']
+   // removed: ['banana', 'orange']
+   ```
+
+8. **Dynamic use:**
+   - You can use variables to dynamically determine the `start`, `deleteCount`, and elements to be added or removed.
+
+The `splice()` function is a powerful and versatile method for manipulating arrays in JavaScript.
 
 ### map() filter() find() and sort() important in the next video

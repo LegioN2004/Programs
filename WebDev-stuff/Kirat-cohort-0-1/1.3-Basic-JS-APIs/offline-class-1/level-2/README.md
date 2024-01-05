@@ -23,7 +23,7 @@ console.log("animal " + dog["name"] + " " + dog["speaks"]);
 console.log("animal " + cat["name"] + " " + cat["speaks"]);
 ```
 
-- now what we are seeing here is that for animal we know that they'll have the same set of properties and they'll have some similar functions they need to run only the body of the functino will change and also here these properties are being used two times but separately and logged out two times separately as well. The same goes for functions too, even if we use them they'll still be needed to call two times as well. So to solve this issue we can use classes, i.e why not combine this together and give a structure to every animal and provide that.
+- now what we are seeing here is that for animal we know that they'll have the same set of properties and they'll have some similar functions they need to run only the body of the function will change and also here these properties are being used two times but separately and logged out two times separately as well. The same goes for functions too, even if we use them they'll still be needed to call two times as well. So to solve this issue we can use classes, i.e why not combine this together and give a structure to every animal and provide that.
 
 - Class in CS means give out a structure of something that is reusable and can used in multiple places
 - Object is the one that is created after the class declaration and then called accordingly to create the object that'll do some work
@@ -51,6 +51,7 @@ dog.speak(); // call function on object
 - What this class contains
   1. first it'll have some attributes (say eg: no of flooors, color, etc)
   2. the functions that will do some work that is happening in the object(say eg: flush the sewerage down the drain out of the building)
+  3. the function that is used here is of the shorthand syntax style i.e not using the function keyword, it is done because in a class a function is a method and a method is declared using the shorthand style syntax. Also this declaring a function inside a class and using that outside of the function to pass some values and do stuff here and there is termed a encapuslation, a OOPS concept, and using encapuslation we can use the values passed from the class object declaration to the class and then again to the method inside the class so as to make use of code reusablity
 - This is good because there are a few functions that we know that will contain the same kind of properties, for eg: speak() function that both of them will have, etc.
 - This is cool because everything that has been created is in the blueprint and we won't have to make a no of separate functions and call them separately to make these work, rather we can say that everything that we need has been put together in the class and who needs to create an animal (in our example) can call this class with the required values.
 
