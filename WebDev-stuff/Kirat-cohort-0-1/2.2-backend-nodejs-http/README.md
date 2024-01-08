@@ -136,6 +136,7 @@ These are all the methods and theirs best practices/conventions written aside, d
 2. 404: page/route not found
 3. 403: authentication issues, wrong/updated/changed cookie, i.e access to the requested resource is forbidden
 4. 500: internal server error, something like the server crashes or some server related issues
+5. 411: inputs were incorrect, like wrong query, etc
 
 These are all the status codes and theirs best practices/conventions written aside, doesn't have to be as it is but it is good to follow them
 

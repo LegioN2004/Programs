@@ -43,6 +43,4 @@ if (hour === 0 && prepend === "AM") {
   }
 }
 
-console.log(
-  "Current time is : " + hour + prepend + "AM : " + mins + ": " + secs,
-);
+console.log("Current time is= " + hour + ": " + mins + ": " + secs + prepend);
