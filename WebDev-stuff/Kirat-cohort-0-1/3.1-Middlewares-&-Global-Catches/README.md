@@ -80,7 +80,7 @@ app.get(
   kidneyValidator,
   function (req, res) {
     res.send("your heart is healthy");
-  },
+  }
 );
 
 app.get(
@@ -89,7 +89,7 @@ app.get(
   kidneyValidator,
   function (req, res) {
     res.send("your kidney is healthy");
-  },
+  }
 );
 
 app.get("/heart-checkup", userMiddleware, function (req, res) {
@@ -113,7 +113,7 @@ app.get(
   },
   function (req, res) {
     console.log("This is the log from req2");
-  },
+  }
 );
 ```
 
@@ -648,7 +648,7 @@ Using libraries
 
 we have to create the backend logic for a server that is somehow connected to this database. the end users can send one fo three requests1
 
-1. /singup: where they give us username, password and first name and when they give us this we have to keep it in the database provided someone with the same data already doesn't exist.
+1. /signup: where they give us username, password and first name and when they give us this we have to keep it in the database provided someone with the same data already doesn't exist.
 2. /signin: our backend need to check does this user exist in the db and is the password correct and if both of the conditions meet then send them the jwt. else stop them
 3. /user: where we expect a header to send us the jwt that they got here, hit the db and return back the data to the user that is asking for it.
 
@@ -824,7 +824,7 @@ Remember to handle errors appropriately in real-world applications and consider 
 ```js
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/",
+  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/"
 );
 
 const Users = mongoose.model("Users", {
@@ -847,3 +847,51 @@ user.save().then(() => console.log("data sent to the database"));
 - Now at the last we can create a new user object with all the details to send to the database and we need to then use the `user_variable.save()` (.save is necessary) to instruct mongoose to send the data. If not nothing will reach the database. I guess it is a promise, so u can also use a `.then()` to send some other stuff as well
 - We can now see that the data has been entered in the database, using MongoDBCompass.
 - We can then wrap it inside a request method to get the request from the browser, and do signup/signin
+
+- http-ify a database call which does signup. It should have done CRUD, but it has one done the first two in the following example
+
+```js
+app.post("/signup", async function (req, res) {
+  const name = req.body.name;
+  const username = req.body.username;
+  const password = req.body.password;
+
+  const existingUser = await user.findOne({ email: username });
+  if (existingUser) {
+    return res.status(400).send("username already exists");
+  }
+
+  // const Users = mongoose.model("Users", {
+  //   name: name,
+  //   email: username,
+  //   password: password,
+  // });
+  const user = new Users({
+    name: name,
+    email: username,
+    password: password,
+  }); // in-memory object
+  user.save().then(() => console.log("data sent to the database"));
+  res.json({
+    msg: " user created successfully",
+  });
+});
+```
+
+### 3.2 middlewares
+
+Using middleware
+
+Express is a routing and middleware web framework that has minimal functionality of its own: An Express application is essentially a series of middleware function calls. --
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next middleware function in the application's request-response cycle. The next middleware function is commonly denoted by a variable named next
+
+Middleware functions can perform the following tasks:
+
+- Execute any code
+
+- Make changes to the request and the response objects.
+
+- End the request-response cycle.
+
+- Call the next middleware function in the stack

@@ -233,7 +233,8 @@ undefined
 ```
 
 - This post request happens from the client-side to server-side
-- We can use the postman software to send post requests by selecting the post button and the using the url in which it is to send, then at the center part we have the important stuff that is used to test out stuff such as headers, body preview, json, etc and using that we can send some of them too which makes it easy to send special server requests as well as test them live.
+- We can use the postman software to send post requests by selecting the post button and the using the url in which it is to send, then at the center part we have the important stuff that is used to test out stuff such as headers, bojust html css + one framework, js, react, express, ek data base
+dy preview, json, etc and using that we can send some of them too which makes it easy to send special server requests as well as test them live.
 
   - Also we can use send key value pair directly to give json inputs to the server
   - Headers(client-side): So here we have a `req` variable defined that takes the "request values" and using that we get an object called headers which lets us see all the headers by writing `req.headers` and loggin that out that is available on that port been sent as a post request. Also if we want to get specific values to the post request, we can specify a key and it will give the values. In the example 'authorization' is received because we specified the authorization key in the req headers parentheses.
