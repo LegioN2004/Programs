@@ -60,6 +60,7 @@ else{ return false }
 ```
 
 - So the syntax goes like `fiter(input, fitlering_function)`
+- Whenever the filtering logic returns false it just removes the stuff at that index of the array
 
 ```javascript
 const arr = [1, 2, 3, 4, 5];
