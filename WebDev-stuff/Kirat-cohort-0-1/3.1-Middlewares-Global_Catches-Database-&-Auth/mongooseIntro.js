@@ -5,7 +5,7 @@ const app = express();
 
 // mongoose logic, connectin the db and making a model in it
 mongoose.connect(
-  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/user_app" // give the correct database name by adding that after the end like a route after '.net/'
+  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/user_app", // give the correct database name by adding that after the end like a route after '.net/'
 );
 const Users = mongoose.model("Users", {
   name: String,
@@ -86,6 +86,12 @@ app.post("/signin", async function (req, res) {
       msg: "password is wrong or the user doesn't exist in our database, you need to signup first",
     });
   }
+});
+
+app.use(function errorHandler(err, req, res, next) {
+  res.status(404).json({
+    msg: "Some unknown error has happened, byeeeeeeeeeeeeeeeeee",
+  });
 });
 
 app.listen(3000);
