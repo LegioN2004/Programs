@@ -1,0 +1,29 @@
+<!-- onmouseover and onmouseout events -->
+<!doctype html>
+<html lang="en">
+  <body>
+    <div
+      onmouseover="mOver(this)"
+      onmouseout="mOut(this)"
+      style="
+        background-color: lightblue;
+        width: 120px;
+        height: 20px;
+        padding: 40px;
+      "
+    >
+      Mouse over me
+    </div>
+    <script>
+      // kind of hover events
+      // when the mouse is over it it shows the following message
+      function mOver(obj) {
+        obj.innerHTML = "Thank you";
+      }
+      // when the mouse is not over it it shows the following message
+      function mOout(obj) {
+        obj.innerHTML = "Mouse over me";
+      }
+    </script>
+  </body>
+</html>

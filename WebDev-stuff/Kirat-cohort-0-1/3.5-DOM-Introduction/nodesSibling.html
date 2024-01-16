@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div class="list">
+      <h2 class="title">Items</h2>
+      <!-- h2 is the previousSibling for ul -->
+      <!-- and ul is the nextSibling for h2 -->
+      <ul class="items">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul>
+      <p>Hello World</p>
+    </div>
+    <script type="text/javascript">
+      // fetching all the class .items i.e the whole of ul
+      const ul = document.querySelector(".title");
+      // parent Node
+      console.log(ul.childNodes[0]);
+      ul.nextElementSibling.style.color = "red"; // to make the childnode item 1 as 0 of the class items 'ul'
+      // use previousElementSibling to make the item 1 i.e before the element of index 1(item2) to red color
+    </script>
+  </body>
+</html>

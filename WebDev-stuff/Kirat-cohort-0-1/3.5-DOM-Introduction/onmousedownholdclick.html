@@ -1,0 +1,31 @@
+<!-- onmouseover and onmouseout events -->
+<!doctype html>
+<html lang="en">
+  <body>
+    <div
+      onmousedown="Down(this)"
+      onmouseup="Up(this)"
+      style="
+        background-color: lightblue;
+        width: 120px;
+        height: 20px;
+        padding: 40px;
+      "
+    >
+      click meeeeeeeee
+    </div>
+    <script>
+      // kind of mouse hold events
+      // when the mouse is hold over on it, it shows the following message with the color changed
+      function Down(obj) {
+        obj.style.backgroundColor = "cyan";
+        obj.innerHTML = "release me";
+      }
+      // when the mouse is not hold over on it, it shows the following message with the color changed
+      function Up(obj) {
+        obj.style.backgroundColor = "pink";
+        obj.innerHTML = "Mouse over me";
+      }
+    </script>
+  </body>
+</html>

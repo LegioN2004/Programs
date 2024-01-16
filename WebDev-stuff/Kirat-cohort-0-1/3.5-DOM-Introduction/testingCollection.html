@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <!-- 1 -->
+    <div id="exampleDiv">This is a div with an id</div>
+    <div id="exampleDiv">This is a second div with an id</div>
+    <!-- 2 -->
+    <ul>
+      <li>Item 1</li>
+    </ul>
+    <li>Item 2</li>
+    <!-- 3 -->
+    <p class="exampleClass">This is a paragraph with a class</p>
+    <!-- 4 -->
+    <div class="exampleDiv">First div</div>
+    <div class="exampleDiv">Second div</div>
+    <!-- 5 -->
+    <form name="exampleForm">
+      <!-- Form elements go here -->
+    </form>
+
+    <script>
+      //1
+      const listItems = document.getElementsByTagName("div");
+      document.getElementsById("exampleDiv").innerHTML =
+        'The first paragraph(index) with class="exampleDiv" ' +
+        listItems[1].innerHTML;
+      //2
+      // const listItems = document.getElementsByTagName("li");
+      //3
+      // const elementsByClass = document.getElementsByClassName("exampleClass");
+      //4
+      // const firstDiv = document.querySelector(".exampleDiv");
+      //5
+      // const allDivs = document.querySelectorAll(".exampleDiv");
+    </script>
+  </body>
+</html>

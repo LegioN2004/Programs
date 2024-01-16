@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="myDiv" style="padding: 16px; background-color: lightblue">
+      <p id="demo">the paragraph to remove</p>
+      <button onclick="remove()">remove</button>
+      <h3>a div element</h3>
+    </div>
+
+    <script>
+      function remove() {
+        // const element = document.getElementById("myDiv").getElementById("demo");
+        const element = document.getElementById("myDiv").getElementById("demo");
+        // element.remove();
+        parent.removeChild(element);
+      }
+    </script>
+  </body>
+</html>

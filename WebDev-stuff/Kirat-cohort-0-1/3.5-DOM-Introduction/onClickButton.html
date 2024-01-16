@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <p>Click try it to execute the displayDate() function</p>
+    <button id="mybtn">Try it</button>
+    <p id="demo"></p>
+    <script>
+      document.getElementById("mybtn").onclick = () => {
+        // this just runs a function on the button that has that above id and just pushes the date onclick to the demo p tag and shows it directly
+        document.getElementById("demo").innerHTML = Date();
+      };
+    </script>
+  </body>
+</html>

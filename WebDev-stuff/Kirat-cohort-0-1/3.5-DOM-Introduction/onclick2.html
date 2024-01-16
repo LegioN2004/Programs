@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <p onclick="onClick(this)">hello hoeiiiiiiii</p>
+    <!-- using this to target this text inside the p tag, and using onclick handler to change it to another thing -->
+    <script>
+      // now making an onclick directly in the function and passing p's text using this to the function storing in text and then changing using innerHTML to byeeeeeeeeee
+      function onClick(text) {
+        text.innerHTML = "byeeeeeeeeee";
+        // don't forget to wrap the string in double quotes
+      }
+    </script>
+  </body>
+</html>

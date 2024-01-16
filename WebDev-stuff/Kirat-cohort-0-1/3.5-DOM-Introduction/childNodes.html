@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <!-- this is a comment -->
+
+    <h1>The element object</h1>
+    <h2>The childNodes property</h2>
+    <p>whitespaces between elements are text nodes. Comments are also nodes</p>
+
+    <p>The body element's child nodes are:</p>
+    <p id="demo"></p>
+
+    <script>
+      const nodeList = document.body.childNodes;
+      let text = "";
+      nodeList.forEach((element, index) => {
+        text += element.nodeName + "<br>";
+        // Inside the forEach loop, this line appends information about each node to the text string. It includes the node's index and its nodeName. The nodeName property returns the name of the node's HTML tag.
+      });
+      // or
+      // for (let i = 0; i < nodeList.length; i++) {
+      //      text += nodeList[i].nodeName + "<br>"
+      // }
+      document.getElementById("demo").innerHTML = text; // and text just takes and stores the value there
+      console.log(text);
+    </script>
+  </body>
+</html>

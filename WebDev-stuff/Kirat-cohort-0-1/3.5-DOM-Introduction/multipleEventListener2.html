@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <button id="mybtn">Try it</button>
+    <p id="demo"></p>
+    <script>
+      var x = document.getElementById("mybtn");
+      x.addEventListener("mouseover", firstFunction);
+      x.addEventListener("click", myFunction);
+      x.addEventListener("mouseout", anotherFunction);
+      function firstFunction() {
+        document.getElementById("demo").innerHTML += "mouse over<br>";
+        // constantly messagse come due to += on mouse over and the others down there as well
+      }
+      function myFunction() {
+        document.getElementById("demo").innerHTML += "clicked<br>";
+      }
+      function anotherFunction() {
+        document.getElementById("demo").innerHTML += "mouse out<br>";
+      }
+    </script>
+  </body>
+</html>

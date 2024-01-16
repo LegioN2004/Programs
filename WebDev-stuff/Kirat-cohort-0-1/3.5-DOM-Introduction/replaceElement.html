@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <ul id="my-list">
+      <!-- whatever written here is not just text, it is TextNode -->
+      <li>coffee</li>
+      <li>tea</li>
+      <li>milk</li>
+    </ul>
+
+    <p>Click 'replace' to replace the second item in the list</p>
+    <button onclick="replace()">Replace</button>
+    <script>
+      function replace() {
+        // var to store the children index 1
+        const element = document.getElementById("my-list").children[1];
+        // creating a text node, which we want to add in that children's place
+        const newNode = document.createTextNode("Juice");
+        element.replaceChild(newNode, element.childNodes[0]);
+      }
+    </script>
+  </body>
+</html>

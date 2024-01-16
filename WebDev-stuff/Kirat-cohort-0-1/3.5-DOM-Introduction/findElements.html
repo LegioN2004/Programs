@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>div one</div>
+    <p class="intro">paragraph one with class intro</p>
+    <div>div one</div>
+    <p>paragraph two</p>
+    <div>another div</div>
+    <div id="Mydiv" style="border: 1px solid black; padding: 8px">
+      <h2 class="example">A heading</h2>
+      <p class="example">A paragraph</p>
+      <p class="example">A second paragraph</p>
+    </div>
+    <p id="para"></p>
+
+    <!-- arotnarotnront -->
+    <script>
+      var paragraphs = document.querySelectorAll("p.intro");
+      paragraphs.forEach(
+        (paragraph) => (paragraph.style.backgroundColor = "red"),
+      );
+
+      var element = document.getElementById("Mydiv");
+      var childElement = element.querySelectorAll(".example");
+      document.getElementById("para").innerHTML = childElement.length;
+    </script>
+  </body>
+</html>
