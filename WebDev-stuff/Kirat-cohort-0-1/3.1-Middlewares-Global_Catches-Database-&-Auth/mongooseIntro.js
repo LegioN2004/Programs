@@ -5,7 +5,7 @@ const app = express();
 
 // mongoose logic, connectin the db and making a model in it
 mongoose.connect(
-  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/user_app", // give the correct database name by adding that after the end like a route after '.net/'
+  "mongodb+srv://milindabarua04:*****@firstmongodbinstance.l4lglul.mongodb.net/user_app", // give the correct database name by adding that after the end like a route after '.net/'
 );
 const Users = mongoose.model("Users", {
   name: String,

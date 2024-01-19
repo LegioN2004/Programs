@@ -1,0 +1,47 @@
+<html>
+  </div>
+  <script>
+    function addTodo() {
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      // const originalHTML = document.getElementById("container").innerHTML;
+
+      const childDiv = document.createElement("div")// this creates a new div in the document
+      // childDiv.innerHTML = title; // give it an innerHTML which is title's value
+      // document.getElementById("container").appendChild(childDiv); // and then append that value to the newly created div
+
+      const childDiv1 = document.createElement("div")
+      childDiv1.innerHTML = title
+      document.getElementById("container").appendChild(childDiv1)
+      const childDiv2 = document.createElement("div")
+      childDiv2.innerHTML = description
+      document.getElementById("container").appendChild(childDiv2)
+      const childDiv3= document.createElement("button")
+      childDiv3.innerHTML = "Mark as done"
+      document.getElementById("container").appendChild(childDiv3).addEventListener('click', function() {
+      childDiv3.innerHTML = "Done"
+      })
+
+      // ugly way to do it
+      //   document.getElementById("container").innerHTML = originalHTML + 
+      //  `
+      //   <div>
+      //     <div>${title}</div>  
+      //     <div>${description}</div>  
+      //     <button>Mark as done</button>
+      //   </div>
+      //  ` 
+
+    }
+  </script>
+  <div>
+    <input id="title" type="text" placeholder="title" />
+    <br />
+    <br />
+    <input id="description" type="text" placeholder="description" />
+    <br />
+    <br />
+    <button onclick="addTodo()">Add todo</button>
+    <div id="container">
+    </div>
+</html>

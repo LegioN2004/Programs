@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Calculator</title>
+    <input
+      oninput="debouncePopulateDiv()"
+      type="text"
+      id="field1"
+      placeholder="First Number"
+    />
+    <br />
+    <input
+      oninput="debouncePopulateDiv()"
+      type="text"
+      id="field2"
+      placeholder="Second Number"
+    />
+    <br />
+    <!-- using on-input  -->
+    <!-- <button onclick="calculator()">Calculate</button>
+    <div id="btn"></div> -->
+  </head>
+  <body>
+    <script>
+      let timeout;
+      function debouncePopulateDiv() {
+        //delay the call to populate div until it has not been called for 100 ms and it has been called atleast once
+        clearTimeout(timeout); // clear when the function gets called again
+        timeout = setTimeout(() => {
+          // then run the setTimeout
+          // returns back a number
+          calculator();
+        }, 100);
+        // clearTimeout(timeout); should not be added here so that the clock restarts whenver a new call happens
+      }
+
+      function calculator() {
+        let a = document.getElementById("field1").value;
+        let b = document.getElementById("field2").value;
+        const element = document.getElementById("btn");
+        // element.innerHTML = parseInt(a) + parseInt(b);
+
+        //fetch
+        // ugly way of doing it
+        fetch("https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b).then(
+          (response) => {
+            console.log(response);
+            response.text().then(function (ans) {
+              document.getElementById("btn").innerHTML = ans;
+            });
+          },
+        );
+        // better way of doing it
+        // fetch(`https://sum-server.100xdevs.com/sum?a=$a&b=$b`);
+      }
+      async function calculator() {
+        let a = document.getElementById("field1").value;
+        let b = document.getElementById("field2").value;
+        const element = document.getElementById("btn");
+        // element.innerHTML = parseInt(a) + parseInt(b);
+
+        const res = await fetch(
+          "https://sum-server.100xdevs.com/sum?a=" + a + "&b=" + b,
+        );
+        const text = await res.text();
+        document.getElementById("btn").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

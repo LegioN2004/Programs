@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <div id="counter"></div>
+    <script>
+      let state = {
+        count: 0,
+      };
+
+      function countState() {
+        state.count++;
+        buttonreRender();
+      }
+
+      function buttonreRender() {
+        document.getElementById("counter").innerHTML = "";
+        const component = buttonComponent(state.count);
+        document.getElementById("counter").appendChild(component);
+      }
+
+      function buttonComponent(count) {
+        const button = document.createElement("button");
+        button.innerHTML = `Count is ${count} `;
+        button.setAttribute("onclick", `countState()`);
+        return button;
+      }
+
+      buttonreRender();
+    </script>
+  </body>
+</html>

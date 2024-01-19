@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <input
+      id="first-field"
+      type="text"
+      placeholder="first value"
+      oninput="debouncedFunction()"
+    />
+    <br />
+    <input
+      id="second-field"
+      type="text"
+      placeholder="second value"
+      oninput="debouncedFunction()"
+    />
+    <br />
+    <div id="btn"></div>
+  </head>
+  <body>
+    <script>
+      let timeout;
+      function debouncedFunction() {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => {
+          mainFunction();
+        }, 1000);
+      }
+      async function mainFunction() {
+        const a = document.getElementById("first-field").value;
+        const b = document.getElementById("second-field").value;
+        const element = document.getElementById("btn");
+        const response = await fetch(`https://localhost:3000/sum?a=$a&b=$b`);
+        const text = await response.text();
+        document.getElementById("btn").innerHTML = text;
+      }
+    </script>
+  </body>
+</html>

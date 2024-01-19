@@ -1,0 +1,68 @@
+<html>
+  <body>
+    <div>
+      <input id="title" type="text" placeholder="title" />
+      <br />
+      <br />
+      <input id="description" type="text" placeholder="description" />
+      <br />
+      <br />
+      <div id="container"></div>
+    </div>
+    <script>
+      //<div id= "container">
+      //  <div>
+      //     <div>${title}</div>
+      //     <div>${description}</div>
+      //     <button>Mark as done</button>
+      //   </div>
+      //</div>
+
+      function addTodo(title, description, id) {
+        const child = document.createElement("div");
+        const grandParent1 = document.createElement("div");
+        grandParent1.innerHTML = title;
+        const grandParent2 = document.createElement("div");
+        grandParent2.innerHTML = description;
+        const grandParent3 = document.createElement("div");
+        grandParent3.innerHTML = "Mark as done";
+        grandParent3.setAttribute("onclick", `markAsDone(${id})`);
+        child.appendChild(grandParent1);
+        child.appendChild(grandParent2);
+        child.setAttribute("id", id);
+        return child;
+      }
+
+      function upDomAccToState(state) {
+        const parent = document.getElementById("container");
+        parent.innerHTML = "";
+        for (let i = 0; i < state.length; i++) {
+          const child = addTodo(
+            state[i].title,
+            state[i].description,
+            state[i].id
+          );
+          parent.appendChild(child);
+        }
+      }
+      window.setInterval(async function () {
+        const res = await fetch("https://sum-server.100xdevs.com/todos");
+        const json = await res.json();
+        upDomAccToState(json.todos);
+      }, 3000);
+
+    //   upDomAccToState([
+    //     {
+    //       title: "go to hell",
+    //       description: " f off",
+    //       id: 1,
+    //     },
+    //     {
+    //       title: "go to hell2",
+    //       description: " f off too",
+    //       id: 1,
+    //     },
+    //   ]);
+    </script>
+  </body>
+</html>

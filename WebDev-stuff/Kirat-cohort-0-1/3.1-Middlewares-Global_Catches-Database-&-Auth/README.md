@@ -80,7 +80,7 @@ app.get(
   kidneyValidator,
   function (req, res) {
     res.send("your heart is healthy");
-  }
+  },
 );
 
 app.get(
@@ -89,7 +89,7 @@ app.get(
   kidneyValidator,
   function (req, res) {
     res.send("your kidney is healthy");
-  }
+  },
 );
 
 app.get("/heart-checkup", userMiddleware, function (req, res) {
@@ -113,7 +113,7 @@ app.get(
   },
   function (req, res) {
     console.log("This is the log from req2");
-  }
+  },
 );
 ```
 
@@ -824,7 +824,7 @@ Remember to handle errors appropriately in real-world applications and consider 
 ```js
 const mongoose = require("mongoose");
 mongoose.connect(
-  "mongodb+srv://milindabarua04:legion@firstmongodbinstance.l4lglul.mongodb.net/"
+  "mongodb+srv://milindabarua04:*****@firstmongodbinstance.l4lglul.mongodb.net/",
 );
 
 const Users = mongoose.model("Users", {

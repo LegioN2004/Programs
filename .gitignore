@@ -99,6 +99,11 @@ GO/bin/
 *.zip
 
 
+# image files
+*.png
+*.svg
+*.jpg
+
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
@@ -253,3 +258,9 @@ npm-debug.log*
 yarn.lock
 package-lock.json
 .pnpm-lock.yaml
+
+
+# extra stuff
+C++/codewithharry-C++/tut4
+WebDev-stuff/Kirat-cohort-0-1/5.1-React-foundations/5.1-counter-app/src/assets/react.svg
+WebDev-stuff/Kirat-cohort-0-1/5.1-React-foundations/5.1-counter-app/public/vite.svg
