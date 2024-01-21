@@ -4,6 +4,7 @@
 *.o
 *.pyc
 *.class
+*node_modules
 
 
 # Ignore generated files and directories for Java
