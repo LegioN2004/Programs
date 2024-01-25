@@ -93,7 +93,7 @@ Now we'll move on to react and see how as a react dev we'll have to write very m
   - It consists of the react import statement and the react-dom import statement as react is not a website framework, it is a remove difference calculating framework. It is able to calculate that based on the current state something should get removed from the native app/ website or something should get added.
   - It also consists of the react-dom which further says that this framework is currently running for the website
 
-```jsx
+```js
 // this is what creates the app function which then gets called to the main.jsx file
 function App() {
   const [count, setCount] = useState(0);
@@ -118,7 +118,23 @@ export default App;
 
 - We have created the same counter button which increments on click event in the equivalentCounter html file where this count variable is what is called a "state" sort of, which represents the state of the app.
 
-- The way we define state variables in react is: `const [count, setCount] = useState(0);`. It is a variable that react needs to consciously watch that if this updates then the whole dom changes too, so it needs to monitor it continuously.
+- The way we define state variables in react is: `const [count, setCount] = useState(0);`. It is a variable that react needs to consciously watch that if this updates then the whole dom changes too, so it needs to monitor it continuously. The actual meaning is the following:
+
+React provides a special function called `useState` that you can call from your component to let it “remember” things.from the tic tac toe eample: Let’s store the current value of the Square in state, and change it when the Square is clicked.
+
+Import useState at the top of the file. Remove the value prop from the Square component. Instead, add a new line at the start of the Square that calls useState. Have it return a state variable called value:
+
+```js
+import { useState } from 'react';
+
+function Square() {
+const [value, setValue] = useState(null);
+
+function handleClick() {
+//...
+```
+
+`value` stores the `value` and `setValue` is a function that can be used to change the value. The null passed to `useState` is used as the initial value for this state variable, so value here starts off equal to null.
 
 - now after this syntax: when we press the count button it prints random numbers from 0 to 1
 
