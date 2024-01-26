@@ -174,6 +174,8 @@ for the example of F1 car: how would check the amount of petrol left. Would you 
 
 ### useCallback
 
+for more details of the useCallback refer to this [documentation](https://react.dev/reference/react/useCallback)
+
 No alternate approach like the two above.
 
 - Before `useCallback`, there are somethings that we need to know like reference equality. When we do something like `a = 1`, `b = 1`, then `a == b` gives out true but if we do that individually inside a function and then compare the equality it returns false. The reason is that it doesn't point to the same "reference" i.e the same place in the "memory/RAM", as the first case where it does. The first case is equal by value as well as reference but the second one is not. So in the case of React too when we remove all the state variables and then run a custom component with some standard variable passed to it, then it doesn't re-render. But in the case of functions it does re-render the whole component because across re-renders this function will get redefined(because it doesn't have reference equality), React thinks that the function has changed(because the function doesn't match with the other that is being compared with that has been passed before to the component) even though it hasn't and as such re-renders. So to prevent this re-render the `useCallback` is used. React is dependent on that `==` check for the re-renders. It is very rarely used here but we should no those
@@ -199,7 +201,7 @@ Here are some key points about `useCallback`:
        },
        [
          /* dependencies */
-       ]
+       ],
      );
      ```
 
@@ -248,6 +250,48 @@ Remember that while `useCallback` can be helpful for optimization in certain sce
 
 These are hooks like `useEffect`, `useState`, etc but they are defined by us hence the name custom hooks. The only condition to make them is that the name should start with 'use' which is the naming convention. It needs to be a function only
 
+- Its syntax is something like this
+
+```js
+function useSomething() {}
+```
+
+- We can define it and then we can move the main logic that we used in the main App component and then add it to the custom hook which can then be declared to a variable in the main component and called using that var, like the following
+
+```js
+// custom hooks
+import { memo, useCallback, useEffect, useState } from "react";
+import "./App.css";
+
+function useTodos() {
+  const [todos, setTodos] = useState([]);
+
+  useEffect(() => {
+    axios.get("").then((res) => {
+      setTodos(res.data.todos);
+    });
+  }, []);
+  return todos;
+}
+
+function App() {
+  //  const [todos, setTodos] = useState([]);
+
+  //  useEffect(() => {
+  //   axios.get('').then((res) => {
+  //    setTodos(res.data.todos);
+  //   });
+  //  }, []);
+  // this above logic moved to that custom hook
+  const todos = useTodos();
+  return <>{todos}</>;
+}
+export default App;
+```
+
+- The above logic moved to the custom hook does the same like when it did in the main component. We can keep the logic here in the main App component or make a custom hook and define it there but the main difference is that we cannot define a random normal function inside which we use a state, that is not possible. But if we ever need to use a hook(like useState with the state variables) the function inside which it will stay needs to be either a hook or a component. We cannot create a normal function and move the logic there and use the state variables as well.
+
+-
 
 ### some misc stuff
 

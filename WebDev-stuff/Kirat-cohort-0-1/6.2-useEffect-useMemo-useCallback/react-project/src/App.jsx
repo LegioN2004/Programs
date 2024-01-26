@@ -1,32 +1,19 @@
-// useCallback
-import { useState, useCallback, memo } from "react";
-import "./App.css";
+// custom hooks
+import { memo, useCallback, useEffect, useState } from 'react';
+import './App.css';
+
+function useTodos() {}
 
 function App() {
-  const [counter, setCount] = useState(0);
+	const [todos, setTodos] = useState([]);
 
-  const a = useCallback(() => {
-    console.log("hi there");
-  }, []);
-  // var a = 1;
+	useEffect(() => {
+		axios.get('').then((res) => {
+			setTodos(res.data.todos);
+		});
+	}, []);
+	// var a = 1;
 
-  return (
-    <>
-      <button
-        onClick={() => {
-          setCount(counter + 1);
-        }}
-      >
-        Counter ({counter})
-      </button>
-
-      <Demo a={a}></Demo>
-    </>
-  );
+	return <>{todos}</>;
 }
-const Demo = memo(({ a }) => {
-  console.log("re-rendered");
-  return <div>hi there {a} </div>;
-});
-
 export default App;
