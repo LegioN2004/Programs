@@ -1,5 +1,7 @@
 # all about map filter and arrow functions
 
+- misc: Go to the misc directory to get more details on these js stuff of es6, React and more
+
 ## arrow functions
 
 - normal functions
