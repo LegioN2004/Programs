@@ -69,38 +69,28 @@ const dashboard = () => {
   - It expects us to invoke the `useNavigate()` i.e the variable that is initialized to it, inside the `<BrowserRouter>` only, and anywhere outside will give us an error. It'll not also allow a component that is using `useNavigate()` outside the `<BrowserRouter>`. So to fix that we can directly initialize the useNavigate inside that custom component that will need it then pass that component directly in the BrowserRouter with the necessary logic
   - In this way we can make a client side routing which doesn't reload on change in routes, which is also the right way to do routing
 
-    ```js
-
-    ```
-
-  function App() {
-  return (
-    <div>
-    <div>this is the navbar</div>
-    <BrowserRouter>
-      <AppRouter></AppRouter>
-      <Routes>
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/" element={<Landing />} />
-      </Routes>
-    </BrowserRouter>
-    </div>
-  );
-  }
-
-  function AppRouter() {
-  const navigate = useNavigate();
-  return (
-    <div>
-    <button onClick={() => { navigate('/'); }} >
-      landing
-    </button>
-    <button onClick={() => { navigate('/dashboard'); }} >
-      dashboard
-    </button>
-    </div>
-  );
-  }
+    ```jsx
+    function AppRouter() {
+      const navigate = useNavigate();
+      return (
+        <div>
+          <button
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            landing
+          </button>
+          <button
+            onClick={() => {
+              navigate("/dashboard");
+            }}
+          >
+            dashboard
+          </button>
+        </div>
+      );
+    }
     ```
 
 #### lazy-loading
