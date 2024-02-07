@@ -18,7 +18,7 @@ Also since we defined the state inside the App component previously so we need t
 
 ### Selectors
 
-A **selector** represents a piece of derived state. You can think of derived state as the output of passing state to a pure function that derives a new value from the said state.  Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
+A **selector** represents a piece of derived state. You can think of derived state as the output of passing state to a pure function that derives a new value from the said state. Derived state is a powerful concept because it lets us build dynamic data that depends on other data.
 
 - Now if we want to add all the notifications and show them on top of the me button, then you will need to add all the count that we've got until now. So we add but that will cause a re-render everytime the main App loads, so we should at the very least use `useMemo` so that if neither of the value changes then it should not re-render the number of notifications.
   - Or the more optimal way to do this using the state as well is by using `selectors` of Recoil. This is the much better approach since now Recoil handles all the re-render and also sees who depends on whom and if that changes then it'll re-render. Also the main reason to use this approach is that if we have a new selector that needs to show another icon to render the total notifications + the messages not replied to or something that will depend on the other selector, we can just use that selector in the new selector, i.e they can depend on each other. If atoms depend no each other for another usecase we can just create a selector and that'll work as well as per needed. Also if we want to create a new one we can do that too and recoil will handle everything of teleporting that stuff to one another. But in case of React's `useState` we can't do that.
@@ -33,26 +33,28 @@ So atom now here doesn't return a single value, it returns a value that has four
 
 ```jsx
 export const notifications = atom({
-    key: "networkAtom",
-    default: {
-        network: 4, 
-        jobs: 6, 
-        messaging: 3, 
-        notifications: 3
-    }
+  key: "networkAtom",
+  default: {
+    network: 4,
+    jobs: 6,
+    messaging: 3,
+    notifications: 3,
+  },
 });
 // giving these default values will make them appear on the first render and then the actual values from the backend will replace it causing a flash and then a replacement
 
 export const totalNotificationSelector = selector({
-    key: "totalNotificationSelector",
-    get: ({get}) => {
-        const allNotifications = get(notifications);
-        return allNotifications.network + 
-        allNotifications.jobs + 
-        allNotifications.notifications + 
-        allNotifications.messaging
-    }
-})
+  key: "totalNotificationSelector",
+  get: ({ get }) => {
+    const allNotifications = get(notifications);
+    return (
+      allNotifications.network +
+      allNotifications.jobs +
+      allNotifications.notifications +
+      allNotifications.messaging
+    );
+  },
+});
 ```
 
 So now we can just import it and use it like any other object in the main app function. And the total notification selector just gets the value and whenever it changes it re-changes the old value causing a re-render
@@ -60,11 +62,11 @@ So now we can just import it and use it like any other object in the main app fu
 Also the backend call is happening using useEffect, so we are using the set function from the atom to update it on component mount.
 
 ```jsx
- useEffect(() => {
-  axios.get('https://sum-server.100xdevs.com/notifications').then((res) => {
-   setNetworkCount(res.data);
+useEffect(() => {
+  axios.get("https://sum-server.100xdevs.com/notifications").then((res) => {
+    setNetworkCount(res.data);
   });
- }, []);
+}, []);
 ```
 
 This is not the correct way of doing "async queries" but surely it is a dumb way of doing it. The reasons are as follows:
@@ -77,16 +79,16 @@ Now if we know that the data fetching happens asynchronously and this is how we 
 
 ```jsx
 export const notifications = atom({
- key: 'networkAtom',
- default: selector({
-  key: 'notificationsSelector',
-  get: async () => {
-   const data = await Axios.get(
-    'https://sum-server.100xdevs.com/notifications'
-   );
-   return res.data;
-  },
- }),
+  key: "networkAtom",
+  default: selector({
+    key: "notificationsSelector",
+    get: async () => {
+      const data = await Axios.get(
+        "https://sum-server.100xdevs.com/notifications",
+      );
+      return res.data;
+    },
+  }),
 });
 ```
 
@@ -99,7 +101,7 @@ export const notifications = atom({
 Yes, you are correct. The `setTimeout` logic is creating a delay using a Promise. Here's a breakdown of how it works:
 
 ```javascript
-await new Promise(r => setTimeout(r, 5000))
+await new Promise((r) => setTimeout(r, 5000));
 ```
 
 1. `setTimeout`: It's a JavaScript function that schedules a function or evaluates an expression after a specified delay (in milliseconds).
@@ -117,13 +119,13 @@ So, in summary, this line is creating a delay of 5000 milliseconds (5 seconds) b
 Sometimes we need more than one atoms for our use case like in case of the todo application
 
 - Question - Create a component that takes a todo id as input, and renders the TODO
-You need to store the Todo in an atom (can’t use useState)
-All the TODOs can be hardcoded as a variable
+  You need to store the Todo in an atom (can’t use useState)
+  All the TODOs can be hardcoded as a variable
 
 - The problems that we'll face here are:
-Would you have a single atom ?
-Would you have one atom per todo?
-How would you create (and delete) todos dynamically?
+  Would you have a single atom ?
+  Would you have one atom per todo?
+  How would you create (and delete) todos dynamically?
 
 Out of all the things that we have learnt until now about Recoil and Atoms, we haven't learnt how to dynamically create atoms since atoms work when we know that we have stuff that will render once on screen(much like that notifications of which only the values change), but if we have a bunch of todos then each will need it's own atoms so we'll have to dynamically create more and more atoms. We can make the default value an array such that we can update dynamically but there are downsides in doing so, so we will need to do stuff in another way
 
@@ -140,23 +142,24 @@ import { atomFamily } from "recoil";
 import { TODOS } from "./todos";
 
 export const todosAtomFamily = atomFamily({
-  key: 'todosAtomFamily',
-  default: id => {
+  key: "todosAtomFamily",
+  default: (id) => {
     // this return statement just finds the id that matches the constraints of the things in the brackets and returns the todo if that matches or else returns null if not
-    return TODOS.find(x => x.id === id)
+    return TODOS.find((x) => x.id === id);
   },
 });
 ```
 
 the inside documentation of atomFamily also says the same thing; it is just another function that returns a memoized atom for each unique parameter value, since if we get lets say a lot of todo we can't just go on creating a lot of atoms by hand, instead we need to give that task to someone else who will create an atom for us dynamically
 
-``` ts
+```ts
 /**
-  * Returns a function which returns a memoized atom for each unique parameter value.
-  */
- export function atomFamily<T, P extends SerializableParam>(
+ * Returns a function which returns a memoized atom for each unique parameter value.
+ */
+export function atomFamily<T, P extends SerializableParam>(
   options: AtomFamilyOptions<T, P>,
- ): (param: P) => RecoilState<T>;jsx
+): (param: P) => RecoilState<T>;
+jsx;
 ```
 
 This does the job of making an atom dynamically whenever we create more todos using an id and when we copy and create more using the same id it generates a single atom once for all of them and if we update the value in one of them then it'll be reflected in all of the others. And if one of the todo changes, then it'll only re-render the one that changes and the other ones remain intact
@@ -169,14 +172,18 @@ Also we cannot write an async call in the default value and hit the backend in t
 
 ```jsx
 export const todosAtomFamily = atomFamily({
-  key: 'todosAtomFamily',
+  key: "todosAtomFamily",
   default: selectorFamily({
     key: "todoSelectorFamily",
-    get: (id) => async ({get}) => {
-      const res = await axios.get(`https://sum-server.100xdevs.com/todo?id=${id}`);
-      return res.data.todo;
-    },
-  })
+    get:
+      (id) =>
+      async ({ get }) => {
+        const res = await axios.get(
+          `https://sum-server.100xdevs.com/todo?id=${id}`,
+        );
+        return res.data.todo;
+      },
+  }),
 });
 ```
 
@@ -191,7 +198,7 @@ In the last question we didn't do a selector family because the todos were of th
 ## useRecoilStateLoadable and useRecoilValueLoadable
 
 What happens when the values aren’t loaded immedietely? There is a blank white space as long as the values don't come back.
- For example, the TODOs that are coming back from the server. As long as the todo data don't come from the server there will be a white space in place of the todos
+For example, the TODOs that are coming back from the server. As long as the todo data don't come from the server there will be a white space in place of the todos
 How can we show loader on screen when that happens rather than an empty state, rather than showing an empty state.
 
 So to implement this loader/loading animation or something like that so that we don't see a blank space, we did the `Suspense` thing in the previous classes but in the case of 'Recoil' we use the `useRecoilStateLoadable` instead of `useRecoilState`.
@@ -204,29 +211,28 @@ So this `useRecoilStateLoadable` returns the same two things as the `useRecoilSt
 -
 
 ```jsx
-// what does the todo contain 
+// what does the todo contain
 // {
 //   contents:   ,
 //   state:   ,
 // }
 
-
 function Todo({ id }) {
- const [todo, setTodo] = useRecoilStateLoadable(todosAtomFamily(id));
- console.log(todo.state);
- if (todo.state === 'loading') {
-  return <div>loading......</div>;
- } else if (todo.state === 'hasValue') {
-  return (
-   <>
-    {todo.contents.title}
-    {todo.contents.description}
-    <br />
-   </>
-  );
- } else if (todo.state === 'hasError') {
-  return <div>Error while loading the data from the backend</div>;
- }
+  const [todo, setTodo] = useRecoilStateLoadable(todosAtomFamily(id));
+  console.log(todo.state);
+  if (todo.state === "loading") {
+    return <div>loading......</div>;
+  } else if (todo.state === "hasValue") {
+    return (
+      <>
+        {todo.contents.title}
+        {todo.contents.description}
+        <br />
+      </>
+    );
+  } else if (todo.state === "hasError") {
+    return <div>Error while loading the data from the backend</div>;
+  }
 }
 ```
 
@@ -260,11 +266,13 @@ In your `Todo` component:
 
 ```javascript
 function Todo({ id }) {
-  const [todoLoadable, setTodoLoadable] = useRecoilStateLoadable(todosAtomFamily(id));
+  const [todoLoadable, setTodoLoadable] = useRecoilStateLoadable(
+    todosAtomFamily(id),
+  );
 
-  if (todoLoadable.state === 'loading') {
+  if (todoLoadable.state === "loading") {
     return <div>Loading...</div>;
-  } else if (todoLoadable.state === 'hasValue') {
+  } else if (todoLoadable.state === "hasValue") {
     const todo = todoLoadable.contents; // Access the loaded data
     return (
       <>
@@ -273,10 +281,31 @@ function Todo({ id }) {
         <br />
       </>
     );
-  } else if (todoLoadable.state === 'hasError') {
+  } else if (todoLoadable.state === "hasError") {
     return <div>Error while loading the data from the backend</div>;
   }
 }
 ```
 
 By checking the `state` property of `Loadable`, you can handle different scenarios based on whether the data is still loading, has been successfully loaded (`hasValue`), or if there's an error (`hasError`). This helps you create more robust and responsive components when dealing with asynchronous data.
+
+### Some assignment misc stuff
+
+- You can add if else ternary operator to show something else when the data has not been loaded yet by doing
+
+```jsx
+<div>
+  {userData ? (
+    <div>
+      <img src={userData.avatar_url} alt="GitHub Avatar" />
+      <h2>{userData.name}</h2>
+      <p>{userData.bio}</p>
+      <p>Followers: {userData.followers}</p>
+      <p>Following: {userData.following}</p>
+      <p>Public Repositories: {userData.public_repos}</p>
+    </div>
+  ) : (
+    <p>Loading...</p>
+  )}
+</div>
+```
