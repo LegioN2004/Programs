@@ -11,8 +11,8 @@
                 "_UNICODE"
             ],
             "windowsSdkVersion": "10.0.22000.0",
-            "compilerPath": "cl.exe",
-            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "C:/Users/User/scoop/apps/gcc/current/bin/gcc.exe",
+            "intelliSenseMode": "windows-gcc-x64",
             "compileCommands": "${workspaceFolder}/C++/compile_commands.json",
             "configurationProvider": "ms-vscode.cmake-tools"
         }

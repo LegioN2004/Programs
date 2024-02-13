@@ -6,5 +6,9 @@
 		"JAVA/kunal-java-dsa/Assignments/src/functions/Qno11FirstJava",
 		"JAVA/kunal-java-dsa/07-methods/lec07-code/src/com/mili",
 		"JAVA/kunal-java-dsa/Assignments/src/functions/Qno11ConditionalsAndLoops/IntermediateJavaPrograms"
-	]
+	],
+	"files.associations": {
+		"cs50.h": "c",
+		"stdio.h": "c"
+	}
 }

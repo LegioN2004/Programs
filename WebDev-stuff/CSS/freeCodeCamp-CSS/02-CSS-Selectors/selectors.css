@@ -1,0 +1,45 @@
+/* * {
+  border: 1px solid red;
+} */
+
+html{
+ font-size: 22px;
+}
+
+body {
+  /* font-size: 22px; */
+  font-family: 'Times New Roman', Times, serif;
+}
+
+main {
+  font-family: monospace;
+}
+.grey {
+  color: black;
+}
+
+h1, h2 {
+  color: blue;
+}
+
+p {
+  color: purple;
+}
+p {
+  color: lightblue;
+}
+
+button, select, textarea, input{
+  font:inherit;
+}
+
+
+#second {
+  font-style: italic;
+}
+
+p span {
+  text-transform: uppercase;
+  background-color: gold;
+}
+
