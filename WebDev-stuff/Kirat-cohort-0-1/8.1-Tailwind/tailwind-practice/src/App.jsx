@@ -1,17 +1,32 @@
-import { useState } from "react";
-// import "./App.css";
+import "./App.css";
+import { RevenueCard } from "./componenents/RevenueCard";
+// import { RevenueCard } from "./componenents/RevenueCard";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ backgroundColor: "red" }}>heloooooooooo</div>
-        <div style={{ backgroundColor: "green" }}>hi</div>
-        <div style={{ backgroundColor: "blue" }}>bye</div>
-        <div style={{ backgroundColor: "yellow" }}>bye</div>
-        <div style={{ backgroundColor: "yellow" }}>bye</div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1">
+        <div className="bg-red-500">heloooooooooo</div>
+        <div className="bg-green-500">heloooooooooo</div>
+        <div className="bg-blue-500">heloooooooooo</div>
+        <RevenueCard
+          className="cols-span-1"
+          title="Next Payout ?"
+          amount="2,312.23"
+          orderCount="23"
+        ></RevenueCard>
+        <RevenueCard
+          className="cols-span-1"
+          title="Amount Pending "
+          amount="92,312.20"
+          orderCount="13"
+        ></RevenueCard>
+        <RevenueCard
+          className="cols-span-1"
+          title="Amount Pending "
+          amount="92,312.20"
+          orderCount="13"
+        ></RevenueCard>
       </div>
     </>
   );

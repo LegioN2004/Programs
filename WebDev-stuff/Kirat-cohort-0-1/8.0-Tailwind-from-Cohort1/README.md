@@ -144,7 +144,7 @@ This works for every utility class in the framework, which means you can change 
 
 The Tailwind does things mobile-first fashion/breakpoint system. So by default, Tailwind uses a mobile-first breakpoint system, similar to what we might be used to in other frameworks like Bootstrap.
 
-What this means is that unprefixed utilities (like uppercase) take effect on all screen sizes, while prefixed utilities (like md:uppercase) only take effect at the specified breakpoint and above.
+What this means is that unprefixed utilities (like `uppercase`) take effect on all screen sizes, while prefixed utilities (like `md:uppercase`) only take effect at the specified breakpoint and above.
 
 - meaning of the above para with more clarity
 
@@ -231,50 +231,50 @@ The text sizing works in a different manner where like the breakpoints we have t
 Utilities for controlling the font size of an element. Below are the utilities which are the defaults for setting up sizes and their equivalent css are written under the properties heading
 
 Quick reference
-| Class    | Properties                          |
+| Class | Properties |
 |----------|-------------------------------------|
-| text-xs  | font-size: 0.75rem;                 |
-|          | line-height: 1rem;                  |
-| text-sm  | font-size: 0.875rem;                |
-|          | line-height: 1.25rem;               |
-| text-base| font-size: 1rem;                    |
-|          | line-height: 1.5rem;                |
-| text-lg  | font-size: 1.125rem;                |
-|          | line-height: 1.75rem;               |
-| text-xl  | font-size: 1.25rem;                 |
-|          | line-height: 1.75rem;               |
-| text-2xl | font-size: 1.5rem;                  |
-|          | line-height: 2rem;                  |
-| text-3xl | font-size: 1.875rem;                |
-|          | line-height: 2.25rem;               |
-| text-4xl | font-size: 2.25rem;                 |
-|          | line-height: 2.5rem;                |
-| text-5xl | font-size: 3rem;                    |
-|          | line-height: 1;                     |
-| text-6xl | font-size: 3.75rem;                 |
-|          | line-height: 1;                     |
-| text-7xl | font-size: 4.5rem;                  |
-|          | line-height: 1;                     |
-| text-8xl | font-size: 6rem;                    |
-|          | line-height: 1;                     |
-| text-9xl | font-size: 8rem;                    |
-|          | line-height: 1;                     |
+| text-xs | font-size: 0.75rem; |
+| | line-height: 1rem; |
+| text-sm | font-size: 0.875rem; |
+| | line-height: 1.25rem; |
+| text-base| font-size: 1rem; |
+| | line-height: 1.5rem; |
+| text-lg | font-size: 1.125rem; |
+| | line-height: 1.75rem; |
+| text-xl | font-size: 1.25rem; |
+| | line-height: 1.75rem; |
+| text-2xl | font-size: 1.5rem; |
+| | line-height: 2rem; |
+| text-3xl | font-size: 1.875rem; |
+| | line-height: 2.25rem; |
+| text-4xl | font-size: 2.25rem; |
+| | line-height: 2.5rem; |
+| text-5xl | font-size: 3rem; |
+| | line-height: 1; |
+| text-6xl | font-size: 3.75rem; |
+| | line-height: 1; |
+| text-7xl | font-size: 4.5rem; |
+| | line-height: 1; |
+| text-8xl | font-size: 6rem; |
+| | line-height: 1; |
+| text-9xl | font-size: 8rem; |
+| | line-height: 1; |
 
 #### Tailwind border radius
 
 The following are the Utilities for controlling the border radius of an element.
 
-| Class           | Properties                |
-|-----------------|---------------------------|
-| rounded-none    | border-radius: 0;         |
-| rounded-sm      | border-radius: 0.125rem;  |
-| rounded         | border-radius: 0.25rem;   |
-| rounded-md      | border-radius: 0.375rem;  |
-| rounded-lg      | border-radius: 0.5rem;    |
-| rounded-xl      | border-radius: 0.75rem;   |
-| rounded-2xl     | border-radius: 1rem;      |
-| rounded-3xl     | border-radius: 1.5rem;    |
-| rounded-full    | border-radius: 9999px;    |
+| Class        | Properties               |
+| ------------ | ------------------------ |
+| rounded-none | border-radius: 0;        |
+| rounded-sm   | border-radius: 0.125rem; |
+| rounded      | border-radius: 0.25rem;  |
+| rounded-md   | border-radius: 0.375rem; |
+| rounded-lg   | border-radius: 0.5rem;   |
+| rounded-xl   | border-radius: 0.75rem;  |
+| rounded-2xl  | border-radius: 1rem;     |
+| rounded-3xl  | border-radius: 1.5rem;   |
+| rounded-full | border-radius: 9999px;   |
 
 Important ones are `rounded`, `rounded-md`, `rounded-lg`, `rounded-full` to apply different border radius sizes to an element.
 
@@ -323,13 +323,19 @@ Important ones are `rounded`, `rounded-md`, `rounded-lg`, `rounded-full` to appl
 8. **rounded-3xl**: Applies an extremely large border-radius, resulting in highly rounded corners.
 
    ```html
-   <div class="rounded-3xl p-4 bg-gray-200">Extremely large rounded corners</div>
+   <div class="rounded-3xl p-4 bg-gray-200">
+     Extremely large rounded corners
+   </div>
    ```
 
 9. **rounded-full**: Applies a border-radius of 9999px, effectively creating a circular shape.
 
    ```html
-   <div class="rounded-full h-24 w-24 bg-gray-200 flex items-center justify-center">Circular shape</div>
+   <div
+     class="rounded-full h-24 w-24 bg-gray-200 flex items-center justify-center"
+   >
+     Circular shape
+   </div>
    ```
 
 These examples demonstrate how different `border-radius` utility classes in Tailwind CSS affect the corners of elements, allowing you to achieve various styles and shapes.
@@ -347,6 +353,7 @@ Now everything works just like the vite bootstrapped react-app, we have created 
 The 'public' folder is the one that contains the images and other non code files
 
 - The video card component
+
   - It has a main thumbnail image which takes some spaces, has some rounded corners and below that image we have round channel img, title, after that channel name, no of views and date added. So they're in a form of grid fashion, first thumbnail main grid, then channel img 1/3rd of the grid space and rest of the stuff in the other 2/3rd one below the other. Only date added is right to the no of views, in equal spaces in that 2/3rd space
   - Adjust the padding and all as per necessity
   - The channel image must be a square for tailwind to better round it using `rounded-full`.
@@ -355,7 +362,7 @@ The 'public' folder is the one that contains the images and other non code files
 - Now we'll create a video grid component in which we have a in memory variable that will contain the values that are supposed to be coming from the backend. And then in that VideoGrid we are going to iterate over the variable to find all the stuff and then put them in the VideoCard component imported from the files and render them from the main index.tsx file.
 - Also we have the AppBar at the top which contains the logo, search bar and a sign in option, of which the search bar has been copied from another website to create one and then yoinked to its own component which then is imported to our main AppBar component
 - The SearchBar component has the custom create search field created by hkirat and the search icon are some icons created by the tailwind people which are some svgs open sourced and free to use.
-  - Also added `inline-flex` & `items-center` to make the things vertically center  to the main parent flex
+  - Also added `inline-flex` & `items-center` to make the things vertically center to the main parent flex
   - Also you can make the appbar responsive too, recommended when it'll be sent to someone. There is an easy way to do using `sm:hidden` when not small and when it is small render only the search icon button and onclick(not the js event) expose the whole search bar which takes the whole space
   - And for hover pointer we can add cursor-pointer to the main parent div of the card to apply that.
 
@@ -368,13 +375,13 @@ The error you're encountering when using `export default` instead of `export` in
 When you use `export default` in a module, you don't need to destructure it using braces `{}` during import. Instead, you can directly import it as:
 
 ```javascript
-import VideoCard from '../components/VideoCard';
+import VideoCard from "../components/VideoCard";
 ```
 
 However, if you're using `export` without `default`, you need to destructure it during import:
 
 ```javascript
-import { VideoCard } from '../components/VideoCard';
+import { VideoCard } from "../components/VideoCard";
 ```
 
 So, to resolve the error, you should either change your import statement in `index.tsx` to import `VideoCard` without braces, or change the export statement in `VideoCard.jsx` to `export` without `default`. Choose the approach based on your project structure and requirements.
@@ -396,7 +403,7 @@ You can import this default export as follows:
 
 ```javascript
 // Importing the default export without braces
-import myFunction from './example.js';
+import myFunction from "./example.js";
 ```
 
 On the other hand, when using `export` without `default`, you're exporting named exports, which are explicit and named values or functions from the module. When importing named exports, you must use the exact names specified in the export statement. This is why you need to destructure the named export using braces `{}` during import.
@@ -414,7 +421,7 @@ You can import this named export as follows:
 
 ```javascript
 // Importing the named export with braces
-import { myFunction } from './example.js';
+import { myFunction } from "./example.js";
 ```
 
 This distinction between default and named exports allows for more flexibility and clarity in managing modules and their exports.
