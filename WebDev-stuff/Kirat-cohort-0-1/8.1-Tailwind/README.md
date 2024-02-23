@@ -37,3 +37,22 @@ the following lines of code to the index.css file as well to setup tailwind in y
 So in the config file, it is a json type file where in the content key we'll need to set the files like in our case it'll be the files with the extensions `.js, .ts, .jsx, .tsx` which tailwind will apply the styling to so tailwind will watch those files.
 
 - The mobile-first approach: Since it follows the mobile-first approach we'll see the main unprefixed ones (like say `bg-red-500`) will apply globally to all devices but the mobile ones i.e small size(but we don't see it because by default our comp screen is big) and the prefixed ones (like `md:bg-blue-500`) styling will apply only when the screen width changes to that breakpoint and above(in our case comp screen is big, so reduce to mobile size and then increase it till the md breakpoint and see). So anything above 640px, only then the `sm:grid-cols-1` will take effect(and so on) or else the unprefixed one will apply the styling globally to all the mobile i.e small screen devices.
+
+- Search for the sidebar and searchbar, and look into examples from flowbite and google it.
+
+### Using storybook
+
+To expose our componenets without us rendering them in the main App.jsx specifically useful for showing or demostrating stuff or when we don't want to open source our complete codebase but a part of our codebase
+
+- first command `npm install @storybook/builder-vite --save-dev`
+- It also has a tailwind like config file which goes by a filename `main.js` and it must be put in the `.storybook` folder in the parent project directory
+  - That file contains stories(which is like the specific extension of the files of storybook) which watches the files with the extension `.stories.js/.ts` which are like the files called 'stories'
+- The 'stories' are stored in another folder in the src directory called the `stories` and the components can then be stored in the sub-folder `stories/components`
+
+### Using material UI
+
+It provides a default styling for everything you can imagine, but it is very opinionated and hard to customize. Only if you want to quickly bootstrap a hackathon project and don't want any pixel perfection by customizing and is good with what defaults the library provides then MUI is a good way to proceed from.
+
+So nowadays, shadCN, Radix, etc libraries are used to get opinionated components to directly use in the codebase.
+
+The file structure contains a folder for the ui stuff with the name `ui` itself and all the components logic are kept there, they're owned by the author and as such they can customize it as per needs.
