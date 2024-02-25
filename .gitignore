@@ -5,6 +5,7 @@
 *.pyc
 *.class
 *node_modules
+*dbConfig.js
 
 
 # Ignore generated files and directories for Java
