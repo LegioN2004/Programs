@@ -1,14 +1,32 @@
 const express = require('express');
 const router = express.Router();
 const zod = require('zod');
-const zodString = zod.string().max(9).min(3);
-const zodPass = zod.string();
+const jwt = require('jsonwebtoken');
+const { User } = require('../db');
+const { JWT_SECRET } = require('../dbConfig');
+
+const userSchema = zod.object({
+	userName: zod.string().min(3).max(30).email(),
+	firstName: zod.string().max(50),
+	lastName: zod.string().max(50),
+	password: zod.string().min(6),
+});
+
+const userId = Math.floor(Math.random() * 1000000);
 
 async function signupMiddleware(req, res, next) {
 	const userName = req.body.userName;
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
 	const password = req.body.password;
+
+	const parsedUsers = userSchema.safeParse({
+		userName: req.body.userName,
+		firstName: req.body.firstName,
+		lastName: req.body.lastName,
+		password: req.body.password,
+	});
+
 	const userExists = await User.findOne({
 		userName: req.body.userName,
 		password: req.body.password,
@@ -16,17 +34,18 @@ async function signupMiddleware(req, res, next) {
 
 	// credential logic
 	try {
-		if (!userExists) {
+		if (!userExists && parsedUsers) {
 			const user = new User({
 				userName: userName,
 				firstName: firstName,
 				lastName: lastName,
 				password: password,
+				userId: userId,
 			});
 			await user.save();
 			next();
 		} else {
-			res.status(400).json({
+			res.status(411).json({
 				msg: 'Username or password already exists, change your credentials',
 			});
 		}
@@ -38,26 +57,33 @@ async function signupMiddleware(req, res, next) {
 }
 
 router.post('/signup', signupMiddleware, (req, res) => {
-	res.json({
-		msg: 'signup doneeeeeeee',
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	const jwtToken = jwt.sign(
+		{
+			userId: userId,
+		},
+		JWT_SECRET
+	);
+	res.status(200).json({
+		msg: `signup donee for the user ${firstName} ${lastName} `,
+		token: `${jwtToken}`,
 	});
 });
 
 async function signinMiddleware(req, res, next) {
-	const userName = req.body.userName;
-	const firstName = req.body.firstName;
-	const lastName = req.body.lastName;
-	const password = req.body.password;
+	const token = req.header.token;
 	const userExists = await User.findOne({
-		userName: req.body.userName,
-		password: req.body.password,
+		userName: userSchema.safeParse(req.body.userName),
+		password: userSchema.safeParse(req.body.password),
 	});
+	const verifyToken = jwt.verify(token, JWT_SECRET);
 
 	// credential logic
 	try {
-		if (!userExists) {
-			res.status(400).json({
-				msg: 'wrong credentials, change em or if user not signed up, sign up first',
+		if (!userExists && !verifyToken) {
+			res.status(411).json({
+				msg: 'error while logging in, wrong credentials, change em or if user not signed up, sign up first',
 			});
 		}
 	} catch (error) {
@@ -69,8 +95,12 @@ async function signinMiddleware(req, res, next) {
 }
 
 router.post('/signin', signinMiddleware, (req, res) => {
-	res.status(300).json({
-		msg: 'signed in successfully',
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	const token = req.header.token;
+	res.status(200).json({
+		msg: `signed in the user ${firstName} ${lastName} successfully`,
+		token: token,
 	});
 });
 
@@ -113,4 +143,4 @@ router.put('/update', updateMiddleware, (req, res) => {
 	res.json('updated successfully');
 });
 
-module.exports(router);
+module.exports = router;

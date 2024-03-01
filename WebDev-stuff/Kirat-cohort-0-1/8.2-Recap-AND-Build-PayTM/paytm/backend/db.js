@@ -12,31 +12,35 @@ mongoose
 
 const UserSchema = new mongoose.Schema({
 	username: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        lowercase: true,
-        minLength: 3,
-        maxLength: 30
-    },
-    password: {
-        type: String,
-        required: true,
-        minLength: 6
-    },
-    firstName: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 50
-    },
-    lastName: {
-        type: String,
-        required: true,
-        trim: true,
-        maxLength: 50
-    }
+		type: String,
+		required: true,
+		unique: true,
+		trim: true,
+		lowercase: true,
+		minLength: 3,
+		maxLength: 30,
+	},
+	firstName: {
+		type: String,
+		required: true,
+		trim: true,
+		maxLength: 50,
+	},
+	lastName: {
+		type: String,
+		required: true,
+		trim: true,
+		maxLength: 50,
+	},
+	password: {
+		type: String,
+		required: true,
+		minLength: 6,
+	},
+	userId: {
+		type: Number,
+		required: true,
+	},
 	// userName: String,
 	// firstName: String,
 	// lastName: String,

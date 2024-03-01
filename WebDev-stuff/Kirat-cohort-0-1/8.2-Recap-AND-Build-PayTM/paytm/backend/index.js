@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-const { User } = require('./db');
 const mainRouter = require('./routes/index');
-const JWT_SECRET = require('./config');
 
 app.use(express.json());
 app.use(bodyParser.json());
@@ -33,5 +31,6 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => {
+	if (err) console.log(err);
 	console.log('listening on the port 3000');
 });
