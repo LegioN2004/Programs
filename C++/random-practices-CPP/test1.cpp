@@ -3,7 +3,7 @@ using namespace std;
 
 int main (){
     int a, b, c=0;
-    cout<<"enter the number";
+    cout<<"
     cin>>a;
     b =a * 10;
     c= (c*10) + b;
