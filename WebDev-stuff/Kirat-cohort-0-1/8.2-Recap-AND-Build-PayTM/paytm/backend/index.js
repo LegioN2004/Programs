@@ -31,6 +31,9 @@ app.use((err, req, res, next) => {
 });
 
 app.listen(3000, () => {
-	if (err) console.log(err);
-	console.log('listening on the port 3000');
+	try {
+		console.log('listening on the port 3000');
+	} catch (e) {
+		console.log(e);
+	}
 });

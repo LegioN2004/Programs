@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const db_url = require('./dbConfig');
+const {db_url} = require("./dbConfig");
 
 mongoose
 	.connect(db_url)
@@ -7,7 +7,7 @@ mongoose
 		console.log('Connected to database');
 	})
 	.catch((err) => {
-		console.log('Error connecting to DB', err.message);
+		console.log('Error connecting to DB, The error: ', err.message);
 	});
 
 const UserSchema = new mongoose.Schema({

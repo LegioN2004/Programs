@@ -30,3 +30,19 @@
   ```
 
   ```
+
+- Firstly we are gonna import the following stuff from the various libraries
+
+```js
+import { Stack, useRouter } from 'expo-router';
+import { useState } from 'react';
+import { SafeAreaView, ScrollView, View } from 'react-native';
+
+import { COLORS, SIZES, icons, images } from '../constants';
+import {
+ NearbyJobs,
+ PopularJobs,
+ ScreenHeaderBtn,
+ Welcome,
+} from '../components';
+```

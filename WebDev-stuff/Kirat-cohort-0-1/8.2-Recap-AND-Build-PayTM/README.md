@@ -37,6 +37,65 @@ app.use('/api/v1', mainRouter)
       console.log("signup router");
   });
   ```
+  
+- Then setup some routes and in that we have used the user route which routes all the user requests and it has the middlewares imported that will handle all the authentication, signin, signup, update, delete and will have all of their logic
+
+- The zod object returns a success object which we can destructure and use it directly or we can take the object in a variable and use the `.` to get the success object which returns true or false based on the parsing of the output. 
+
+- why are we using Bearer in token: For security reasons we should make sure that the Authorization header has the expected content. We simply should not accept a header that does not start with Bearer if we are expecting it ("Bearer" is a recommendation in the RFC, it is not mandatory) ".
+  - Ideally what we should do this authentication is by sending out an otp to the user kind of a verification email which the user will click on and they can actually signup. But here we are assuming that the user will send in an actual correct email
+  - The authenticator applications does this pretty well which is another way to verify users for signup and signin.
+  - `Bearer` tells us what type of token, there are various types of tokens that can be used for authenticating requests. Api key is another popular option then the api_key will be there instead of the bearer.
+
+- We should hash passwords before storing them in the database, since if we don't then storing passwords directly in the database will create a huge security flaw which we don't want. So a  good practice is to use hashing libraries which stores the converted hash of the password in the database
+  - Important concept "salt":
+  - Why we should do this because it is one way and now people who maintain the database can never login to our account, people repeating passwords is another reason why we should hash passwords
+  - But it will still cause security flaws if the password is the same for two different persons since the hashes will be the same. So there is this concept of "salt" which adds like a random string or anything with the combination of the password and then generates a hash which will always be unique to everyone in the world and so in that way it'll be more secure.
+  - So the authentication happens in this manner. First signup generates a token (for the user's browser to login anytime) and hash (for the database storage), token works as long as the cookie remains i.e signin works and the hash will be generated for the person everytime it needs to signup and the same hash will generated for the same user
+
+- explanation of the code below
+ 
+     ```js
+    const updatedBody = zod.object({
+        firstName: zod.string().optional(),
+        lastName: zod.string().optional(),
+        password: zod.string().optional(),
+    })
+
+    const {success} = updatedBody.safeParse(req.body);
+    try {
+        if (!success) {
+            res.status(411).json({
+                message: "Error while updating information"
+            })
+        }
+        await User.updateOne({_id: req.userId}, req, body)
+        next();
+    }
+    ```
+  - we can do the updatedBody like that where we take in the zod object with all the schema defined in there and 
+    then that will auto get the main values from the success destructured object and that updatedBody will take in the 
+1. **Request Body Parsing and Validation**:
+    - The `safeParse` method of the `updatedBody` schema is invoked with `req.body` as its argument. This method 
+      parses and validates the request body against the defined schema.
+    - The `safeParse` method returns an object containing two properties: `success` and `data`.
+    - The `success` property is a boolean indicating whether the parsing and validation were successful. If successful, `success` is `true`; otherwise, it's `false`.
+
+2. **Destructuring the `success` Object**:
+    - The `{success}` syntax is a form of destructuring assignment in JavaScript. It extracts the `success` property from the object returned by `safeParse`.
+    - With this destructuring assignment, we directly access the `success` property without having to reference the entire object (`{success: boolean}`).
+
+3. **Error Handling based on Success Flag**:
+    - If `success` is `false`, it means that the parsing and validation failed. In this case, the server responds with an error status (411) and an error message.
+    - If `success` is `true`, it indicates that the parsing and validation were successful, and the request body conforms to the expected schema.
+
+4. **Updating User Information**:
+    - If the parsing and validation are successful (`success === true`), the server proceeds to update the user information in the database.
+    - The `updateOne` method of the `User` model is used to update the user document based on the provided `_id`. The update data is taken from the request body (`req.body`).
+    - There seems to be a typo in the code where `req, body` is written instead of `req.body`. It should be `req.body`.
+
+- **Searching** part: We can do that by the following way
+
 
 ## not notes
 

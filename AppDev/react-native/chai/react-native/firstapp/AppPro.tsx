@@ -9,8 +9,8 @@ function AppPro(): JSX.Element {
         Hello hiiiiiiiiiii
       </Text>
       <Text style={isDarkMode ? styles.whiteText : styles.darkText}>
-        This is apparently my first app and ironically I am doing this in the
-        midst of exams
+        This is apparently my first app and ironically I did all of this in the
+        midst of first semester exams and now it is over
       </Text>
       <View>
         <Button title="kick me" style={styles.button} />
