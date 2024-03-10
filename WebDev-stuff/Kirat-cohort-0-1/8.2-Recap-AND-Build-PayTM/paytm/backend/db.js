@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const {db_url} = require("./dbConfig");
+const { db_url } = require('./dbConfig');
 
 mongoose
 	.connect(db_url)
@@ -15,7 +15,7 @@ const UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 		unique: true,
-		trim: true,
+		trim: true, // removes any extra spaces from the names of the user
 		lowercase: true,
 		minLength: 3,
 		maxLength: 30,
@@ -37,18 +37,28 @@ const UserSchema = new mongoose.Schema({
 		required: true,
 		minLength: 6,
 	},
-	userId: {
-		type: Number,
-		required: true,
-	},
 	// userName: String,
 	// firstName: String,
 	// lastName: String,
 	// password: String,
 });
 
+const accountSchema = new mongoose.Schema({
+	userId: {
+		type: mongoose.Schema.Types.ObjectId,
+		ref: 'User',
+		required: true,
+	},
+	balance: {
+		type: Number,
+		required: true,
+	},
+});
+
 const User = new mongoose.model('User', UserSchema);
+const Account = new mongoose.model('Account', accountSchema);
 
 module.exports = {
 	User,
+	Account,
 };

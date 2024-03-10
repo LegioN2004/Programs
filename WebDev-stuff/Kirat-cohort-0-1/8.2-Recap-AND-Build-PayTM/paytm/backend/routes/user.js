@@ -3,16 +3,17 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { User } = require('../db');
 const { JWT_SECRET } = require('../dbConfig');
-const {signupMiddleware} = require( "../middlewares/middleware");
-const {signinMiddleware} = require( "../middlewares/middleware");
-const {updateMiddleware} = require( "../middlewares/middleware");
+const { signupMiddleware } = require('../middlewares/middleware');
+const { signinMiddleware } = require('../middlewares/middleware');
+const { updateMiddleware } = require('../middlewares/middleware');
 
 router.post('/signup', signupMiddleware, (req, res) => {
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
+	const userId = User.userId;
 	const jwtToken = jwt.sign(
 		{
-			userId: User.userId,
+			userId,
 		},
 		JWT_SECRET
 	);
@@ -25,45 +26,56 @@ router.post('/signup', signupMiddleware, (req, res) => {
 router.post('/signin', signinMiddleware, (req, res) => {
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
+	const token = req.headers.authorization;
+	const tokenArray = token.split(' ')[1];
+
 	res.status(200).json({
 		msg: `signed in the user ${firstName} ${lastName} successfully`,
-		token: separateBearer,
+		token: tokenArray,
 	});
 });
 
-
-router.put('/', signinMiddleware, updateMiddleware, (req, res) => {
+router.put('/update', updateMiddleware, (req, res) => {
 	res.json({
-			message: 'details updated successfully',
-		})
+		message: 'details updated successfully',
+	});
 });
 
-router.put('/bulk', async (req,res) => {
-	const param = req.query.filter;
-	const userExists1 = await User.findOne({
-		firstName: param,
-	})
-	const userExists2 = await User.findOne({
-		lastName: param,
-	})
+router.get('/bulk', async (req, res) => {
+	const param = req.query.filter || '';
+	const userExists = await User.find({
+		$or: [
+			{
+				firstName: {
+					$regex: param,
+				},
+			},
+			{
+				lastName: {
+					$regex: param,
+				},
+			},
+		],
+	});
 	try {
-		if((userExists1 || userExists2)){
+		if (userExists) {
 			res.status(200).json({
-				users : [{
-					firstName: User.firstName,
-					lastName: User.lastName,
-					_id: User.userId,
-				}],
-			})
-		}else{
+				user: userExists.map((user) => ({
+					username: user.username,
+					firstName: user.firstName,
+					lastName: user.lastName,
+					_id: user.userId,
+				})),
+			});
+		} else {
 			res.status(411).json({
-				msg: "You have a type fix that and re-enter",
-			})
+				msg: 'You have a typo fix that and re-enter',
+			});
 		}
 	} catch (e) {
 		res.status(500).json({
-			msg: "unknown error occured",
-		})
+			msg: 'unknown error occured',
+		});
 	}
-})
+});
 module.exports = router;

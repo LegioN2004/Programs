@@ -9,7 +9,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.use('/api/v1', mainRouter);
-app.use('/api/v2', mainRouter);
+// app.use('/api/v2', mainRouter);
 
 // app.get('/user', async (req, res) => {
 // 	try {
