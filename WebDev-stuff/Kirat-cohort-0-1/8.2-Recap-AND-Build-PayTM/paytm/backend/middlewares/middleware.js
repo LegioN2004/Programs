@@ -118,18 +118,27 @@ async function signinMiddleware(req, res, next) {
 
 // TODO: check if we need to use authentication using jwt token to do stuff like changing data or getting data, etc. If yes add the authMiddleware to everywhere other than signup, signin, or update
 
-// async function authMiddleware(req, res, next) {
-// 	const token = req.headers.authorization
-// 	const separatedToken = token.split('')[1];
-// 	const userName = req.body.userName;
-// 	const jwtVerify = jwt.verify(token, JWT_SECRET);
-// 	if (!jwtVerify) {
-// 		return res.status(401).json({
-// 			message: 'wrong token',
-// 		});
-// 	}
+async function authMiddleware(req, res, next) {
+	const authHeader = req.headers.authorization;
+	if (!authHeader || !authHeader.startsWith('Bearer ')) {
+		return res.status(403).json({
+			message:
+				"Forbidden: Invalid token, or token doesn't exist get a new one by signing up :)",
+		});
+	}
 
-// }
+	const token = authHeader.split(' ')[1];
+
+	try {
+		const decoded = jwt.verify(token, JWT_SECRET);
+		req.userId = decoded.userId;
+		next();
+	} catch (err) {
+		return res.status(403).json({
+			message: 'server error, refresshh the page :-<',
+		});
+	}
+}
 
 async function updateMiddleware(req, res, next) {
 	const updatedBody = zod.object({
@@ -158,4 +167,5 @@ module.exports = {
 	signupMiddleware,
 	signinMiddleware,
 	updateMiddleware,
+	authMiddleware,
 };

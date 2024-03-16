@@ -1,11 +1,14 @@
 const express = require('express');
-const { signinMiddleware } = require('../middlewares/middleware');
+const {
+	signinMiddleware,
+	authMiddleware,
+} = require('../middlewares/middleware');
 const router = express.Router();
 const { Account } = require('../db');
 // TODO: why does using Account instead of object destructuring show an error saying that  in the Account.findOne line findOne is not a function
 const mongoose = require('mongoose');
 
-router.get('/balance', async (req, res) => {
+router.get('/balance', authMiddleware, async (req, res) => {
 	const userId = req.body.userId;
 	const account = await Account.findOne({
 		userId: userId,
@@ -62,7 +65,7 @@ router.get('/balance', async (req, res) => {
 // 	});
 // });
 
-router.post('/transfer', async (req, res) => {
+router.post('/transfer', authMiddleware, async (req, res) => {
 	const session = await mongoose.startSession();
 
 	session.startTransaction();

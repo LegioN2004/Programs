@@ -17,9 +17,9 @@ import {
 import {MapPinIcon} from 'react-native-heroicons/solid';
 import * as Progress from 'react-native-progress';
 import {fetchLocations, fetchWeatherForecast} from '../api/weather';
-const {weatherImages} = require( '../constants/index')
+const {weatherImages} = require('../constants/index');
 import {theme} from '../theme/index';
-import {getData, storeData} from '../utils/asyncStorage';
+// import {getData, storeData} from '../utils/asyncStorage';
 
 export default function HomeScreen() {
   const [showSearch, toggleSearch] = useState(false);
@@ -27,7 +27,7 @@ export default function HomeScreen() {
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const handleLocation = () => {
+  const handleLocation = location => {
     setLocations([]);
     toggleSearch(false);
     setLoading(true);
@@ -37,7 +37,7 @@ export default function HomeScreen() {
     }).then(data => {
       setWeather(data);
       setLoading(false);
-      storeData('city', location.name);
+      // storeData('city', location.name);
     });
   };
 
@@ -58,11 +58,11 @@ export default function HomeScreen() {
   }, []);
 
   const fetchMyWeatherData = async () => {
-    let myCity = await getData('city');
+    // let myCity = await getData('city');
     let cityName = 'Dibrugarh';
-    if (myCity) {
-      cityName = myCity;
-    }
+    // if (myCity) {
+    //   cityName = myCity;
+    // }
     fetchWeatherForecast({
       cityName,
       days: '7',

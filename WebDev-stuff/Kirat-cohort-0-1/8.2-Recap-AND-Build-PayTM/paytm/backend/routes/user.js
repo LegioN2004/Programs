@@ -3,9 +3,12 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const { User } = require('../db');
 const { JWT_SECRET } = require('../dbConfig');
-const { signupMiddleware } = require('../middlewares/middleware');
-const { signinMiddleware } = require('../middlewares/middleware');
-const { updateMiddleware } = require('../middlewares/middleware');
+const {
+	signupMiddleware,
+	authMiddleware,
+	signinMiddleware,
+	updateMiddleware,
+} = require('../middlewares/middleware');
 
 router.post('/signup', signupMiddleware, (req, res) => {
 	const firstName = req.body.firstName;
@@ -41,6 +44,7 @@ router.put('/update', updateMiddleware, (req, res) => {
 	});
 });
 
+// router.get('/bulk', authMiddleware, async (req, res) => {
 router.get('/bulk', async (req, res) => {
 	const param = req.query.filter || '';
 	const userExists = await User.find({
