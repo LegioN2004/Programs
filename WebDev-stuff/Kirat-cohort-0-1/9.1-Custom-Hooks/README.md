@@ -309,8 +309,133 @@ function useTodos(n) {
 
 - The problems in the above code is that we have a dependency variable that is changing but we are not using it in the dependency  array which is wrong since if the value of n changes then the render part will run for the old value of n which we don't want
 - If we set the dep array and also change the n then there will be two setInterval of both the new and the old one which is wrong and the old one must be cleared, so as said earlier we'll use the return function inside the useEffect hook which acts as the cleanup function
-- So in the return function we'll use the `clearInterval()` function which clears the interval set by `setInterval()`. Here setInteval returns a value which can be stored and then be used to do the cleaning of the interval(JS stuff).
+- So in the return function we'll use the `clearInterval()` function which clears the interval set by `setInterval()`. Here setInteval returns a value(which is a way to find that clock running) which can be stored and then be used to do the cleaning of the interval(JS stuff).
 
 ## SWR by vercel
 
 All of the above custom hooks that we have written is already made into a library called "**SWR**" and it provides us with such hooks and a bunch of other things on top of those and by using them we'll make our life easier.
+
+Also whoever is using the SWR library don't need to worry about the set function, like the `[todos, setTodos]` because it is like provide me the set of todos and we need to worry about only updating the todos, the rest of the work will be done by SWR and so it doesn't return it.
+
+### More hooks random
+
+4 - Browser funtionality related hooks
+
+- The way to write these hooks is by creating a folder named hooks in the src and then we can put all the hooks there and then import those in the file where it'll be used.
+- **`useIsOnline`** hook
+  - Create a hook that returns true or false based on wether the user is currently online
+  - We are given that -
+    - `window.navigator.onLine` returns true or false based on weather the user is online
+    - You can attach the following event listeners to listen to weather the user is online or not
+  - *usecase*: for gaming websites where the person comes and if there internet connection cuts off then it'll show up as "you are offline". We can do this without hooks and also without react.
+
+```js
+window.addEventListener('online', () => console.log('Became online'));
+window.addEventListener('offline', () => console.log('Became offline'));
+```
+
+- **`useMousePointer`** hook
+  - Create a hook that returns you the current mouse pointer position.
+  - You are given that `window.addEventListener('mousemove', handleMouseMove);` will trigger the handleMouseMove function anytime the mouse pointer is moved.
+
+- Also we should clear this event listeners so that we don't have any lingering events when the component unmounts.
+
+5 - Performance/Timer based
+
+- **`useInterval`**
+Create a hook that runs a certain callback function every n seconds.
+We'll have to implement useInterval which is being used in the code below -
+
+```jsx
+import { useEffect, useState } from 'react';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  useInterval(() => {
+    setCount(c => c + 1);
+  }, 1000)
+
+  return (
+    <>
+      Timer is at {count}
+    </>
+  )
+}
+
+export default App
+```
+
+But in most cases, if `fn` and `timeout` are not expected to change, it's safe to omit them from the dependency array to avoid unnecessary re-renders.
+
+- The main one: `useDebounce` The debouncing concept
+  - What is **debouncing**: For example in the amazon page, when we search for something and there we type slowly letter by letter then multiple requests goes to the backend based on the input query that is being written and it sends, searches and sends back suggestions and those get populated in the search suggestion below accordingly. If we type all the words in a second then how should the request be sent, ideally it should send the whole word as a single request such that there is less stress on the server as much as possible. Or we can do something like no change as long as no key has been pressed for 200ms, so after 200ms after the last key pressed will the request be sent. This is called 'debouncing'
+
+- Create a hook that debounces a value given
+  - The value that needs to be debounced
+  - The interval at which the value should be debounced.
+
+```jsx
+import React, { useState } from 'react';
+import useDebounce from './useDebounce';
+
+const SearchBar = () => {
+  const [inputValue, setInputValue] = useState('');
+  const debouncedValue = useDebounce(inputValue, 500); // 500 milliseconds debounce delay
+
+  // Use the debouncedValue in your component logic, e.g., trigger a search API call via a useEffect
+
+  return (
+    <input
+      type="text"
+      value={inputValue}
+      onChange={(e) => setInputValue(e.target.value)}
+      placeholder="Search..."
+    />
+  );
+};
+
+export default SearchBar;
+```
+
+- inputValue state changes immmediately but
+- Here the debounced value doesn't change instantly, but only when we are ready to fire off the requests. When we search for 'airpods' it shouldn't get 'a' then 'i' then 'air' instead it should get the letter first and then the word as a whole, i.e it should not get the intermediate values that we know that we shouldn't send, it needs to debounce storing these value in there until we are ready to fire off the request.
+- After the implementation, the following is the code
+  - The thing to note here is that we should clear the clock after the last keystroke happens because if we keep typing the clock will run for all the keystrokes continuously and debouncing just becomes of no use since it'll continuously type and instead we want it to happen after 500ms of the last keystroke. So we'll keep starting new clocks and stopping the old clocks until it reaches the point when it doesn't need to run the clearing function and then the request gets sent
+
+```jsx
+function useDebounce(value, timeout) {
+ const [debouncedValue, setDebouncedValue] = useState(value);
+ useEffect(() => {
+  setTimeout(() => {
+   setDebouncedValue(value);
+   console.log(value);
+  }, timeout);
+  return () => {
+   clearTimeout(hello);
+  };
+ }, [value]);
+}
+
+```
+
+### doubt
+
+In this case, you don't need to include `fn` or `timeout` in the dependency array of the `useEffect` hook. The reason is that `fn` and `timeout` are provided by the parent component when invoking the `useInterval` custom hook, and they don't change over time. Including them in the dependency array would cause the effect to re-run unnecessarily.
+
+However, if `fn` or `timeout` were to change during the component's lifecycle and you needed to react to those changes, you would include them in the dependency array. For example:
+
+```javascript
+function useInterval(fn, timeout) {
+ useEffect(() => {
+  const intervalId = setInterval(() => {
+   fn();
+  }, timeout);
+
+  // Return a cleanup function to clear the interval when the component unmounts
+  return () => {
+   clearInterval(intervalId);
+  };
+ }, [fn, timeout]); // Include fn and timeout in the dependency array
+}
+```

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import { Dimensions } from './Dimensions';
+import { MouseMove } from './MouseMove';
+import { Online } from './Online';
 import { Todo } from './Todo';
+import { Timer } from './Timer';
+import { Debounce } from './Debounce';
 
 export default function App() {
 	const [showComponent, setShowComponent] = useState(true);
@@ -13,7 +18,12 @@ export default function App() {
 	// return <>{showComponent ? <MyComponent></MyComponent> : <div></div>}</>;
 	return (
 		<div>
-			<Todo />
+			{/* <Todo /> */}
+			{/* <Online></Online> */}
+			{/* <MouseMove></MouseMove> */}
+			{/* <Dimensions></Dimensions> */}
+			{/* <Timer></Timer> */}
+			<Debounce></Debounce>
 		</div>
 	);
 }
