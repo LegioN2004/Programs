@@ -134,22 +134,111 @@ function greet(name: string) {
 greet('byeeeeeeeee');
 ```
 
+- Here the function can get as many arguments so each of them will have to defined a type like we have done above
+
 - Problem 2 - Sum function
 
   > 💡 Thing to learn - How to assign a return type to a function
 
   - Write a function that calculates the sum of two functions
-  Solution: 
+  Solution: The following is the solution of the above question and we can explicitly define the types there in the argument itself with a colon and then we can also specify the type of the return statement after the argument brackets like done in the following.
+  - But if we don't define the type of the function explicitly still typescript is able to know the type automatically. This is known as "type inference" since the two numbers that were defined with the type inside the function were already numbers and as such if we add the two we'll still get a number and so TS automatically knows that, but we should know that typescript doesn't know the logic it only knows the type. It is a good practice to set the type of the function.
 
-  ```js
+  ```ts
+  function Sum(a: number, b: number): number {
+    return a + b;
+  }
 
+  console.log(Sum(1, 2));
   ```
 
 - Problem 3 - Return true or false based on if a user is 18+
+solution:
+
+```ts
+function isLegal(a: number): boolean {
+ if (a >= 18) {
+  return true;
+ } else {
+  return false;
+ }
+}
+
+console.log(isLegal(20));
+console.log(isLegal(10));
+```
 
 > 💡 Thing to learn - Type inference
-Function name - isLegal
-Code
-notion image
-Problem 4 -
-Create a function that takes another function as input, and runs it after 1 second.
+
+- Problem 4 - Create a function that takes another function as input, and runs it after 1 second.
+solution: Here we will use the callback function type definition which can be done by the following way.
+Firstly the main `Callback` function receives a function as an argument and as such we'll have to define the function type in this manner  `fn: () => void` where the first is the name followed by colon which is the way to show types followed by another `()` which shows the function and followed by the `=>` and then the type that will be returned which is void in our case since the callback doesn't expect/return any value or doesn't has any argument and so it returns nothing i.e `void`
+
+```ts
+function Callback(fn: () => void) {
+ setTimeout(fn, 1000);
+}
+
+Callback(function () {
+ console.log('ran after 1 second');
+});
+
+```
+
+## The tsconfig file
+
+Now we'll need to understand the tsconfig.json configuration file and some of the options that are present in the file and what happens to the compilation process when we flip their arguments.
+
+The tsconfig file has a bunch of options that we can change to change the compilation process.
+Some of these include
+
+1. **`target`**
+
+- The `target` option in a tsconfig.json file specifies the "ECMAScript" target version to which the "TypeScript" compiler will compile the "TypeScript" code.
+- The version specifies the type of things that were introduced in the new version and if the browser or the runtime doesn't support the code will be of no use. We can set it to any version as per our choice but the default one will be the most recent/newest one
+- To try it out, try compiling the following code for target being ES5 and es2020
+
+```ts
+const greet = (name: string) => `Hello, ${name}!`;
+```
+
+Output for ES2016(understands arrow functions)
+
+```js
+const greetings = (name) => `Hello, ${name}!`;
+```
+
+Output for ES5(doesn't undestand arrow function)
+
+```js
+var greetings = function (name) { return "Hello, ".concat(name, "!"); };
+```
+
+Output for ES2020
+
+```js
+const greetings = (name) => `Hello, ${name}!`;
+```
+
+- The best use case for this is the backwards compatibility where we can compile the TS code with latest standards and the compile it down to the oldest standards as old as the IE days where it supports only a very old version of ECMAscript.
+
+2. **`rootDir`** and **`outDir`**
+
+- Where should the compiler look for .ts files. Good practise is for this to be the `src` folder
+  - So we should create a `src` folder which will have all the source files
+- And where should the compiler look for spit out the .js files. We'll create folder called `dist`/`build` which will have all the compiled down output js files. We can name it anything we want but this is commonly used.
+
+4. noImplicitAny
+
+- This is by default set to true in the tsconfig file and if we set it to false, then it'll be less strict and will stop checking explicitly for types and will accept implicitly the type. Eg: In cases where we are migrating from JS to TS and we don't want to infer types since there will be a thousand functions and it'll take a hell lot of time and will be done slowly but there is a need to compile the code atleast
+- Try enabling it and see the compilation errors on the following code
+
+```js
+const greet = (name) => `Hello, ${name}!`;
+```
+
+Then try disabling it
+5. removeComments
+Weather or not to include comments in the final js file. We can just set it to true since there is no use of using comments in the final js file because the whole time will be spent on the main TS file
+
+There are a thousands of these configurations in tsconfig for typescript and we don't need to know everything and as time goes by we can learn on the go.
