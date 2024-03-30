@@ -3,15 +3,15 @@
 ## Types of languages
 
 - Strongly typed vs loosely typed
-The terms strongly typed and loosely typed refer to how programming languages handle types, particularly how strict they are about type conversions and type safety.
+  The terms strongly typed and loosely typed refer to how programming languages handle types, particularly how strict they are about type conversions and type safety.
 
-| Strongly typed languages | Loosely typed languages |
-| ------- | ------- |
-| Examples - Java, C++, C, Rust | Examples - Python, Javascript, Perl, php |
-| Benefits - | Benefits - |
-| Lesser runtime errors | Easy to write code |
-| Stricter codebase | Fast to bootstrap |
-| Easy to catch errors at compile time | Low learning curve |
+| Strongly typed languages             | Loosely typed languages                  |
+| ------------------------------------ | ---------------------------------------- |
+| Examples - Java, C++, C, Rust        | Examples - Python, Javascript, Perl, php |
+| Benefits -                           | Benefits -                               |
+| Lesser runtime errors                | Easy to write code                       |
+| Stricter codebase                    | Fast to bootstrap                        |
+| Easy to catch errors at compile time | Low learning curve                       |
 
 - Code doesn’t work ❌
 
@@ -29,9 +29,9 @@ return 0;
 
 ```js
 function main() {
-let number = 10;
-number = "text";
-return number;
+  let number = 10;
+  number = "text";
+  return number;
 }
 ```
 
@@ -40,11 +40,13 @@ return number;
 ## What is Typescript
 
 - What is typescript?
+
   - TypeScript is a programming language developed and maintained by Microsoft.
   - It is a strict syntactical superset of JavaScript and adds optional static typing to the language.
   - It is backwards compatible with JS
 
 - Where/How does typescript code run?
+
   - Typescript code never runs in your browser. Your browser can only understand javascript.
   - Javascript is the runtime language (the thing that actually runs in your browser/nodejs runtime)
   - Typescript is something that compiles down to javascript, more appropriately 'transpiled' down to JS
@@ -58,11 +60,11 @@ return number;
 
 ## Creating a typescript node project
 
- The tsc compiler
+The tsc compiler
 We can bootstrap a simple Typescript Node.js application locally on our machines by the following steps:
 
 - Step 1 - Install tsc/typescript globally
-` npm install -g typescript `
+  `npm install -g typescript`
 - Step 2 - Initialize an empty Node.js project with typescript
 
 ```bash
@@ -75,7 +77,7 @@ npx tsc --init
 These commands should initialize two files in your project
 
 - Step 3 - Create a a.ts file
-` npm install -g typescript `
+  `npm install -g typescript`
 
 ```ts
 const x: number = 1;
@@ -83,30 +85,31 @@ console.log(x);
 ```
 
 - Step 4 - Compile the ts file to js file
-` tsc -b `
+  `tsc -b`
 - Step 5 - Explore the newly generated index.js file
-Notice how there is no typescript code in the javascript file. It’s a plain old js file with no types
+  Notice how there is no typescript code in the javascript file. It’s a plain old js file with no types
 - Step 6 - Try assigning x to a string
-Make sure you convert the const to let
+  Make sure you convert the const to let
 
 ```ts
 let x: number = 1;
-x = "harkirat"
+x = "harkirat";
 console.log(x);
 ```
 
 - Step 7 - Delete a.js
 - Step 8 - Try compiling the code again
-` tsc -b `
-Notice all the errors you see in the console. This tells you there are type errors in your codebase.
-Also notice that no index.js is created anymore
-notion image
-This is the high level benefit of typescript. It lets you catch type errors at compile time
+  `tsc -b`
+  Notice all the errors you see in the console. This tells you there are type errors in your codebase.
+  Also notice that no index.js is created anymore
+  notion image
+  This is the high level benefit of typescript. It lets you catch type errors at compile time
 
 - About the tsconfig.json
   - This file contains a bunch of variables we can call them configurations, which we can turn true or false and based on that the compilation process will change.
   - There are a lot of configurations within the file which we don't need to learn all of them, but some popular ones should be learned
 - About package.json
+
   - It has nothing to do with typescript
   - It just contains the packages, their versions and some other stuff regarding the package management
 
@@ -115,7 +118,7 @@ This is the high level benefit of typescript. It lets you catch type errors at c
 ## Basic Types in TypeScript
 
 - Typescript provides us with some basic types such as `number`, `string`, `boolean`, `null`, `undefined`.
-Let’s create some simple applications using these types -
+  Let’s create some simple applications using these types -
 
 - Problem 1 - Hello world
 
@@ -125,7 +128,7 @@ Let’s create some simple applications using these types -
     Argument - firstName
     Logs - Hello {firstName}
     Doesn’t return anything
-  Solution: Here we can see that everything is the same as JS, but the thing that is different is the argument which requires a type since it is TS and it has types for most of the things so as to reduce errors
+    Solution: Here we can see that everything is the same as JS, but the thing that is different is the argument which requires a type since it is TS and it has types for most of the things so as to reduce errors
 
 ```js
 function greet(name: string) {
@@ -141,7 +144,7 @@ greet('byeeeeeeeee');
   > 💡 Thing to learn - How to assign a return type to a function
 
   - Write a function that calculates the sum of two functions
-  Solution: The following is the solution of the above question and we can explicitly define the types there in the argument itself with a colon and then we can also specify the type of the return statement after the argument brackets like done in the following.
+    Solution: The following is the solution of the above question and we can explicitly define the types there in the argument itself with a colon and then we can also specify the type of the return statement after the argument brackets like done in the following.
   - But if we don't define the type of the function explicitly still typescript is able to know the type automatically. This is known as "type inference" since the two numbers that were defined with the type inside the function were already numbers and as such if we add the two we'll still get a number and so TS automatically knows that, but we should know that typescript doesn't know the logic it only knows the type. It is a good practice to set the type of the function.
 
   ```ts
@@ -153,15 +156,15 @@ greet('byeeeeeeeee');
   ```
 
 - Problem 3 - Return true or false based on if a user is 18+
-solution:
+  solution:
 
 ```ts
 function isLegal(a: number): boolean {
- if (a >= 18) {
-  return true;
- } else {
-  return false;
- }
+  if (a >= 18) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 console.log(isLegal(20));
@@ -171,18 +174,17 @@ console.log(isLegal(10));
 > 💡 Thing to learn - Type inference
 
 - Problem 4 - Create a function that takes another function as input, and runs it after 1 second.
-solution: Here we will use the callback function type definition which can be done by the following way.
-Firstly the main `Callback` function receives a function as an argument and as such we'll have to define the function type in this manner  `fn: () => void` where the first is the name followed by colon which is the way to show types followed by another `()` which shows the function and followed by the `=>` and then the type that will be returned which is void in our case since the callback doesn't expect/return any value or doesn't has any argument and so it returns nothing i.e `void`
+  solution: Here we will use the callback function type definition which can be done by the following way.
+  Firstly the main `Callback` function receives a function as an argument and as such we'll have to define the function type in this manner `fn: () => void` where the first is the name followed by colon which is the way to show types followed by another `()` which shows the function and followed by the `=>` and then the type that will be returned which is void in our case since the callback doesn't expect/return any value or doesn't has any argument and so it returns nothing i.e `void`
 
 ```ts
 function Callback(fn: () => void) {
- setTimeout(fn, 1000);
+  setTimeout(fn, 1000);
 }
 
 Callback(function () {
- console.log('ran after 1 second');
+  console.log("ran after 1 second");
 });
-
 ```
 
 ## The tsconfig file
@@ -211,7 +213,9 @@ const greetings = (name) => `Hello, ${name}!`;
 Output for ES5(doesn't undestand arrow function)
 
 ```js
-var greetings = function (name) { return "Hello, ".concat(name, "!"); };
+var greetings = function (name) {
+  return "Hello, ".concat(name, "!");
+};
 ```
 
 Output for ES2020
@@ -237,8 +241,336 @@ const greetings = (name) => `Hello, ${name}!`;
 const greet = (name) => `Hello, ${name}!`;
 ```
 
-Then try disabling it
-5. removeComments
+Then try disabling it 5. removeComments
 Weather or not to include comments in the final js file. We can just set it to true since there is no use of using comments in the final js file because the whole time will be spent on the main TS file
 
 There are a thousands of these configurations in tsconfig for typescript and we don't need to know everything and as time goes by we can learn on the go.
+
+## Interfaces
+
+1. What are interfaces
+   How can you assign types to objects? For example, a user object that looks like this -
+
+```ts
+const user = {
+	firstName: "harkirat",
+	lastName: "singh",
+	email: "email@gmail.com".
+	age: 21,
+}
+```
+
+To assign a type to the user object, you can use interfaces. It is a way to combine multiple things in a single object.
+
+```ts
+interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+}
+```
+
+Assignment #1 - Create a function isLegal that returns true or false if a user is above 18. It takes a user as an input.
+
+- It can be done in the following way but for another function we'll again need to define these types and as such it simply violates dry which is what we don't want so instead we can define interfaces. There are more reasons as to why this practice is bad except the dry part.
+
+```ts
+function isLegal(user: {
+  firstName: string;
+  lastName: string;
+  age: number;
+}): boolean {
+  return user.age >= 18 ? true : false;
+}
+
+// repitition
+function greet(user: {
+  firstName: string;
+  lastName: string;
+}): boolean {
+  return "heloooo there" + firstName + " " + lastName;
+}
+
+isLegal(
+  firstName: "harkirat",
+  lastName: "singh",
+  age: 20
+)
+```
+
+- So here comes the usecase of interfaces where we can just instead do the following
+
+  - This is how we can create an interface
+
+```ts
+interface User {
+  firstName: string;
+  lastName: string;
+  age: number;
+}
+```
+
+- And so we can use this interface as the input type by writing that first and then where we set the type using colon, inplace of the type we can set the interface variable and then the type for the certain data for the objects gets set from there itself and we don't need to define it repeatedly on function argument declaration.
+  - And the main code will look something like the following. This is a much better for doing something like this.
+  - Also we can set optional arguments like the one "email" in the interface using the syntax `email?: string;` which means that it depends on the user if they want to send something or not, can be also empty. We'll not get compilation errors.
+  - This is the correct way to give the type using interfaces, and the wrong way is to use `any`.
+
+```ts
+interface User {
+  firstName: string;
+  lastName: string;
+  age: number;
+  email?: string; // optional arguments
+}
+
+function isLegal(user: User) {
+  return user.age >= 18 ? true : false;
+}
+
+function greet(user: User) {
+  return "heloooo there" + user.firstName + " " + user.lastName;
+}
+
+isLegal({
+  firstName: "harkirat",
+  lastName: "singh",
+  age: 20,
+});
+```
+
+### Interfaces inside a class
+
+We can use interfaces inside a class so as to make the code more strict.
+
+- The reason to use this is that we can have more flexibility on what is being provided, what should be not entered, basically strictness.
+- And also it lets us add some object-oriented properties to JS
+- We can create an interface and use that to extend the classes. Similar to the interfaces and abstract class in JAVA.
+- It is rarely used but it is good to know since it is one of the main differences between interfaces and types.
+
+Interfaces have another special property. You can implement interfaces as a class.
+Let’s say we have an person interface -
+
+- What we can do here is that we can use that interface and add more strictness to the class that will be using the interface. Similarly we can apply that to many different classes like CEO, Manager, etc and they'll have different input as well as output.
+- This interface is the structure of what the class might finally look like, and this `Employee` is implementing that structure for the Employee part, for CEO, so on and so forth
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+  greet(phrase: string): void;
+}
+```
+
+We can create a class which implements this interface.
+
+- In TS, if we know that the class might be associated to the final object i.e `const e = new Employee("hkirat", 22);`, then we'll need to define these properties above the constructor like the following(can be public or private). And then these are initialized in the constructor where we also define the type inside the argument part.
+
+  - The `n`, `a` are variables that takes the value serially just like functions after the variable declaration inside the class and as such if we don't do this `this.var_name = the_constructor_arg`, then it'll show error that the variable has not been declared
+  - This is the error, which says that the class implements, i.e follows the strucutre set by the interface and as such we can't make the age optional inside the class when it is required strictly inside the interface bc it follows the interface.
+
+    ```
+    ❯ tsc src/interfaces-in-class.ts
+    src/interfaces-in-class.ts:7:7 - error TS2420: Class 'Employee' incorrectly implements interface 'Person'.
+      Property 'age' is optional in type 'Employee' but required in type 'Person'.
+
+    7 class Employee implements Person {
+            ~~~~~~~~
+    ```
+
+  - Now if we know that one of the property may be an optional, then we can remove the constructor initializer and then add the optional argument syntax to the class initializer and in the interface as well i.e `age?: number`.
+
+```ts
+class Employee implements Person {
+  // defined again so that we can t
+  name: string;
+  age: number;
+
+  constructor(n: string, a: number) {
+    this.name = n;
+    this.age = a;
+  }
+
+  greet(phrase: string) {
+    console.log(`${phrase} ${this.name}`);
+  }
+}
+
+const e = new Employee("hkirat", 22);
+```
+
+This is useful since now we can create multiple variants of a person (Manager, CEO …)
+
+The main difference between interfaces and types is that if we define an interface, we can actually implement a class from it that follows all the properties defined in the interface. Types don't let us do it. This is a popular interview question.
+
+- Why do we need to implement the interface if we can create class individually: The reason is that when we implement the interface in the class, we'll now have this structure to the class properties/variables/values which if doesn't matched will cause an error in compilation.
+  - Also by implementing the interface `Person` on that `e` object when creating class we will call `greet` which exists as a function inside the interface, and whoever implements this interface inside the class will be forced to have these types and the function.
+  - We can do the above class stuff in JS as well the whole point of using TS is to get more strictness in the overall code and then it'll be more safe and we'll not shoot ourselves in our foot.
+  - Note that the compiled JS doesn't have this, JS can't even understand interfaces. Only we do it in TS to make it strict as much as possible
+
+## About the class in TS, by Chat gippity
+
+Absolutely! Let's break down the class `Employee` and its constructor in detail, along with its syntax, control flow, and logic.
+
+### Class Syntax:
+
+In TypeScript (and JavaScript), a class is a blueprint for creating objects with predefined properties and methods. Here's a basic syntax of a class:
+
+```typescript
+class ClassName {
+  // Properties
+  property1: type;
+  property2: type;
+
+  // Constructor
+  constructor(parameter1: type, parameter2: type) {
+    this.property1 = parameter1;
+    this.property2 = parameter2;
+  }
+
+  // Methods
+  methodName() {
+    // Method body
+  }
+}
+```
+
+### `Employee` Class:
+
+Let's analyze the `Employee` class in your code:
+
+```typescript
+class Employee implements Person {
+  name: string;
+  age: number;
+
+  constructor(n: string, a: number) {
+    this.name = n;
+    this.age = a;
+  }
+
+  greet(phrase: string) {
+    console.log(`${phrase} ${this.name}`);
+  }
+}
+```
+
+#### Properties:
+
+- `name` and `age`: These are properties of the `Employee` class. They represent the name and age of an employee and are both of type `string` and `number` respectively.
+
+#### Constructor:
+
+- `constructor(n: string, a: number)`: This is a constructor method that is called when an object of the `Employee` class is created.
+  - `n: string` and `a: number`: These are parameters passed to the constructor. They represent the name and age of the employee respectively.
+  - Inside the constructor:
+    - `this.name = n;`: Assigns the value of `n` (the name passed to the constructor) to the `name` property of the `Employee` object.
+    - `this.age = a;`: Assigns the value of `a` (the age passed to the constructor) to the `age` property of the `Employee` object.
+
+#### Methods:
+
+- `greet(phrase: string)`: This is a method of the `Employee` class that takes a `phrase` parameter (of type `string`) and logs a greeting message along with the employee's name.
+  - `console.log(`${phrase} ${this.name}`);`: Outputs the greeting message to the console, incorporating the `phrase` parameter and the `name` property of the `Employee` object.
+
+### Control Flow and Logic:
+
+1. **Object Creation**: When an object of the `Employee` class is created using the `new` keyword, the constructor is automatically invoked.
+
+   ```typescript
+   const e = new Employee("hkirat", 22);
+   ```
+
+   - This statement creates a new `Employee` object named `e` with the name `"hkirat"` and age `22`.
+   - The constructor initializes the `name` and `age` properties of the `e` object with the provided values.
+
+2. **Method Invocation**: After creating the `Employee` object, you can invoke its methods, such as `greet`.
+
+   ```typescript
+   e.greet("Hello");
+   ```
+
+   - This statement calls the `greet` method of the `e` object, passing the string `"Hello"` as the `phrase` parameter.
+   - The `greet` method combines the `phrase` parameter with the `name` property of the `e` object and logs the resulting message to the console.
+
+3. **Property Access**: You can also access the properties of the `Employee` object directly.
+   ```typescript
+   console.log(e.name); // Output: hkirat
+   console.log(e.age); // Output: 22
+   ```
+   - These statements access and output the `name` and `age` properties of the `e` object respectively.
+
+In summary, the class `Employee` encapsulates the data and behavior related to an employee, allowing you to create multiple instances of `Employee` objects with different names and ages, and interact with them through methods like `greet`. The constructor initializes the object's properties when it's created, and methods provide functionality to the objects.
+
+## Types in TS
+
+- What are types?: They're very similar to interfaces, types let you aggregate data together.
+  - One of the syntactical difference between interface and type is that we don't need to put an assignment operator on interface creation but we need to do in case of types
+  - Types and interface are almost similar but we decide what to use according to the usecase, eg: if we have to implement a structure with 'types' for a class then we can go for the `interface` since it can't be done using `type` and in other cases like functions and all we are good to use `type`
+
+```ts
+type User = {
+  firstName: string;
+  lastName: string;
+  age: number;
+};
+```
+
+But they let you do a few other things.
+
+1. **Unions**
+   - Let’s say you want to print the id of a user, which can be a number or a string. We can not do this using interfaces.
+   - And this can be done using the following syntax i.e `string | number` assigned to a function or we can pull this out to a type.
+
+```ts
+type StringOrNumber = string | number;
+
+function printId(id: StringOrNumber) {
+  console.log(`ID: ${id}`);
+}
+
+printId(101); // ID: 101
+printId("202"); // ID: 202
+```
+
+2. **Intersection**
+   - What if you want to create a type that has every property of multiple types / interfaces. We can not do this using interfaces.
+   - What we have done here is that we have created two structure, Employee and Manager which has the datatype defined in them and using `type` we can use one or both of those structures for defining the data that will be entered.
+   - If we know that we'll need to have the intersection of the two defined structures we'll use this syntax `type TeamLead = Employee & Manager;` ampersand here and so the final output will need to have the `name`, `startDate` and `description`. That is what types let us do and this is how it is different from interfaces
+
+```ts
+type Employee = {
+  name: string;
+  startDate: Date;
+};
+
+type Manager = {
+  name: string;
+  department: string;
+};
+
+type TeamLead = Employee & Manager;
+
+const teamLead: TeamLead = {
+  name: "harkirat",
+  startDate: new Date(),
+  department: "Software developer",
+};
+```
+
+## Arrays in TS
+
+If you want to access arrays in typescript, it’s as simple as adding a [] annotation next to the type, in the manner `type[]`
+Example 1: Given an array of positive integers as input, return the maximum value in the array
+
+```ts
+function maxValue(arr: number[]) {
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log(maxValue([1, 2, 3]));
+```
