@@ -253,10 +253,10 @@ There are a thousands of these configurations in tsconfig for typescript and we 
 
 ```ts
 const user = {
-	firstName: "harkirat",
-	lastName: "singh",
-	email: "email@gmail.com".
-	age: 21,
+ firstName: "harkirat",
+ lastName: "singh",
+ email: "email@gmail.com".
+ age: 21,
 }
 ```
 
@@ -411,7 +411,7 @@ The main difference between interfaces and types is that if we define an interfa
 
 Absolutely! Let's break down the class `Employee` and its constructor in detail, along with its syntax, control flow, and logic.
 
-### Class Syntax:
+### Class Syntax
 
 In TypeScript (and JavaScript), a class is a blueprint for creating objects with predefined properties and methods. Here's a basic syntax of a class:
 
@@ -434,7 +434,7 @@ class ClassName {
 }
 ```
 
-### `Employee` Class:
+### `Employee` Class
 
 Let's analyze the `Employee` class in your code:
 
@@ -454,11 +454,11 @@ class Employee implements Person {
 }
 ```
 
-#### Properties:
+#### Properties
 
 - `name` and `age`: These are properties of the `Employee` class. They represent the name and age of an employee and are both of type `string` and `number` respectively.
 
-#### Constructor:
+#### Constructor
 
 - `constructor(n: string, a: number)`: This is a constructor method that is called when an object of the `Employee` class is created.
   - `n: string` and `a: number`: These are parameters passed to the constructor. They represent the name and age of the employee respectively.
@@ -466,12 +466,12 @@ class Employee implements Person {
     - `this.name = n;`: Assigns the value of `n` (the name passed to the constructor) to the `name` property of the `Employee` object.
     - `this.age = a;`: Assigns the value of `a` (the age passed to the constructor) to the `age` property of the `Employee` object.
 
-#### Methods:
+#### Methods
 
 - `greet(phrase: string)`: This is a method of the `Employee` class that takes a `phrase` parameter (of type `string`) and logs a greeting message along with the employee's name.
   - `console.log(`${phrase} ${this.name}`);`: Outputs the greeting message to the console, incorporating the `phrase` parameter and the `name` property of the `Employee` object.
 
-### Control Flow and Logic:
+### Control Flow and Logic
 
 1. **Object Creation**: When an object of the `Employee` class is created using the `new` keyword, the constructor is automatically invoked.
 
@@ -492,10 +492,12 @@ class Employee implements Person {
    - The `greet` method combines the `phrase` parameter with the `name` property of the `e` object and logs the resulting message to the console.
 
 3. **Property Access**: You can also access the properties of the `Employee` object directly.
+
    ```typescript
    console.log(e.name); // Output: hkirat
    console.log(e.age); // Output: 22
    ```
+
    - These statements access and output the `name` and `age` properties of the `e` object respectively.
 
 In summary, the class `Employee` encapsulates the data and behavior related to an employee, allowing you to create multiple instances of `Employee` objects with different names and ages, and interact with them through methods like `greet`. The constructor initializes the object's properties when it's created, and methods provide functionality to the objects.
@@ -562,15 +564,57 @@ If you want to access arrays in typescript, it’s as simple as adding a [] anno
 Example 1: Given an array of positive integers as input, return the maximum value in the array
 
 ```ts
-function maxValue(arr: number[]) {
-  let max = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
+type numberArr = number[];
+
+function maxValue(arr: numberArr) {
+ let max = 0;
+ for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
+   max = arr[i];
   }
-  return max;
+ }
+ return max;
 }
 
-console.log(maxValue([1, 2, 3]));
+console.log('max value is', maxValue([1, 2, 3]));
 ```
+
+- You can also set a `type` to a variable for storing the array, but we can't use interface for that
+- For interfaces we can use the following syntax to iterate over an array made with interfaces
+  - Only thing to note here is that we need to add an extra annotation at the end of the interface name i.e the brackets `[]` so that the interface is iterated upon like an array
+
+```ts
+interface User {
+ firstName: string;
+ lastName: string;
+ age: number;
+}
+
+function filtersUser(user: User[]) {
+ let max = 0;
+ for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
+   max = arr[i];
+  }
+ }
+ return max;
+}
+```
+
+- So both types and interfaces lets us aggregate data together
+  - The difference comes here, interfaces can be implemented by classes and types lets us do unions and intersections
+  - Interfaces lets us do `extends` but types doesn't. The following is a good example of how it is possible. Here we have done one thing that is first set up the interface for giving the structure to the data that we'll make and then we have introduced the third interface that has its own and on top of that another set of structure to follow and that can be done using `extends` we can separate two or more `interfaces` by just using commas. What happens then is that the `Manager`, `User` interface structure is being followed throughout by the `BigPerson` interface as well as its own inteface structure. This just reduces the good ol' DRY.
+
+  ```ts
+  interface Manager {
+    name: string;
+  }
+
+  interface User {
+    age: string;
+  }
+
+  interface BigPerson extends User,Manager{
+    gender: string; 
+  }
+  ```
