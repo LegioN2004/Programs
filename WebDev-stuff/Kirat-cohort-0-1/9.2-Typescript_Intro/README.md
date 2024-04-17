@@ -457,6 +457,7 @@ class Employee implements Person {
 #### Properties
 
 - `name` and `age`: These are properties of the `Employee` class. They represent the name and age of an employee and are both of type `string` and `number` respectively.
+- We can make all properties of a interface optional by adding `?` after the property name. This is useful when we want to make some properties optional in the class that implements the interface.
 
 #### Constructor
 
@@ -567,16 +568,16 @@ Example 1: Given an array of positive integers as input, return the maximum valu
 type numberArr = number[];
 
 function maxValue(arr: numberArr) {
- let max = 0;
- for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-   max = arr[i];
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
   }
- }
- return max;
+  return max;
 }
 
-console.log('max value is', maxValue([1, 2, 3]));
+console.log("max value is", maxValue([1, 2, 3]));
 ```
 
 - You can also set a `type` to a variable for storing the array, but we can't use interface for that
@@ -585,23 +586,24 @@ console.log('max value is', maxValue([1, 2, 3]));
 
 ```ts
 interface User {
- firstName: string;
- lastName: string;
- age: number;
+  firstName: string;
+  lastName: string;
+  age: number;
 }
 
 function filtersUser(user: User[]) {
- let max = 0;
- for (let i = 0; i < arr.length; i++) {
-  if (arr[i] > max) {
-   max = arr[i];
+  let max = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
   }
- }
- return max;
+  return max;
 }
 ```
 
 - So both types and interfaces lets us aggregate data together
+
   - The difference comes here, interfaces can be implemented by classes and types lets us do unions and intersections
   - Interfaces lets us do `extends` but types doesn't. The following is a good example of how it is possible. Here we have done one thing that is first set up the interface for giving the structure to the data that we'll make and then we have introduced the third interface that has its own and on top of that another set of structure to follow and that can be done using `extends` we can separate two or more `interfaces` by just using commas. What happens then is that the `Manager`, `User` interface structure is being followed throughout by the `BigPerson` interface as well as its own inteface structure. This just reduces the good ol' DRY.
 
@@ -614,7 +616,43 @@ function filtersUser(user: User[]) {
     age: string;
   }
 
-  interface BigPerson extends User,Manager{
-    gender: string; 
+  interface BigPerson extends User, Manager {
+    gender: string;
   }
   ```
+
+## Some qna stuff(do some research on this, if not aware)
+
+- What is the difference between abstract classes and interfaces?
+  - Abstract classes can contain implementation details and can have constructors, while interfaces cannot contain implementation details and do not have constructors.
+  - A class can inherit from only one abstract class, but it can implement multiple interfaces.
+  - Abstract classes can have access modifiers for their members, while interfaces cannot.
+  - Abstract classes can define methods as abstract, which must be implemented by derived classes, while interfaces require all methods to be implemented by classes that implement them.
+  - Abstract classes are used when you want to provide a common base implementation for derived classes, while interfaces are used to define a contract for classes to implement.
+  - Abstract classes can have instance members, while interfaces cannot.
+  - In interfaces we can't have any runtime code or any function implemention but we can have them in abstract classes.
+- Can we use types like interfaces extends as types can do intersections?
+  - No, we can't use extends in types, it's only for interfaces
+    - We can use types to do intersections and unions
+    - We can do interfaces to extend
+    - But we can't do the above inplace each other.
+- These interfaces or types are very different from schema definition or models, since those happen in runtime but these TS stuff are not at all present in the main JS code.
+
+- CLARIFYING - Duplicate function implementation
+  - When you write a function with the same name sad code structure as a function already defined in another TypeScript file within your project, even they're in separate files. TypeScript will raise a red flag saying, "Duplicate function implementations
+  - why does it happen? Ambient Modules: When you don't use explicit imports and exports in its files, they become **ambient modules**.
+  - All their contents, including functions, are created as part of a single global namespace. Defining functions with identical names and signatures in different ambient modules leads to this error
+- If you define a function and don't export it, it's considered part of the ambient module and can't be redefined in another file. Basically it'll throw an error when you don't export the function and try to use it in another file or use/have the same name somehow.
+
+- Also we cannot define unions as an interface outside of it, it can be type like the following
+
+```ts
+type NumberInterface = number | string;
+// you cannot do -> Interface NumberInterface = number | string;
+
+interface User {
+  id: NumberInterface;
+  // you can do -> id: number | string,
+  name: string;
+}
+```
