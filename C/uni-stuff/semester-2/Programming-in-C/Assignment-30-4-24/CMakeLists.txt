@@ -1,0 +1,1 @@
+target_link_libraries(3.c m)

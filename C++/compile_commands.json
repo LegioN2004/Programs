@@ -1,1 +1,8 @@
---compile-commands-dir=build
+[
+  {
+    "directory": "/home/sunny/ghq/github.com/LegioN2004/Programs",
+    "command": "/usr/bin/g++ ... -c ../foo/foo.cc",
+    "file": "../foo/foo.cc",
+    "output": "../foo.dir/foo.cc.o"
+  }
+]
