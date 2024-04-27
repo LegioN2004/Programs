@@ -9,14 +9,22 @@ Now, 284: 1, 2, 4, 71, 142
 1 + 2 + 4 + 71 + 142 = 220
 */
 
-#include <math.h>
 #include <stdio.h>
 
 int main() {
-  int a = 4, newValue = 0;
-  for (int i = 0; i <= a; i++) {
-    newValue = newValue + pow(10, i);
-    printf("%d \n", newValue);
+  int a = 0, b = 0, divisors = 0, newValue = 0;
+  printf("Enter the two numbers to find the amicable of(use spaces): ");
+  scanf("%d%d", &a, &b);
+  for (int i = 1; i <= a; i++) {
+    if (a % i == 0 && a != i) {
+      divisors = i;
+      newValue += divisors;
+    }
+  }
+  if (newValue == b) {
+    printf("the numbers are amicable");
+  } else {
+    printf("the numbers are not amicable");
   }
   return 0;
 }

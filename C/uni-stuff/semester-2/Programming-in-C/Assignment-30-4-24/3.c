@@ -6,11 +6,15 @@
 #include <stdio.h>
 
 int main() {
-  int a = 4, result = 0, newValue = 0;
+  int a = 0, result = 0, newValue = 0;
+  printf("Enter the value of n: ");
+  scanf("%d", &a);
   for (int i = 0; i < a; i++) {
     newValue = newValue + pow(10, i);
+    // printf("%d + ", newValue);
     result += newValue;
   }
-  printf("%d \n", result);
+  // printf("\n");
+  printf("answer = %d \n", result);
   return 0;
 }
