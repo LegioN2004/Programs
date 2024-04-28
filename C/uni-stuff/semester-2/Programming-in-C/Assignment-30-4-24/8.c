@@ -6,16 +6,12 @@ is multiple of seven. e.g. 16,25,34......
 #include <stdio.h>
 
 int main() {
-  int a = 0, b = 0;
-  for (int i = 0; i < 10000; i++) {
-    a = i % 10;
-    b = a * 10 + b;
-    if (b % 7 == 0) {
-      printf("%d \n", a);
+  for (int i = 1; i < 9; i++) {
+    for (int j = 0; j < 9; j++) {
+      if ((i + j) % 7 == 0) {
+        printf("%d%d \n", i, j);
+      }
     }
-    /* } else { */
-    /*   printf("The end"); */
-    /* } */
   }
   return 0;
 }
