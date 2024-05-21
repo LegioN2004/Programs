@@ -1,7 +1,8 @@
 // typecasting
 #include <stdio.h>
 
-int main() {
+int main()
+{
   int a = 10, b = 6;
   float result;
   result = (float)a / b;

@@ -1,3 +1,5 @@
+// write a C program to add two numbers taken as user input and print the sum
+
 #include <stdio.h>
 
 int main() {

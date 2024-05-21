@@ -1,4 +1,12 @@
-// right half pyramid
+/* right half pyramid
+ *
+ **
+ ***
+ ****
+ *****
+ ******
+ */
+#include <stdio.h>
 
 int main() {
   int rows = 5;
