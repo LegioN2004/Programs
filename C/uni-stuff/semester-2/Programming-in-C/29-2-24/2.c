@@ -3,7 +3,7 @@
 
 int main()
 {
-    int a = 5, b = 6, c = 7, large;
+    int a = 8, b = 9, c = 7, large;
     large = ((a > b) ? ((a > c) ? printf("%d is greatest", a) : printf("%d is greatest", c)) : ((b > c) ? printf("%d is greatest", b) : printf("%d is greatest", c)));
     return 0;
 }

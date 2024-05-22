@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int main() {
+int main()
+{
   char ch;
   printf("Enter the char: ");
   scanf("%c", &ch);

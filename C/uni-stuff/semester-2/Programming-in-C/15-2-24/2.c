@@ -3,14 +3,11 @@
 #include <stdio.h>
 
 int main() {
-  int a, b, d, temp;
+  int a, b, d;
   printf("Enter the number: ");
   scanf("%d", &a);
   printf("Enter the digit you want to find from the number: ");
   scanf("%d", &b);
-  // loop to reverse the number so as to find the correct position
-  /* for (int j = 1; j < ; j++) { */
-  /* } */
 
   for (int i = 1; i <= a; i++) {
     d = a % 10;

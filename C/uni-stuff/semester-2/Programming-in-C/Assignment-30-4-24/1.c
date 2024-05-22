@@ -1,8 +1,8 @@
 /*
- A number is called an Armstrong number if the sum of the cubes of the digits
- of the number is equal to the number. For example 153 = 1^3 + 5^3 + 3^3. Write
- a C program that asks the user to enter a number and returns if it is Armstrong
- or not.
+ A number is called an Armstrong number if the sum of the cubes or more of the
+ digits of the number is equal to the number. For example 153 = 1^3 + 5^3 + 3^3.
+ Write a C program that asks the user to enter a number and returns if it is
+ Armstrong or not.
 */
 
 #include <math.h>
@@ -14,7 +14,8 @@ int main() {
   scanf("%d", &number);
   numberCopy = number;
 
-  for (; numberCopy != 0; numberCopy /= 10, ++n);
+  for (; numberCopy != 0; numberCopy /= 10, ++n)
+    ;
 
   numberCopy = number;
 
