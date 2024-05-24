@@ -4,7 +4,8 @@ int main() {
   char *ptr;
   char string[] = "india123";
   ptr = string;
-  ptr += 5;
+  printf("%s\n", ptr);
+  ptr += 6;
   printf("%s\n", ptr);
   /* printf("%c\n", *ptr); */
   /* printf("%s\n", string); */

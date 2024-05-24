@@ -6,7 +6,7 @@ int main() {
   for (int i = 0; i < sizeof(ch); i++) {
     printf("%c", ch[i]);
   }
-
+  /* printf("\n%c", ch[3]); */
   /* char ch[10] = "abc"; */
   /* printf("%zu %s\n", sizeof(ch), ch); // Use %zu for size_t and %s for string
    */

@@ -9,8 +9,5 @@ void main() {
   case 3:
     printf("Case 2\n");
     break;
-  default:
-    printf("Default\n");
-    break;
   }
 }
