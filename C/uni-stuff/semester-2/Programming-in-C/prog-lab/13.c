@@ -2,7 +2,7 @@
 
 int main() {
   double p;
-  printf("Enter your percentage:\n");
+  printf("Enter your percentage: ");
   scanf("%lf", &p);
   if (p <= 100 && p >= 75) {
     printf("Grade: A");

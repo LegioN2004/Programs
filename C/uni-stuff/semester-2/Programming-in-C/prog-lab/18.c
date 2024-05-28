@@ -1,3 +1,4 @@
+// find if the number has three 5s in a row or not
 #include <stdio.h>
 
 int main() {

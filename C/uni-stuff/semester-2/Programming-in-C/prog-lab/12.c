@@ -2,7 +2,7 @@
 
 int main() {
   int a, b, c;
-  printf("Enter a number:\n");
+  printf("Enter a number: ");
   scanf("%d%d%d", &a, &b, &c);
   if (a > b) {
     if (a > c) {
@@ -10,7 +10,6 @@ int main() {
     } else {
       printf("%d is the largest number of the three", c);
     }
-
   } else {
     if (b > c) {
       printf("%d is the largest number of the three", b);

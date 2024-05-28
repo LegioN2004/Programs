@@ -1,14 +1,10 @@
+// perimeter of a triangle
 #include <stdio.h>
 
 int main() {
-  int n;
-  printf("Enter a number:\n");
-  scanf("%d", &n);
-
-  if (n % 2 == 0) {
-    printf("%d is a Even number", n);
-  } else {
-    printf("%d is not a Even number", n);
-  }
-  return 0;
+  float a, b, c;
+  printf("enter the three sides ");
+  scanf("%f %f %f", &a, &b, &c);
+  float d = a + b + c;
+  printf(" the perimeter is %f", d);
 }

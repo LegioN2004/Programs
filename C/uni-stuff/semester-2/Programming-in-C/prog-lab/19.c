@@ -1,3 +1,4 @@
+// find the result of the sum of the digits of all numbers from 10 to 99
 #include <stdio.h>
 
 int main() {

@@ -1,3 +1,4 @@
+// find the reverse of a number
 #include <stdio.h> //while loop
 
 int main() {

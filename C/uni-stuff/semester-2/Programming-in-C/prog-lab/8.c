@@ -3,13 +3,13 @@
 
 int main() {
   int x, y, z;
-  printf("Enter values of X,Y and Z:\n");
+  printf("Enter values of x,y and z: ");
   scanf("%d%d%d", &x, &y, &z);
-  printf("Swapping X=%d Y=%d Z=%d\n", x, y, z);
+  printf("Swapping x=%d y=%d z=%d\n", x, y, z);
   x = x + y + z;
   y = x - y - z;
   z = x - y - z;
   x = x - y - z;
-  printf("X=%d Y=%d Z=%d\n", x, y, z);
+  printf("x=%d y=%d z=%d", x, y, z);
   return 0;
 }

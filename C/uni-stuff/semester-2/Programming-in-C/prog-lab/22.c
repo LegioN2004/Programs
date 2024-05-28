@@ -1,3 +1,4 @@
+// find even and odd numbers upto n
 #include <stdio.h>
 
 int main() {
