@@ -1,5 +1,5 @@
 // find the reverse of a number
-#include <stdio.h> //while loop
+#include <stdio.h>
 
 int main() {
   int n, ans = 0;
