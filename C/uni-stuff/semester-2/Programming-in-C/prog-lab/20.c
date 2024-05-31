@@ -1,15 +1,19 @@
-// find the reverse of a number
+// find even and odd numbers upto n
 #include <stdio.h>
 
 int main() {
-  int n, ans = 0;
-  printf("Enter a number:\n");
+  int n;
+  printf("Enter the number of terms:\n");
   scanf("%d", &n);
-
-  while (n != 0) {
-    ans = ans * 10 + n % 10;
-    n = n / 10;
+  printf("Even:\t");
+  for (int i = 0; i <= n; i = i + 2) {
+    printf("%d\t", i);
   }
-  printf("Reverse:\n%d", ans);
+  printf("\nOdd:\t");
+  for (int i = 0; i <= n; i++) {
+    if (i % 2 != 0) {
+      printf("%d\t", i);
+    }
+  }
   return 0;
 }

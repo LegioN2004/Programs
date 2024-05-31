@@ -1,20 +1,15 @@
-// find the result of the sum of the digits of all numbers from 10 to 99
+// find the reverse of a number
 #include <stdio.h>
 
 int main() {
-  int ans = 0;
+  int n, ans = 0;
+  printf("Enter a number:\n");
+  scanf("%d", &n);
 
-  for (int i = 10; i < 100; i++) {
-    int temp = i;     // Use a temporary variable to avoid modifying i directly
-    int digitSum = 0; // Reset the digit sum for each number
-    while (temp > 0) {
-      digitSum += temp % 10;
-      temp /= 10;
-    }
-    ans += digitSum; // Add the sum of digits of the current number to ans
+  while (n != 0) {
+    ans = ans * 10 + n % 10;
+    n = n / 10;
   }
-
-  printf("The cumulative sum of the digits from 10 to 99 is: %d\n", ans);
+  printf("Reverse:\n%d", ans);
   return 0;
 }
-

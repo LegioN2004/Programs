@@ -1,21 +1,20 @@
-// find the sum of squares of first n natural numbers
+// find the average of n numbers using array
 #include <stdio.h>
+void main() {
+  int n, avg = 0;
 
-int main()
-{
-  int n, ans = 0;
-  printf("Enter a number:\n");
+  printf("Enter n:");
   scanf("%d", &n);
 
-  for (int i = 1; i <= n; i++)
-  {
-    printf("%d", i * i);
-    if (i < n)
-    {
-      printf("+");
-    }
-    ans = ans + i * i;
+  int x[n];
+  printf("Enter all the elements:\n");
+  for (int i = 0; i < n; i++) {
+    scanf("%d", &x[i]);
   }
-  printf("\nSUM = %d", ans);
-  return 0;
+
+  for (int i = 0; i < n; i++) {
+    avg += x[i];
+  }
+  avg /= n;
+  printf("Averge:%d", n);
 }

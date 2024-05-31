@@ -1,19 +1,20 @@
-// find even and odd numbers upto n
+// find the sum of n elements entered by the user using array
 #include <stdio.h>
 
 int main() {
-  int n;
-  printf("Enter the number of terms:\n");
+  int n, sum = 0;
+  printf("Enter no. of elements:\n");
   scanf("%d", &n);
-  printf("Even:\t");
-  for (int i = 0; i <= n; i = i + 2) {
-    printf("%d\t", i);
+  int a[n];
+
+  for (int i = 0; i < n; i++) {
+    printf("Enter #%d:\n", i + 1);
+    scanf("%d", &a[i]);
   }
-  printf("\nOdd:\t");
-  for (int i = 0; i <= n; i++) {
-    if (i % 2 != 0) {
-      printf("%d\t", i);
-    }
+
+  for (int i = 0; i < n; i++) {
+    sum = sum + a[i];
   }
+  printf("sum=%d", sum);
   return 0;
 }
