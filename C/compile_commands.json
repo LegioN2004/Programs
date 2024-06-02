@@ -1,0 +1,3 @@
+[ 
+"clang.cflags": ["-I", "C:\\msys64\\mingw64\\include"],"clang.cxxflags": ["-I","C:\\msys64\\mingw64\\include"]
+]
