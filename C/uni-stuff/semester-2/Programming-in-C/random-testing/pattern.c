@@ -90,9 +90,8 @@ void pattern6()
   }
 }
 
-int main()
-{
-  pattern1();
+int main()   {
+pattern1();
   // pattern2();
   pattern3();
   pattern4();

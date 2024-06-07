@@ -4,11 +4,11 @@ int main() {
   int arr[100], n, element, position;
 
   printf("Enter the number of elements in the array: ");
-  scanf("%d", &n);
+  scanf("%d", &n); // 5
 
   printf("Enter %d elements:\n", n);
   for (int i = 0; i < n; i++) {
-    scanf("%d", &arr[i]);
+    scanf("%d", &arr[i]); // 1 2 3 4 5
   }
 
   printf("Enter the element to be inserted: ");
