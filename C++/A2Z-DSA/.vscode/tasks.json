@@ -1,0 +1,184 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        		{
+			"label": "Compile and run",
+			"type": "shell",
+			"command": "",
+			"args": [
+				"copy",
+				"\"${file}\"",
+				"\"${workspaceFolder}\\jspwTest.cpp\"",
+				"&&",
+				"g++",
+				"jspwTest.cpp",
+				"-o",
+				"jspwTest",
+				"&&",
+				"jspwTest",
+				"<",
+				"input.txt",
+				">",
+				"output.txt",
+				"&&",
+				"del",
+				"jspwTest.exe",
+				"&&",
+				"del",
+				"jspwTest.cpp"
+			],
+			"presentation": {
+				"reveal": "never"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true,
+			},
+			"problemMatcher": {
+				"owner": "cpp",
+				"fileLocation": [
+					"relative",
+					"${workspaceRoot}"
+				],
+				"pattern": {
+					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+					"file": 1,
+					"line": 2,
+					"column": 3,
+					"severity": 4,
+					"message": 5
+				}
+			}
+		},
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: Build with GCC v12",
+        //     "command": "C:/Users/User/scoop/apps/gcc/current/bin/g++.exe",
+        //     "args": [
+        //         "-fdiagnostics-color=always",
+        //         "-g3",
+        //         "-std=c++2a",
+        //         "-ggdb", // this is used for debug build of your executable
+        //         // use this below two args for using in the release builds of your cpp executable
+        //         //"-O2",
+        //         //"-DNDEBUG",
+        //         "-pedantic-errors",
+        //         "-Wall",
+        //         "${file}",
+        //         "-o",
+        //         //use anything in the line after $ to . to give any name to the executable
+        //         "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": "build",
+        //     "detail": "compiler: C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\g++.exe"
+        // },
+        // {
+        //     "type": "shell",
+        //     "label": "C/C++: Run Simple build and execute cpp file ",
+        //     "command": "C:\\Users\\User\\scoop\\apps\\gcc\\current\\bin\\gcc.exe -std=c++2a -g3 -Wall -ggdb -Werror \"${file}\" -o \"${fileDirname}\\a.exe\" &&\"${fileDirname}\\a.exe\"",
+        //     // use these type of double quotes with back slashes for removing runtime errors of filenames with spaces
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "group": "build",
+        // },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: Build with MSVC",
+        //     "command": "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe",
+        //     "args": [
+        //         "/Zi",
+        //         //"${command:workbench.action.tasks.runTask}",
+        //         "/std:c++latest",
+        //         "/EHsc",
+        //         "/Fe:",
+        //         "${fileDirname}\\a.exe",
+        //         "${file}"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$msCompile"
+        //     ],
+        //     "group": {
+        //         "kind": "build"
+        //     },
+        //     "detail": "compiler: C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.34.31933\\bin\\HostX86\\x86\\cl.exe"
+        // },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: Build with clang v15",
+        //     "command": "C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe",
+        //     "args": [
+        //         "-fdiagnostics-color=always",
+        //         "-g3",
+        //         "-Werror",
+        //         "-std=c++2a",
+        //         "${file}",
+        //         "-o",
+        //         "${fileDirname}\\${fileBasenameNoExtension}.exe"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": "build",
+        //     "detail": "compiler: C:\\Users\\hp\\Downloads\\winlibs-x86_64-posix-seh-gcc-12.2.0-llvm-15.0.7-mingw-w64ucrt-10.0.0-r4\\mingw64\\bin\\clang++.exe"
+        // },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: g++ build active file",
+        //     "command": "/usr/bin/g++",
+        //     "args": [
+        //         "-fdiagnostics-color=always",
+        //         "-g3",
+        //         "-Werror",
+        //         "-std=c++2a",
+        //         "${file}",
+        //         "-o",
+        //         "${fileDirname}/${fileBasenameNoExtension}"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": {
+        //         "kind": "build",
+        //     },
+        //     "detail": "Task generated by Debugger."
+        // },
+        // {
+        //     "type": "cppbuild",
+        //     "label": "C/C++: g++(linux) build active file",
+        //     "command": "/usr/bin/g++",
+        //     "args": [
+        //         "-fdiagnostics-color=always",
+        //         "-g",
+        //         "${file}",
+        //         "-o",
+        //         "${fileDirname}/${fileBasenameNoExtension}"
+        //     ],
+        //     "options": {
+        //         "cwd": "${fileDirname}"
+        //     },
+        //     "problemMatcher": [
+        //         "$gcc"
+        //     ],
+        //     "group": {
+        //         "kind": "build"
+        //     },
+        //     "detail": "Task generated by Debugger."
+        // }
+    ]
+}
