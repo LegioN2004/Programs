@@ -100,10 +100,7 @@ console.log(x);
 - Step 7 - Delete a.js
 - Step 8 - Try compiling the code again
   `tsc -b`
-  Notice all the errors you see in the console. This tells you there are type errors in your codebase.
-  Also notice that no index.js is created anymore
-  notion image
-  This is the high level benefit of typescript. It lets you catch type errors at compile time
+  Notice all the errors you see in the console. This tells you there are type errors in your codebase.  Also notice that no index.js is created anymore This is the high level benefit of typescript. It lets you catch type errors at compile time
 
 - About the tsconfig.json
   - This file contains a bunch of variables we can call them configurations, which we can turn true or false and based on that the compilation process will change.
@@ -568,6 +565,7 @@ Example 1: Given an array of positive integers as input, return the maximum valu
 type numberArr = number[];
 
 function maxValue(arr: numberArr) {
+// function maxValue(arr: number[]) { // or you can do this if you don't want to use type
   let max = 0;
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] > max) {
@@ -581,8 +579,10 @@ console.log("max value is", maxValue([1, 2, 3]));
 ```
 
 - You can also set a `type` to a variable for storing the array, but we can't use interface for that
+  - Or we can directly set the type to the function argument as well by doing `function maxValue(arr: number[])`
 - For interfaces we can use the following syntax to iterate over an array made with interfaces
   - Only thing to note here is that we need to add an extra annotation at the end of the interface name i.e the brackets `[]` so that the interface is iterated upon like an array
+- the following is another way to use interfaces to set the type of the array and then iterate over it.
 
 ```ts
 interface User {
@@ -592,14 +592,15 @@ interface User {
 }
 
 function filtersUser(user: User[]) {
-  let max = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] > max) {
-      max = arr[i];
-    }
-  }
-  return max;
+  return user.filter(x => x.age > 18);
 }
+
+console.log(
+  filtersUser([
+    { firstName: "harkirat", lastName: "singh", age: 21 },
+    { firstName: "harkirat", lastName: "singh", age: 17 },
+  ])
+);
 ```
 
 - So both types and interfaces lets us aggregate data together
