@@ -126,6 +126,8 @@ In such cases Generics enable you to create components that work with any data t
 
 What is the problem in this approach?
 
+- The `const` doesn't know whether the getFirstElement is sending in a string or a number since a union is used and as such there we'll have errors as said above.
+
 ```ts
 function getFirstElement(arr: (string | number)[]) {
   return arr[0];
@@ -134,11 +136,11 @@ const el = getFirstElement([1, 2, "3"]);
 ```
 
 ```ts
- function getFirstElement(arr: (string | number)[]) {
- return arr[0];
- }
- const el = getFirstElement(["harkiratSingh", "ramanSingh
- console.log(el.toLowerCase())
+function getFirstElement(arr: (string | number)[]) {
+  return arr[0];
+}
+const el = getFirstElement(["harkiratSingh", "ramanSingh"]);
+console.log(el.toLowerCase());
 ```
 
 2. Solution - Generics
@@ -146,15 +148,33 @@ const el = getFirstElement([1, 2, "3"]);
    - Can you modify the code of the original problem now to include generics in it?
      - User can send different types of values in inputs, without any type errors
      - Typescript isn’t able to infer the right type of the return type
+     - When we used type it was supposed to figure itself out if it is a number or a string, but since it expects both so we can't apply certain type specific stuff and there are many more problems.
+        - So in such cases we can use generics to define the type at the starting, that's what that `<T>` represents.
+        - So that functions is like it can be called with a generic value i.e any value. identity has a generic type and it can get anything i.e during definition it won't know the type of anything i.e it will be generic function, anyone can call it and when calling they should just define, it can be a number, string, object, etc. It is a placeholder for the type of the input and the output.
+        - And when we want to use it, we can use it like `identity<string>(["harkiratSingh", "ramanSingh"])` and it will automatically infer the type of the input and the output and as such we can use the type specific functions as well.
+
        Simple example -
 
-   ```ts
-   function identity<T>(arg: T): T {
-     return arg;
-   }
-   let output1 = identity<string>("myString");
-   let output2 = identity<number>(100);
-   ```
+      ```ts
+      function identity<T>(arg: T): T {
+        return arg;
+      }
+      let output1 = identity<string>("myString");
+      let output2 = identity<number>(100);
+      ```
+
+      - It can be seen as being able to create multiple variations of your function one for number, one for string and so on, that takes in a value and returns the same value, but the type of the value can be anything, so it is a generic function.
+
+      ```ts
+      function identity(arg: string) {
+        return arg;
+      }
+      function identity(arg: number) {
+        return arg;
+      }
+      let output1 = identity1("myString");
+      let output2 = identity2(100);
+      ```
 
 3. Solution to original problem
 
@@ -181,6 +201,71 @@ const el = getFirstElement([1, 2, "3"]);
        console.log(el.toLowerCase())
    ```
 
+What are the usecases and benefits
+
+ ```ts
+ function identity<T>(arg: T): T {
+   return arg;
+ }
+ let output1 = identity<string>("myString");
+ let output2 = identity<number>(100);
+ ```
+
+- Since it is being called with a generic the type is specific as to what will be returned, In the above example we can say that it'll return string because it is being called with a type string then the arg will also take the same type(bc it has a generic type) and the return is also arg so its the same string, so overall it is string everywhere.
+  - So now we can easily use the `toLowerCase()`, `toUpperCase()`, etc functions on the output and it will work fine.
+  - But the explicit definition of the generic type while calling is not necessary because TS infers it from the type of values you are giving and hence it is not necessary to define the type explicitly. So if it as a string or a number, the generic type will automatically tell the type of the input and the output and it will work fine. I think it would be better to define them explicitly just in case.
+  - You can still give mixed values but then explicit type definition will be necessary, otherwise it will throw an error on certain usage and it assumes that the type is `(string | number)`.
+  - You can also set a interface in the generic type while calling so it can be extended to many complex sort of datas.
+
+  ```ts
+  interface User {
+    name: string;
+    age: number;
+  }
+
+  const User1 = origProblem<User>([
+    { name: 'John', age: 25 },
+    { name: 'Doe', age: 30 },
+  ]);
+  ```
+
+## Exports and Imports
+
+```ts
+const express = require("express");
 ```
 
+From the first we have been following the above syntax to import the modules, this is correct in some way but there are better ways to do this imports and exports and they are by using the `import` and `export` keywords. So TypeScript follows the ES6 module system(the more modern system), using import and export statements to share code between different files. Here's a brief overview of how this works:
+
+```ts
+import express from "express"
+// also you will need to install @types/express for using types in express as well alongwith the express package obviously
+```
+
+and the following is the export syntax, rather than using `module.exports = { a = 1}` this will be the better syntax
+
+```ts
+export const a = 1;
+export const b = 1;
+
+// and for importing it you can use the following syntax
+import { a, b } from "./a"; // object destructuring
+```
+
+Also if you are exporting a default value then you can use the following syntax
+
+```ts
+const a = 1;
+export default a;
+// and for importing it you can use the following syntax
+import a from "./a"; // no object destructuring
+```
+
+- do note that the default imports can be named anything so you don't need to keep the smae name but it would be a good practice to keep the same name.
+- Since we can name the default import anything, so we should know that there can be only one default export and import
+
+for importing both the default and the named exports you can use the following syntax
+
+```ts
+import a, { b } from "./a";
 ```
