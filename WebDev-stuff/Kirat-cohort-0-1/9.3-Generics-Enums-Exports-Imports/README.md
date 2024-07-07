@@ -269,3 +269,21 @@ for importing both the default and the named exports you can use the following s
 ```ts
 import a, { b } from "./a";
 ```
+
+
+## Miscellaneous
+
+Follow the general practice of make changes in the tsconfig file of setting the outDir to be the dist folder and the rootDir to be the src folder, so that the compiled js files are in the dist folder and the src files are in the src folder.
+
+```json
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "module": "commonjs",
+    "target": "es6",
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
+```

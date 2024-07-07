@@ -1,0 +1,5 @@
+helloooooooo
+0
+1234
+q = 10 y = 10.0 z = 10.0
+s1, s3 equality true

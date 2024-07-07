@@ -64,16 +64,18 @@ GO/bin/
 
 # Build directories
 /build/
+**build
 /dist/
+**dist
 /out/
 /.build/
-/.bin/
-/.cache/
-/.gradle/
-/.stack-work/
-/.next/
-/.nuxt/
-/public/assets/
+**.bin
+**.cache
+**.gradle
+**.stack-work
+**.next
+**.nuxt
+**public/assets
 
 
 # Logs and databases
@@ -336,3 +338,4 @@ yarn-error.log
 
 # testing
 /coverage
+WebDev-stuff/Kirat-cohort-0-1/10.1-Postgres/postgres1-app/src/password.ts
