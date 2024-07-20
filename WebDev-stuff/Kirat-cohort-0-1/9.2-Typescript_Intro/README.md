@@ -267,6 +267,17 @@ interface User {
 }
 ```
 
+and then to use this in the code we can do the following, using the `:` operator to set the type of the object
+
+```ts
+const user: User = {
+ firstName: "harkirat",
+ lastName: "singh",
+ email: "email@gmail.com".
+ age: 21,
+}
+```
+
 Assignment #1 - Create a function isLegal that returns true or false if a user is above 18. It takes a user as an input.
 
 - It can be done in the following way but for another function we'll again need to define these types and as such it simply violates dry which is what we don't want so instead we can define interfaces. There are more reasons as to why this practice is bad except the dry part.

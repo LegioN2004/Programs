@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  // you can give you upfront what DB you wanna use, maybe mongoDB, mysql, postgresql, etc
+  url      = env("DATABASE_URL")
+  // you can directly give the url = "" inside the double quotes but using .env file is a very safer way to send credentials
+}
+
+model Users2 {
+  id Int @id @default(autoincrement())
+  email String @unique
+  // if you want to make any inputs optional you can add the question mark at the end of the type.
+  firstName String 
+  lastName String?
+  password String
+}
+
+model Todos2 {
+  id Int @id @default(autoincrement())
+  title String
+  done Boolean @default(false)
+  description String? 
+  userId Int
+}

@@ -9,7 +9,7 @@
 ### **NoSQL databases**
 
 1. Store data in a `schema-less` fashion. Extremely lean and fast way to store data.
-    - This is the reason why NoSQL databases are taught first since they are easy to learn at first.
+   - This is the reason why NoSQL databases are taught first since they are easy to learn at first.
 2. Examples - MongoDB,
 
 ![image 1, MongoDB](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2Fc1750169-9a32-4b92-a424-13feba37211d%2Fs6_data_no_sidebar.png?table=block&id=fd5d37a7-88ae-40d3-8cdf-f97ca850d60b&cache=v2)
@@ -36,7 +36,7 @@
 3. Examples - MySQL, Postgres
 4. We don't store a JSON here, it'll have a simple row and column like data table where we'll store the data.
 
-![Postgres example image](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F48b213de-b3d3-4d6d-8cf4-f09afce3fb40%2Fdownload_(2).png?table=block&id=8fa33082-8b13-49ef-b7a7-e25e15937972&cache=v2)
+![Postgres example image](<https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F48b213de-b3d3-4d6d-8cf4-f09afce3fb40%2Fdownload_(2).png?table=block&id=8fa33082-8b13-49ef-b7a7-e25e15937972&cache=v2>)
 
 ### Why not NoSQL
 
@@ -60,7 +60,7 @@ Different rows can have different schema (keys/types), which is termed as corrup
 1. Can move very fast
 2. Can change schema very easily
 
-> 💡 You might think that `mongoose` does add strictness to the codebase because we used to define a schema there.  That strictness is present at the Node.js level, not at the DB level. You can still put in erroneous data in the database that doesn’t follow that schema.
+> 💡 You might think that `mongoose` does add strictness to the codebase because we used to define a schema there. That strictness is present at the Node.js level, not at the DB level. You can still put in erroneous data in the database that doesn’t follow that schema.
 
 ## **Why SQL?**
 
@@ -86,11 +86,11 @@ You can start a Potgres database in a few ways -
 
 - Using neondb
 
-    <https://neon.tech/> is a decent service that let’s you create a server.
+  <https://neon.tech/> is a decent service that let’s you create a server.
 
-    ![neonDB dashboard](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2Fb7ee7eea-328e-4b37-8481-0afb51676e7b%2FScreenshot_2024-02-02_at_9.45.53_PM.png?table=block&id=f089c2e4-7756-4532-a7df-ca4a482138ac&cache=v2)
+  ![neonDB dashboard](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2Fb7ee7eea-328e-4b37-8481-0afb51676e7b%2FScreenshot_2024-02-02_at_9.45.53_PM.png?table=block&id=f089c2e4-7756-4532-a7df-ca4a482138ac&cache=v2)
 
-    ![second pic of the dashboard](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F18fc29c5-b324-4e91-bdd0-549d4977561b%2FScreenshot_2024-02-02_at_9.46.01_PM.png?table=block&id=2d1bd758-fd33-4bef-95ae-47f826076991&cache=v2>)
+  ![second pic of the dashboard](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F18fc29c5-b324-4e91-bdd0-549d4977561b%2FScreenshot_2024-02-02_at_9.46.01_PM.png?table=block&id=2d1bd758-fd33-4bef-95ae-47f826076991&cache=v2>)
 
 **Normal Connection String**
 
@@ -98,7 +98,7 @@ You can start a Potgres database in a few ways -
 
 - Using docker locally
 
-    `docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
+  `docker run --name my-postgres -e POSTGRES_PASSWORD=mysecretpassword -d -p 5432:5432 postgres
 
   - **Connection String**
 
@@ -106,7 +106,8 @@ You can start a Potgres database in a few ways -
 
 - Using docker on windows
 
-    How to run postgrSQL in windows terminal(if you have docker installed).
+  How to run postgrSQL in windows terminal(if you have docker installed).
+
   - fist run docker gui application that help in running commands in terminal.
   - After that run it with the docker instance by the help of following command .
     -- for the first time if the image is not downloaded .
@@ -115,10 +116,10 @@ You can start a Potgres database in a few ways -
   - After that ,
     -- use `docker exec -it my-postgres1 psql -U postgres -d postgres` this command in terminal .
     -- then enter the password and it will connect to localhost Postgress instance .
-    -- now you will be inside the postress command line that looks like `postgres-#`  .
+    -- now you will be inside the postress command line that looks like `postgres-#` .
   - U can check it by running `\\dt` , (the command to display all the tables.)
 
->💡 The connection string is similar to the string we had in mongoose.
+> 💡 The connection string is similar to the string we had in mongoose.
 
 ### **Connection String**
 
@@ -136,7 +137,7 @@ The world is round ⇒ [1, 2, 10001, 1001, 001001]
 
 Pacman is such a good game ⇒ [100, 10001, 20020, 1-001, 100]
 
-## Using a library that let’s you connect and put data in it.**
+## Using a library that let’s you connect and put data in it.\*\*
 
 ### **1. psql**
 
@@ -183,7 +184,7 @@ CREATE TABLE users (
 
 When we created that DB first in neon.tech we have that pink empty part which are to be filled with tables using the above command
 
-- `SERIAL` is a postgres specific data type that auto increments the value of the column. It is similar to the _id in MongoDB. It is the `PRIMARY KEY` of the table.
+- `SERIAL` is a postgres specific data type that auto increments the value of the column. It is similar to the \_id in MongoDB. It is the `PRIMARY KEY` of the table.
 - `VARCHAR` is a variable character string data type that can store up to 50 characters for storing some characters i.e the username. It is used to limit the length of the username. Should be `UNIQUE` for every row and shouldn't be null `NOT NULL`.
 - email is similar to username.
 - password is similar to username but it can be non unique and `NOT NULL`.
@@ -253,31 +254,32 @@ VALUES ('username_here', 'user@example.com', 'user_password');
 ```
 
 - Which means insert data to users table, with the username, email and password as the values, which are given in the values section.
+- Note that it can be in any manner(talking in the context of the tables) but the order of the values should be the same as the order of the columns in the table, but you don't necessarily need to add everything in the table serially while querying.
 
->💡 Notice how you didn’t have to specify the `id`  because it auto increments
+> 💡 Notice how you didn’t have to specify the `id` because it auto increments
 
 ### **2. UPDATE**
 
 ```sql
 UPDATE users
 SET password = 'new_password'
-WHERE email = 'user@example.com'; 
+WHERE email = 'user@example.com';
 ```
 
 ### **3. DELETE**
 
 ```sql
 DELETE FROM users
-WHERE id = 1; 
+WHERE id = 1;
 ```
 
-- This will delete the user with the id 1. But you don't really delete users in a real app. Whenever someone says to delete something which is called *is hidden*, you don't delete them but mark them as *hidden* for auditability purposes.
+- This will delete the user with the id 1. But you don't really delete users in a real app. Whenever someone says to delete something which is called _is hidden_, you don't delete them but mark them as _hidden_ for auditability purposes.
 
 ### **4. Select**
 
 ```sql
 SELECT * FROM users
-WHERE id = 1; 
+WHERE id = 1;
 ```
 
 This is enough for creating a simple application like todo. You can now create a table, insert data into it, update it, delete it and read it.
@@ -285,7 +287,7 @@ This is enough for creating a simple application like todo. You can now create a
 ## **How to do queries from a Node.js app?**
 
 In the end, postgres exposes a protocol that someone needs to talk to be able to send these commands (update, delete) to the database.
-`psql`  is one such library that takes commands from your terminal and sends it over to the database.
+`psql` is one such library that takes commands from your terminal and sends it over to the database.
 To do the same in a Node.js , you can use one of many `Postgres clients`
 
 ### **pg library**
@@ -300,7 +302,7 @@ Connecting -
 
 ```sql
 import { Client } from 'pg'
- 
+
 const client = new Client({
   host: 'my.database-server.com',
   port: 5334,
@@ -320,7 +322,7 @@ console.log(result)Copy
 
 // write a function to create a users table in your database.
 import { Client } from 'pg'
- 
+
 const client = new Client({
   connectionString: "postgresql://postgres:mysecretpassword@localhost/postgres"
 })
@@ -347,16 +349,16 @@ Adding new users to the table -
 ```ts
 // insert data to users table
 async function insertDataToUsers() {
- await client.connect();
- try {
-  const Query = `INSERT INTO users (username, email, password) VALUES ('hello', 'hello@gmail.com', 'passwordTurMurTu')`;
-  const res = await client.query(Query);
-  console.log('Insertion success', res);
- } catch (error) {
-  console.log('some error happened', error);
- } finally {
-  await client.end();
- }
+  await client.connect();
+  try {
+    const Query = `INSERT INTO users (username, email, password) VALUES ('hello', 'hello@gmail.com', 'passwordTurMurTu')`;
+    const res = await client.query(Query);
+    console.log("Insertion success", res);
+  } catch (error) {
+    console.log("some error happened", error);
+  } finally {
+    await client.end();
+  }
 }
 
 insertDataToUsers();
@@ -398,25 +400,26 @@ Create a function that let’s you insert data into a table. Make it `async`, ma
 - Answer
 
 ```ts
-import { Client } from 'pg';
+import { Client } from "pg";
 
 // Async function to insert data into a table
 async function insertData() {
   const client = new Client({
-    host: 'localhost',
+    host: "localhost",
     port: 5432,
-    database: 'postgres',
-    user: 'postgres',
-    password: 'mysecretpassword',
+    database: "postgres",
+    user: "postgres",
+    password: "mysecretpassword",
   });
 
   try {
     await client.connect(); // Ensure client connection is established
-    const insertQuery = "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";
+    const insertQuery =
+      "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";
     const res = await client.query(insertQuery);
-    console.log('Insertion success:', res); // Output insertion result
+    console.log("Insertion success:", res); // Output insertion result
   } catch (err) {
-    console.error('Error during the insertion:', err);
+    console.error("Error during the insertion:", err);
   } finally {
     await client.end(); // Close the client connection
   }
@@ -425,7 +428,7 @@ async function insertData() {
 insertData();
 ```
 
->💡 This is an `insecure` way to store data in your tables.  When you expose this functionality eventually via `HTTP`, someone can do an `SQL INJECTION` to get access to your data/delete your data.
+> 💡 This is an `insecure` way to store data in your tables. When you expose this functionality eventually via `HTTP`, someone can do an `SQL INJECTION` to get access to your data/delete your data.
 
 Why this is insecure: **SQL Injection**
 
@@ -434,17 +437,19 @@ Why this is insecure: **SQL Injection**
 - What we shouldn't do is to put the user provided fields directly into the SQL string.
 
 1. More secure way to store data.
-Update the code so you don’t put `user provided fields` in the `SQL string`
+   Update the code so you don’t put `user provided fields` in the `SQL string`
 
 - What are user provided strings?
   - In your final app, this insert statement will be done when a user signs up on your app. Email, username, password are all user provided strings
 - What is the SQL string ?
-`const insertQuery = "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";`
+  `const insertQuery = "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";`
+
   - Hint
 
   ```ts
-    const insertQuery = 'INSERT INTO example_table(column1, column2) VALUES($1, $2)';
-    const res = await client.query(insertQuery, [column1Value, column2Value]);
+  const insertQuery =
+    "INSERT INTO example_table(column1, column2) VALUES($1, $2)";
+  const res = await client.query(insertQuery, [column1Value, column2Value]);
   ```
 
 - Solution
@@ -454,7 +459,7 @@ Update the code so you don’t put `user provided fields` in the `SQL string`
     await client.connect(); // Ensure client connection is established
     // Use parameterized query to prevent SQL injection
     const insertQuery = "INSERT INTO users (username, email, password) VALUES ($1, $2, $3)";
-    // instead of 
+    // instead of
     // const insertQuery = "INSERT INTO users (username, email, password) VALUES ('username2', 'user3@example.com', 'user_password');";
     const values = [username, email, password];
     const res = await client.query(insertQuery, values);
@@ -478,7 +483,7 @@ How the above is secure:
     - Common thing to try in an input field using SQL injection is to put in `;DELETE * FROM USERS;` in the input field and you can delete the data in the database if that matches this table name. Why this happens: On seeing the semicolon, SQL thinks that the query has ended and a new query has started and as such it runs the next query which is the delete query. But using $1, $2, $3, this can't be done, it will just store that string in the database.
 
 1. Query data
-Write a function `getUser` that lets you fetch data from the database given a `email` as input. It's gets a little different in the query
+   Write a function `getUser` that lets you fetch data from the database given a `email` as input. It's gets a little different in the query
 
 ```ts
   try {
@@ -588,7 +593,7 @@ WHERE user_id = 1;
 
 ### **Extra - Transactions in SQL**
 
->💡 Good question to have at this point is what queries are run when the user signs up and sends both their information and their address in a single request.  Do we send two SQL queries into the database? What if one of the queries (address query for example) fails?  This would require `transactions`  in SQL to ensure either both the user information and address goes in, or neither does
+> 💡 Good question to have at this point is what queries are run when the user signs up and sends both their information and their address in a single request. Do we send two SQL queries into the database? What if one of the queries (address query for example) fails? This would require `transactions` in SQL to ensure either both the user information and address goes in, or neither does
 
 - SQL Query
 
@@ -606,82 +611,93 @@ WHERE user_id = 1;
 
 - Node.js Code
 
-  ``` ts
-    import { Client } from 'pg';
-    
-    async function insertUserAndAddress(
-        username: string, 
-        email: string, 
-        password: string, 
-        city: string, 
-        country: string, 
-        street: string, 
-        pincode: string
-    ) {
-        const client = new Client({
-            host: 'localhost',
-            port: 5432,
-            database: 'postgres',
-            user: 'postgres',
-            password: 'mysecretpassword',
-        });
-    
-        try {
-            await client.connect();
-    
-            // Start transaction
-            await client.query('BEGIN');
-    
-            // Insert user
-            const insertUserText = `
+  ```ts
+  import { Client } from "pg";
+
+  async function insertUserAndAddress(
+    username: string,
+    email: string,
+    password: string,
+    city: string,
+    country: string,
+    street: string,
+    pincode: string,
+  ) {
+    const client = new Client({
+      host: "localhost",
+      port: 5432,
+      database: "postgres",
+      user: "postgres",
+      password: "mysecretpassword",
+    });
+
+    try {
+      await client.connect();
+
+      // Start transaction
+      await client.query("BEGIN");
+
+      // Insert user
+      const insertUserText = `
                 INSERT INTO users (username, email, password)
                 VALUES ($1, $2, $3)
                 RETURNING id;
             `;
-            const userRes = await client.query(insertUserText, [username, email, password]);
-            const userId = userRes.rows[0].id;
-    
-            // Insert address using the returned user ID
-            const insertAddressText = `
+      const userRes = await client.query(insertUserText, [
+        username,
+        email,
+        password,
+      ]);
+      const userId = userRes.rows[0].id;
+
+      // Insert address using the returned user ID
+      const insertAddressText = `
                 INSERT INTO addresses (user_id, city, country, street, pincode)
                 VALUES ($1, $2, $3, $4, $5);
             `;
-            await client.query(insertAddressText, [userId, city, country, street, pincode]);
-    
-            // Commit transaction
-            await client.query('COMMIT');
-    
-            console.log('User and address inserted successfully');
-        } catch (err) {
-            await client.query('ROLLBACK'); // Roll back the transaction on error
-            console.error('Error during transaction, rolled back.', err);
-            throw err;
-        } finally {
-            await client.end(); // Close the client connection
-        }
+      await client.query(insertAddressText, [
+        userId,
+        city,
+        country,
+        street,
+        pincode,
+      ]);
+
+      // Commit transaction
+      await client.query("COMMIT");
+
+      console.log("User and address inserted successfully");
+    } catch (err) {
+      await client.query("ROLLBACK"); // Roll back the transaction on error
+      console.error("Error during transaction, rolled back.", err);
+      throw err;
+    } finally {
+      await client.end(); // Close the client connection
     }
-    
-    // Example usage
-    insertUserAndAddress(
-        'johndoe', 
-        'john.doe@example.com', 
-        'securepassword123', 
-        'New York', 
-        'USA', 
-        '123 Broadway St', 
-        '10001'
-    );
+  }
+
+  // Example usage
+  insertUserAndAddress(
+    "johndoe",
+    "john.doe@example.com",
+    "securepassword123",
+    "New York",
+    "USA",
+    "123 Broadway St",
+    "10001",
+  );
   ```
 
 ## **Joins**
 
 Defining relationships is easy.
 
-What’s hard is `joining`  data from two (or more) tables together. Like give users details and their addresses or in a todo application, which has a name and all the todos the query might be that give me the users' information and all their todos. And that can be done using `joins`.
+What’s hard is `joining` data from two (or more) tables together. Like give users details and their addresses or in a todo application, which has a name and all the todos the query might be that give me the users' information and all their todos. And that can be done using `joins`.
 
-For example, if I ask you to fetch me a users details `and`  their address, what SQL would you run?
+For example, if I ask you to fetch me a users details `and` their address, what SQL would you run?
 
 - Approach 1 (Bad):
+
   - how this happens: Firstly get the user's details and then get the address of the user using the user's id. Secondly, get the user's address using the user's id.
 
   ```sql
@@ -696,6 +712,7 @@ For example, if I ask you to fetch me a users details `and`  their address, what
   ```
 
 - Approach 2 (using joins)
+
   - The benefit: We can combine the two above queries into one and get the user's details and address(basically to get data from two tables) in a single query. This is how joining lets you grab data for related tables.
 
   ```sql
@@ -721,15 +738,15 @@ Now try converting the same to your node app
   ```ts
         try {
             await client.connect();
-    
+
             // Fetch user details
             const userDetailsQuery = 'SELECT id, username, email FROM users WHERE id = $1';
             const userDetails = await client.query(userDetailsQuery, [userId]);
-    
+
             // Fetch user address
             const userAddressQuery = 'SELECT city, country, street, pincode FROM addresses WHERE user_id = $1';
             const userAddress = await client.query(userAddressQuery, [userId]);
-    
+
             if (userDetails.rows.length > 0) {
                 console.log('User found:', userDetails.rows[0]);
                 console.log('Address:', userAddress.rows.length > 0 ? userAddress.rows[0] : 'No address found');
@@ -760,7 +777,7 @@ Now try converting the same to your node app
                 WHERE u.id = $1
             `;
             const result = await client.query(query, [userId]);
-    
+
             if (result.rows.length > 0) {
                 console.log('User and address found:', result.rows[0]);
                 return result.rows[0];
@@ -776,7 +793,7 @@ Now try converting the same to your node app
         }
     }
     getUserDetailsWithAddress("1");
-    ```
+  ```
 
 **Benefits of using a join -**
 
@@ -926,18 +943,21 @@ Let's break down the process for your query:
 SELECT u.id, u.username, u.email, a.city, a.country, a.street, a.pincode
 FROM users u
 JOIN addresses a ON u.id = a.user_id
-WHERE u.id = YOUR_USER_ID; -- Replace YOUR_USER_ID with the actual user ID 
+WHERE u.id = YOUR_USER_ID; -- Replace YOUR_USER_ID with the actual user ID
 ```
 
 1. **FROM users u**:
+
    - The `users` table is specified, and the alias `u` is defined for it.
 
 2. **JOIN addresses a ON u.id = a.user_id**:
+
    - The `addresses` table is specified, and the alias `a` is defined for it.
    - The join condition `u.id = a.user_id` uses the alias `u` to refer to the `users` table and `a` to refer to the `addresses` table.
    - till here is the join clause
 
 3. **WHERE u.id = YOUR_USER_ID**:
+
    - The `WHERE` clause filters the results using the alias `u` to refer to the `id` column from the `users` table.
    - if u.id is not defined then it'll apply the join clause on the all of the users on the table
 
@@ -952,7 +972,7 @@ Let's look at a more detailed example to illustrate this:
 SELECT u.id, u.username, u.email, a.city, a.country, a.street, a.pincode
 FROM users u
 JOIN addresses a ON u.id = a.user_id
-WHERE u.id = 1; -- Replace YOUR_USER_ID with the actual user ID 
+WHERE u.id = 1; -- Replace YOUR_USER_ID with the actual user ID
 ```
 
 - **Step 1**: Process the `FROM` clause:
