@@ -308,38 +308,3 @@ for (int i : arr) {
   System.out.println(i);
 }
 ```
-
-### Some stuff for solving problems
-
-Instead of initializing the value of a variable to 0 for setting the lowest possible number to a variable, you can also use `int a = Integer.MIN_VALUE` (in cpp it is `int a = INT_MIN`). We have got similar ones for other types such as `Long.MIN_VALUE`, `Integer.MAX_VALUE`, etc.
-
-Initializing it with 0 is fine because the least possible integer value can be 0 but if we are trying to find out the max value of an array which also contains negative values then this type of initialization will be useful `Integer.MIN_VALUE`.
-
-While solving the 2D array problems using for each loop, we must know that the loop iterates already on a 1D so you don't need to explicitly set a 1D variable to iterate in a 1D manner on the given 2D variable, just like in the following leetcode question no 1672. Richest customer wealth: You are given an m x n integer grid accounts where accounts[i][j] is the amount of money the ith customer has in the jth bank. Return the wealth that the richest customer has.
-A customer's wealth is the amount of money they have in all their bank accounts. The richest customer is the customer that has the maximum wealth.
-
-```java
-class Solution {
-    public int maximumWealth(int[][] accounts) {
-        int count = 0;
-       for (int[] account: accounts) {
-        int sum = 0;
-           for (int main: account){
-            sum += main;
-           }
-           count = Math.max(count, sum);
-       }
-       return count;
-    }
-}
-```
-
-**867. Transpose of a matrix**:
-
-- we need to find the rows and columns here, so to find the rows we can find the length of the matrix since that'll be always equal to the no of rows in the array and for the columns we can find the no of values in the first/any one of the value of the index since that'll be always equal to the no of columns.
-- Then we'll need to have to make an output array that will store the transpose of the matrix and which will also return it. Note that it should be initialized with the size of the format of transpose that it'll be storing so that there is no index out of bounds error, i.e transpose[columns][rows]
-- Since the rows and columns will interchange when there is not a square matrix we'll need to also interchange them when setting up the size of the matrix so that they don't err out on index out of bounds.
-- Then the main logic, you can't use the for each loop since the indexes will be required to solve this question
-  - So the main logic will have the first iteration which will be for the row and then the second iteration will be for the columns which will then be reversed within their places for storing the transpose.
-
-**NOTE**: In coding contests, the questions will be well defined but in the interviews there'll be multiple rounds of these type of contests and there we should clarify the question with the interviewer, since a small piece of info can change the answer. The interviewers doesn't always tell all the info since they want the candidate to ask questions. Since in the real world while working you will always be approached by people in the workplace who will come to you with problems and they'll not be well defined most of the times. It is upto the engineers to ask questions, clarify the problem and then start solving instead of just jumping on the problem. You'll be studying about that on the 6th semesters in Software Engineering called lifecycles. Another use case can be when you'll be solving tree problems where the interviewer will tell you that you are given a binary tree but if it is a binary search tree then the problem might be a bit different so there's a property associated with it, in matrix if you have gotten square matrix(no of rows = no of columns) then you can leverage that to further optimize the solutions. So don't make assumptions and just ask questions.

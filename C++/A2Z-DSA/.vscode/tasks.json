@@ -1,55 +1,326 @@
 {
     "version": "2.0.0",
     "tasks": [
-        		{
-			"label": "Compile and run",
-			"type": "shell",
-			"command": "",
-			"args": [
-				"copy",
-				"\"${file}\"",
-				"\"${workspaceFolder}\\jspwTest.cpp\"",
-				"&&",
-				"g++",
-				"jspwTest.cpp",
-				"-o",
-				"jspwTest",
-				"&&",
-				"jspwTest",
-				"<",
-				"input.txt",
-				">",
-				"output.txt",
-				"&&",
-				"del",
-				"jspwTest.exe",
-				"&&",
-				"del",
-				"jspwTest.cpp"
-			],
-			"presentation": {
-				"reveal": "never"
-			},
-			"group": {
-				"kind": "build",
-				"isDefault": true,
-			},
-			"problemMatcher": {
-				"owner": "cpp",
-				"fileLocation": [
-					"relative",
-					"${workspaceRoot}"
-				],
-				"pattern": {
-					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-					"file": 1,
-					"line": 2,
-					"column": 3,
-					"severity": 4,
-					"message": 5
-				}
-			}
-		},
+        // {
+        //     "label": "Compile and run",
+        //     "type": "shell",
+        //     "command": "",
+        //     "args": [
+        //         "copy",
+        //         "\"${file}\"",
+        //         "\"${workspaceFolder}\\jspwTest.cpp\"",
+        //         "&&",
+        //         "g++",
+        //         "jspwTest.cpp",
+        //         "-o",
+        //         "jspwTest",
+        //         "&&",
+        //         "jspwTest",
+        //         "<",
+        //         "input.txt",
+        //         ">",
+        //         "output.txt",
+        //         "&&",
+        //         "del",
+        //         "jspwTest.exe",
+        //         "&&",
+        //         "del",
+        //         "jspwTest.cpp"
+        //     ],
+        //     "presentation": {
+        //         "reveal": "never"
+        //     },
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true,
+        //     },
+        //     "problemMatcher": {
+        //         "owner": "cpp",
+        //         "fileLocation": [
+        //             "relative",
+        //             "${workspaceRoot}"
+        //         ],
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     },
+        //     "linux": {
+        //         "command": "g++",
+        //         "args": [
+        //             "-g",
+        //             "${relativeFile}",
+        //             "-o",
+        //             "${fileBasenameNoExtension}.out",
+        //             "&&",
+        //             "clear",
+        //             "&&",
+        //             "timeout",
+        //             "10",
+        //             "/usr/bin/time",
+        //             "-v",
+        //             "--output",
+        //             "sys.txt",
+        //             "./${fileBasenameNoExtension}.out",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt",
+        //             "&&",
+        //             "rm",
+        //             "*out"
+        //         ]
+        //     },
+        //     "presentation": {
+        //         "reveal": "silent"
+        //     },
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": {
+        //         "owner": "cpp",
+        //         "fileLocation": [
+        //             "relative",
+        //             "${workspaceRoot}"
+        //         ],
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // },
+        // {
+        //     // For 
+        //     // Dart 
+        //     // Programs 
+        //     "label": "Compile and run Dart",
+        //     "type": "shell",
+        //     "windows": {
+        //         "command": "dart",
+        //         "args": [
+        //             "${relativeFile}",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt"
+        //         ]
+        //     },
+        //     "linux": {
+        //         "command": "/usr/bin/time",
+        //         "args": [
+        //             "-v",
+        //             "--output",
+        //             "sys.txt",
+        //             "timeout",
+        //             "5",
+        //             "dart",
+        //             "${relativeFile}",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt"
+        //         ]
+        //     },
+        //     "presentation": {
+        //         "reveal": "silent"
+        //     },
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": {
+        //         "owner": "dart",
+        //         "fileLocation": [
+        //             "relative",
+        //             "${workspaceRoot}"
+        //         ],
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // },
+        // For 
+        // java 
+        // Programs 
+        {
+            "label": "Compile and run Java",
+            "type": "shell",
+            "windows": {
+                "command": "java",
+                "args": [
+                    "${relativeFile}",
+                    "<",
+                    "input.txt",
+                    ">",
+                    "output.txt"
+                ]
+            },
+            "linux": {
+                "command": "/usr/bin/time",
+                "args": [
+                    "-v",
+                    "--output",
+                    "sys.txt",
+                    "timeout",
+                    "5",
+                    "javac",
+                    "${relativeFile}",
+                    "&&",
+                    "java",
+                    "${fileBasenameNoExtension}",
+                    "<",
+                    "input.txt",
+                    ">",
+                    "output.txt",
+                    "&&",
+                    "rm",
+                    "-rf",
+                    "*.class"
+                ]
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "java",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+        // For 
+        // python 
+        // Programs 
+        // {
+        //     "label": "Compile and run Python",
+        //     "type": "shell",
+        //     "windows": {
+        //         "command": "python3",
+        //         "args": [
+        //             "${relativeFile}",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt"
+        //         ]
+        //     },
+        //     "linux": {
+        //         "command": "/usr/bin/time",
+        //         "args": [
+        //             "-v",
+        //             "--output",
+        //             "sys.txt",
+        //             "timeout",
+        //             "5",
+        //             "python3",
+        //             "${relativeFile}",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt"
+        //         ]
+        //     },
+        //     "presentation": {
+        //         "reveal": "silent"
+        //     },
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": {
+        //         "owner": "py",
+        //         "fileLocation": [
+        //             "relative",
+        //             "${workspaceRoot}"
+        //         ],
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // },
+        // For 
+        // go 
+        // Programs 
+        // {
+        //     "label": "Compile and run go program",
+        //     "type": "shell",
+        //     "linux": {
+        //         "command": "go",
+        //         "args": [
+        //             "build",
+        //             "${relativeFile}",
+        //             "&&",
+        //             "timeout",
+        //             "10",
+        //             "/usr/bin/time",
+        //             "-v",
+        //             "--output",
+        //             "sys.txt",
+        //             "./${fileBasenameNoExtension}",
+        //             "<",
+        //             "input.txt",
+        //             ">",
+        //             "output.txt",
+        //             "&&",
+        //             "rm",
+        //             "${fileBasenameNoExtension}"
+        //         ]
+        //     },
+        //     "presentation": {
+        //         "reveal": "silent"
+        //     },
+        //     "group": {
+        //         "kind": "build",
+        //         "isDefault": true
+        //     },
+        //     "problemMatcher": {
+        //         "owner": "go",
+        //         "fileLocation": [
+        //             "relative",
+        //             "${workspaceRoot}"
+        //         ],
+        //         "pattern": {
+        //             "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+        //             "file": 1,
+        //             "line": 2,
+        //             "column": 3,
+        //             "severity": 4,
+        //             "message": 5
+        //         }
+        //     }
+        // }
         // {
         //     "type": "cppbuild",
         //     "label": "C/C++: Build with GCC v12",
