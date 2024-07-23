@@ -16,4 +16,6 @@ This video consists of all the basics of programming and the related concepts us
 ### Conditionals
 
 - We have the basic if-else statements here, where we have the `if` and `else` conditions but it is not mandatory to have an `else` block.
-  - But we can also use `if` and more `ifs` and as such it will also work, but there'll be more memory usage since all the `ifs` will run again and again, This is where `else ifs`. By using `else-if` the code will not run again and again once the `if` condition or the `else-if` satisfies and as such we'll not have more than
+  - But we can also use `if` and more `ifs` and as such it will also work, but there'll be more memory usage since all the `ifs` will run again and again, This is where `else ifs` come. By using `else-if` the code will not run again and again once the `if` condition or the `else-if` satisfies the code will stop then and there thereby reducing memory usage and executing everything properly
+    - Now in the better grading program we have seen that instead of using if we are using else if which is much better and efficient but after the conditions are a little absurd since we are checking for less that 25 and again for the next, checking for more than 25 and less than 45. This is not necessary because if it is less than 25 and it is less that 44 then obviously it'll be between the both of them. So we can remove this unnecessary condition. Same goes for the rest of them so we can remove the unnecessary condition.
+  - nested if else:

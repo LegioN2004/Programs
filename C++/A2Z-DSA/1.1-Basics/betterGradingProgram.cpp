@@ -1,3 +1,5 @@
+// the following code shows a better grading style
+
 #include <iostream>
 using namespace std;
 
