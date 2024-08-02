@@ -4,5 +4,4 @@ Why is it necessary? Because it teaches us all about loops and this is one of th
 
 ## Trick to solve any pattern
 
-
 Note that it'll always have nested loops
