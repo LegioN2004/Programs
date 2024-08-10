@@ -1,1 +1,6 @@
-retireddddddd
+    A    
+   ABA   
+  ABCBA  
+ ABCDCBA 
+ABCDEDCBA
+

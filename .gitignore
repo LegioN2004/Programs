@@ -16,6 +16,11 @@
 build/
 bin/
 target/
+*/out/
+*out/
+*.pdf
+*.gz
+*.aux
 
 
 # Ignore generated files and directories for Rust
