@@ -289,6 +289,7 @@ public class AllPatterns {
             System.out.println();
         }
     }
+
     static void pattern17(int n) {
         /*
          *      A
@@ -298,29 +299,123 @@ public class AllPatterns {
          */
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n - i - 1; j++) {
-                System.out.print(" ");
+                System.out.print("_");
             }
             char ch = 'A';
-            // breakpoint gives 1 3 5 7 9
-            int breakPoint = (2 * i + 1) / 2; // 1/2 = 0, 3/2=1, 5/2=2, 7/2=3
-            for (int j = 1; j <= i * 2 + 1; j++) {
+            for (int j = 1; j <= 2 * i + 1; j++) {
                 System.out.print(ch);
-                if (j <= breakPoint) ch++;
+                // breakpoint part gives 1 3 5 7 9
+                if (j <= (2 * i + 1) / 2) ch++; // 1/2 = 0, 3/2=1, 5/2=2, 7/2=3
                 else ch--;
             }
             for (int j = 0; j < n - i - 1; j++) {
-                System.out.print(" ");
+                System.out.print("_");
             }
             System.out.println();
         }
     }
+
+    static void pattern18(int n) {
+        /*
+         *   E
+         *   DE
+         *   CDE
+         *   BCDE
+         *   ABCDE
+         */
+        for (int i = 0; i < n; i++) {
+            for (char ch = (char)('E' - i); ch <= 'E'; ch++) {
+                System.out.print(ch);
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern19(int n) {
+        /*
+         *   **********
+         *   ****  ****
+         *   ***    ***
+         *   **      **
+         *   *        *
+         *   *        *
+         *   **      **
+         *   ***    ***
+         *   ****  ****
+         *   **********
+         */
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < i * 2; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 0; j < n - i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < n * 2 - i * 2; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+
+    static void pattern20(int n) {
+        /*
+         *   *        *
+         *   **      **
+         *   ***    ***
+         *   ****  ****
+         *   **********
+         *   ****  ****
+         *   ***    ***
+         *   **      **
+         *   *        *
+         */
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < n * 2 - i * 2; j++) {
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < n; i++) {
+            for (int j = n; j >= n - i; j--) {
+                System.out.print("*");
+            }
+            for (int j = 0; j < i * 2; j++) {
+                System.out.print(" ");
+            }
+            for (int j = n; j >= n - i; j--) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int t = in.nextInt();
         for (int i = 0; i < t; i++) {
             int n = in.nextInt();
-            pattern17(n);
+            pattern20(n);
             System.out.println();
         }
     }

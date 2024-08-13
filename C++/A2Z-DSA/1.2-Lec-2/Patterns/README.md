@@ -185,3 +185,51 @@ So here the input is 2, so the pattern will be printed two times, for 4 lines an
   ```java
   char ch = (char) ('A' + i);
   ```
+
+- Pattern 17
+  - explanation below
+
+  ```java
+        /*
+         *      A
+         *     ABA
+         *    ABCBA
+         *   ABCDCBA
+         */
+  ```
+
+  - The first and third for loop just prints the spaces in the order of 4, 3, 2, 1 by using `n - i - 1` where n is the number of rows and i is the current row number.
+  - goes the same like the previous ones but the main part of the code is the second part of the snippet which solves the triangle part.
+    - Here firstly we'll print A, then we'll go and print everything in the order of the rows, so for the second row, it will be ABA, for the third row it will be ABCBA and so on. And the code for that is odd_numbers / 2, so 1/2 = 0, 3/2 = 1, 5/2 = 2, 7/2 = 3, till here it increases and then it decreases. 
+
+  ```java
+            char ch = 'A';
+            for (int j = 1; j <= 2 * i + 1; j++) {
+                System.out.print(ch);
+                // breakpoint part gives 1 3 5 7 9
+                if (j <= (2 * i + 1) / 2) ch++; // 1/2 = 0, 3/2=1, 5/2=2, 7/2=3
+                else ch--;
+            }
+  ```
+
+
+- Pattern 19
+  - This one's not that hard but it's a little tricky. all the sided triangle together and then a diamond spaced pattern in the center.
+  - triangle part can be made easily, for the spaced part it is in even no order so it'll go like that.
+  - The order is [stars, spaces, stars] and so the top half order is [5, 0, 5], [4, 1, 4], [3, 2, 3], [2, 3, 2], [1, 4, 1], [0, 5, 0]. And then create another outer row wala loop for printing the next part and so it'll be [1, 8, 1], ...., again even spaces. Do note that the iterative traingle loop will remain the same throught the left and right half for both the upper and lower half.
+
+
+```java
+        /*
+         *   **********
+         *   ****  ****
+         *   ***    ***
+         *   **      **
+         *   *        *
+         *   *        *
+         *   **      **
+         *   ***    ***
+         *   ****  ****
+         *   **********
+         */
+```
