@@ -233,3 +233,22 @@ So here the input is 2, so the pattern will be printed two times, for 4 lines an
          *   **********
          */
 ```
+
+
+- pattern 21: The following is a numbered pattern that we gotta print here.
+  - We just subtract 4 from every value.
+  - In the matrix it has 7 rows and columns, so it is related to 4 using the formula `2 * n - 1`, 
+  - We gotta check the distance for any element we are considering and we always need to choose the most minimum distance from the boundary.
+    - So the top distance is nothing but the row number and the left distance is column no, right is `(2 * n - 1) - 1 - j`, bottom is `(2 * n - 1) - 1 - i`
+
+  ```java
+        /*
+         * 4 4 4 4 4 4 4
+         * 4 3 3 3 3 3 4
+         * 4 3 2 2 2 3 4
+         * 4 3 2 1 2 3 4
+         * 4 3 2 2 2 3 4
+         * 4 3 3 3 3 3 4
+         * 4 4 4 4 4 4 4
+         */
+  ```
