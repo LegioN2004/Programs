@@ -2,9 +2,7 @@ import java.util.Scanner;
 
 public class first {
     static void namePrint(int i, int n) {
-        if (i > n) {
-            return;
-        }
+        if (i > n) return;
         System.out.println("G ILY");
         namePrint(i + 1, n);
     }

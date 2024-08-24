@@ -5,19 +5,19 @@
 Here the function goes as what normal recursion happens. But the thing where it is crucial is the one where we recall the function, there in the args passed `i` must be incremented since we are not using a for loop to do so. Otherwise the function is going to print unlimited times until the stack overflows, simple(I am kinda dumb for not doing that initially). Then after the condition is fulfilled the function ends.
 
 ```java
-    static void namePrint(int i, int n) {
-        if (i > n) {
-            return;
-        }
-        System.out.println("G ILY");
-        namePrint(i + 1, n); // main line
+static void namePrint(int i, int n) {
+    if (i > n) {
+        return;
     }
+    System.out.println("G ILY");
+    namePrint(i + 1, n); // main line
+}
 
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        namePrint(1, n);
-    }
+public static void main(String[] args) {
+    Scanner in = new Scanner(System.in);
+    int n = in.nextInt();
+    namePrint(1, n);
+}
 ```
 
 ![recursion tree](../assets/Screenshot%202024-08-18%20172052.png)
