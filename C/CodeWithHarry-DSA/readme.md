@@ -50,11 +50,30 @@ to link a second node to the first node we can use the arrow operator to access 
 
 ## 15- Linked List insertion
 
+Let us consider a linked list with some nodes: head -> first node(1) -> second node(2) -> third node(3) -> fourth node(4) -> fifth node(null)
+
 ### Case 1 - Insert at the beginning
+
+Now the head node points to the first node and also we have a `new node (100)` which has just been introduced. Now to make the new node the first node we'll have to make the following steps:
+
+1. join the new node to the first node, i.e ptr -> next = head, it'll point to the node where head is pointing to.
+2. Then we'll remove head from the first node and point it to the new node.
+3. Then we'll get the new node inserted at the beginning.
 
 ### Case 2 - Insert in between
 
+Now to insert a new node in between, let's say in between 1 and 2, we'll have to do the following steps:
+
+1. Firstly create a function for doing that operation
+2. P ptr is what is going in the LL
+3. Then we'll create a new node 'ptr', which'll have some data and then we'll make it point it to the second node. i.e
+   1. `ptr -> next = p -> next;` // This adds the next upcoming node's address i.e 2 to the new node i.e ptr so as to make the link in bewtween.
+   2. `p -> next = ptr;` // And then this replaces the node 2's address that is to be stored in 1's next link with the new node ptr's address so as to make that link permanent ultimately inserting the new node 'ptr' between 1 and 2.
+   3. note: Before doing this, it'll have two pointers one that traverses on the LL already and one for making the change in between
+
 ### Case 3 - Insert at the end
+
+Here we are still following the same LL. So we will continue traversing in the LL using a pointer `p` which will go on till it is not NULL, then it'll
 
 ### Case 4 - Insert after a certain node
 

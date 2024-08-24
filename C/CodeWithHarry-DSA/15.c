@@ -32,6 +32,9 @@ int main() {
   head->data = 10;
   head->next = first;
 
+  fifth->data = 60;
+  fifth->next = first;
+
   first->data = 20;
   first->next = second;
 
@@ -43,13 +46,6 @@ int main() {
 
   fourth->data = 50;
   fourth->next = NULL;
-
-  PrintLL(head);
-
-  printf("\n");
-
-  fifth->data = 60;
-  fifth->next = head;
 
   PrintLL(head);
 
