@@ -164,3 +164,143 @@ Node *insertAfterNode(Node *head, Node *prevNode, int data) {
 ```
 
 ![fourth question pic](../assets/4LL.png)
+
+## 17, 18 - Linked List deletion
+
+Let us consider a linked list with some nodes: head -> first node(4) -> second node(3) -> third node(2) -> fourth node(1) -> fifth node(null)
+
+### Case 1 - Deleting the first node
+
+To do that we got to point the head from the first to the second node, and remove the first node. But the first node was created by allocating memory dynamically and as such we need to free the memory as well. The following steps are to be followed:
+
+1. firstly `struct node* ptr = head;`, i.e create a new pointer that'll point to the same node that the head is pointing to
+2. Then `head = head -> next;`, i.e make the head point to the next node
+3. Then `free(ptr);`, i.e free the memory that the ptr is pointing to.
+
+And the complexity of this operation is O(1) since the list size doesn't matter and we only need to do one operation and the work is constant.
+
+```c
+Node *deleteFirstNode(Node *head) {
+ Node *p = head;
+ head = head->next;
+ free(p);
+ return head;
+}
+```
+
+### Case 2 - Deleting a node in between
+
+Let's assume we have been given indexes of the nodes stating from 0, and let's assume the one we are to delete is 2. We will need to point 1 before the target i.e to point to the next i.e 3 and then free the memory of 2. So the steps to be followed are as follows:
+
+1. Firstly create a `p` pointer that will point to the head.
+2. Then we'll need to iterate using `p = p -> next;` to point to the next element till we reach the `index - 1` element.
+3. Then outside the loop, we'll need another `q` pointer that will point to the next of `p` i.e `Struct node* q = p -> next;` and then we'll make the next of `p` point to `q`'s next' i.e `p -> next = q -> next;`. This will firstly create a new pointer for pointing to the one to remove, then make p point to the next of q i.e the one that comes after the node to be removed. And that will link the node p from 1 to 3 removing 2.
+4. then we'll free the memory of `q` i.e `free(q);` of the node 2.
+
+```c
+
+```
+
+### Case 3 - Deleting the last node
+
+Here we'll take two pointers p and q where p and q both will traverse one after the other respectively in the LL, when q reaches null make p point to the second last node and then make the next of p point to null and free the memory of q.
+
+```c
+Node *deleteLastNode(Node *head) {
+  Node *p = head;
+  Node *q = head->next;
+  while (q->next != NULL) {
+    p = p->next;
+    q = q->next;
+  }
+  p->next = NULL;
+  free(q);
+  return head;
+}
+```
+
+### Case 4 - Deleting at a given index
+
+We are going to delete only the first occurence(considering there may be moreee) here.
+
+### Case 5 - Deleting a node with a given value
+
+We are going to use the same approach as we did for deleting a node in between. We are going to use two pointers p and q which will point to one after another and traverse till the data matches and till it reaches null. Also when it comes out of the loop we are sure of either of the two things: it reached the end without matching or it found the match. So we are going to do an if check again to see if the data matches or not and if it matches then we'll point the prev p pointer to the next of the one to delete and then free the one to be deleted i.e q. Else we'll normally return head.
+
+```c
+Node *deleteAtGivenValue(Node *head, int value) {
+  Node *p = head;
+  Node *q = head->next;
+  while (q->data != value && q->next != NULL) {
+    p = p->next;
+    q = q->next;
+  }
+  // to make sure that the value matches as well since there are two conditions
+  // here
+  if (q->data == value) {
+    p->next = q->next;
+    free(q);
+  }
+  return head;
+}
+```
+
+## 19 - Circular linked list and operations
+
+When we consider a LL like the ones we did in the insertion and deletion videos, the circular LL is the same as those but the only thing that's different is that the last node points to the head node instead of null. So upon traversing we'll go round and round in the linked list.
+
+Considering a LL with nodes: head -> 7(first) -> 8(second) -> 11(second) head. For traversal we'll do the following:
+
+```pseudo
+p = head;
+while(p->next != head) {
+  print(p->data);
+  p = p->next;
+}
+// since last node will not be printed here, so we'll print it separately
+print(p->data);
+```
+
+using do while loop
+
+```psuedo
+do{}
+  print(p->data);
+  p = p->next;
+} while(p != head);
+```
+
+- Search can be done using the traversal method as well.
+- The rest of the insertion operations will be the same as the ones we did before but the only thing different will be is that it does not matter where the head is, since there is no first element and the head here is just a pointer that helps you get inside that LL.
+- For circular LL, we have to create a pointer node which points to the first node and from there the LL starts. The `head` node this time doesn't have data as it had earlier. And these nodes point to each other and then the last one points to the first node (not the `head` node). The `head` is used just to enter the LL and do stuff.
+
+- **Creating a circular empty LL**
+  - For singly LL, it can be done by pointing the pointer to NULL.
+  - For circular LL, we create a pointer node which points to the first node and so here we'll use just that to create one empty LL by pointing the head node to itself.
+- **NOTE: The head node is not the first node in the LL, it is just a pointer that helps you get inside the LL and it doesn't have data in it.**
+
+- Empty singly LL: head -> NULL
+
+## 20 - Circular linked list in C
+
+Circular linked list insertion operations are not that different from the singly LL versions.
+
+1. **Traversal in a LL**: This is as simple as it was with the single ones. Just the while's condition will be that the next of the pointer should not be equal to the head. So we'll do the following:
+
+```c
+void printLL(Node *head)
+{
+    Node *ptr = head;
+    // following two lines till the loop is to make the loop run atleast once so that the ptr doesn't stay stuck to head which is the starting point and the condition at the same time
+    // and for doing that in a better way we have the do-while loop
+    printf("Element: %d\n", ptr->data);
+    ptr = ptr->next;
+    while (ptr != head)
+    {
+        printf("Element: %d\n", ptr->data);
+        ptr = ptr->next;
+    }
+}
+```
+
+A better way to do this is by using the do-while loop

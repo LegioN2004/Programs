@@ -4,5 +4,3 @@ project(C++)
 
 add_subdirectory(C)
 add_subdirectory(C++)
-add_executable(new_target C/uni-stuff/semester-2/Programming-in-C/areaOfTriangle.c
-        C/uni-stuff/semester-2/Programming-in-C/implicitTypeConversion.c)

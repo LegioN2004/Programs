@@ -1,0 +1,104 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CP run file",
+            "type": "shell",
+            "command": "",
+            "args": [
+                "copy",
+                "\"${file}\"",
+                "\"${workspaceFolder}\\jspwTest.c\"",
+                "&&",
+                "gcc",
+                "jspwTest.c",
+                "-o",
+                "jspwTest",
+                "&&",
+                "jspwTest",
+                "<",
+                "input.txt",
+                ">",
+                "output.txt",
+                "&&",
+                "del",
+                "jspwTest.exe",
+                "&&",
+                "del",
+                "jspwTest.c"
+            ],
+            "presentation": {
+                "reveal": "never"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true,
+            },
+            "problemMatcher": {
+                "owner": "c",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "linux": {
+                "command": "gcc",
+                "args": [
+                    "-g",
+                    "${relativeFile}",
+                    "-o",
+                    "${fileBasenameNoExtension}.out",
+                    "&&",
+                    "clear",
+                    "&&",
+                    "timeout",
+                    "10",
+                    "/usr/bin/time",
+                    "-v",
+                    "--output",
+                    "sys.txt",
+                    "./${fileBasenameNoExtension}.out",
+                    "<",
+                    "input.txt",
+                    ">",
+                    "output.txt",
+                    "&&",
+                    "rm",
+                    "*out"
+                ]
+            },
+            "presentation": {
+                "reveal": "silent"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": {
+                "owner": "c",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceRoot}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            }
+        },
+    ]
+}
