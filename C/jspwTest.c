@@ -1,85 +1,237 @@
-#include <process.h>
 #include <stdio.h>
 #include <stdlib.h>
-#define size 5
+#include <process.h>
 
-void push(int stack[], int *top, int value) {
-  int i;
-  if (*top == size - 1)
-    printf("\n\t\t\toverflowwwwwwww\n");
-  else {
-    *top += 1;
-    stack[*top] = value;
+struct node {
+  int data;
+  struct node *link;
+};
+struct node *header, *newnode, *ptr;
 
-    // display the stack
-    printf("\n");
-    printf("\t\t\t%d <--- Top\n", stack[*top]);
-    for (i = *top - 1; i >= 0; i--)
-      printf("\t\t\t%d\n", stack[i]);
-  }
-}
-
-void pop(int stack[], int *top) {
-  int i, item;
-  if (*top == -1)
-    printf("\n\t\t\tunderflowwwwww\n");
-  else {
-    item = stack[*top];
-    *top -= 1;
-    if (*top == -1)
-      printf("\n\t\t\tLast element has been popped, now the stack is empty\n");
-    else {
-      printf("\n");
-      printf("\t\t\t%d <--- Top\n", stack[*top]);
-      for (i = *top - 1; i >= 0; i--)
-        printf("\t\t\t%d\n", stack[i]);
+void insert_beginning(int *count)
+{
+    *count = 0;
+    newnode = (struct node *)malloc(sizeof(struct node));
+    printf("\nEnter data you want to add at the beginning: ");
+    scanf("%d", &newnode->data);
+    newnode->link = header;
+    header = newnode;
+    printf("The list after you added another element is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr->data, *count);
+        ptr = ptr->link;
     }
-  }
+    printf("\n");
 }
 
-void status(int stack[], int *top) {
-  float free_space = (float)(size - (*top + 1)) / size * 100;
-  if (*top == -1) {
-    printf("\n\nThe stack is empty.\n");
-    printf("The percentage of free space left in stack is: 100%%\n");
-    printf("No element is at Top.\n");
-
-  } else if (*top == size - 1) {
-    printf("\n\nThe stack is full.\n");
-    printf("The percentage of free space left in stack is: 0%%\n");
-    printf("The element at Top is: %d\n", stack[*top]);
-
-  } else {
-    printf("\n\nThe stack is not full.\n");
-    printf("The percentage of free space left in stack is: %0.2f%%\n",
-           free_space);
-    printf("The element at Top is: %d\n", stack[*top]);
-  }
+void insert_end(int *count)
+{
+    *count = 0;
+    newnode = (struct node *)malloc(sizeof(struct node));
+    printf("\nEnter data you want to add to the end: ");
+    scanf("%d", &newnode->data);
+    newnode->link = 0;
+    ptr = header;
+    while(ptr->link != 0)
+        ptr = ptr->link;
+    ptr->link = newnode;
+    printf("The list after you added another element is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr->data, *count);
+        ptr = ptr->link;
+    }
+    printf("\n");
 }
 
-int main() {
-  int stack[size];
-  int input, value;
-  int top = -1;
-  while (1) {
-    printf("\n1. Push an element.\n2. Pop an element.\n3. Check the "
-           "status of the stack.\n4. Exit.\n");
-    printf(
-        "\nEnter the number to perform the corresponding operation on stack: ");
-    scanf("%d", &input);
-    if (input == 1) {
-      printf("Enter the value to insert: ");
-      scanf("%d", &value);
-      push(stack, &top, value);
-
-    } else if (input == 2)
-      pop(stack, &top);
-    else if (input == 3)
-      status(stack, &top);
-    else if (input == 4)
-      exit(0);
+void insert_anywhere(int *count)
+{
+    int pos, i = 1;
+    printf("\nEnter the position at which you want to add the new node: ");
+    scanf("%d", &pos);
+    if(pos == *count + 1)
+    {
+        *count = 0;
+        newnode = (struct node *)malloc(sizeof(struct node));
+        printf("\nEnter data you want to add to the end: ");
+        scanf("%d", &newnode->data);
+        newnode->link = 0;
+        ptr = header;
+        while(ptr->link != 0)
+            ptr = ptr->link;
+        ptr->link = newnode;
+    }
+    else if(pos > *count + 1)
+    {
+        printf("Invalid position...\n");
+        return;
+    }
+    else if(pos == 1)
+    {
+        *count = 0;
+        newnode = (struct node *)malloc(sizeof(struct node));
+        printf("\nEnter data you want to add at the beginning: ");
+        scanf("%d", &newnode->data);
+        newnode->link = header;
+        header = newnode;
+    }
     else
-      printf("\nPlease type 1, 2, 3 or 4. Follow the instructions!\n");
-  }
-  return 0;
+    {
+        ptr = header;
+        while(i < pos - 1)
+        {
+            ptr = ptr->link;
+            i++;
+        }
+        newnode = (struct node *)malloc(sizeof(struct node));
+        *count = 0;
+        if(newnode == 0)
+            printf("Insufficient memory...\n");
+        else
+        {
+            printf("Enter data: ");
+            scanf("%d", &newnode->data);
+            newnode->link = ptr->link;
+            ptr->link = newnode;
+        }
+    }
+    printf("\nThe list after addition of new element is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr->data, *count);
+        ptr = ptr->link;
+    }
+    printf("\n");
+
+}
+
+void delete_beginning(int *count)
+{
+    ptr = header;
+    header = ptr->link;
+    free(ptr);
+    *count = 0;
+    printf("The list after deletion of first element is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr->data, *count);
+        ptr = ptr->link;
+    }
+    printf("\n");
+}
+
+void delete_end(int *count)
+{
+    struct node *ptr1;
+    ptr = header;
+    while(ptr->link != 0)
+    {
+        ptr1 = ptr;
+        ptr = ptr->link;
+    }
+    ptr1->link = 0;
+    free(ptr);
+    *count = 0;
+    ptr1 = header;
+    printf("The list after deletion of last element is: ");
+    while(ptr1 != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr1->data, *count);
+        ptr1 = ptr1->link;
+    }
+    printf("\n");
+}
+
+void delete_anywhere(int *count)
+{
+    int pos, i = 1;
+    ptr = header;
+    printf("Enter the position of the element you want to delete: ");
+    scanf("%d", &pos);
+    while(i < pos - 1)
+    {
+        ptr = ptr->link;
+        i++;
+    }
+    newnode = ptr->link;
+    ptr->link = newnode->link;
+    free(newnode);
+    *count = 0;
+    printf("The list after deletion of the element is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        *count += 1;
+        printf("%d(%d) ", ptr->data, *count);
+        ptr = ptr->link;
+    }
+    printf("\n");
+}
+
+int main(){
+    header = 0;
+    int user_input, count = 0, choice = 1;
+    while(choice)
+    {
+        newnode = (struct node *)malloc(sizeof(struct node));
+        if(newnode == 0)
+            printf("Insufficient memory...\n");
+        else
+        {
+          printf("Enter data: ");
+          scanf("%d", &newnode->data);
+          newnode->link = 0;
+          if(header == 0)
+              header = ptr = newnode;
+          else
+          {
+              ptr->link = newnode;
+              ptr = newnode;
+          }
+          printf("Do you wish to continue(0,1): ");
+          scanf("%d", &choice);
+        }
+    }
+    printf("\nYour Linked List is created.\nThe list is: ");
+    ptr = header;
+    while(ptr != 0)
+    {
+        ++count;
+        printf("%d(%d) ", ptr->data, count);
+        ptr = ptr->link;
+    }
+    printf("\n");
+    while(1)
+    {
+    printf("\nWhere do you want to insert the new element?\n1. Press 1 to insert in beginning.\n2. Press 2 to insert at the end.\n3. Press 3 to insert at any location.\nWhere do you want to delete the element?\n4. Press 4 to delete at the beginning.\n5. Press 5 to delete at the end.\n6. Press 6 to delete anywhere on the list.\n7. Press 7 to exit.\n\n");
+    printf("Your Answer: ");
+    scanf("%d", &user_input);
+    if(user_input == 1)
+        insert_beginning(&count);
+    else if(user_input == 2)
+        insert_end(&count);
+    else if(user_input == 3)
+        insert_anywhere(&count);
+    else if(user_input == 4)
+        delete_beginning(&count);
+    else if(user_input == 5)
+        delete_end(&count);
+    else if(user_input == 6)
+        delete_anywhere(&count);
+    else if(user_input == 7)
+        exit(0);
+    else
+        printf("You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the instructions.\n");
+    }
+    return 0;
 }
