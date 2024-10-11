@@ -344,3 +344,8 @@ yarn-error.log
 # testing
 /coverage
 WebDev-stuff/Kirat-cohort-0-1/10.1-Postgres/postgres1-app/src/password.ts
+
+**/zig-cache/
+zig-cache/
+**/.zig-cache/
+.zig-cache/
