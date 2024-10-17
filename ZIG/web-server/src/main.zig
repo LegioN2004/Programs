@@ -10,6 +10,7 @@ const StreamServer = net.Server;
 const Address = net.Address;
 
 pub fn main() anyerror!void {
-    StreamServer.accept(s: *Server);
+    // StreamServer.accept(s: *Server);
+    std.debug.print("aorintn", .{});
 }
 

@@ -20,7 +20,7 @@ VMs on AWS are called `EC2 Servers`. This was the biggest offering by AWS.
 
 EC2 stands for Elastic compute Version 2.
 
-1. `Elastic` - Can increase/decrease the size of the machine
+1. `Elastic` - Can increase/decrease the size of the machine, i.e a computer with flexible specifications
 2. `Compute` - It is a machine
 3. `2` - It is the second version of the machine
 
@@ -305,3 +305,7 @@ https://backend1.100xdevs.com/
 ![](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F6f3c6675-2178-43e1-bbfe-a90e391db2f4%2FScreenshot_2024-02-11_at_8.50.59_AM.png?table=block&id=8a6d5e90-7897-498b-bdd3-bc2ab958c683&cache=v2)
 
 # 11.3 Certificates, extension of the pervious video
+
+This is one of the important parts of a website hosting i.e how to add certificates to your website so that the website shows connection is secure in the browser. How to do that freely so that our website is hosted in the **https** protocol instead of http.
+
+We'll be deploying the sum-server node.js application using reverse proxy and all that we talked about earlier
