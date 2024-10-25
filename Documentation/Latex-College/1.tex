@@ -1,28 +1,64 @@
-\documentclass{article}
+\documentclass[13pt, letterpaper]{article}
 \usepackage{graphicx}
 \usepackage{multirow}
-\usepackage{amsmath}
+\graphicspath{{assets}}
 
-\title{Latex Document}
+\title{\textbf{A big page}}
 \author{Milinda Barua}
-\date{\today}
+\date{20th October 2024}
 \begin{document}
-
 \maketitle
-
-\section{Introduction}
-\subsection{fig, table}
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.6\textwidth]{./assets/image1.png}
-    \caption{Graphical representation}
-    \label{fig:graphical_representation}
+    \includegraphics[width=0.5\linewidth]{./assets/image1.png}
+    \caption{An image caption}
+    \label{fig:label}
 \end{figure}
+As you can see in figure \ref{fig:label}, the function grows near the origin. This example is on page \pageref{fig:label}.
+
+\begin{itemize}
+    \item This is the first item
+    \item This is the second item
+    \item This is the third item
+\end{itemize}
+
+\begin{enumerate}
+    \item This is the first item
+    \item This is the second item
+    \item This is the third item
+\end{enumerate}
+
+In physics, the mass-energy equivalence is stated
+by the equation $E=mc^2$, discovered in 1905 by Albert Einstein.
+
+\begin{math}
+    \newline
+    E=mc^2
+    \newline
+    b^2 - 4ac = 0
+\end{math} is typeset in a paragraph using inline math mode---as is $E=mc^2$, and so too is \(E=mc^2\).
+
+\begin{equation}
+    E=mc^2
+    b^2 - 4ac = 0
+    \delta
+    \alpha
+\end{equation}
+\newline
+$\delta$
+\newline
+$\alpha$
+\newline
+
+hello there
+this is a \LaTeX{} document
+this is a second \LaTeX{} document
+
 
 \begin{table}[h!]
     \centering
-    % \begin{tabular}{c|c|c}
-    \begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|  }
+    % \begin{tabular}{|c|c|c|}
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}| }
         \hline
         Country Name or Area Name & ISO ALPHA 2 Code & ISO ALPHA 3 Code \\
         \hline
@@ -39,7 +75,6 @@
     \label{tab:my_label}
 \end{table}
 
-
 \begin{table}[h!]
     \centering
     \begin{tabular}{c c}
@@ -52,14 +87,6 @@
         \hline
     \end{tabular}
 \end{table}
-
-\subsection{Equation}
-\begin{align}
-    \text{Precision} & = \frac{TP}{TP + FP} \tag{1}                                                                      \\
-    \text{Recall}    & = \frac{TP}{TP + FN} \tag{2}                                                                      \\
-    F1               & = 2 \times \frac{\text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}} \tag{3} \\
-    \text{Accuracy}  & = \frac{TN + TP}{TN + FP + TP + FN} \tag{4}
-\end{align}
 
 \subsection{List}
 \begin{enumerate}
