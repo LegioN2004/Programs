@@ -1,0 +1,10 @@
+a = [1,2,3;4,5,6;7,8,9]
+disp(a)
+disp(size(a))
+disp(a)
+disp(size(a))
+disp(length(a))
+disp(min(a))
+disp(max(a))
+disp(inv(a))
+disp(det(a))

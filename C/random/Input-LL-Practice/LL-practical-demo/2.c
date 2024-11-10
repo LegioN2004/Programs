@@ -11,10 +11,10 @@ student *head;
 // create a student pointer and a function to input students
 void create(student *h) {
   int rno;
-  // if the h is NULL, then we neeed to initialize the head and the value from
-  // the user
   printf("Enter the roll no\n");
   scanf("%d", &rno);
+  // if the h is NULL, then we neeed to initialize the head and the value from
+  // the user
   if (h == NULL) {  // no students in the list
     head = (student *)malloc(sizeof(student));
     head->rno = rno;

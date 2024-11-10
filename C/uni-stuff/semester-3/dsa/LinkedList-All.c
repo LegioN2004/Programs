@@ -1,10 +1,9 @@
-#include <process.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 struct node {
   int data;
-  struct node *link;
+  struct node *next;
 };
 struct node *header, *newnode, *ptr;
 
@@ -13,14 +12,14 @@ void insert_beginning(int *count) {
   newnode = (struct node *)malloc(sizeof(struct node));
   printf("\nEnter data you want to add at the beginning: ");
   scanf("%d", &newnode->data);
-  newnode->link = header;
+  newnode->next = header;
   header = newnode;
   printf("The list after you added another element is: ");
   ptr = header;
   while (ptr != 0) {
     *count += 1;
     printf("%d(%d) ", ptr->data, *count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
 }
@@ -30,17 +29,16 @@ void insert_end(int *count) {
   newnode = (struct node *)malloc(sizeof(struct node));
   printf("\nEnter data you want to add to the end: ");
   scanf("%d", &newnode->data);
-  newnode->link = 0;
+  newnode->next = 0;
   ptr = header;
-  while (ptr->link != 0)
-    ptr = ptr->link;
-  ptr->link = newnode;
+  while (ptr->next != 0) ptr = ptr->next;
+  ptr->next = newnode;
   printf("The list after you added another element is: ");
   ptr = header;
   while (ptr != 0) {
     *count += 1;
     printf("%d(%d) ", ptr->data, *count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
 }
@@ -54,11 +52,10 @@ void insert_anywhere(int *count) {
     newnode = (struct node *)malloc(sizeof(struct node));
     printf("\nEnter data you want to add to the end: ");
     scanf("%d", &newnode->data);
-    newnode->link = 0;
+    newnode->next = 0;
     ptr = header;
-    while (ptr->link != 0)
-      ptr = ptr->link;
-    ptr->link = newnode;
+    while (ptr->next != 0) ptr = ptr->next;
+    ptr->next = newnode;
   } else if (pos > *count + 1) {
     printf("Invalid position...\n");
     return;
@@ -67,12 +64,12 @@ void insert_anywhere(int *count) {
     newnode = (struct node *)malloc(sizeof(struct node));
     printf("\nEnter data you want to add at the beginning: ");
     scanf("%d", &newnode->data);
-    newnode->link = header;
+    newnode->next = header;
     header = newnode;
   } else {
     ptr = header;
     while (i < pos - 1) {
-      ptr = ptr->link;
+      ptr = ptr->next;
       i++;
     }
     newnode = (struct node *)malloc(sizeof(struct node));
@@ -82,8 +79,8 @@ void insert_anywhere(int *count) {
     else {
       printf("Enter data: ");
       scanf("%d", &newnode->data);
-      newnode->link = ptr->link;
-      ptr->link = newnode;
+      newnode->next = ptr->next;
+      ptr->next = newnode;
     }
   }
   printf("\nThe list after addition of new element is: ");
@@ -91,14 +88,14 @@ void insert_anywhere(int *count) {
   while (ptr != 0) {
     *count += 1;
     printf("%d(%d) ", ptr->data, *count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
 }
 
 void delete_beginning(int *count) {
   ptr = header;
-  header = ptr->link;
+  header = ptr->next;
   free(ptr);
   *count = 0;
   printf("The list after deletion of first element is: ");
@@ -106,7 +103,7 @@ void delete_beginning(int *count) {
   while (ptr != 0) {
     *count += 1;
     printf("%d(%d) ", ptr->data, *count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
 }
@@ -114,11 +111,11 @@ void delete_beginning(int *count) {
 void delete_end(int *count) {
   struct node *ptr1;
   ptr = header;
-  while (ptr->link != 0) {
+  while (ptr->next != 0) {
     ptr1 = ptr;
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
-  ptr1->link = 0;
+  ptr1->next = 0;
   free(ptr);
   *count = 0;
   ptr1 = header;
@@ -126,7 +123,7 @@ void delete_end(int *count) {
   while (ptr1 != 0) {
     *count += 1;
     printf("%d(%d) ", ptr1->data, *count);
-    ptr1 = ptr1->link;
+    ptr1 = ptr1->next;
   }
   printf("\n");
 }
@@ -137,19 +134,19 @@ void delete_anywhere(int *count) {
   printf("Enter the position of the element you want to delete: ");
   scanf("%d", &pos);
   while (i < pos - 1) {
-    ptr = ptr->link;
+    ptr = ptr->next;
     i++;
   }
-  newnode = ptr->link;
-  ptr->link = newnode->link;
+  newnode = ptr->next;
+  ptr->next = newnode->next;
   free(newnode);
   *count = 0;
   printf("The list after deletion of the element is: ");
-ptr = header;
+  ptr = header;
   while (ptr != 0) {
     *count += 1;
     printf("%d(%d) ", ptr->data, *count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
 }
@@ -164,23 +161,23 @@ int main() {
     else {
       printf("Enter data: ");
       scanf("%d", &newnode->data);
-      newnode->link = 0;
+      newnode->next = 0;
       if (header == 0)
         header = ptr = newnode;
       else {
-        ptr->link = newnode;
+        ptr->next = newnode;
         ptr = newnode;
       }
       printf("Do you wish to continue(0,1): ");
       scanf("%d", &choice);
     }
   }
-  printf("\nYour Linked List is created.\nThe list is: ");
+  printf("\nYour nexted List is created.\nThe list is: ");
   ptr = header;
   while (ptr != 0) {
     ++count;
     printf("%d(%d) ", ptr->data, count);
-    ptr = ptr->link;
+    ptr = ptr->next;
   }
   printf("\n");
   while (1) {
@@ -207,8 +204,9 @@ int main() {
     else if (user_input == 7)
       exit(0);
     else
-      printf("You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
-             "instructions.\n");
+      printf(
+          "You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
+          "instructions.\n");
   }
   return 0;
 }
