@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 typedef struct node
 {
@@ -18,11 +19,20 @@ void printLL(Node *head)
     } while (ptr != head);
 }
 
-Node *insertHeadFirst(Node *head, int data)
+Node *insertAtFirst(Node *head, int data)
 {
     Node *ptr = (Node *)malloc(sizeof(Node *));
     ptr->data = data;
     Node *p = head->next;
+    while (p->next != head)
+    {
+        p = p->next;
+        // at this point p will be pointing to the last node of the circular linked list
+    }
+    p->next = ptr;
+    ptr->next = head;
+    head = ptr;
+    return head;
 }
 
 int main()
@@ -44,10 +54,12 @@ int main()
     fourth->data = 1;
     fourth->next = head;
 
+    printf("Original Circular Linked List\n");
     printLL(head);
     printf("\n");
 
-    head = insertHeadFirst(head, 69);
+    printf("Circular Linked List after inserting 69 at the beginning\n");
+    head = insertAtFirst(head, 69);
 
     printLL(head);
 

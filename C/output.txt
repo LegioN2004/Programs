@@ -1,4 +1,10 @@
--660604304 
--660604296 
-3 
--660604304 
+stack is not empty
+
+Enter the no of elements of the array
+Enter the values of the array
+array of the stack before the change
+1 (0)
+2 (1)
+3 (2)
+4 (3)
+5 (4)

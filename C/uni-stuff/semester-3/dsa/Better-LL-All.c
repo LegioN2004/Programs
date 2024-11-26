@@ -1,19 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct Node {
+struct Node
+{
   int data;
-  struct Node* next;
+  struct Node *next;
 };
 
-struct Node* head = NULL;  // Points to the start of the list
+struct Node *head = NULL; // Points to the start of the list
 
 // Function to display the current list and return the count of nodes
-int displayList() {
-  struct Node* temp = head;
+int displayList()
+{
+  struct Node *temp = head;
   int count = 0;
   printf("The list is: ");
-  while (temp != NULL) {
+  while (temp != NULL)
+  {
     count++;
     printf("%d(%d) ", temp->data, count);
     temp = temp->next;
@@ -23,86 +26,106 @@ int displayList() {
 }
 
 // Insert a new node at the beginning
-void insertAtBeginning() {
-  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+void insertAtBeginning()
+{
+  struct Node *newData = (struct Node *)malloc(sizeof(struct Node));
   printf("Enter data to insert at the beginning: ");
-  scanf("%d", &newNode->data);
-  newNode->next = head;
-  head = newNode;
+  scanf("%d", &newData->data);
+  newData->next = head;
+  head = newData;
   displayList();
 }
 
 // Insert a new node at the end
-void insertAtEnd() {
-  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+void insertAtEnd()
+{
+  struct Node *newData = (struct Node *)malloc(sizeof(struct Node));
   printf("Enter data to insert at the end: ");
-  scanf("%d", &newNode->data);
-  newNode->next = NULL;
+  scanf("%d", &newData->data);
+  newData->next = NULL;
 
-  if (head == NULL) {
-    head = newNode;
-  } else {
-    struct Node* temp = head;
-    while (temp->next != NULL) {
+  if (head == NULL)
+  {
+    head = newData;
+  }
+  else
+  {
+    struct Node *temp = head;
+    while (temp->next != NULL)
+    {
       temp = temp->next;
     }
-    temp->next = newNode;
+    temp->next = newData;
   }
   displayList();
 }
 
 // Insert a node at a specified position
-void insertAtPosition() {
+void insertAtPosition()
+{
   int pos, i = 1;
   printf("Enter the position to insert a new node: ");
   scanf("%d", &pos);
 
-  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+  struct Node *newData = (struct Node *)malloc(sizeof(struct Node));
   printf("Enter data for the new node: ");
-  scanf("%d", &newNode->data);
+  scanf("%d", &newData->data);
 
-  if (pos == 1) {
-    newNode->next = head;
-    head = newNode;
-  } else {
-    struct Node* temp = head;
-    for (i = 1; i < pos - 1 && temp != NULL; i++) {
+  if (pos == 1)
+  {
+    newData->next = head;
+    head = newData;
+  }
+  else
+  {
+    struct Node *temp = head;
+    for (i = 1; i < pos - 1 && temp != NULL; i++)
+    {
       temp = temp->next;
     }
-    if (temp == NULL) {
+    if (temp == NULL)
+    {
       printf("Invalid position!\n");
-      free(newNode);
+      free(newData);
       return;
     }
-    newNode->next = temp->next;
-    temp->next = newNode;
+    newData->next = temp->next;
+    temp->next = newData;
   }
   displayList();
 }
 
 // Delete the first node
-void deleteFromBeginning() {
-  if (head == NULL) {
+void deleteFromBeginning()
+{
+  if (head == NULL)
+  {
     printf("The list is empty.\n");
     return;
   }
-  struct Node* temp = head;
+  struct Node *temp = head;
   head = head->next;
   free(temp);
   displayList();
 }
 
 // Delete the last node
-void deleteFromEnd() {
-  if (head == NULL) {
+void deleteFromEnd()
+{
+  if (head == NULL)
+  {
     printf("The list is empty.\n");
     return;
   }
   struct Node *temp = head, *prev = NULL;
-  if (head->next == NULL) {
+  if (head->next == NULL)
+  {
     head = NULL;
-  } else {
-    while (temp->next != NULL) {
+  }
+  else
+  {
+    while (temp->next != NULL)
+    {
       prev = temp;
       temp = temp->next;
     }
@@ -113,27 +136,34 @@ void deleteFromEnd() {
 }
 
 // Delete a node from a specified position
-void deleteFromPosition() {
+void deleteFromPosition()
+{
   int pos, i = 1;
   printf("Enter the position of the node to delete: ");
   scanf("%d", &pos);
 
-  if (head == NULL) {
+  if (head == NULL)
+  {
     printf("The list is empty.\n");
     return;
   }
 
-  struct Node* temp = head;
-  if (pos == 1) {
+  struct Node *temp = head;
+  if (pos == 1)
+  {
     head = head->next;
     free(temp);
-  } else {
-    struct Node* prev = NULL;
-    for (i = 1; i < pos && temp != NULL; i++) {
+  }
+  else
+  {
+    struct Node *prev = NULL;
+    for (i = 1; i < pos && temp != NULL; i++)
+    {
       prev = temp;
       temp = temp->next;
     }
-    if (temp == NULL) {
+    if (temp == NULL)
+    {
       printf("Invalid position!\n");
       return;
     }
@@ -143,9 +173,11 @@ void deleteFromPosition() {
   displayList();
 }
 
-int main() {
+int main()
+{
   int choice;
-  while (1) {
+  while (1)
+  {
     printf(
         "\n1. Insert at beginning\n2. Insert at end\n3. Insert at position\n");
     printf(
@@ -154,29 +186,30 @@ int main() {
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    switch (choice) {
-      case 1:
-        insertAtBeginning();
-        break;
-      case 2:
-        insertAtEnd();
-        break;
-      case 3:
-        insertAtPosition();
-        break;
-      case 4:
-        deleteFromBeginning();
-        break;
-      case 5:
-        deleteFromEnd();
-        break;
-      case 6:
-        deleteFromPosition();
-        break;
-      case 7:
-        exit(0);
-      default:
-        printf("Invalid choice! Try again.\n");
+    switch (choice)
+    {
+    case 1:
+      insertAtBeginning();
+      break;
+    case 2:
+      insertAtEnd();
+      break;
+    case 3:
+      insertAtPosition();
+      break;
+    case 4:
+      deleteFromBeginning();
+      break;
+    case 5:
+      deleteFromEnd();
+      break;
+    case 6:
+      deleteFromPosition();
+      break;
+    case 7:
+      exit(0);
+    default:
+      printf("Invalid choice! Try again.\n");
     }
   }
   return 0;
