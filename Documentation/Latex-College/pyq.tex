@@ -1,0 +1,106 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath} % for math symbols
+
+\usepackage{multirow} % for multirow tables
+
+
+
+\title{Software Tools}
+
+\author{LastName1, FirstName1\\ \textit{your roll number}
+
+\and LastName2, FirstName2\\ \textit{leave it as it is}}
+
+
+
+\begin{document}
+
+
+
+\maketitle
+
+
+
+\section{Latex}
+
+Prepare the question paper [1]. Every section contains marks. So construct your file as given:
+
+
+
+\subsection{List}
+
+\begin{itemize}
+
+    \item orange
+
+    \item blue
+
+          \begin{itemize}
+
+              \item red
+
+                    \begin{itemize}
+
+                        \item hello
+
+                              \begin{enumerate}
+
+                                  \item hello
+
+                                  \item hello
+
+                              \end{enumerate}
+
+                        \item hello
+
+                    \end{itemize}
+
+          \end{itemize}
+
+    \item mango
+
+\end{itemize}
+
+
+
+\subsection{Tables}
+
+\begin{table}[h!]
+    \centering
+    \caption{Multi-row table}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{first column}     & \textbf{second column} \\ \hline
+        \multirow{2}{*}{Multirow} & Y                      \\ \cline{2-2}
+                                  & X                      \\ \hline
+        Cricket                   & Football               \\ \hline
+    \end{tabular}
+
+\end{table}
+
+
+
+\subsection{Equations}
+
+\begin{equation}
+
+    \text{Precision} = \frac{\sum TP}{TP + FP}
+
+\end{equation}
+
+
+
+\section*{References}
+
+\begin{itemize}
+
+    \item[1.1] Smith, T.F., Waterman, M.S.: Identification of common molecular subsequences. J. Mol. Biol. 147, 195-197 (1981).
+    \item[1.2] Smith, T.F., Waterman, M.S.: Identification of common molecular subsequences. J. Mol. Biol. 147, 195-197 (1981).
+
+\end{itemize}
+
+
+
+\end{document}
+

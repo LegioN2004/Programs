@@ -1,3 +1,4 @@
+clc;
 a = 5;
 
 function result = fct(a)
