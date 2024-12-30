@@ -1,9 +1,9 @@
-// write a C program to add, subtract, multiply and divide two numbers taken as user input and print the results
+// write a C program to add, subtract, multiply and divide two numbers taken as
+// user input and print the results
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
   float a, b, c;
   printf("Enter the first and second number: ");
   scanf("%f%f", &a, &b);

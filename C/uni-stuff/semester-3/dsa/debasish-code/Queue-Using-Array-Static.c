@@ -25,8 +25,7 @@ void enqueue(int value) {
     // display the queue
     printf("\n");
     printf("\t\t\t%d <--- Front\n", queue[front]);
-    for (i = front + 1; i <= rear - 1; i++)
-      printf("\t\t\t%d\n", queue[i]);
+    for (i = front + 1; i <= rear - 1; i++) printf("\t\t\t%d\n", queue[i]);
     printf("\t\t\t%d <--- Rear\n", queue[rear]);
   }
 }
@@ -46,8 +45,7 @@ void dequeue() {
     } else {
       printf("\n");
       printf("\t\t\t%d <--- Front\n", queue[front]);
-      for (i = front + 1; i <= rear - 1; i++)
-        printf("\t\t\t%d\n", queue[i]);
+      for (i = front + 1; i <= rear - 1; i++) printf("\t\t\t%d\n", queue[i]);
       printf("\t\t\t%d <--- Rear\n", queue[rear]);
     }
   }

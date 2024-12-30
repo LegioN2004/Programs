@@ -1,7 +1,7 @@
 // find if numbers is armstrong or not
 
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 
 int main()
 // using for loop
@@ -28,22 +28,18 @@ int main()
 //     return 0;
 // }
 {
-    int n1, n2, arm = 0, rem;
-    printf("Enter a number: ");
-    scanf("%d", &n1);
-    n2 = n1;
-    while (n1 != 0)
-    {
-        rem = n1 % 10;
-        arm = arm + pow(rem, 3);
-        n1 = n1 / 10;
-    }
-    if (arm == n2)
-    {
-        printf("The number is an armstrong number");
-    }
-    else
-    {
-        printf("The number is not an armstrong number");
-    }
+  int n1, n2, arm = 0, rem;
+  printf("Enter a number: ");
+  scanf("%d", &n1);
+  n2 = n1;
+  while (n1 != 0) {
+    rem = n1 % 10;
+    arm = arm + pow(rem, 3);
+    n1 = n1 / 10;
+  }
+  if (arm == n2) {
+    printf("The number is an armstrong number");
+  } else {
+    printf("The number is not an armstrong number");
+  }
 }

@@ -14,8 +14,7 @@ int main() {
   scanf("%d", &number);
   numberCopy = number;
 
-  for (; numberCopy != 0; numberCopy /= 10, ++n)
-    ;
+  for (; numberCopy != 0; numberCopy /= 10, ++n);
 
   numberCopy = number;
 

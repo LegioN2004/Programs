@@ -4,8 +4,9 @@
 
 int main() {
   int start, end;
-  printf("Enter the start and end point between which you want to find the "
-         "prime numbers \n");
+  printf(
+      "Enter the start and end point between which you want to find the "
+      "prime numbers \n");
   scanf("%d%d", &start, &end);
   for (int i = start; i <= end; i++) {
     int isPrime = 1;
@@ -19,8 +20,7 @@ int main() {
         }
       }
     }
-    if (isPrime)
-      printf("%d\n", i);
+    if (isPrime) printf("%d\n", i);
   }
   printf("\n");
   return 0;

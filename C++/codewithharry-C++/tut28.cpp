@@ -5,7 +5,7 @@ class Y;
 class X {
   int data;
 
-public:
+ public:
   void setValue(int value) { data = value; }
   friend void add(X, Y);
 };
@@ -13,7 +13,7 @@ public:
 class Y {
   int num;
 
-public:
+ public:
   void setValue(int value) { num = value; }
   friend void add(X, Y);
 };
@@ -22,7 +22,7 @@ void add(X o1, Y o2) {
   cout << "adding datas of X and Y objects gives me " << o1.data + o2.num;
 }
 int main() {
-  int a1,b1;
+  int a1, b1;
 
   X a;
   a.setValue(3);

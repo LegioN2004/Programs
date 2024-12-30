@@ -36,7 +36,7 @@ void pattern2() {
       printf(" ");
     }
     for (int k = 1; k <= i; k++) {
-      printf("*"); // print the Star
+      printf("*");  // print the Star
     }
     printf("\n");
   }
@@ -46,8 +46,7 @@ void armstrong() {
   int a = 153, b = a, c, d = 0, i = 0;
   // scanf("%d", &a);
   // find the number of digits
-  for (; a != 0; a /= 10, ++i)
-    ;
+  for (; a != 0; a /= 10, ++i);
   a = b;
 
   while (a != 0) {

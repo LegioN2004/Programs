@@ -25,8 +25,8 @@ void push(int value) {
   }
 }
 
-void pop() // popping means the same thing as deleting from the beginning of a
-           // list.
+void pop()  // popping means the same thing as deleting from the beginning of a
+            // list.
 {
   int item;
   struct node *temp, *temp1;
@@ -67,8 +67,9 @@ void status() {
 int main() {
   int user_input, value;
   while (1) {
-    printf("\n1. Push an element.\n2. Pop an element.\n3. Check the status of "
-           "the stack.\n4. Exit.\n");
+    printf(
+        "\n1. Push an element.\n2. Pop an element.\n3. Check the status of "
+        "the stack.\n4. Exit.\n");
     printf(
         "\nEnter the number to perform the corresponding operation on stack: ");
     scanf("%d", &user_input);

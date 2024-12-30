@@ -63,8 +63,7 @@ int main() {
         "Press 6 to delete anywhere on the list.\n7. Press 7 to exit.\n\n");
     printf("Your Answer: ");
     scanf("%d", &user_input);
-    if (user_input == 1)
-      insert_beginning(&count);
+    if (user_input == 1) insert_beginning(&count);
     /* else if (user_input == 2) */
     /*   insert_end(&count); */
     /* else if (user_input == 3) */
@@ -78,8 +77,9 @@ int main() {
     /* else if (user_input == 7) */
     /*   exit(0); */
     else
-      printf("You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
-             "instructions.\n");
+      printf(
+          "You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
+          "instructions.\n");
   }
   return 0;
 }

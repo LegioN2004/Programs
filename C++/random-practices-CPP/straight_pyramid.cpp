@@ -1,16 +1,16 @@
-#include<iostream>
-using namespace std; 
+#include <iostream>
+using namespace std;
 
-int main(){
-    int a;
-    cout<<"Enter the number ";
-    cin>>a;
+int main() {
+  int a;
+  cout << "Enter the number ";
+  cin >> a;
 
-    for (int i=1 ; i<=a ; i++){
-        for (int j=1 ; j<=i ; j++){
-            cout<<"*";
-        }
-        cout<<endl;
+  for (int i = 1; i <= a; i++) {
+    for (int j = 1; j <= i; j++) {
+      cout << "*";
     }
-    return 0;
+    cout << endl;
+  }
+  return 0;
 }

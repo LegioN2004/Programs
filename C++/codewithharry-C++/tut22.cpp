@@ -3,27 +3,27 @@
 using namespace std;
 
 class binary {
-private: // by default members of the class is always private
+ private:  // by default members of the class is always private
   void chk_bin(void);
   string s;
 
-public:
-  void read(void); // (void) means that it takes nothing
+ public:
+  void read(void);  // (void) means that it takes nothing
   void ones_compliment(void);
   void display(void);
 };
 
 void binary ::read(void) {
   cout << "Enter a binary no"
-       << endl; // it tells to take whatever value is given to s in string s
+       << endl;  // it tells to take whatever value is given to s in string s
   cin >> s;
 }
 
-void binary ::chk_bin(void) { // to check if the binary no is present or not
+void binary ::chk_bin(void) {  // to check if the binary no is present or not
   for (int i = 0; i < s.length(); i++) {
     if (s.at(i) != '0' &&
         s.at(i) !=
-            '1') // string ke andar jo index hai if that is not equal to 0
+            '1')  // string ke andar jo index hai if that is not equal to 0
     {
       cout << "Incorrect binary format" << endl;
       exit(0);
@@ -32,21 +32,21 @@ void binary ::chk_bin(void) { // to check if the binary no is present or not
 }
 
 void binary ::ones_compliment(
-    void) // interchange the value of  1 as 0 and 0 as 1 wherever present
+    void)  // interchange the value of  1 as 0 and 0 as 1 wherever present
 {
-  chk_bin(); // one member function is called inside the other member function
-             // of the same class it is called nesting of member functions
+  chk_bin();  // one member function is called inside the other member function
+              // of the same class it is called nesting of member functions
   for (int i = 0; i < s.length(); i++) {
     if (s.at(i) == '0') {
       s.at(i) = '1';
-    } else //(s.at(i) == '1')
+    } else  //(s.at(i) == '1')
     {
       s.at(i) = '0';
     }
   }
 }
 void binary ::display(
-    void) // interchange the value of  1 as 0 and 0 as 1 wherever present
+    void)  // interchange the value of  1 as 0 and 0 as 1 wherever present
 {
   cout << "Displaying your binary number" << endl;
   for (int i = 0; i < s.length(); i++) {
@@ -55,10 +55,10 @@ void binary ::display(
   cout << endl;
 }
 
-int main() { // yahan pe sab bahar se call hone wale functions likhe gaye hai
+int main() {  // yahan pe sab bahar se call hone wale functions likhe gaye hai
 
   binary b;
-  b.read(); // to read if it's a binary no
+  b.read();  // to read if it's a binary no
   // b.chk_bin(); // to check if it's a binary no or not
   b.display();
   b.ones_compliment();

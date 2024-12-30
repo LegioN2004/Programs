@@ -1,13 +1,13 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-    
-void Multitply(int a , int b){
-    int c;
-    c = a + b ;
-    cout << c << endl;
+
+void Multitply(int a, int b) {
+  int c;
+  c = a + b;
+  cout << c << endl;
 }
-int main(){
-    Multitply(1,2);
-    cout << "Hello world" << endl ;
-    return 0;
+int main() {
+  Multitply(1, 2);
+  cout << "Hello world" << endl;
+  return 0;
 }

@@ -2,8 +2,7 @@
 
 int main() {
   for (;;)
-    for (;;)
-      printf("Hello");
+    for (;;) printf("Hello");
 
   return 0;
 }

@@ -2,16 +2,18 @@
 
 #include <stdio.h>
 
-void withoutThird(int a, int b) // 4 5
+void withoutThird(int a, int b)  // 4 5
 {
-  a = a + b; // a = 4 + 5 = 9
-  b = a - b; // b = 9 - 5 = 4
-  a = a - b; // a = 9 - 4 = 5
-  printf("swapping the values without using third variable are a = %d and b = %d \n", a, b);
+  a = a + b;  // a = 4 + 5 = 9
+  b = a - b;  // b = 9 - 5 = 4
+  a = a - b;  // a = 9 - 4 = 5
+  printf(
+      "swapping the values without using third variable are a = %d and b = %d "
+      "\n",
+      a, b);
 }
 
-int main()
-{
+int main() {
   int a, b, temp;
   printf("Enter the first number a = ");
   scanf("%d", &a);
@@ -21,6 +23,7 @@ int main()
   temp = a;
   a = b;
   b = temp;
-  printf("swapping the values using a third variable are a = %d and b = %d \n", a, b);
+  printf("swapping the values using a third variable are a = %d and b = %d \n",
+         a, b);
   return 0;
 }

@@ -21,14 +21,14 @@ Node *deleteFirstNode(Node *head) {
 }
 
 Node *deleteAtIndex(Node *head, int index) {
-  Node *p = head;                       // 0
-  Node *q = head->next;                 // 1
-  for (int i = 1; i < index - 1; i++) { // 2 - 1 = 1, runs the loop 2x
-    p = p->next;                        // 1 2
-    q = q->next;                        // 2 3
+  Node *p = head;                        // 0
+  Node *q = head->next;                  // 1
+  for (int i = 1; i < index - 1; i++) {  // 2 - 1 = 1, runs the loop 2x
+    p = p->next;                         // 1 2
+    q = q->next;                         // 2 3
   }
-  p->next = q->next; // 1 linked to 3
-  free(q);           // 2 removed
+  p->next = q->next;  // 1 linked to 3
+  free(q);            // 2 removed
   return head;
 }
 

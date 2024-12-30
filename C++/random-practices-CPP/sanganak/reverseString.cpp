@@ -4,6 +4,5 @@ using namespace std;
 int main() {
   string a = "hello world\0";
   string rev = "";
-    int 
-  return 0;
+  int return 0;
 }

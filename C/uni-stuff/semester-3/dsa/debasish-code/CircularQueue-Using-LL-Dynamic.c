@@ -38,7 +38,7 @@ void enqueue(int value) {
 
 void dequeue() {
   struct node *temp,
-      *temp1; // temp for traversing, temp1 for deleting the node;
+      *temp1;  // temp for traversing, temp1 for deleting the node;
   if (front == NULL && rear == NULL)
     printf("\n\t\t\tUNDERFLOW...\n");
   else if (front == rear) {
@@ -74,8 +74,9 @@ int main() {
   int user_input, value;
   while (1) {
     printf("\n1. Enqueue an element.\n2. Dequeue an element.\n3. Exit.\n");
-    printf("\nEnter the number to perform the corresponding operation on "
-           "circular queue: ");
+    printf(
+        "\nEnter the number to perform the corresponding operation on "
+        "circular queue: ");
     scanf("%d", &user_input);
     if (user_input == 1) {
       printf("Enter the data to insert: ");

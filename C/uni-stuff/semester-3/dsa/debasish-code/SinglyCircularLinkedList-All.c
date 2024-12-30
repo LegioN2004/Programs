@@ -35,8 +35,7 @@ void insert_end(int *count) {
   scanf("%d", &newnode->data);
   newnode->link = header;
   ptr = header;
-  while (ptr->link != header)
-    ptr = ptr->link;
+  while (ptr->link != header) ptr = ptr->link;
   ptr->link = newnode;
   ptr = newnode;
   printf("The list after you added another element is: ");
@@ -62,8 +61,7 @@ void insert_anywhere(int *count) {
     scanf("%d", &newnode->data);
     newnode->link = header;
     ptr = header;
-    while (ptr->link != header)
-      ptr = ptr->link;
+    while (ptr->link != header) ptr = ptr->link;
     ptr->link = newnode;
     ptr = newnode;
   } else if (pos > *count + 1) {
@@ -239,8 +237,9 @@ int main() {
     else if (user_input == 7)
       exit(0);
     else
-      printf("You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
-             "instructions!!\n");
+      printf(
+          "You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Follow the "
+          "instructions!!\n");
   }
   return 0;
 }

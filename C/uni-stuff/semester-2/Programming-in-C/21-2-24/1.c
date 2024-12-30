@@ -2,8 +2,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
   char lowerCase, upperCase;
   printf("Enter the lowercase char: ");
   scanf(" %c", &lowerCase);

@@ -14,8 +14,7 @@ void push(int stack[], int *top, int value) {
     // display the stack
     printf("\n");
     printf("\t\t\t%d <--- Top\n", stack[*top]);
-    for (i = *top - 1; i >= 0; i--)
-      printf("\t\t\t%d\n", stack[i]);
+    for (i = *top - 1; i >= 0; i--) printf("\t\t\t%d\n", stack[i]);
   }
 }
 
@@ -31,8 +30,7 @@ void pop(int stack[], int *top) {
     else {
       printf("\n");
       printf("\t\t\t%d <--- Top\n", stack[*top]);
-      for (i = *top - 1; i >= 0; i--)
-        printf("\t\t\t%d\n", stack[i]);
+      for (i = *top - 1; i >= 0; i--) printf("\t\t\t%d\n", stack[i]);
     }
   }
 }
@@ -62,8 +60,9 @@ int main() {
   int input, value;
   int top = -1;
   while (1) {
-    printf("\n1. Push an element.\n2. Pop an element.\n3. Check the "
-           "status of the stack.\n4. Exit.\n");
+    printf(
+        "\n1. Push an element.\n2. Pop an element.\n3. Check the "
+        "status of the stack.\n4. Exit.\n");
     printf(
         "\nEnter the number to perform the corresponding operation on stack: ");
     scanf("%d", &input);

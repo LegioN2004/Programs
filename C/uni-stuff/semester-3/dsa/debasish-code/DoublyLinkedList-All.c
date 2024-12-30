@@ -36,8 +36,7 @@ void insert_end(int *count) {
   newnode->llink = 0;
   newnode->rlink = 0;
   ptr = header;
-  while (ptr->rlink != 0)
-    ptr = ptr->rlink;
+  while (ptr->rlink != 0) ptr = ptr->rlink;
   ptr->rlink = newnode;
   newnode->llink = ptr;
   ptr = newnode;
@@ -64,8 +63,7 @@ void insert_anywhere(int *count) {
     newnode->llink = 0;
     newnode->rlink = 0;
     ptr = header;
-    while (ptr->rlink != 0)
-      ptr = ptr->rlink;
+    while (ptr->rlink != 0) ptr = ptr->rlink;
     ptr->rlink = newnode;
     newnode->llink = ptr;
     ptr = newnode;
@@ -254,8 +252,9 @@ int main() {
     else if (user_input == 7)
       exit(0);
     else
-      printf("You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Please follow the "
-             "instructions!!\n");
+      printf(
+          "You didn't press any of 1, 2, 3, 4, 5, 6 or 7. Please follow the "
+          "instructions!!\n");
   }
   return 0;
 }

@@ -14,20 +14,20 @@ int main() {
   printf("enter the value of b: ");
   scanf("%d", &b);
   switch (ch) {
-  case 1:
-    printf("the value of is %d+%d=%d \n", a, b, (a + b));
-    break;
-  case 2:
-    printf("%d-%d=%d \n", a, b, (a - b));
-    break;
-  case 3:
-    printf("%d*%d=%d \n", a, b, (a * b));
-    break;
-  case 4:
-    printf("%d/%d=%d \n", a, b, (a / b));
-    break;
-  default:
-    printf("wrong choice, enter the correct input \n");
+    case 1:
+      printf("the value of is %d+%d=%d \n", a, b, (a + b));
+      break;
+    case 2:
+      printf("%d-%d=%d \n", a, b, (a - b));
+      break;
+    case 3:
+      printf("%d*%d=%d \n", a, b, (a * b));
+      break;
+    case 4:
+      printf("%d/%d=%d \n", a, b, (a / b));
+      break;
+    default:
+      printf("wrong choice, enter the correct input \n");
   }
   return 0;
 }

@@ -78,7 +78,7 @@ int main() {
       }
     }
   } else {
-    float d = b * b - 4 * a * c; // Discriminant
+    float d = b * b - 4 * a * c;  // Discriminant
 
     if (d > 0) {
       // Two distinct real roots

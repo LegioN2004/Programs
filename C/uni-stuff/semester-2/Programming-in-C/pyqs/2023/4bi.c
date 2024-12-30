@@ -4,9 +4,9 @@
 // Function to swap two numbers using pointers
 void swap(int *x, int *y) {
   int temp;
-  temp = *x; // Store the value of x in temp
-  *x = *y;   // Assign the value of y to x
-  *y = temp; // Assign the value of temp (original x) to y
+  temp = *x;  // Store the value of x in temp
+  *x = *y;    // Assign the value of y to x
+  *y = temp;  // Assign the value of temp (original x) to y
 }
 
 int main() {

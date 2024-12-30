@@ -100,7 +100,6 @@ void insertAtPosition() {
     }
     temp->next = newNode;
   }
-
   displayList();
 }
 
@@ -138,7 +137,6 @@ void deleteFromEnd() {
     }
     temp->prev->next = NULL;
   }
-
   free(temp);
   displayList();
 }
@@ -179,10 +177,8 @@ void deleteAtPosition() {
     if (temp->prev != NULL) {
       temp->prev->next = temp->next;
     }
-
     free(temp);
   }
-
   displayList();
 }
 

@@ -13,9 +13,10 @@ int main() {
 
   // Check if the matrix is square
   if (rows != cols) {
-    printf("Error: The matrix must be square (number of rows = number of "
-           "columns).\n");
-    return 1; // Return with error code 1
+    printf(
+        "Error: The matrix must be square (number of rows = number of "
+        "columns).\n");
+    return 1;  // Return with error code 1
   }
 
   // Read the elements of the matrix
@@ -30,7 +31,7 @@ int main() {
   // Calculate the sum of diagonal elements
   int sum = 0;
   for (int i = 0; i < rows; i++) {
-    sum += matrix[i][i]; // Add the diagonal element at position [i][i]
+    sum += matrix[i][i];  // Add the diagonal element at position [i][i]
   }
 
   // Print the sum of diagonal elements

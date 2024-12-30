@@ -9,8 +9,8 @@ struct node {
 
 struct node *front = NULL;
 struct node *rear = NULL;
-struct node *temp1; // temp -- for traversing, temp1 -- last second node, temp2
-                    // -- node to be deleted
+struct node *temp1;  // temp -- for traversing, temp1 -- last second node, temp2
+                     // -- node to be deleted
 
 void enqueue(int value) {
   struct node *newnode, *temp;

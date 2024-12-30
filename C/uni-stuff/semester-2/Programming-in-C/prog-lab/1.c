@@ -2,8 +2,7 @@
 
 #include <stdio.h>
 
-int main()
-{
+int main() {
   printf("This is my first C Program");
   return 0;
 }
