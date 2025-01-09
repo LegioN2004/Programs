@@ -35,7 +35,7 @@ What if, you could just write the code and someone else could take care of all o
 
 The name can be misleading, as there are still servers involved in the process. However, the cloud provider manages the servers, and we developers do not have to worry about them.
 
-The cloud provider just makes sure that of autoscaling, monitoring, etc. If no one visits it will have pretty much no server running. As soon as someone visits, it will start a server and run the code. If there are 20 people visiting, it will start more servers. If a lot of people are visiting, it will start a lot of servers, no really servers but yeah.
+The cloud provider just makes sure that of autoscaling, monitoring, etc. If no one visits it will have pretty much no server running. As soon as someone visits, it will start a server and run the code. If there are 20 people visiting, it will start more servers. If a lot of people are visiting, it will start a lot of servers, not really but yeah.
 
 Easier definition: What if you could just write your express routes and run a command. The app would automatically
 
@@ -89,7 +89,7 @@ The dashboard is similar to a lot of the other cloud providers like GCP, AWS, et
 
 1. Domain registration section: If you have a domain, or want to buy one or want to point it to something else, we can go here.
 2. Analytics & Logs: For tracking how many people visit the website and other data.
-3. Turnstile: Works for preventing DDoS attacks, those capchas and all.
+3. Turnstile: Works for preventing DDoS attacks, those captchas and all.
 
 We'll be working with workers and pagers for today which _Builds serverless functions with Workers. Deploy websites and full-stack applications with Pages_. This is what happens when we just provide the code and the servers handle everything themselves.
 
@@ -116,13 +116,13 @@ So what they did is use a big runtime that takes all the things that is being as
 
 ![image from the blog](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2F34612f53-8340-455b-9ea5-a7ecbfed76e7%2FScreenshot_2024-02-10_at_3.51.07_AM.jpg?table=block&id=05510132-8f7d-448b-bd2a-0a03319c647f&cache=v2)
 
-They have their own runtime and they have bunch of their servers all around the world which are running this runtime. So whenever you start a process, it runs it on one of these servers based on the location and other parameters.
+They have their own worker runtime which is based on v8 and they have bunch of their servers all around the world which are running this runtime. So whenever you start a process, it runs it on one of these cloud edge networks or basically servers based on the location and other parameters.
 
 ### **Isolates vs containers**
 
 ![image 2 from the blog](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F085e8ad8-528e-47d7-8922-a23dc4016453%2Feac4cf16-3350-4f8b-aa6e-98322a23d7fa%2FScreenshot_2024-02-10_at_3.54.02_AM.jpg?table=block&id=dde817ce-f77f-4a17-add4-f8297d8107fe&cache=v2)
 
-Isolates as shown in the pic is something like there will be either several node.js process that run the code separately but in Cloudflare there is something like one node.js process that will run one index.js file and that file will run all the code of different users separately without them interfering with each other, and also that run happens based on who specific region and its server. Why do we need to know: There has been a new custom JavaScript runtime from AWS as well to compete with this.
+Isolates as shown in the pic is something like there will be either several node.js process that run the code separately but in Cloudflare there is something like one node.js process that will run one index.js file and that file will run all the code of different users separately without them interfering with each other, and also that run happens based on the specific region and its server. Why do we need to know: There has been a new custom JavaScript runtime from AWS as well to compete with this.
 
 ## **Initializing a worker**
 
@@ -211,9 +211,11 @@ We cannot write code like this or install express in cloudflare workers. We will
 How can you do the same in the Cloudflare environment? We'll have to write the following code in order to do that, and most of the server logic is pre-written by the cloudflare folks in order to make our life easier.
 What we worry about are: the methods, headers, the body, the query parameters, etc
 
-So whenever we write this function we get a **`request`** object which gives access to methods, headers, body, routes and many more which we'll see later on. The names may be different from  what we used in express but they have the same functionality
+So whenever we write this function we get a **`request`** object which gives access to methods, headers, body, routes and many more which we'll see later on. The names may be different from what we used in express but they have the same functionality
 
 ```ts
+export interface Env {}
+
 export default {
   async fetch(
     request: Request,
@@ -221,14 +223,16 @@ export default {
     ctx: ExecutionContext,
   ): Promise<Response> {
     console.log(request.body);
- // some very complex code and regex for extracting the methods
+ // *insert some complex code and regex for extracting the methods, here
   let url = 0;
 
   if (request.method === 'GET') {
    if (url === '/users') {
     console.log('hit the users endpoint');
-   }   console.log(request.headers);
-      // -----------------------
+   }   
+   console.log(request.headers);
+
+   // -----------------------------------------
 
     if (request.method === "GET") {
       return Response.json({
@@ -246,7 +250,7 @@ export default {
 On running the code we get the following output from the console, null here means that we did not send any body in the request and we will get different outputs for different requests like POST, PUT, DELETE, etc. But the thing is that we get all the details of the request and all but we'll have to write very complex code to extract that info and make the application properly as per need. This is how it was intended to be written at the starting but eventually libraries came into the picture that made it easier to write the code.
 
 - misc stuff
-  - Why do we have `Promise<Response>`?: Because the fetch function is an async function, and async functions return promises. The promise will resolve to a response object. Because eventually we'll have a async await usecase like taking data from the database which will be async and as such we'll have to await and so we'll surely have to return a promise. You don't need to specifically write `Promise<Response>` since it can infer automatically but it is a good practice to write it.
+  - Why do we have `Promise<Response>`?: Because the fetch function is an async function, and async functions return promises. The promise will resolve to a response object. Because eventually we'll have an async await usecase like taking data from the database which will be async and as such we'll have to await and so we'll surely have to return a promise. You don't need to specifically write `Promise<Response>` since it can infer automatically but it is a good practice to write it.
 
 ```shell
 null

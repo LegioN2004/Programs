@@ -50,7 +50,10 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "string_view": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "bitset": "cpp",
+        "__availability": "cpp"
     },
-    "livePreview.defaultPreviewPath": "/home/sunny/ghq/github.com/legion2004/programs/codewithharry/codewithharryWebDev/codewithharryHTML,CSS&JS/tut7/tut7.html"
+    "livePreview.defaultPreviewPath": "/home/sunny/ghq/github.com/legion2004/programs/codewithharry/codewithharryWebDev/codewithharryHTML,CSS&JS/tut7/tut7.html",
+    "C_Cpp.default.compilerPath": "/usr/bin/clang"
 }

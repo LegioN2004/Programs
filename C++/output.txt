@@ -1,2 +1,6 @@
-Hello
-Jello
+Enter the type of tea, price per kg and its rating you want(in a serial manner): The type of tea is "noob_bihari"
+
+The price of tea per kg is 25.01
+
+The rating of tea per kg is Z
+
