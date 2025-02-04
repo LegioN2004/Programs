@@ -35,7 +35,6 @@ int main() {
   // now writing these marks in while and do-while loop
 
   // while loop part
-
   //   int i=0;
   //      while( i<4);
   //  {
@@ -52,21 +51,25 @@ int main() {
   // }while(i<4);
 
   // pointers and arrays
-  //(here * simply points to the value to where it is located )
+  // `*` here we can directly use the dereference operator to access the array elements and we can increment and decrement using ints as well
   int *p = marks;  // *p points to the first value of the marks array or address
                    // store karta he array ke starting ka
   cout << *(p++)
        << endl;  // this will show the value of p and then increment the value
                  // of p and it shows the incremented output in cout
-  cout << *(++p) << endl;  // firstly value of *p is 23 and *p++ is 2345 and if
-                           // we again use *++p then the value becomes 2356 i.e
-                           // the next value of array is printed (second last)
-  //  cout<<"The value of *p is "<<*p<<endl; // here *p shows the value at p but
-  //  p stores the address cout<<"The value of *p(p+1) is "<<*(p+1)<<endl; // to
-  //  print the other values we need to use brackets before * and then add p
-  //  cout<<"The value of *p(p+2) is "<<*(p+2)<<endl; //  with 1,2,3
-  //  respectively to get the respective values serial cout<<"The value of
-  //  *p(p+3) is "<<*(p+3)<<endl;
+  cout << *(++p) << endl;
+  /*
+   firstly value of *p is 23 and *p++ is 45(after the control executes that line
+   and we again use *++p then the value becomes 56(since pre increment op) i.e
+   the next value of array is printed (second last)
+  */
+
+  // cout<<"The value of *p is "<<*p<<endl; // here *p shows the value at p but
+  // p stores the address cout<<"The value of *p(p+1) is "<<*(p+1)<<endl; // to
+  // print the other values we need to use brackets before * and then add p
+  // cout<<"The value of *p(p+2) is "<<*(p+2)<<endl; //  with 1,2,3
+  // respectively to get the respective values serial cout<<"The value of
+  // *p(p+3) is "<<*(p+3)<<endl;
 
   return 0;
 }

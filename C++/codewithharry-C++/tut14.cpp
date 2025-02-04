@@ -1,11 +1,12 @@
 #include <iostream>
 using namespace std;
 
-// structures--> It is that type of user defined data type which is used to use
-// different data types in one program such as int,float,char,etc
-typedef struct employee  // we can use typedef struct and at the end* ,, it
-                         // means that what we used to say struct employee we
-                         // can now say ep
+// structures--> It is that type of user defined data type which is used to
+// segregate different data types in a single data type. different data types in
+// one program such as int,float,char,etc
+typedef struct employee
+/* Using typedef with struct allows us to use 'ep' as an alias for 'struct
+         employee' */
 {
   /* data */
   int eid;  // here the datatypes are mentioned with the corresponding data
@@ -13,26 +14,25 @@ typedef struct employee  // we can use typedef struct and at the end* ,, it
   char favChar;
   float salary;
 } ep;  //* end here we have to put ep so we can use shortcut*
+
 // unions -- they are similar to structures but they provide a very good memory
 // management
 // 2nd part
 union money {
   /* data */
   int rice;  // here we can use only one data type which help us to achieve
-             // better optimisation
-  char car;
+  int rice;  // Only one member of the union can be used at a time, which helps
+             // achieve better memory optimization.
   float pounds;
 };
 
 int main()  // here the values are given for the corresponding data types with
             // the
 {
-  enum Meal {
-    breakfast,
-    lunch,
-    dinner
-  };  // enum can be used to give numerical values starting from 0 to the words
-      // in the brakcets
+  /* enum can be used to give numerical values starting from 0 to the words in
+           the brakcets */
+
+  enum Meal { breakfast, lunch, dinner };
   Meal m1 = lunch;  // here anything written after = gives the corresponding
                     // values of the words in the above brackets
   cout << (m1 ==
@@ -58,9 +58,13 @@ int main()  // here the values are given for the corresponding data types with
   // and then the name given to hold the values of the respective data type
   // mili.favChar='r';
   // mili.salary=1000;
-  // cout<<"The value is "<<mili.eid<<endl;
-  // cout<<"The value is "<<mili.favChar<<endl;
-  // cout<<"The value is "<<mili.salary<<endl;
+  ep mili;
+  mili.eid = 1;
+  mili.favChar = 'r';
+  mili.salary = 1000;
+  cout << "\nThe value is " << mili.eid << endl;
+  cout << "The value is " << mili.favChar << endl;
+  cout << "The value is " << mili.salary << endl;
 
   return 0;
 }
