@@ -1,8 +1,10 @@
 {
-	"cmake.sourceDirectory": "C:/Users/hp/Documents/dotfiles/LegioN2004-githubthings/programs/C++",
+	"cmake.sourceDirectory": "/home/mili/ghq/github.com/legion2004/Programs",
 	"java.debug.settings.onBuildFailureProceed": true,
 	"cmake.configureOnOpen": true,
-	"java.project.sourcePaths": ["JAVA/"],
+	"java.project.sourcePaths": [
+		"JAVA/"
+	],
 	"files.associations": {
 		"cs50.h": "c",
 		"stdio.h": "c",
@@ -98,5 +100,8 @@
 		"valarray": "cpp",
 		"variant": "cpp",
 		"string.h": "c"
-	}
+	},
+	"dataworkspace.excludedProjects": [
+		"4th-sem/4th-sem.sqlproj"
+	]
 }

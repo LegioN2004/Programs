@@ -84,8 +84,8 @@ GO/bin/
 
 
 # Logs and databases
+# *.sql
 *.log
-*.sql
 *.sqlite
 *.db
 
