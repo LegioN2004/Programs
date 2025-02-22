@@ -1,0 +1,18 @@
+# Fdb version 3
+["lualatex"] 1740148879 "resume.tex" "resume.pdf" "resume" 1740148879
+  "/usr/share/texlive/texmf-dist/tex/latex/base/article.cls" 1636758526 20144 8a7de377ae7a11ee924a7499611f5a9d ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/latexsym.sty" 1622581934 2853 064bc688b5f0914f6c46857908d3b04a ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/ltluatex.lua" 1636758526 19214 9fefc6dff80101966499ea0d8ae2e503 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo" 1636758526 8464 74db94825c407b51399ca17d9bd38a3d ""
+  "/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.lua" 1642022539 15627 866398a1358608205cb87da529bd41e8 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/latexconfig/lualatexquotejobname.lua" 1308175312 1031 977f79ff10b802fc398926378bec58e9 ""
+  "/usr/share/texmf/fonts/tfm/public/lm/rm-lmr10.tfm" 1254938640 11868 4f81e9b6033c032bdaf9884f4d7ef412 ""
+  "/usr/share/texmf/tex/latex/lm/ot1lmr.fd" 1256929440 1880 bae7b659316f7344a86218ad38b01d91 ""
+  "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1740147962 4555432 f675e35db90552988143dc88c6efbc8b ""
+  "fullpage.sty" 0 -1 0 ""
+  "resume.aux" 1740148126 32 3985256e7290058c681f74d7a3565a19 ""
+  "resume.tex" 1740148438 10087 056596bb7155e90980c24fc510298b55 ""
+  "titlesec.sty" 0 -1 0 ""
+  (generated)
+  "resume.log"
+  "resume.pdf"

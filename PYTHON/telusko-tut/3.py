@@ -11,3 +11,5 @@ print("the price is", total, rent, gas, bike)
 
 round = round((gas / food), 3) 
 print(round)
+
+print(10 * ' naveen')
