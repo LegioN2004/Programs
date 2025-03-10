@@ -6,18 +6,13 @@ int sum(int a, int b) {
   return c;
 }
 // this will not swap a and b
-void swap(int a, int b)  // the values are as follows
-{                        // temp a b
-  int temp = a;  // 4    4 5   here temp is storing the initial value as 4 and
-                 // as it is = to a so a is also 4
-  a = b;     // 4    5 5   here a=b so a is 5 and since nothing has changed in b
-             // and temp so it is same as it was before
-  b = temp;  // 4    5 4   here temp is as it is and b=temp so b is 4 here and
-             // others are same, a was 5 previously so it'll remain same
-}  // this is a way to swap the values of variables but they don't swap but only
-   // copy the values
-// so we use the following way to swap the values
-// two types to call functions ---->
+// the values are as follows temp a b
+void swap(int a, int b)  
+{                        
+  int temp = a;  // 4    4 5   here temp is storing the initial value as 4 and as it is = to a so a is also 4
+  a = b;     // 4    5 5   here a=b so a is 5 and since nothing has changed in b and temp so it is same as it was before
+  b = temp;  // 4    5 4   here temp is as it is and b=temp so b is 4 here and others are same, a was 5 previously so it'll remain same
+} // this is a way to swap the values of variables but they don't swap but only copy the values so we use the following way to swap the values two types to call functions ---->
 
 // call by reference using pointers
 void swapPointer(

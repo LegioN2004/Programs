@@ -9,41 +9,41 @@ typedef struct employee
          employee' */
 {
   /* data */
-  int eid;  // here the datatypes are mentioned with the corresponding data
-            // which is to be printed
+  int eid; // here the datatypes are mentioned with the corresponding data
+           // which is to be printed
   char favChar;
   float salary;
-} ep;  //* end here we have to put ep so we can use shortcut*
+} ep; //* end here we have to put ep so we can use shortcut*
 
 // unions -- they are similar to structures but they provide a very good memory
 // management
 // 2nd part
 union money {
   /* data */
-  int rice;  // here we can use only one data type which help us to achieve
-  int rice;  // Only one member of the union can be used at a time, which helps
-             // achieve better memory optimization.
+  int rice; // here we can use only one data type which help us to achieve
+            // Only one member of the union can be used at a time, which helps
+            // achieve better memory optimization.
   float pounds;
 };
 
-int main()  // here the values are given for the corresponding data types with
-            // the
+int main() // here the values are given for the corresponding data types with
+           // the
 {
   /* enum can be used to give numerical values starting from 0 to the words in
            the brakcets */
 
   enum Meal { breakfast, lunch, dinner };
-  Meal m1 = lunch;  // here anything written after = gives the corresponding
-                    // values of the words in the above brackets
+  Meal m1 = lunch; // here anything written after = gives the corresponding
+                   // values of the words in the above brackets
   cout << (m1 ==
-           0);  // here we should put the corresponding values like 0,1,2 etc of
-                // the corresponding values and if we write the wrong value then
-                // we will get output as 0 and if we write the correct value
-                // then we will get the corresponding value
+           0); // here we should put the corresponding values like 0,1,2 etc of
+               // the corresponding values and if we write the wrong value then
+               // we will get output as 0 and if we write the correct value
+               // then we will get the corresponding value
 
-  // cout<<breakfast;
-  // cout<<lunch;
-  // cout<<dinner;
+  cout << breakfast;
+  cout << lunch;
+  cout << dinner;
   //  ep mili; //* ep here instead of struct employee to make it easy ,, also
   //  the name is mili so we have to use it in int main whenever we initialise
   //  the values

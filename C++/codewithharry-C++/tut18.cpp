@@ -1,16 +1,14 @@
 #include <iostream>
 using namespace std;
 
-int fib(int n) {  // this is a recursive function
+int fib(int n) { // this is a recursive function
   if (n < 2) {
     return 1;
   }
-  return fib(n - 2) + fib(n - 1);  // there is no need of an extra else as
+  return fib(n - 2) + fib(n - 1); // there is no need of an extra else as
 }
 
-int factorial(int n)
-
-{
+int factorial(int n) {
   if (n <= 1) {
     return 1;
   }
@@ -35,7 +33,7 @@ int main() {
   cout << "Enter a number" << endl;
   cin >> a;
   cout << "The factorial of a is " << factorial(a) << endl;
-  /* cout<<"The term in fibonacci sequence at position "<<a<<" is
-   * "<<fib(a)<<endl; */
+  cout << "The term in fibonacci sequence at position " << a << " is " << fib(a)
+       << endl;
   return 0;
 }

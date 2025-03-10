@@ -6,9 +6,9 @@ using namespace std;
 // it to the respective values with which it is float and if it fails to do so
 // then it will give errors
 int add(int a,
-        int b) {  // if we write datatype of function in float but the overall
-                  // datatype is int then the datatype will remain the same and
-                  // no error will be shown and vice versa
+        int b) { // if we write datatype of function in float but the overall
+                 // datatype is int then the datatype will remain the same and
+                 // no error will be shown and vice versa
   cout << "Using function with 2 arguments" << endl;
   return a + b;
 }

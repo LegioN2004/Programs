@@ -8,20 +8,20 @@ int main() {
   cout << "Tell me your age" << endl;
   cin >> age;
 
-  //    1. Selection control structure If-else ladder , ladder means if else
-  //    else if comes sequentially
-  // if((age<18) && (age>0))
-  // {
-  //     cout<<"You cannot come to my party"<<endl;
-  // }
-  // else if (age==18)
-  // {
-  // cout<<"You will get a kid pass to enter the party"<<endl;
-  // }
-  // else if(age<1)
-  // {
-  //     cout<<"You are not yet born"<<endl;
-  // }
+  // 1. Selection control structure If-else ladder , ladder means if else
+  //     else if comes sequentially
+  //  if((age<18) && (age>0))
+  //  {
+  //      cout<<"You cannot come to my party"<<endl;
+  //  }
+  //  else if (age==18)
+  //  {
+  //  cout<<"You will get a kid pass to enter the party"<<endl;
+  //  }
+  //  else if(age<1)
+  //  {
+  //      cout<<"You are not yet born"<<endl;
+  //  }
 
   // else
   // {

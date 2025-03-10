@@ -5,13 +5,13 @@ using namespace std;
 
 int main() {
   // Array example
-  int marks[4] = {23, 45, 56, 79};  // one way of declaring array
-                                    //  int mathMarks[4];
-                                    //  mathMarks[0]=227;
-                                    //  mathMarks[1]=257;
-                                    //  mathMarks[2]=247;
-                                    //  mathMarks[3]=2267;
-                                    //   cout<<"These are mathMarks"<<endl;
+  int marks[4] = {23, 45, 56, 79}; // one way of declaring array
+                                   //  int mathMarks[4];
+                                   //  mathMarks[0]=227;
+                                   //  mathMarks[1]=257;
+                                   //  mathMarks[2]=247;
+                                   //  mathMarks[3]=2267;
+                                   //   cout<<"These are mathMarks"<<endl;
 
   //  cout<<mathMarks[0]<<endl;    // cout shows that you can print or cahnge
   //  the values cout<<mathMarks[1]<<endl; cout<<mathMarks[2]<<endl;
@@ -51,12 +51,13 @@ int main() {
   // }while(i<4);
 
   // pointers and arrays
-  // `*` here we can directly use the dereference operator to access the array elements and we can increment and decrement using ints as well
-  int *p = marks;  // *p points to the first value of the marks array or address
-                   // store karta he array ke starting ka
+  // `*` here we can directly use the dereference operator to access the array
+  // elements and we can increment and decrement using ints as well
+  int *p = marks; // *p points to the first value of the marks array or address
+                  // store karta he array ke starting ka
   cout << *(p++)
-       << endl;  // this will show the value of p and then increment the value
-                 // of p and it shows the incremented output in cout
+       << endl; // this will show the value of p and then increment the value
+                // of p and it shows the incremented output in cout
   cout << *(++p) << endl;
   /*
    firstly value of *p is 23 and *p++ is 45(after the control executes that line
@@ -64,10 +65,11 @@ int main() {
    the next value of array is printed (second last)
   */
 
-  // cout<<"The value of *p is "<<*p<<endl; // here *p shows the value at p but
+  cout << "The value of *p is " << *p
+       << endl; // here *p shows the value at p but
   // p stores the address cout<<"The value of *p(p+1) is "<<*(p+1)<<endl; // to
   // print the other values we need to use brackets before * and then add p
-  // cout<<"The value of *p(p+2) is "<<*(p+2)<<endl; //  with 1,2,3
+  cout << "The value of *p(p+2) is " << *(p + 2) << endl; //  with 1,2,3
   // respectively to get the respective values serial cout<<"The value of
   // *p(p+3) is "<<*(p+3)<<endl;
 

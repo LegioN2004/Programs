@@ -25,21 +25,24 @@ int main() {
   //  cout<<" The value of b without setw is : "<< b<<endl;
   //  cout<<" The value of c without setw is : "<< c <<endl;
 
-  //  cout<<" The value of a is : "<<setw(4)<<a<<endl; // here the no in the
-  //  bracket of setw shows the space taken and
-  //  // it is used to shift the nos to the right with spaces as taken in the
-  //  brackets cout<<" The value of b is : "<<setw(4)<<b<<endl; // here 4 is
-  //  taken in () so the no 3 is printed with 3 spaces first cout<<" The value
-  //  of c is : "<<setw(4)<<c<<endl;// and then 3 like '   3'
+  //  cout<<" The value of a is : "<<setw(4)<<a<<endl;
+  // here the no in the bracket of setw shows the space taken and it is used to
+  // shift the nos to the right with spaces as taken in the
+  //  brackets cout<<" The value of b is : "<<setw(4)<<b<<endl;
+  // here 4 is taken in () so the no 3 is printed with 3 spaces first
+  // cout<<"The value of c is : "<<setw(4)<<c<<endl;
+  // and then 3 like '   3'
 
   // Operator Precedence
-
   int a = 3, b = 4;  // which operator will be first used
                      //  int c= ((a*5)+b)
   int c = ((((a * 5) + b) - 47) +
            87);  // precedence is given to * so use them in brackets but  +, -
                  // has equal precendence (see from the net)
   // so  we have to see the associativity which is from left to right
-  cout << c;
+  cout << c << endl;
+  cout << "The value of c is : " << setw(14) << left << c << endl;
+  // output: The value of c is : 59            
+  // outputs with a space of 14, where the alignment is left and so the value takes 2 spaces to the left and rest of the 12 spaces is just spaces
   return 0;
 }
