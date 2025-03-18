@@ -1,0 +1,9 @@
+[project]
+name = "opencv-tut"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+    "opencv-python>=4.11.0.86",
+]

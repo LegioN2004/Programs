@@ -1,7 +1,1 @@
-The sum of 3 and 6 is Using function with 2 arguments
-9
-The sum of 3 ,6 and 7 is Using function with 3 arguments
-16
-The volume of cylinder radius 3 and height 6 is 169
-The volume of cube of side  is 27
-The volume of cuboid is  l=3,b=6,and h=7 is 126
+The value is 3

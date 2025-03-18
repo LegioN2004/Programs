@@ -71,4 +71,17 @@ So updating and deleting is very useful but can be dangerous if not used properl
 - You can also order by name by doing `select fcc.name, fcc.major from fcc ORDER BY fcc.name;` this will order the rows by the name column in ascending order(alphabetical order to be precise for strings). You can also do `ORDER BY fcc.name DESC;` to order in descending order. By default it'll be in ascending order(alphabetical) if you don't specify.
   - you can add `desc` at the end to show it in descending order
   - you can add `asc` at the end to show it in ascending order
+- To limit the number of rows you get, you can use `LIMIT` like `SELECT * FROM fcc LIMIT 3;` this will limit the number of rows/entries to 3:
+
+Conditional operators are as follows: `where column_name operator value`:
+
+- `=`: Equal to
+- `!=` or `<>`: Not equal to
+- `>`: Greater than
+- `<`: Less than
+- `>=`: Greater than or equal to
+- `<=`: Less than or equal to
+- `AND`: Both conditions must be true
+- `OR`: Either condition must be true
+- `NOT`: The condition must not be true
 
