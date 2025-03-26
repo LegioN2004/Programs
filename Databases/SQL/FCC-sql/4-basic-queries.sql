@@ -14,4 +14,5 @@ select * from fcc where `CGPA` <> 1.0 order by student_id asc; -- error
 
 select * from fcc where name in ("gargu", "milu");
 select * from fcc where name in ("gargu", "milu") AND cgpa > 1;
+select * from fcc
 
