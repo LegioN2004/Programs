@@ -1,3 +1,4 @@
+-- Active: 1739339070113@@127.0.0.1@3306@study
 CREATE TABLE Employees (
   EmployeeID INT NOT NULL,
   Name VARCHAR(255) NOT NULL,

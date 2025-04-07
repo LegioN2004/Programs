@@ -17,14 +17,14 @@ private:
 
 public:
   void inputDetails() {
-    cout << "enter the name, roll number";
+    cout << "enter the name, roll number: ";
     cin >> name >> rollNumber;
-    cout << "enter the marks of 5 subjects";
+    cout << "enter the marks of 5 subjects: ";
     for (int i = 0; i < 5; i++) {
       if (marks[i] >= 0 && marks[i] <= 100) {
         cin >> marks[i];
       } else {
-        cout << "Marks is out of bounds";
+        cout << "Marks is out of bounds \n";
       }
     }
     calculateTotalAndAverageMarks();
@@ -37,9 +37,7 @@ public:
     cout << "The average marks of the student is " << averageMarks << endl;
   }
 
-  bool compareMarks(student other) { return totalMarks > other.totalMarks; }
-
-  int findTopper(student arr[], int size) {
+  static int findTopper(student arr[], int size) {
     int topper = 0;
     for (int i = 0; i < size; i++) {
       if (arr[i].totalMarks > arr[topper].totalMarks) {
@@ -79,7 +77,7 @@ public:
       return;
     }
 
-    int topperIndex = Students::findTopper(Students, count);
+    int topperIndex = student::findTopper(Students, count);
     Students[topperIndex].displayDetails();
 
     // for (int i = 0; i < 5; i++) {
@@ -103,25 +101,29 @@ int main() {
     cout << "3. Find Topper\n";
     cout << "4. Exit\n";
     cout << "Enter choice: ";
+    cin >> choice;
     switch (choice) {
     case 1:
       classroom.addStudent();
+      cout << endl;
       break;
 
     case 2:
       classroom.displayAllStudents();
+      cout << endl;
       break;
 
-    case 3:
+    case 3: {
       classroom.getTopper();
-      break;
+      cout << endl;
+    } break;
 
     case 4:
-      cout << "exit";
+      cout << "exit\n";
       break;
 
     default:
-      cout << "Invalid choice, try again";
+      cout << "Invalid choice, try again\n";
       break;
     }
   } while (choice != 4);
