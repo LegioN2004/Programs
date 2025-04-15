@@ -1,5 +1,8 @@
 {
     "files.associations": {
+        "*.sqlbook": "sql",
+        "*.ndjson": "jsonl",
+        "*.dbclient-js": "javascript",
         "ostream": "cpp",
         "iostream": "cpp",
         "algorithm": "cpp",
@@ -53,9 +56,10 @@
         "array": "cpp",
         "bitset": "cpp",
         "__availability": "cpp",
-        "barrier": "cpp"
+        "barrier": "cpp",
+        "regex": "cpp"
     },
     "livePreview.defaultPreviewPath": "/home/sunny/ghq/github.com/legion2004/programs/codewithharry/codewithharryWebDev/codewithharryHTML,CSS&JS/tut7/tut7.html",
-    "C_Cpp.default.compilerPath": "/usr/bin/clang",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "C_Cpp.errorSquiggles": "disabled"
 }

@@ -31,7 +31,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": null,
+            "compilerPath": "/usr/bin/g++",
             "intelliSenseMode": "linux-gcc-x64",
             "browse": {
                 "path": [

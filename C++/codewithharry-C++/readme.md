@@ -94,21 +94,21 @@ cout << "The value at address c is " << **c << endl;
 
 ### Corrected Explanation
 
-| Expression | What It Stores | What It Prints |
-|------------|---------------|---------------|
-| `b` | Address of `a` | Prints address of `a` |
-| `&a` | Address of `a` | Prints address of `a` |
-| `c` | Address of `b` | Prints address of `b` |
-| `&b` | Address of `b` | Prints address of `b` |
-| `*c` | Value stored in `c` (which is `b`) | Prints address of `a` |
-| `**c` | Value stored at address `b` (which is `a`) | Prints `3` |
+| Expression | What It Stores                             | What It Prints        |
+| ---------- | ------------------------------------------ | --------------------- |
+| `b`        | Address of `a`                             | Prints address of `a` |
+| `&a`       | Address of `a`                             | Prints address of `a` |
+| `c`        | Address of `b`                             | Prints address of `b` |
+| `&b`       | Address of `b`                             | Prints address of `b` |
+| `*c`       | Value stored in `c` (which is `b`)         | Prints address of `a` |
+| `**c`      | Value stored at address `b` (which is `a`) | Prints `3`            |
 
 ---
 
 ### Minor Mistake in Your Explanation
 
 > "**c = &b**"  
-**Correction:** `c` is **already** declared as `int** c = &b;`, meaning `c` stores the **address of `b`**, not `&b` itself.
+> **Correction:** `c` is **already** declared as `int** c = &b;`, meaning `c` stores the **address of `b`**, not `&b` itself.
 
 # Tut 14: about enums, structs and unions
 
@@ -199,13 +199,13 @@ In C++, `struct`, `union`, and `enum` are three distinct constructs used for dif
 
 ### Key Differences
 
-| Feature                | Struct                          | Union                          | Enum                          |
-|------------------------|---------------------------------|--------------------------------|-------------------------------|
-| **Purpose**            | Group related data members      | Store different types in the same memory | Define named integer constants |
-| **Memory Allocation**  | Sum of all members (+ padding)  | Size of the largest member     | Size of an `int` (typically)  |
-| **Member Access**      | All members can be accessed     | Only one member at a time      | Enumerators are constants     |
-| **Use Case**           | Represent records or objects    | Save memory or variant types   | Represent sets of constants   |
-| **Example**            | `struct Point { int x, y; };`   | `union Data { int i; float f; };` | `enum Day { Monday, Tuesday };` |
+| Feature               | Struct                         | Union                                    | Enum                            |
+| --------------------- | ------------------------------ | ---------------------------------------- | ------------------------------- |
+| **Purpose**           | Group related data members     | Store different types in the same memory | Define named integer constants  |
+| **Memory Allocation** | Sum of all members (+ padding) | Size of the largest member               | Size of an `int` (typically)    |
+| **Member Access**     | All members can be accessed    | Only one member at a time                | Enumerators are constants       |
+| **Use Case**          | Represent records or objects   | Save memory or variant types             | Represent sets of constants     |
+| **Example**           | `struct Point { int x, y; };`  | `union Data { int i; float f; };`        | `enum Day { Monday, Tuesday };` |
 
 ---
 
@@ -463,18 +463,18 @@ cout << getColorName(GREEN); // Output: GREEN
 ✅ When you have **a fixed set of related constants**.  
 ✅ When you need **better readability** in code instead of using `int` values directly.  
 ✅ When using **switch-case statements** for controlling logic.  
-✅ When you need **strong typing** (`enum class`).  
+✅ When you need **strong typing** (`enum class`).
 
 ---
 
 ### **🔹 Summary Table**
 
-| Feature | `enum` | `enum class` |
-|---------|--------|-------------|
-| Implicit conversion to `int` | ✅ Yes | ❌ No |
-| Scoped | ❌ No | ✅ Yes |
-| Requires prefix (e.g., `Color::RED`) | ❌ No | ✅ Yes |
-| Type safety | ❌ No | ✅ Yes |
+| Feature                              | `enum` | `enum class` |
+| ------------------------------------ | ------ | ------------ |
+| Implicit conversion to `int`         | ✅ Yes | ❌ No        |
+| Scoped                               | ❌ No  | ✅ Yes       |
+| Requires prefix (e.g., `Color::RED`) | ❌ No  | ✅ Yes       |
+| Type safety                          | ❌ No  | ✅ Yes       |
 
 ---
 
@@ -512,9 +512,9 @@ One other thing to remember is that it is only useful to make the function inlin
 An example where the inline function has no effect at all:
 
 ```cpp
-inline void show() 
-{ 
-    cout << “value of S = ” << S << endl; 
+inline void show()
+{
+    cout << “value of S = ” << S << endl;
 }
 ```
 
@@ -532,7 +532,8 @@ To declare an inline function, use the `inline` keyword before the function defi
 
 ## **🔹 Why Use Inline Functions?**
 
-1. **Avoids Function Call Overhead**  
+1. **Avoids Function Call Overhead**
+
    - Normally, when a function is called, the CPU has to:
      1. Store the return address.
      2. Pass arguments.
@@ -541,13 +542,15 @@ To declare an inline function, use the `inline` keyword before the function defi
      5. Return to the stored address.
    - This overhead is eliminated with inline functions.
 
-2. **Faster Execution for Small Functions**  
+2. **Faster Execution for Small Functions**
+
    - Ideal for **small, frequently used** functions.
 
-3. **Better Optimization**  
+3. **Better Optimization**
+
    - The compiler can optimize inlined code better than separately called functions.
 
-4. **Useful for Getters and Setters**  
+4. **Useful for Getters and Setters**
    - Small functions like getters and setters in classes are often inlined.
 
 ---
@@ -571,7 +574,7 @@ int main() {
 }
 ```
 
-🔹 **How it Works:**  
+🔹 **How it Works:**
 
 - Instead of making a function call to `square(5)`, the compiler replaces it with `5 * 5` directly in the code.
 
@@ -599,7 +602,7 @@ int main() {
 }
 ```
 
-📌 **Note:**  
+📌 **Note:**
 
 - Since `cube(int x)` is defined inside the class, it is **implicitly inline**.
 
@@ -624,7 +627,7 @@ int main() {
 }
 ```
 
-🔹 **How it Works:**  
+🔹 **How it Works:**
 
 - If no argument is passed, it defaults to `"User"`.
 
@@ -632,14 +635,14 @@ int main() {
 
 ## **🔹 When NOT to Use Inline Functions**
 
-❌ **For Large Functions:**  
+❌ **For Large Functions:**
 
-- If the function is large, inlining increases **code size** (code bloat).  
+- If the function is large, inlining increases **code size** (code bloat).
 - This can **increase memory usage** and **reduce cache efficiency**.
 
-❌ **For Recursion & Loops:**  
+❌ **For Recursion & Loops:**
 
-- Functions with loops or recursion should NOT be inlined.  
+- Functions with loops or recursion should NOT be inlined.
 - Since recursion requires function calls, inlining does not work effectively.
 
 ```cpp
@@ -648,7 +651,7 @@ inline int factorial(int n) {  // ❌ Bad use of inline
 }
 ```
 
-❌ **When Used Frequently Across Different Files:**  
+❌ **When Used Frequently Across Different Files:**
 
 - If an inline function is used in multiple files, it can lead to **duplicate copies** of the function in each translation unit, increasing the binary size.
 
@@ -656,12 +659,12 @@ inline int factorial(int n) {  // ❌ Bad use of inline
 
 ## **🔹 Summary**
 
-| Feature | Inline Function |
-|---------|----------------|
-| Function Overhead | Eliminated |
-| Execution Speed | Faster (for small functions) |
-| Suitable for | Short functions, Getters/Setters |
-| Not Suitable for | Large functions, Recursion, Loops |
+| Feature           | Inline Function                   |
+| ----------------- | --------------------------------- |
+| Function Overhead | Eliminated                        |
+| Execution Speed   | Faster (for small functions)      |
+| Suitable for      | Short functions, Getters/Setters  |
+| Not Suitable for  | Large functions, Recursion, Loops |
 
 ---
 
@@ -714,15 +717,15 @@ Instead, it **keeps calling itself** until it reaches the base case (`n <= 1`).
 
 Let's go step by step:
 
-| Call | Condition (`n <= 1`?) | What Happens |
-|------|-----------------|--------------|
-| `factorial(5)` | No | Returns `5 * factorial(4)` |
-| `factorial(4)` | No | Returns `4 * factorial(3)` |
-| `factorial(3)` | No | Returns `3 * factorial(2)` |
-| `factorial(2)` | No | Returns `2 * factorial(1)` |
-| `factorial(1)` | Yes ✅ | Returns `1` (Base Case) |
+| Call           | Condition (`n <= 1`?) | What Happens               |
+| -------------- | --------------------- | -------------------------- |
+| `factorial(5)` | No                    | Returns `5 * factorial(4)` |
+| `factorial(4)` | No                    | Returns `4 * factorial(3)` |
+| `factorial(3)` | No                    | Returns `3 * factorial(2)` |
+| `factorial(2)` | No                    | Returns `2 * factorial(1)` |
+| `factorial(1)` | Yes ✅                | Returns `1` (Base Case)    |
 
-🔹 Now, the recursion starts **returning values back up the call stack**.  
+🔹 Now, the recursion starts **returning values back up the call stack**.
 
 ---
 
@@ -735,12 +738,12 @@ Then, they **return values back up the stack**, multiplying at each step.
 
 Now, each function call **returns** the computed value to its previous caller:
 
-| Call | What it Returns |
-|------|---------------|
-| `factorial(1)` returns `1` |
-| `factorial(2)` returns `2 * 1 = 2` |
-| `factorial(3)` returns `3 * 2 = 6` |
-| `factorial(4)` returns `4 * 6 = 24` |
+| Call                                  | What it Returns |
+| ------------------------------------- | --------------- |
+| `factorial(1)` returns `1`            |
+| `factorial(2)` returns `2 * 1 = 2`    |
+| `factorial(3)` returns `3 * 2 = 6`    |
+| `factorial(4)` returns `4 * 6 = 24`   |
 | `factorial(5)` returns `5 * 24 = 120` |
 
 ### **Final Answer**
@@ -758,7 +761,7 @@ The factorial of 5 is 120
 1️⃣ **First, function calls stack up until the base case is reached.**  
 2️⃣ **The base case (`n = 1`) returns 1.**  
 3️⃣ **Then, the values are returned step by step, multiplying at each level.**  
-4️⃣ **Multiplication only happens during the return phase, NOT during the function call phase.**  
+4️⃣ **Multiplication only happens during the return phase, NOT during the function call phase.**
 
 ---
 
@@ -773,9 +776,9 @@ factorial(3)
 = 6
 ```
 
-📌 **Notice:**  
+📌 **Notice:**
 
-- Function calls **keep stacking** until `factorial(1)` is reached.  
+- Function calls **keep stacking** until `factorial(1)` is reached.
 - Then, multiplication happens **as the calls return**.
 
 ---
@@ -801,3 +804,66 @@ factorial(3) = 3 * 2
 factorial(2) = 2 * 1
 factorial(1) = 1  <-- Base case
 ```
+
+# Friend functions
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Complex {
+  int a, b;
+
+public:
+  void setNumber(int n1, int n2) {
+    a = n1;
+    b = n2;
+  }
+
+  friend Complex sumComplex(Complex o1, Complex o2);
+
+  void printNumber() {
+    cout << "Your number is " << a << " + " << b << "i" << endl;
+  }
+};
+
+// It doesn't become a part of the class, it just gets some permissions to use
+// the values of the data members
+Complex sumComplex(Complex o1, Complex o2) {
+  // this is wrong, since you are accessing the private data members, so you got
+  // to define it as friend inside the class(declaration is opitional outside or
+  // inside as per necessary)
+  Complex o3;
+  o3.setNumber((o1.a + o2.a), (o1.b + o2.b));
+  return o3;
+}
+
+int main() {
+  Complex c1, c2, sum;
+  c1.setNumber(1, 4);
+  c1.printNumber();
+
+  c2.setNumber(5, 8);
+  c2.printNumber();
+
+  sum = sumComplex(c1, c2);
+  sum.printNumber();
+  return 0;
+}
+```
+
+Friend functions are not members of the class, but they can access private and protected members of the class. They are declared inside the class with the `friend` keyword, allowing them to access private data members directly.
+
+It doesn't become a part of the class, it just gets some permissions to use the values of the data members.
+`Complex sumComplex(Complex o1, Complex o2) {`
+Just using this is wrong, since you are accessing the private data members, so you got to define it as friend inside the class(declaration is optional outside or inside as per necessary).
+
+properties of friend functions
+
+- not in the scope of the class
+- It is a non-member function that is allowed to do any  with the private data members of the class.
+- Since it is not in the scope of the class, it cannot be called from the object of the class. c1.sumComplex() is invalid
+- can be invoked without the help of the object of the class
+- usually contains the objects as arguments
+- can be declared inside the public or private section of the class, doesn't matter
+- It cannot access the members directly by their names so has to use the object name like `object_name.member_name` to access any member.

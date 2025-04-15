@@ -10,7 +10,7 @@
 		li $v0, 1
 		add $a0, $zero, $s0
 		syscall
-		
+
 		# tells the system that the program is done
 		li $v0, 10
 		syscall
