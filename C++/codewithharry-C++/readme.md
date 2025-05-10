@@ -867,3 +867,32 @@ properties of friend functions
 - usually contains the objects as arguments
 - can be declared inside the public or private section of the class, doesn't matter
 - It cannot access the members directly by their names so has to use the object name like `object_name.member_name` to access any member.
+
+# Inheritance
+
+Inheritance is a way to form new classes using classes that have already been defined. The new class is called the derived class, and the class from which it is derived is called the base class. The derived class inherits all the features from the base class and can have additional features of its own.
+
+- Reusability of code: The derived class can use the members of the base class, which means you don't have to rewrite the same code again.
+- Extensibility: You can add new features to the derived class without modifying the base class alongside reusing it.
+- Reusing classes saves time and effort in programming, as you can build upon existing classes rather than starting from scratch.
+- Reusing already tested and debugged classes reduces the efforts of developing and debugging the same thing again since that's what the inheritance is all about.
+- We can reuse the properties of an existing class by inheriting from it.
+- The existing class is called the *base class* or *parent class*, and the new class is called the *derived class* or *child class*.
+- There are many different types of inheritance in C++ like single inheritance, multiple inheritance, hierarchical inheritance, multilevel inheritance, and hybrid inheritance.
+
+Types of inheritance:
+
+- Single inheritance: A derived class inherits from a single base class.
+- Multiple inheritance: A derived class inherits from multiple base classes.
+- Multilevel inheritance: A derived class inherits from another derived class.
+- Hierarchical inheritance: Multiple derived classes inherit from a single base class.
+- Hybrid inheritance: A combination of two or more types of inheritance.
+- Multilevel inheritance: A derived class inherits from another derived class.
+
+## How are you inheriting your derived class?
+
+- *Default visiblity mode(private)*: If inheriting derived class using default access specifier => public members of the base class becomes private members of the derived class. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the private members of the derived class.
+- *Public visibility mode*: If you are inheriting your derived class using the public access specifier, then the public members of the base class will become the public members of the derived class as well. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the protected members of the derived class.
+- *Private visibility mode*: If you are inheriting your derived class using the private access specifier, then the public members of the base class will become the private members of the derived class. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the private members of the derived class.
+- *Protected visibility mode*: If you are inheriting your derived class using the protected access specifier, then the public members of the base class will become the protected members of the derived class. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the protected members of the derived class.
+- *Private members cannot be inherited*

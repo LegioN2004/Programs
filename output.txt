@@ -1,1 +1,39 @@
-4321
+Academic Classification System
+
+--- Enter details for Arts student ---
+
+Enter Name: Enter ID: Enter Age: Name: 100, ID: 1, Age: 0
+Stream: Arts
+ Subjects: History, Literature, Political Science
+Lab Hours: None
+
+--- Enter details for Medical student ---
+
+Enter Name: Enter ID: Enter Age: Name: .4, ID: 0, Age: 0
+Stream: Medical
+ Subjects: Biology, Chemistry, Anatomy
+Lab Hours: 8 hours/week
+
+--- Enter details for Mechanical student ---
+
+Enter Name: Enter ID: Enter Age: Name: , ID: 803276680, Age: 366
+Stream: Engineering
+Mechanical Engineering
+Subjects: Thermodynamics, Fluid Mechanics, Design
+Lab Hours: 10 hours/week
+
+--- Enter details for Electrical student ---
+
+Enter Name: Enter ID: Enter Age: Name: , ID: 803279760, Age: 366
+Stream: Engineering
+Electrical Engineering
+Subjects: Circuits, Electromagnetics, Control Systems
+Lab Hours: 9 hours/week
+
+--- Enter details for Civil student ---
+
+Enter Name: Enter ID: Enter Age: Name: , ID: 1600677166, Age: 1819242352
+Stream: Engineering
+Civil Engineering
+Subjects: Structural Analysis, Surveying, Construction
+Lab Hours: 8 hours/week

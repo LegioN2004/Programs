@@ -6,6 +6,9 @@
 		"JAVA/"
 	],
 	"files.associations": {
+		"*.sqlbook": "sql",
+		"*.ndjson": "jsonl",
+		"*.dbclient-js": "javascript",
 		"cs50.h": "c",
 		"stdio.h": "c",
 		"iostream": "cpp",
@@ -99,7 +102,11 @@
 		"typeinfo": "cpp",
 		"valarray": "cpp",
 		"variant": "cpp",
-		"string.h": "c"
+		"string.h": "c",
+		"cerrno": "cpp",
+		"climits": "cpp",
+		"ios": "cpp",
+		"queue": "cpp"
 	},
 	"dataworkspace.excludedProjects": [
 		"4th-sem/4th-sem.sqlproj"

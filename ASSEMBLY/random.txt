@@ -1,0 +1,90 @@
+Welcome! The list is currently empty. Ready to push/pop 10 times.
+
+Iteration 1: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+1
+Added1
+
+Iteration 2: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+2
+Added2
+
+Iteration 3: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+3
+Added3
+
+Iteration 4: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+4
+Added4
+
+Iteration 5: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+5
+Added5
+
+Iteration 6: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+6
+Added6
+
+Iteration 7: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+7
+Added7
+
+Iteration 8: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+8
+Added8
+
+Iteration 9: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+9
+Added9
+
+Iteration 10: Enter "u" to push, enter "o" to pop.
+u
+Enter the number that will be added to the list.
+10
+Added10
+End of list push/pop operations.
+Now saving some registers and calling procedure addproc.
+Returned from addproc. Restoring registers.
+The list has 10 elements.
+The contents of the list are:
+1
+2685009921
+2
+2685009962
+3
+2685010003
+4
+2685010044
+5
+2685010085
+6
+2685010126
+7
+2685010167
+8
+2685010208
+9
+2685010249
+10
+26850102810
+The sum is 55
+
+-- program is finished running --
+

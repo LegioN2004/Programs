@@ -8,8 +8,8 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "D:/msys64/mingw64/bin/g++.exe",
-            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "C:/Users/milin/scoop/apps/gcc/current/bin/g++.exe",
+            "intelliSenseMode": "${default}",
             "cppStandard": "c++23",
             "cStandard": "c23",
             "configurationProvider": "ms-vscode.cmake-tools",

@@ -1,3 +1,1 @@
-The value of data1 and data2 is: 4 & 5
-The value of data1 and data2 is: 2 & 0
-The value of data1 and data2 is: 0 & 0
+a is equal to c

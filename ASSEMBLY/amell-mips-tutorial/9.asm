@@ -10,5 +10,5 @@
 	li $v0, 1
 	# add $t0, $zero, $t1
 	# can also do the following
-	move $a0, $t1 # just moves the value of t0 to a0
+	move $a0, $t1 # just moves the value of t1 to a0
 	syscall

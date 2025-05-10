@@ -5,7 +5,7 @@
 			"includePath": ["${workspaceFolder}/**"],
 			"defines": ["_DEBUG", "UNICODE", "_UNICODE"],
 			"windowsSdkVersion": "10.0.22000.0",
-			"compilerPath": "C:/Users/User/scoop/apps/gcc/current/bin/gcc.exe",
+			"compilerPath": "C:/Users/milin/scoop/apps/gcc/current/bin/gcc.exe",
 			"intelliSenseMode": "windows-gcc-x64",
 			"compileCommands": "${workspaceFolder}/C++/compile_commands.json",
 			"configurationProvider": "ms-vscode.cmake-tools",
