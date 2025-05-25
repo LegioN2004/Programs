@@ -5,8 +5,8 @@ welcome_msg: .asciiz "Welcome! The list is currently empty. Ready to push/pop 10
 iteration_msg: .asciiz "\nIteration "
 prompt_msg: .asciiz ": Enter \"u\" to push, enter \"o\" to pop.\n"
 push_msg: .asciiz "\nEnter the number that will be added to the list.\n"
-added_msg: .asciiz "Added"
-removed_msg: .asciiz "\n has been removed from the list.\n"
+added_msg: .asciiz "Added "          # Changed from "Added\n" to "Added " (with a space)
+removed_msg: .asciiz " has been removed from the list.\n"  # Added space at beginning and newline at end
 nothing_to_pop_msg: .asciiz "Nothing to pop.\n"
 end_msg: .asciiz "End of list push/pop operations.\n"
 saving_msg: .asciiz "Now saving some registers and calling procedure addproc.\n"
@@ -94,10 +94,12 @@ push:
     la $a0, added_msg
     syscall
 
+    # Print the value
     li $v0, 1
     move $a0, $t5
     syscall
 
+    # Print newline
     li $v0, 4
     la $a0, newline
     syscall
@@ -118,7 +120,7 @@ pop:
     # Load value from array
     lw $t5, 0($t6)       # $t5 = value to pop
 
-    # Print removed message
+    # Print removed message (value first, then message)
     li $v0, 1
     move $a0, $t5
     syscall

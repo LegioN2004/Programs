@@ -25,6 +25,7 @@ statements
 check the readme for more.
 */
 
+// class programmer : employee {
 class programmer : public employee {
 public:
   programmer(int id) { this->id = id; }

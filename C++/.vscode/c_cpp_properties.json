@@ -8,7 +8,7 @@
                 "UNICODE",
                 "_UNICODE"
             ],
-            "compilerPath": "C:/Users/milin/scoop/apps/gcc/current/bin/g++.exe",
+            "compilerPath": "C:/Program Files/MinGW/bin/g++.exe",
             "intelliSenseMode": "${default}",
             "cppStandard": "c++23",
             "cStandard": "c23",

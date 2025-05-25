@@ -895,4 +895,32 @@ Types of inheritance:
 - *Public visibility mode*: If you are inheriting your derived class using the public access specifier, then the public members of the base class will become the public members of the derived class as well. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the protected members of the derived class.
 - *Private visibility mode*: If you are inheriting your derived class using the private access specifier, then the public members of the base class will become the private members of the derived class. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the private members of the derived class.
 - *Protected visibility mode*: If you are inheriting your derived class using the protected access specifier, then the public members of the base class will become the protected members of the derived class. The private members of the base class will not be accessible in the derived class, but the protected members of the base class will become the protected members of the derived class.
-- *Private members cannot be inherited*
+    - Protected members of the base class are kind of like private members, but they can be *inherited*, i.e accessed in the derived class and its subclasses.
+- *NOTE*: Private members cannot be inherited
+
+# Tut 39: Protected access modifier
+
+The `protected` access modifier in C++ is used to allow access to class members (variables and methods) from derived classes while keeping them hidden from outside classes. It is a middle ground between `private` and `public`.
+
+for a protected member:
+
+| Access Modifier | Public derivation | Private Derivation | Protected Derivation |
+|-----------------|-------------------|-------------------|----------------------|
+| 1. Private      | Not inherited     | Not inherited     | Not inherited        |
+| 2. Protected    | Inherited         | Inherited         | Inherited            |
+| 3. Public       | Inherited         | Inherited         | Inherited            |
+
+# tut 54 Polymorphism
+
+Polymorphism(poly = many, moprhism = form) is a core concept in object-oriented programming (OOP) that allows objects of different classes to be treated as objects of a common base class. It enables a single interface to represent different underlying forms (data types). eg: CWH channel, it is a YT channel that can have multiple different tutorials, so anything that can serve more than one roles . In C++, polymorphism can be achieved through:
+1. **Compile-time polymorphism** (also known as static polymorphism or early binding):
+   - Achieved through function overloading and operator overloading.
+   - The function to be called is determined at compile time based on the arguments passed.
+   - Example: Function overloading allows multiple functions with the same name but different parameter types or numbers.
+   - the decision taken by the compiler to run which function according to the arguments passed also falls under this category like two args passed so two params overloaded function will be called, i.e binding of the functions that happens on here and not in runtime polymorphism.
+2. **Run-time polymorphism** (also known as dynamic polymorphism):
+   - Achieved through inheritance and virtual functions.
+   - The function to be called is determined at runtime based on the type of the object pointed to by a base class pointer.
+   - Here the decision is taken after runtime as to which function to run, according to pointer type.
+- This allows for more flexible and extensible code, as new derived classes can be added without modifying existing code.
+

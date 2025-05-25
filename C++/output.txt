@@ -1,1 +1,1 @@
-a is equal to c
+Author: author1 Title: title1 Price: 1000
