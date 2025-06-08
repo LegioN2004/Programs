@@ -31,14 +31,10 @@ int main() {
 
   // but using this with the constructor commented out also works and runs as it
   // is, just like the copy constructor. And it works with any x/y/z.
-  Number z1(
-      z); // copy constructor called gets printed since it is written as the
-          // output statement to run when the copy constructor will be called
-  z1.display(); // z1 is the new object made
-  // z1 ko jo value pass kiya gaya hai, so uss function ka a ka value is equal
-  // to the value of the passed variable
+  Number z1(z); // copy constructor called gets printed since it is written as the output statement to run when the copy constructor will be called
+  z1.display(); // z1 is the new object made, z1 ko jo value pass kiya gaya hai, so uss function ka a ka value is equal, to the value of the passed variable
 
-  z2 = z; // this shows error, and the copy constructor is not called
+  // z2 = z; // this shows error, and the copy constructor is not called
 
   Number z3 = z;
   z3.display(); // this works, and the copy constructor is called

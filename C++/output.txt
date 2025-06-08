@@ -1,1 +1,7 @@
-Author: author1 Title: title1 Price: 1000
+The number for this object is 0
+The number for this object is 0
+The number for this object is 21
+copy constructor called 
+The number for this object is 21
+copy constructor called 
+The number for this object is 21
