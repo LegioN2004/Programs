@@ -1,0 +1,1499 @@
+mysql> use xyz;
+Database changed
+mysql> desc study;
+ERROR 1146 (42S02): Table 'xyz.study' doesn't exist
+mysql> desc lab1
+    -> ;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | no name |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.02 sec)
+
+mysql> insert into lab1(id, roll_no, age) values(1, 101, 21);
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from lab1;
++----+---------+---------+------+
+| id | roll_no | name    | age  |
++----+---------+---------+------+
+|  1 |     101 | no name |   21 |
++----+---------+---------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into lab1 values(2, 102, 'name1', 100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into lab1 values(3, 103, "name3", 100);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from lab1;
++----+---------+---------+------+
+| id | roll_no | name    | age  |
++----+---------+---------+------+
+|  1 |     101 | no name |   21 |
+|  2 |     102 | name1   |  100 |
+|  3 |     103 | name3   |  100 |
++----+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> alter table lab1 drop primary key;
+Query OK, 3 rows affected (0.15 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from lab1;
++----+---------+---------+------+
+| id | roll_no | name    | age  |
++----+---------+---------+------+
+|  1 |     101 | no name |   21 |
+|  2 |     102 | name1   |  100 |
+|  3 |     103 | name3   |  100 |
++----+---------+---------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from lab1;^C
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   |     | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | no name |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table lab1 add primary key(id)
+    -> ;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | no name |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> drop lab2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lab2' at line 1
+mysql> drop lab1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'lab1' at line 1
+mysql> drop table lab1;
+Query OK, 0 rows affected (0.04 sec)
+
+mysql> desc lab1;
+ERROR 1146 (42S02): Table 'xyz.lab1' doesn't exist
+mysql> desc lab1;
+ERROR 1146 (42S02): Table 'xyz.lab1' doesn't exist
+mysql> create table lab1(id int primary key not null, roll_no int, name varchar(15), age int);
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> insert into table values(1, 101, 'name', 12);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table values(1, 101, 'name', 12)' at line 1
+mysql> insert into lab1 values(1, 101, 'name', 12);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from lab1
+    -> ;
++----+---------+------+------+
+| id | roll_no | name | age  |
++----+---------+------+------+
+|  1 |     101 | name |   12 |
++----+---------+------+------+
+1 row in set (0.00 sec)
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> truncate table lab1;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from lab1
+    -> ^C
+mysql> select * from lab1;
+Empty set (0.00 sec)
+
+mysql> alter table lab1 add branch int;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> select * from lab1;
+Empty set (0.00 sec)
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| branch  | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table lab1 modify branch int not null;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| branch  | int         | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> desc lab1;^C
+mysql> alter table lab1 drop column branch;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> alter table lab1 add branch int not null;
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| branch  | int         | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table lab1 rename column branch to Branch;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc lab1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | NO   | PRI | NULL    |       |
+| roll_no | int         | YES  |     | NULL    |       |
+| name    | varchar(15) | YES  |     | NULL    |       |
+| age     | int         | YES  |     | NULL    |       |
+| Branch  | int         | NO   |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> create database Bank;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use Bank;
+Database changed
+mysql> create table bank1(bank_ac int primary key not null, bank_name varchar(20), name varchar(10), age int, address varchar(20), phone int);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql> insert into bank1(bank_ac int primary key not null, bank_name varchar(20), name varchar(10), age int, address varchar(20), phone int) values(101, 'Bank1', 'name1', 21, 'nothing', 1234561234);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'int primary key not null, bank_name varchar(20), name varchar(10), age int, addr' at line 1
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(101, 'Bank1', 'name1', 21, 'nothing', 1234561234);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> desc bank1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| bank_ac   | int         | NO   | PRI | NULL    |       |
+| bank_name | varchar(20) | YES  |     | NULL    |       |
+| name      | varchar(10) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| address   | varchar(20) | YES  |     | NULL    |       |
+| phone     | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc bank1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| bank_ac   | int         | NO   | PRI | NULL    |       |
+| bank_name | varchar(20) | YES  |     | NULL    |       |
+| name      | varchar(10) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| address   | varchar(20) | YES  |     | NULL    |       |
+| phone     | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(102, 'Bank1', 'name1', 22, 'nothing', 1234568790);
+Query OK, 1 row affected (0.05 sec)
+
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(102, 'Bank1', 'name1', 22, 'nothing', 1234568790);^C
+mysql> ^C
+mysql> ^C
+mysql> select distinct bank_name, name from bank1;
++-----------+-------+
+| bank_name | name  |
++-----------+-------+
+| Bank1     | name1 |
++-----------+-------+
+1 row in set (0.00 sec)
+
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(103, 'Bank2', 'na^C', 22, 'nothing', 1
+mysql> ^C);
+mysql> ^C
+mysql> select * from bank1;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
++---------+-----------+-------+------+---------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bank1;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
++---------+-----------+-------+------+---------+------------+
+2 rows in set (0.00 sec)
+
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(103, 'Bank2', 'name', 22, 'nothing', 124568790);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into bank1(bank_ac, bank_name , name , age , address, phone) values(104, 'Bank2', 'name', 22, 'nothing', 124568790);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select distinct bank_name, name from bank1;
++-----------+-------+
+| bank_name | name  |
++-----------+-------+
+| Bank1     | name1 |
+| Bank2     | name  |
++-----------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select distinct bank_name, name from bank1;^C
+mysql> select * from bank1;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 where age = 22;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+3 rows in set (0.01 sec)
+
+mysql> select * from bank1 where age = 22 AND name='Bank1';
+Empty set (0.00 sec)
+
+mysql> select * from bank1 where age = 22 OR name='Bank1';
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from bank1 where age = 22 OR bank_name='Bank1';
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 where age = 22 and bank_name='Bank1';
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
++---------+-----------+-------+------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from bank1 where age = 22 not bank_name='Bank1';
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'bank_name='Bank1'' at line 1
+mysql> select * from bank1 where not age = 22 and bank_name='Bank1';
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
++---------+-----------+-------+------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from bank1 where not age = 21 and bank_name='Bank1';
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
++---------+-----------+-------+------+---------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from bank1 where not age = 21;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from bank1;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 where not age = 21 and not bank_name='Bank1';
++---------+-----------+------+------+---------+-----------+
+| bank_ac | bank_name | name | age  | address | phone     |
++---------+-----------+------+------+---------+-----------+
+|     103 | Bank2     | name |   22 | nothing | 124568790 |
+|     104 | Bank2     | name |   22 | nothing | 124568790 |
++---------+-----------+------+------+---------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bank1 order by name asc;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 order by name desc;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 order by age desc;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 order by age asc;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     101 | Bank1     | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 order by age asc;^C
+mysql> ^C
+mysql> update bank1 set bank_name=Bankaorint where bank_ac=101;
+ERROR 1054 (42S22): Unknown column 'Bankaorint' in 'field list'
+mysql> update bank1 set bank_name='Bankaorint' where bank_ac=101;
+Query OK, 1 row affected (0.02 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from bank1;
++---------+------------+-------+------+---------+------------+
+| bank_ac | bank_name  | name  | age  | address | phone      |
++---------+------------+-------+------+---------+------------+
+|     101 | Bankaorint | name1 |   21 | nothing | 1234561234 |
+|     102 | Bank1      | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2      | name  |   22 | nothing |  124568790 |
+|     104 | Bank2      | name  |   22 | nothing |  124568790 |
++---------+------------+-------+------+---------+------------+
+4 rows in set (0.00 sec)
+
+mysql> delete from bank1 where age = 21;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from bank1;
++---------+-----------+-------+------+---------+------------+
+| bank_ac | bank_name | name  | age  | address | phone      |
++---------+-----------+-------+------+---------+------------+
+|     102 | Bank1     | name1 |   22 | nothing | 1234568790 |
+|     103 | Bank2     | name  |   22 | nothing |  124568790 |
+|     104 | Bank2     | name  |   22 | nothing |  124568790 |
++---------+-----------+-------+------+---------+------------+
+3 rows in set (0.00 sec)
+
+mysql> delete from bank1;
+Query OK, 3 rows affected (0.01 sec)
+
+mysql> select * from bank1;
+Empty set (0.00 sec)
+
+mysql> desc bank1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| bank_ac   | int         | NO   | PRI | NULL    |       |
+| bank_name | varchar(20) | YES  |     | NULL    |       |
+| name      | varchar(10) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| address   | varchar(20) | YES  |     | NULL    |       |
+| phone     | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from bank1;
+Empty set (0.00 sec)
+
+mysql> use database study;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use study;
+Database changed
+mysql> select * from lab1;
+ERROR 1146 (42S02): Table 'study.lab1' doesn't exist
+mysql> use bank;
+Database changed
+mysql> desc bank;
+ERROR 1146 (42S02): Table 'bank.bank' doesn't exist
+mysql> desc study;
+ERROR 1146 (42S02): Table 'bank.study' doesn't exist
+mysql> show study;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'study' at line 1
+mysql> show database study;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database study' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bank               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| study              |
+| sys                |
+| xyz                |
++--------------------+
+7 rows in set (0.01 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_bank |
++----------------+
+| bank1          |
++----------------+
+1 row in set (0.09 sec)
+
+mysql> desc bank1;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| bank_ac   | int         | NO   | PRI | NULL    |       |
+| bank_name | varchar(20) | YES  |     | NULL    |       |
+| name      | varchar(10) | YES  |     | NULL    |       |
+| age       | int         | YES  |     | NULL    |       |
+| address   | varchar(20) | YES  |     | NULL    |       |
+| phone     | int         | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into bank1 values(1, 'bankname', 'name', 21, 'aroistnaroint', 1234123512)
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into bank1 values(2, 'bankname2', 'name2', 21, 'aroistnaroint', 1234123512)
+    -> ;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into bank1 values(2, 'bankname', 'name1', 22, 'aroistnaroint', 1234123512);
+ERROR 1062 (23000): Duplicate entry '2' for key 'bank1.PRIMARY'
+mysql> insert into bank1 values(3, 'bankname', 'name1', 22, 'aroistnaroint', 1234123512);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into bank1 values(4, 'bankname', 'name2', 23, 'aroistnaroint', 1234123512);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into bank1 values(4, 'bankname', 'name2', 23, 'aroistnaroint', 1234123512);s^C
+mysql> select * from bank1;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 limit 2;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bank1 offset 2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2' at line 1
+mysql> select * from bank1 limit 4 offset 2;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bank1 limit 2 offset 2;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select * from bank1 limit 2 offset 1;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+2 rows in set (0.00 sec)
+
+mysql> select max(age) from bank1;
++----------+
+| max(age) |
++----------+
+|       23 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select min(age) from bank1;
++----------+
+| min(age) |
++----------+
+|       21 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(age) from bank1;
++------------+
+| count(age) |
++------------+
+|          4 |
++------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(age) from bank1;
++----------+
+| avg(age) |
++----------+
+|  21.7500 |
++----------+
+1 row in set (0.01 sec)
+
+mysql> select sum(age) from bank1 as sum_age;
++----------+
+| sum(age) |
++----------+
+|       87 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select sum(age) as sum_age from bank1;
++---------+
+| sum_age |
++---------+
+|      87 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select * from bank1;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank where name=%n;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%n' at line 1
+mysql> select * from bank where name like %n;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%n' at line 1
+mysql> select * from bank where name like n%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+mysql> select name from bank where name like n%;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%' at line 1
+mysql> select name from bank where name like 'n%';
+ERROR 1146 (42S02): Table 'bank.bank' doesn't exist
+mysql> select name from bank1 where name like 'n%';
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 where name like 'n%';
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n%';
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like '%_a';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '%__a';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '_n%';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '__n%';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '__a%';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '_a%';
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like '__m%';
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like '_m%';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '%n';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '%ne';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like '%e';
++------+
+| name |
++------+
+| name |
++------+
+1 row in set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n%e';
++------+
+| name |
++------+
+| name |
++------+
+1 row in set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n__%';
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n____%';
++-------+
+| name  |
++-------+
+| name2 |
+| name1 |
+| name2 |
++-------+
+3 rows in set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n_____%';
+Empty set (0.00 sec)
+
+mysql> select name from bank1 where name like 'n_____%';^C
+mysql> select * from bank1 where name in (name1);
+ERROR 1054 (42S22): Unknown column 'name1' in 'where clause'
+mysql> select * from bank1 where name in (name1);^C
+mysql> ^C
+mysql> select name from bank1;
++-------+
+| name  |
++-------+
+| name  |
+| name2 |
+| name1 |
+| name2 |
++-------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank1 where name in(name1, name2);
+ERROR 1054 (42S22): Unknown column 'name1' in 'where clause'
+mysql> select * from bank1 where name in('name1');
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from bank1 where name not in('name1');
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from bank1 where name not between 21 and 22;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+4 rows in set, 4 warnings (0.00 sec)
+
+mysql> select * from bank1 where name between 21 and 22;
+Empty set, 4 warnings (0.00 sec)
+
+mysql> select * from bank1 where age between 21 and 22;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+3 rows in set (0.00 sec)
+
+mysql> select age from bank1 where age between 21 and 22 as ageee;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'as ageee' at line 1
+mysql> select age from bank1 ageee;
++------+
+| age  |
++------+
+|   21 |
+|   21 |
+|   22 |
+|   23 |
++------+
+4 rows in set (0.00 sec)
+
+mysql> select age from bank1 as ageee;
++------+
+| age  |
++------+
+|   21 |
+|   21 |
+|   22 |
+|   23 |
++------+
+4 rows in set (0.00 sec)
+
+mysql> select age as ageeeee from bank1 ;
++---------+
+| ageeeee |
++---------+
+|      21 |
+|      21 |
+|      22 |
+|      23 |
++---------+
+4 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bank               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| study              |
+| sys                |
+| xyz                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use study;
+Database changed
+mysql> create table students(id int primary key, name varchar(50), dept varchar(30), age int);
+ERROR 1050 (42S01): Table 'students' already exists
+mysql> create table students1(id int primary key, name varchar(50), dept varchar(30), age int);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> alter table students1 add column email varchar(100);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc students1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(50)  | YES  |     | NULL    |       |
+| dept  | varchar(30)  | YES  |     | NULL    |       |
+| age   | int          | YES  |     | NULL    |       |
+| email | varchar(100) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> alter table students1 modify column age int to varchar(30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to varchar(30)' at line 1
+mysql> alter table students1 modify column age to varchar(30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to varchar(30)' at line 1
+mysql> alter table students1 modify age int to varchar(30);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'to varchar(30)' at line 1
+mysql> alter table students1 modify age varchar(30);
+Query OK, 0 rows affected (0.13 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc students1;
++-------+--------------+------+-----+---------+-------+
+| Field | Type         | Null | Key | Default | Extra |
++-------+--------------+------+-----+---------+-------+
+| id    | int          | NO   | PRI | NULL    |       |
+| name  | varchar(50)  | YES  |     | NULL    |       |
+| dept  | varchar(30)  | YES  |     | NULL    |       |
+| age   | varchar(30)  | YES  |     | NULL    |       |
+| email | varchar(100) | YES  |     | NULL    |       |
++-------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> insert into students1 values(101, 'name', 'dept1', '12', 'email'), (102, 'name2', 'dept2', 21, 'email2'), (103, 'name3', 'dept3', '22, 'email3'), (104, 'name4', dept4', '24', 'email');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'email3'), (104, 'name4', dept4', '24', 'email')' at line 1
+mysql> insert into students1 values(101, 'name', 'dept1', '12', 'email'), (102, 'name2', 'dept2', '21', 'email2'), (103, 'name3', 'dept3', '22, 'email3'), (104, 'name4', dept4', '24', 'email');
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'email3'), (104, 'name4', dept4', '24', 'email')' at line 1
+mysql> insert into students1 values(101, 'name', 'dept1', '12', 'email'), (102, 'name2', 'dept2', '21', 'email2'), (103, 'name3', 'dept3', '22', 'email3'), (104, 'name4', dept4', '24', 'email');
+    '> ^C
+mysql> ^C
+mysql> ^C
+mysql> insert into students1 values(101, 'name', 'dept1', '12', 'email'), (102, 'name2', 'dept2', '21', 'email2'), (103, 'name3', 'dept3', '22', 'email3'), (104, 'name4', dept4', '24', 'email');
+    '>
+    '> ;
+    '> ^C
+mysql> ^C
+mysql> insert into students1 values(101, 'name', 'dept1', '12', 'email'), (102, 'name2', 'dept2', '21', 'email2'), (103, 'name3', 'dept3', '22', 'email3'), (104, 'name4', 'dept4', '24', 'email');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from students1;
++-----+-------+-------+------+--------+
+| id  | name  | dept  | age  | email  |
++-----+-------+-------+------+--------+
+| 101 | name  | dept1 | 12   | email  |
+| 102 | name2 | dept2 | 21   | email2 |
+| 103 | name3 | dept3 | 22   | email3 |
+| 104 | name4 | dept4 | 24   | email  |
++-----+-------+-------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from bank.bank1;
++---------+-----------+-------+------+---------------+------------+
+| bank_ac | bank_name | name  | age  | address       | phone      |
++---------+-----------+-------+------+---------------+------------+
+|       1 | bankname  | name  |   21 | aroistnaroint | 1234123512 |
+|       2 | bankname2 | name2 |   21 | aroistnaroint | 1234123512 |
+|       3 | bankname  | name1 |   22 | aroistnaroint | 1234123512 |
+|       4 | bankname  | name2 |   23 | aroistnaroint | 1234123512 |
++---------+-----------+-------+------+---------------+------------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students1;
++-----+-------+-------+------+--------+
+| id  | name  | dept  | age  | email  |
++-----+-------+-------+------+--------+
+| 101 | name  | dept1 | 12   | email  |
+| 102 | name2 | dept2 | 21   | email2 |
+| 103 | name3 | dept3 | 22   | email3 |
+| 104 | name4 | dept4 | 24   | email  |
++-----+-------+-------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> update students1 dept='cse' where id=101;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='cse' where id=101' at line 1
+mysql> update table students1 dept='cse' where id=101;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'table students1 dept='cse' where id=101' at line 1
+mysql> update students1 dept='cse' where id=101;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='cse' where id=101' at line 1
+mysql> update students1 set dept='cse' where id=101;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students1;
++-----+-------+-------+------+--------+
+| id  | name  | dept  | age  | email  |
++-----+-------+-------+------+--------+
+| 101 | name  | cse   | 12   | email  |
+| 102 | name2 | dept2 | 21   | email2 |
+| 103 | name3 | dept3 | 22   | email3 |
+| 104 | name4 | dept4 | 24   | email  |
++-----+-------+-------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students1;^C
+mysql> ^C
+mysql> ^C
+mysql> update students1 set ^Cwhere id=101;
+mysql> update students1 dept='ece' where id=104;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '='ece' where id=104' at line 1
+mysql> update students1 set dept='ece' where id=104;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students1 set dept='me' where id=103;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update students1 set dept='pe' where id=102;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from students1;
++-----+-------+------+------+--------+
+| id  | name  | dept | age  | email  |
++-----+-------+------+------+--------+
+| 101 | name  | cse  | 12   | email  |
+| 102 | name2 | pe   | 21   | email2 |
+| 103 | name3 | me   | 22   | email3 |
+| 104 | name4 | ece  | 24   | email  |
++-----+-------+------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where (dept='cse' AND age<22) or (not dept='ece');
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> select * from students where (dept='cse' AND age<22);
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> select * from students where (dept='cse' AND age<22)^C
+mysql> select * from students where dept='cse' AND age<22 or not dept='ece';
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> select * from students where dept='cse' AND age<'22' or dept!='ece';
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> select * from students where (dept='cse' AND age<'22') or dept!='ece';
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> SELECT *
+    -> FROM STUDENTS
+    -> WHERE (Department = 'CSE' AND Age < '22')
+    ->    OR Department != 'ECE';
+ERROR 1054 (42S22): Unknown column 'Department' in 'where clause'
+mysql>    OR Department != 'ECE';^C
+mysql> ^C
+mysql> select * from students1 order by name asc;
++-----+-------+------+------+--------+
+| id  | name  | dept | age  | email  |
++-----+-------+------+------+--------+
+| 101 | name  | cse  | 12   | email  |
+| 102 | name2 | pe   | 21   | email2 |
+| 103 | name3 | me   | 22   | email3 |
+| 104 | name4 | ece  | 24   | email  |
++-----+-------+------+------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select * from students where (dept = 'cse' AND age < '22') or dept != 'ece';
+ERROR 1054 (42S22): Unknown column 'dept' in 'where clause'
+mysql> select * from students1 where (dept = 'cse' AND age < '22') or dept != 'ece';
++-----+-------+------+------+--------+
+| id  | name  | dept | age  | email  |
++-----+-------+------+------+--------+
+| 101 | name  | cse  | 12   | email  |
+| 102 | name2 | pe   | 21   | email2 |
+| 103 | name3 | me   | 22   | email3 |
++-----+-------+------+------+--------+
+3 rows in set (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| bank               |
+| information_schema |
+| mysql              |
+| performance_schema |
+| study              |
+| sys                |
+| xyz                |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> show tables
+    -> ;
++-----------------+
+| Tables_in_study |
++-----------------+
+| students        |
+| students1       |
++-----------------+
+2 rows in set (0.00 sec)
+
+mysql> use xyz;
+Database changed
+mysql> show tables;
++---------------+
+| Tables_in_xyz |
++---------------+
+| lab1          |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> create table customers(id int primary key auto_increment, firstname varchar(10), lastname varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> desc customers;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(10) | YES  |     | NULL    |                |
+| lastname  | varchar(10) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into customers(firstname, lastname) values('gargi', 'HB'), ('milinda', 'b'), ('name1', 'name1');
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> insert into customers(firstname, lastname) values('gargi', 'HB'), ('milinda', 'b'), ('name1', 'name1');^C
+mysql> select * from customers;
++----+-----------+----------+
+| id | firstname | lastname |
++----+-----------+----------+
+|  1 | gargi     | HB       |
+|  2 | milinda   | b        |
+|  3 | name1     | name1    |
++----+-----------+----------+
+3 rows in set (0.00 sec)
+
+mysql> create table transactions(trans_id int primary key auto_increment, amount int, id int, foreign key(id) references customers(id));
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> select * from transactions;
+Empty set (0.00 sec)
+
+mysql> desc transactions;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| trans_id | int  | NO   | PRI | NULL    | auto_increment |
+| amount   | int  | YES  |     | NULL    |                |
+| id       | int  | YES  | MUL | NULL    |                |
++----------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> select * from transactions;
+Empty set (0.01 sec)
+
+mysql> desc customers;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(10) | YES  |     | NULL    |                |
+| lastname  | varchar(10) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.01 sec)
+
+mysql> desc transactions;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| trans_id | int  | NO   | PRI | NULL    | auto_increment |
+| amount   | int  | YES  |     | NULL    |                |
+| id       | int  | YES  | MUL | NULL    |                |
++----------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> alter table transactions add constraint fkey foreign key(trans_id) references customers(id);
+Query OK, 0 rows affected (0.17 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc transactions;
++----------+------+------+-----+---------+----------------+
+| Field    | Type | Null | Key | Default | Extra          |
++----------+------+------+-----+---------+----------------+
+| trans_id | int  | NO   | PRI | NULL    | auto_increment |
+| amount   | int  | YES  |     | NULL    |                |
+| id       | int  | YES  | MUL | NULL    |                |
++----------+------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> desc customers;
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int         | NO   | PRI | NULL    | auto_increment |
+| firstname | varchar(10) | YES  |     | NULL    |                |
+| lastname  | varchar(10) | YES  |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+mysql> insert into transactions(amount, id) values(100, 1) ;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into transactions(amount, id) values(200, 2) ;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into transactions(amount, id) values(300, 3) ;
+Query OK, 1 row affected (0.02 sec)
+
+mysql> ^C
+mysql> alter table transactions modify FOREIGN KEY(trans_id) REFERENCES customers(id) on update CASCADE;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FOREIGN KEY(trans_id) REFERENCES customers(id) on update CASCADE' at line 1
+mysql> ^F
+    -> ALTER TABLE transactions DROP FOREIGN KEY fkey;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+ALTER TABLE transactions DROP FOREIGN KEY fkey' at line 1
+mysql> ALTER TABLE transactions ADD CONSTRAINT fkey FOREIGN KEY(id) REFERENCES customers(id) ON UPDATE CASCADE ON DELETE CASCADE;
+ERROR 1826 (HY000): Duplicate foreign key constraint name 'fkey'
+mysql>
+mysql> insert into transactions(amount, trans_id) values(100, NULL);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into customers(id, firstname, lastname) values(null, 'name', 'name');
+Query OK, 1 row affected (0.01 sec)
+
+mysql>
+mysql> select * from transactions;
++----------+--------+------+
+| trans_id | amount | id   |
++----------+--------+------+
+|        1 |    100 |    1 |
+|        2 |    200 |    2 |
+|        3 |    300 |    3 |
+|        6 |    100 | NULL |
+|        7 |    100 | NULL |
++----------+--------+------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> -- inner join
+Query OK, 0 rows affected (0.00 sec)
+
+mysql>
+mysql> -- select * from table_to_be_on_left INNER JOIN table-on-right ON left-table.fk = right-table.fk-ka-reference
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from transactions INNER JOIN customers ON transactions.id = customers.id;
++----------+--------+------+----+-----------+----------+
+| trans_id | amount | id   | id | firstname | lastname |
++----------+--------+------+----+-----------+----------+
+|        1 |    100 |    1 |  1 | gargi     | HB       |
+|        2 |    200 |    2 |  2 | milinda   | b        |
+|        3 |    300 |    3 |  3 | name1     | name1    |
++----------+--------+------+----+-----------+----------+
+3 rows in set (0.00 sec)
+
+mysql> select trans_id, amount, firstname, lastname from transactions INNER JOIN customers ON transactions.id = customers.id;
++----------+--------+-----------+----------+
+| trans_id | amount | firstname | lastname |
++----------+--------+-----------+----------+
+|        1 |    100 | gargi     | HB       |
+|        2 |    200 | milinda   | b        |
+|        3 |    300 | name1     | name1    |
++----------+--------+-----------+----------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from transactions LEFT JOIN customers ON transactions.id = customers.id;
++----------+--------+------+------+-----------+----------+
+| trans_id | amount | id   | id   | firstname | lastname |
++----------+--------+------+------+-----------+----------+
+|        1 |    100 |    1 |    1 | gargi     | HB       |
+|        2 |    200 |    2 |    2 | milinda   | b        |
+|        3 |    300 |    3 |    3 | name1     | name1    |
+|        6 |    100 | NULL | NULL | NULL      | NULL     |
+|        7 |    100 | NULL | NULL | NULL      | NULL     |
++----------+--------+------+------+-----------+----------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from transactions RIGHT JOIN customers ON transactions.id = customers.id;
++----------+--------+------+----+-----------+----------+
+| trans_id | amount | id   | id | firstname | lastname |
++----------+--------+------+----+-----------+----------+
+|        1 |    100 |    1 |  1 | gargi     | HB       |
+|        2 |    200 |    2 |  2 | milinda   | b        |
+|        3 |    300 |    3 |  3 | name1     | name1    |
+|     NULL |   NULL | NULL |  4 | name      | name     |
+|     NULL |   NULL | NULL |  5 | name      | name     |
++----------+--------+------+----+-----------+----------+
+5 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from transactions FULL OUTER JOIN customers ON transactions.id = customers.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OUTER JOIN customers ON transactions.id = customers.id' at line 1
+mysql>
+mysql>
+mysql> select trans_id, count(amount) from transactions GROUP BY trans_id;
++----------+---------------+
+| trans_id | count(amount) |
++----------+---------------+
+|        1 |             1 |
+|        2 |             1 |
+|        3 |             1 |
+|        6 |             1 |
+|        7 |             1 |
++----------+---------------+
+5 rows in set (0.00 sec)
+
+mysql> use study;
+Database changed
+mysql>
+mysql> show TABLES;
++-----------------+
+| Tables_in_study |
++-----------------+
+| students        |
+| students1       |
++-----------------+
+2 rows in set (0.01 sec)
+
+mysql> CREATE TABLE students (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50) NOT NULL,
+    ->     dept VARCHAR(10) NOT NULL,
+    ->     age INT,
+    ->     marks INT
+    -> );
+Query OK, 0 rows affected (0.08 sec)
+
+mysql>
+mysql> INSERT INTO students (id, name, dept, age, marks) VALUES
+    -> (1, 'Amit', 'CSE', 20, 85),
+    -> (2, 'Priya', 'ECE', 21, 72),
+    -> (3, 'Rahul', 'CSE', 22, 92),
+    -> (4, 'Divya', 'ME', 23, 70),
+    -> (5, 'Anjali', 'CSE', 22, 92),
+    -> (6, 'Mohan', 'ECE', 20, 85),
+    -> (7, 'Sneha', 'CSE', 21, NULL);
+Query OK, 7 rows affected (0.02 sec)
+Records: 7  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> select * from students;
++----+--------+------+------+-------+
+| id | name   | dept | age  | marks |
++----+--------+------+------+-------+
+|  1 | Amit   | CSE  |   20 |    85 |
+|  2 | Priya  | ECE  |   21 |    72 |
+|  3 | Rahul  | CSE  |   22 |    92 |
+|  4 | Divya  | ME   |   23 |    70 |
+|  5 | Anjali | CSE  |   22 |    92 |
+|  6 | Mohan  | ECE  |   20 |    85 |
+|  7 | Sneha  | CSE  |   21 |  NULL |
++----+--------+------+------+-------+
+7 rows in set (0.00 sec)
+
+mysql>
+mysql> select name from students where marks > (SELECT AVG(marks) from students);
++--------+
+| name   |
++--------+
+| Amit   |
+| Rahul  |
+| Anjali |
+| Mohan  |
++--------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select name from students where age > all (select age from students where dept='ECE');
++--------+
+| name   |
++--------+
+| Rahul  |
+| Divya  |
+| Anjali |
++--------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql> select marks, count(*) as count from students where marks IS NOT NULL group by marks having count(*) > 1;
++-------+-------+
+| marks | count |
++-------+-------+
+|    85 |     2 |
+|    92 |     2 |
++-------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> select name, marks from students where marks = ( select max(marks) from students where dept = 'CSE');
++--------+-------+
+| name   | marks |
++--------+-------+
+| Rahul  |    92 |
+| Anjali |    92 |
++--------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> select AVG(marks) avg, dept from students group by dept ORDER BY avg desc;
++---------+------+
+| avg     | dept |
++---------+------+
+| 89.6667 | CSE  |
+| 78.5000 | ECE  |
+| 70.0000 | ME   |
++---------+------+
+3 rows in set (0.00 sec)
+
+mysql>
+mysql> select name from students where dept not in ('CSE', 'ECE');
++-------+
+| name  |
++-------+
+| Divya |
++-------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> SELECT MAX(marks) as marks from students where marks < (SELECT MAX(marks) FROM students);
++-------+
+| marks |
++-------+
+|    85 |
++-------+
+1 row in set (0.00 sec)
+
+mysql>
+mysql> select name, age from students where age = (select age from students WHERE name = 'Amit');
++-------+------+
+| name  | age  |
++-------+------+
+| Amit  |   20 |
+| Mohan |   20 |
++-------+------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> SELECT * from students where name like '%a' AND marks is not null;
++----+-------+------+------+-------+
+| id | name  | dept | age  | marks |
++----+-------+------+------+-------+
+|  2 | Priya | ECE  |   21 |    72 |
+|  4 | Divya | ME   |   23 |    70 |
++----+-------+------+------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
+mysql> select * from students s where marks = (select MAX(marks) from students where dept = s.dept);
++----+--------+------+------+-------+
+| id | name   | dept | age  | marks |
++----+--------+------+------+-------+
+|  3 | Rahul  | CSE  |   22 |    92 |
+|  4 | Divya  | ME   |   23 |    70 |
+|  5 | Anjali | CSE  |   22 |    92 |
+|  6 | Mohan  | ECE  |   20 |    85 |
++----+--------+------+------+-------+
+4 rows in set (0.00 sec)
+
+mysql>
+mysql> select dept from students group by dept having AVG(marks) > 80;
++------+
+| dept |
++------+
+| CSE  |
++------+
+1 row in set (0.00 sec)
