@@ -1,7 +1,6 @@
-The number for this object is 0
-The number for this object is 0
-The number for this object is 21
-copy constructor called 
-The number for this object is 21
-copy constructor called 
-The number for this object is 21
+Give author and title one by one: 
+Title: goru| Author: the-book-of-goru
+Give author and title one by one: 
+Title: goru| Author: the-book-of-goru
+Give author and title one by one: 
+Title: goru| Author: the-book-of-goru

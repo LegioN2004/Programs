@@ -25,10 +25,6 @@ public:
 };
 
 int main() {
-  int a, b;
-  cout << "Enter the numbers";
-  cin >> a >> b;
-
   addAndSub a1(-5, -4);
   a1.print();
   -a1;

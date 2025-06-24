@@ -17,10 +17,13 @@ public:
 int main() {
   Cricketer c1("Sachin", 10000, 44.5);
   // Cricketer c2("Dravid", 12000, 50.0);
-  Cricketer *c2 = new Cricketer("Dravid", 12000, 50.0); // the above line can be written in this way as well
+  Cricketer *c2 =
+      new Cricketer("Dravid", 12000,
+                    50.0); // the above line can be written in this way as well
 
   /*
-    NOTE: Now we'll always try to use the pointer object instead of the normal object because:
+    NOTE: Now we'll always try to use the pointer object instead of the normal
+    object because:
     1. It is more efficient and faster than the normal object
     2. It is very useful in many cases.
     3. It is pass by reference, so we can change the value of the object
@@ -42,6 +45,7 @@ int main() {
   // ---------- dynamic memory allocation -------------
   // allocating memory in heap, dynamically at runtime
   int *p1 = new int(1234); // this will create a new variable in the heap memory
+  cout << *p1 << "\n";
   /*
     created a int pointer variable p1, which doesn't have a name but it
     stores the address of the integer
@@ -49,6 +53,7 @@ int main() {
     2. assign the address of that variable to the pointer variable
     3. dereference the pointer variable to access the value of that variable
   */
+  *p1 = 100;
   cout << *p1 << "\n";
   return 0;
 }

@@ -54,9 +54,11 @@ int main() {
 
   // change(c1); // when using the & object as the input argument
 
-  change(&c1); // or we can do this and pass the reference as parameter and take the argument as pointer
+  change(&c1); // or we can do this and pass the reference as parameter and take
+               // the argument as pointer
 
-  // in all of the object pointers, the left p1 should alwyas be the pointer variable
+  // in all of the object pointers, the left p1 should alwyas be the pointer
+  // variable
   cout << c1.name;
   return 0;
 }
