@@ -34,6 +34,7 @@ public:
     Branch = b;
     cout << "Branch: " << Branch << endl;
   }
+  // GraduateStudent(string name, int age, int rollno, string Class, string Branch){}
 };
 
 int main() {

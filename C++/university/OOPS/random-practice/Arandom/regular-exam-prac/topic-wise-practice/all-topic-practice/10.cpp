@@ -38,6 +38,7 @@ int main() {
   Car car;
   car.fuelType();
 
+  // run time poly
   Vehicle *v;
   v = &bus;
   v->fuelType();

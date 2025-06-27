@@ -17,6 +17,7 @@ class BankAccount {
 
         BankAccount(const BankAccount &b){
             cout << "Copy constructor called";
+            cout << b.acno;
         }
 
         void displayDetails() {
@@ -28,7 +29,7 @@ int main(){
 
     BankAccount b(10000, 1234);
     b.displayDetails();
-    BankAccount c = b;
+    BankAccount c(b);
     // BankAccount c, b(c);
 
     return 0;

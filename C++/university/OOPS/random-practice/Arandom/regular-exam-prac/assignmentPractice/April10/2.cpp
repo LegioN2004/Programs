@@ -1,12 +1,12 @@
 #include <iostream>
 using namespace std;
 
-class numbers {
+class Numbers {
 private:
   int a;
 
 public:
-  numbers(int a) { this->a = a; }
+  Numbers(int a) { this->a = a; }
 
   int add() { return a; }
 };
@@ -15,9 +15,10 @@ int main() {
 
   int a, b, c;
   cin >> a >> b >> c;
-  numbers r1(a), r2(b), r3(c);
+  Numbers r1(a), r2(b), r3(c);
 
-  int result = r1.add(), ;
+  int result = r1.add();
+  cout << result;
 
   return 0;
 }

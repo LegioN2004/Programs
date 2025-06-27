@@ -1,42 +1,50 @@
 .data
-
-answer: .word   0
+newline:    .asciiz "\n"
 .text
+            .globl  main
 
-	li      $v0,        5
-	syscall
+main:
+	li      $a0,        5                      # number to calculate factorial of
+	jal     factorial                          # call factorial function
+	move    $t0,        $v0                    # save result to $t0
 
-	sw      $v0,        $a0
-	jal     factorial
-	sw      $a0,        answer
-
+	# print result
 	li      $v0,        1
-	la      $a0,        answer
+	move    $a0,        $t0
 	syscall
 
+	# print newline
+	li      $v0,        4
+	la      $a0,        newline
+	syscall
 
+	# exit program
+	li      $v0,        10
+	syscall
+
+	# factorial function
+	# input: $a0 = n
+	# output: $v0 = factorial(n)
 factorial:
+	addi    $sp,        $sp,        -8         # make space on stack
+	sw      $ra,        4($sp)                 # save return address
+	sw      $a0,        0($sp)                 # save argument n
 
-	subu    $sp,        $sp,    8
-	sw      $ra,        ($sp)
-	sw      $a0,        4($sp)
+	li      $t1,        1
+	ble     $a0,        $t1,        base_case  # if n <= 1, return 1
 
-	li      $a0,        1
-	beq     $a0,        0,      factDone
+	subu    $a0,        $a0,        1         # n = n - 1
+	jal     factorial                          # recursive call: factorial(n-1)
 
-	lw      $s0,        4($sp)
-	sub     $a0,        $a0,    1
-	mul     $a0,        $s0,    $a0
+	lw      $a0,        0($sp)                 # restore original n
+	mul     $v0,        $a0,        $v0        # n * factorial(n - 1)
 
-factDone:
+	lw      $ra,        4($sp)                 # restore return address
+	addi    $sp,        $sp,        8          # pop stack
+	jr      $ra                                # return
 
-	addi    $sp,        $sp,    8
-	lw      $ra,        ($sp)
-	lw      $a0,        4($sp)
-
-
-
-
-
-
-
+base_case:
+	li      $v0,        1                      # <--️ FIX: Set return value to 1
+	lw      $ra,        4($sp)
+	addi    $sp,        $sp,        8
+	jr      $ra
