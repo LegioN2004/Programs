@@ -1,106 +1,39 @@
 {
 	"version": "2.0.0",
 	"tasks": [
-		// {
-		// 	"label": "C/C++: g++ build active file",
-		// 	"type": "shell",
-		// 	"options": {
-		// 		"cwd": "${workspaceFolder}"
-		// 	},
-		// 	"problemMatcher": [
-		// 		"$gcc"
-		// 	],
-		// 	"group": {
-		// 		"kind": "build",
-		// 		"isDefault": true
-		// 	},
-		// 	"windows": {
-		// 		"command": "C:\\Users\\User\\scoop\\apps\\gcc\\current\\bin\\g++.exe",
-		// 		"args": [
-		// 			"-pipe",
-		// 			// "-fsanitize=signed-integer-overflow,undefined", Causes compilation error in Windows
-		// 			"-g",
-		// 			"-march=native",
-		// 			// "-O2", This optimization causes errors while Debugging
-		// 			// "-std=c++17", Causes compilation error in Windows
-		// 			"-Wall",
-		// 			"-Wshadow",
-		// 			"-Wno-unused-result",
-		// 			"${file}",
-		// 			"-o",
-		// 			"${fileDirname}/${fileBasenameNoExtension}"
-		// 		]
-		// 	},
-		// 	"linux": {
-		// 		"command": "/usr/bin/g++",
-		// 		"args": [
-		// 			"-pipe",
-		// 			"-fsanitize=signed-integer-overflow,undefined",
-		// 			"-g",
-		// 			"-march=native",
-		// 			// "-O2", This optimization causes errors while Debugging
-		// 			"-std=c++17",
-		// 			"-Wall",
-		// 			"-Wshadow",
-		// 			"-Wno-unused-result",
-		// 			"${file}",
-		// 			"-o",
-		// 			"${fileDirname}/${fileBasenameNoExtension}"
-		// 		]
-		// 	}
-		// },
-		// {
-		// 	"label": "Run Java",
-		// 	"type": "shell",
-		// 	"command": "pwsh",
-		// 	"args": [
-		// 		"-Command",
-		// 		"javac ${{file}} && java ${{fileBasenameNoExtension}} < input.txt > output.txt"
-		// 	],
-		// 	"group": "build",
-		// 	"presentation": {
-		// 		"reveal": "always"
-		// 	},
-		// 	"problemMatcher": "$javac"
-		// },
 		{
 			"label": "Compile and run",
 			"type": "shell",
-			"command": "",
-			"args": [
-				"copy",
-				"\"${file}\"",
-				"\"${workspaceFolder}\\jspwTest.cpp\"",
-				"&&",
-				"g++",
-				"jspwTest.cpp",
-				"-o",
-				"jspwTest",
-				"&&",
-				"jspwTest",
-				"<",
-				"input.txt",
-				">",
-				"output.txt",
-				"&&",
-				"del",
-				"jspwTest.exe",
-				"&&",
-				"del",
-				"jspwTest.cpp"
-			],
-			"presentation": {
-				"reveal": "never"
-			},
 			"group": {
 				"kind": "build",
-				"isDefault": true,
+				"isDefault": true
+			},
+			"windows": {
+				"command": "cmd",
+				"args": [
+					"/C",
+					"copy \"${file}\" \"${workspaceFolder}\\jspwTest.cpp\" && g++ jspwTest.cpp -o jspwTest && jspwTest < input.txt > output.txt && del jspwTest.exe && del jspwTest.cpp"
+				]
+			},
+			"linux": {
+				"command": "/bin/bash",
+				"args": [
+					"-c",
+					"g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt"
+				]
+			},
+			"osx": {
+				"command": "/bin/bash",
+				"args": [
+					"-c",
+					"g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt"
+				]
 			},
 			"problemMatcher": {
 				"owner": "cpp",
 				"fileLocation": [
 					"relative",
-					"${workspaceRoot}"
+					"${workspaceFolder}"
 				],
 				"pattern": {
 					"regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
@@ -111,6 +44,6 @@
 					"message": 5
 				}
 			}
-		},
+		}
 	]
 }

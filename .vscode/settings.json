@@ -1,5 +1,5 @@
 {
-	"cmake.sourceDirectory": "/home/mili/ghq/github.com/legion2004/Programs",
+	"cmake.sourceDirectory": "/Users/milinda/ghq/github.com/legion2004/Programs",
 	"java.debug.settings.onBuildFailureProceed": true,
 	"cmake.configureOnOpen": true,
 	"java.project.sourcePaths": [
