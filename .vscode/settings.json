@@ -110,5 +110,6 @@
 	},
 	"dataworkspace.excludedProjects": [
 		"4th-sem/4th-sem.sqlproj"
-	]
+	],
+	"livePreview.defaultPreviewPath": "/WebDev-stuff/codewithharryWebDev/codewithharryHTML,CSS&JS/CSS/tut15/index.html"
 }
