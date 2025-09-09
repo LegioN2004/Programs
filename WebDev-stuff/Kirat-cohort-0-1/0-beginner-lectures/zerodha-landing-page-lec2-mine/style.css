@@ -60,7 +60,7 @@ body {
 }
 
 #main-pic-header h4 {
-  height: 30vh;
+  height: 10vh;
   font-size: 20px;
   font-weight: 180;
   color: rgb(61, 58, 58);
@@ -70,7 +70,14 @@ body {
   margin-right: 300px;
 }
 
+#main-pic-header h1, h4 {
+  text-align: center;
+  align-items: center;
+}
+
 #button {
+  text-align: center;
+  align-items: center;
   font-size: 25px;
   color: rgb(61, 58, 58);
 }
