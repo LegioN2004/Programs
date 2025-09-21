@@ -16,7 +16,7 @@ int main() {
             return 0;
         }
 
-        switch (state) { // 1001
+        switch (state) { // 0
             case 0: // q0
                 if (ch == '0') state = 1; // q1
                 else state = 0;           // q0

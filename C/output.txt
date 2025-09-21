@@ -1,1 +1,1 @@
-Enter a binary string: Rejected.
+Enter a binary string: Accepted
