@@ -1,0 +1,501 @@
+Age,Flow_Level,Lifestyle,Budget,Skin_Sensitivity,Eco_Friendly_Preference,Comfort_Priority,Product_Recommended
+20,Light,Active,Medium,Yes,Yes,Low,Menstrual Cup
+18,Heavy,Moderate,Low,Yes,Yes,Low,Pad
+45,Heavy,Sedentary,High,Yes,No,Low,Period Panty
+30,Light,Sedentary,High,No,No,Medium,Tampon
+26,Medium,Sedentary,Low,No,Yes,Medium,Reusable Pad
+29,Light,Active,Medium,Yes,No,Low,Period Panty
+36,Heavy,Sedentary,High,Yes,Yes,High,Menstrual Cup
+31,Light,Sedentary,Low,No,No,Medium,Reusable Pad
+23,Medium,Moderate,Low,No,Yes,High,Pad
+28,Light,Moderate,Medium,No,Yes,High,Reusable Pad
+16,Light,Sedentary,Medium,No,No,Low,Tampon
+33,Light,Active,Medium,No,No,Low,Menstrual Cup
+21,Light,Active,High,No,No,High,Period Panty
+38,Medium,Sedentary,Low,No,Yes,Low,Pad
+22,Heavy,Sedentary,High,No,Yes,Medium,Reusable Pad
+42,Heavy,Moderate,High,Yes,Yes,High,Reusable Pad
+34,Light,Moderate,Medium,Yes,No,Low,Period Panty
+45,Light,Active,Low,No,Yes,Low,Reusable Pad
+23,Heavy,Active,Low,No,No,Low,Tampon
+20,Medium,Moderate,Low,Yes,Yes,High,Pad
+18,Heavy,Moderate,Low,Yes,Yes,High,Reusable Pad
+23,Medium,Active,High,No,Yes,High,Menstrual Cup
+32,Medium,Active,High,No,No,High,Period Panty
+20,Light,Sedentary,Low,No,Yes,High,Period Panty
+27,Heavy,Sedentary,Low,Yes,Yes,Low,Pad
+15,Medium,Sedentary,High,Yes,No,High,Period Panty
+26,Heavy,Sedentary,High,No,Yes,Medium,Reusable Pad
+25,Light,Sedentary,High,No,No,Medium,Period Panty
+42,Heavy,Sedentary,High,Yes,Yes,Medium,Reusable Pad
+19,Light,Sedentary,Low,No,Yes,Medium,Pad
+30,Medium,Sedentary,Low,No,Yes,Low,Pad
+18,Light,Sedentary,Medium,No,No,Low,Period Panty
+16,Light,Moderate,Low,No,No,Medium,Reusable Pad
+40,Heavy,Active,High,No,Yes,Low,Reusable Pad
+26,Light,Active,High,Yes,No,Low,Reusable Pad
+43,Heavy,Active,Low,Yes,Yes,Low,Tampon
+17,Heavy,Sedentary,High,Yes,No,Low,Reusable Pad
+15,Heavy,Sedentary,Medium,No,No,Low,Menstrual Cup
+28,Medium,Moderate,Low,No,No,Medium,Pad
+13,Medium,Active,High,Yes,Yes,High,Menstrual Cup
+45,Medium,Sedentary,Medium,Yes,Yes,Medium,Reusable Pad
+23,Medium,Active,High,No,Yes,High,Reusable Pad
+19,Light,Moderate,Low,Yes,Yes,Medium,Reusable Pad
+26,Heavy,Moderate,Low,No,No,Medium,Pad
+18,Heavy,Moderate,Medium,Yes,Yes,Medium,Menstrual Cup
+29,Light,Active,Medium,No,Yes,Low,Menstrual Cup
+22,Heavy,Sedentary,Medium,Yes,No,Low,Reusable Pad
+32,Medium,Sedentary,Medium,Yes,Yes,High,Menstrual Cup
+35,Heavy,Moderate,High,Yes,Yes,Low,Menstrual Cup
+39,Light,Sedentary,High,No,No,High,Period Panty
+28,Medium,Sedentary,High,Yes,No,Low,Period Panty
+27,Light,Moderate,Medium,No,Yes,Low,Menstrual Cup
+25,Medium,Moderate,Medium,Yes,No,Medium,Period Panty
+34,Light,Sedentary,Medium,Yes,No,Low,Reusable Pad
+40,Medium,Active,Medium,No,Yes,Medium,Menstrual Cup
+29,Light,Active,Medium,Yes,Yes,Medium,Reusable Pad
+17,Heavy,Moderate,High,No,Yes,High,Reusable Pad
+45,Medium,Active,Medium,No,No,High,Menstrual Cup
+21,Light,Moderate,High,No,Yes,High,Reusable Pad
+38,Heavy,Sedentary,Medium,No,Yes,Medium,Reusable Pad
+42,Medium,Moderate,High,Yes,No,High,Reusable Pad
+18,Medium,Active,High,No,Yes,Low,Reusable Pad
+27,Light,Sedentary,Low,Yes,Yes,Medium,Pad
+42,Medium,Active,High,Yes,No,Medium,Period Panty
+28,Light,Active,High,Yes,Yes,Medium,Menstrual Cup
+24,Heavy,Active,Medium,Yes,Yes,Low,Reusable Pad
+21,Medium,Active,High,No,No,High,Reusable Pad
+40,Heavy,Moderate,Low,No,No,Medium,Pad
+30,Heavy,Moderate,High,Yes,No,Medium,Reusable Pad
+31,Light,Moderate,Medium,No,Yes,Low,Menstrual Cup
+27,Medium,Active,Low,Yes,Yes,Medium,Reusable Pad
+34,Heavy,Moderate,Medium,Yes,Yes,Medium,Reusable Pad
+14,Heavy,Moderate,Medium,Yes,No,Medium,Period Panty
+39,Heavy,Active,High,Yes,No,Low,Tampon
+30,Medium,Moderate,Low,No,No,High,Reusable Pad
+23,Medium,Sedentary,High,Yes,No,High,Reusable Pad
+18,Heavy,Moderate,Low,No,Yes,Low,Reusable Pad
+37,Medium,Sedentary,Medium,No,No,Medium,Menstrual Cup
+39,Medium,Sedentary,Medium,Yes,Yes,Medium,Menstrual Cup
+17,Heavy,Sedentary,Low,Yes,Yes,Low,Pad
+28,Light,Moderate,High,Yes,Yes,Medium,Reusable Pad
+36,Light,Active,High,Yes,Yes,Medium,Menstrual Cup
+14,Medium,Active,High,No,No,High,Tampon
+17,Heavy,Active,High,Yes,Yes,High,Reusable Pad
+20,Heavy,Sedentary,Medium,No,No,Low,Reusable Pad
+34,Light,Moderate,Medium,Yes,No,Medium,Period Panty
+22,Medium,Sedentary,High,No,No,Medium,Period Panty
+30,Medium,Sedentary,Low,No,No,Low,Reusable Pad
+37,Medium,Sedentary,Medium,No,Yes,Medium,Menstrual Cup
+35,Medium,Moderate,Medium,No,Yes,High,Menstrual Cup
+18,Light,Active,Medium,No,Yes,High,Reusable Pad
+44,Medium,Sedentary,Low,No,Yes,Medium,Pad
+32,Heavy,Active,Medium,No,No,Medium,Tampon
+34,Medium,Active,Medium,No,No,Medium,Tampon
+20,Heavy,Sedentary,Medium,Yes,Yes,Low,Menstrual Cup
+43,Medium,Active,High,No,Yes,Low,Reusable Pad
+27,Medium,Sedentary,Medium,Yes,Yes,Medium,Menstrual Cup
+16,Heavy,Moderate,High,Yes,No,Low,Reusable Pad
+31,Medium,Moderate,Medium,No,Yes,Low,Reusable Pad
+43,Light,Sedentary,Medium,No,Yes,High,Menstrual Cup
+22,Light,Active,Medium,Yes,Yes,Low,Reusable Pad
+27,Heavy,Moderate,Medium,No,No,High,Period Panty
+32,Heavy,Active,Low,Yes,Yes,High,Tampon
+26,Medium,Active,Low,Yes,Yes,Low,Pad
+23,Light,Moderate,Medium,No,No,Low,Tampon
+31,Heavy,Moderate,High,No,Yes,High,Menstrual Cup
+29,Heavy,Active,High,Yes,No,Low,Tampon
+27,Heavy,Sedentary,Medium,Yes,Yes,Low,Menstrual Cup
+32,Heavy,Active,High,No,No,Low,Tampon
+42,Heavy,Moderate,High,No,No,High,Reusable Pad
+44,Medium,Sedentary,High,Yes,No,High,Period Panty
+29,Light,Sedentary,Low,Yes,No,High,Period Panty
+15,Light,Moderate,High,No,No,Low,Reusable Pad
+40,Heavy,Moderate,Low,No,No,Medium,Reusable Pad
+33,Heavy,Sedentary,Low,No,No,High,Reusable Pad
+31,Heavy,Moderate,High,Yes,No,Low,Period Panty
+29,Medium,Sedentary,Medium,Yes,No,Medium,Reusable Pad
+25,Heavy,Moderate,High,No,No,Low,Tampon
+30,Heavy,Sedentary,Medium,No,No,Low,Pad
+28,Heavy,Sedentary,Medium,Yes,No,Low,Reusable Pad
+20,Medium,Sedentary,High,Yes,No,High,Period Panty
+45,Heavy,Moderate,Medium,No,No,Low,Period Panty
+22,Medium,Sedentary,High,Yes,Yes,Medium,Reusable Pad
+34,Heavy,Moderate,Low,No,No,High,Reusable Pad
+22,Medium,Active,Medium,No,No,High,Reusable Pad
+37,Medium,Moderate,Low,Yes,No,Low,Reusable Pad
+15,Medium,Active,Medium,No,No,High,Tampon
+44,Light,Sedentary,High,No,Yes,Medium,Menstrual Cup
+42,Light,Active,Low,No,Yes,Low,Reusable Pad
+29,Medium,Active,High,No,Yes,Medium,Reusable Pad
+33,Heavy,Active,Medium,Yes,Yes,Low,Reusable Pad
+27,Heavy,Sedentary,Medium,Yes,Yes,Medium,Menstrual Cup
+32,Light,Sedentary,Medium,Yes,No,Medium,Period Panty
+40,Light,Sedentary,High,No,Yes,Low,Menstrual Cup
+18,Heavy,Moderate,High,Yes,No,High,Reusable Pad
+27,Medium,Active,Medium,No,No,High,Pad
+42,Medium,Active,High,Yes,Yes,Medium,Reusable Pad
+32,Heavy,Moderate,High,No,No,Medium,Tampon
+37,Medium,Sedentary,Low,No,No,High,Reusable Pad
+31,Light,Active,Medium,No,Yes,High,Menstrual Cup
+44,Medium,Sedentary,High,No,Yes,High,Menstrual Cup
+29,Heavy,Active,High,Yes,Yes,High,Menstrual Cup
+32,Medium,Sedentary,High,No,Yes,Low,Reusable Pad
+33,Heavy,Moderate,Low,Yes,Yes,High,Reusable Pad
+45,Medium,Sedentary,Medium,No,No,High,Menstrual Cup
+20,Medium,Sedentary,Low,Yes,No,High,Reusable Pad
+18,Medium,Sedentary,Medium,Yes,No,Medium,Period Panty
+37,Heavy,Moderate,Low,Yes,No,Low,Reusable Pad
+27,Heavy,Sedentary,High,No,No,High,Period Panty
+20,Light,Sedentary,Low,No,No,Low,Pad
+28,Heavy,Sedentary,Medium,No,No,High,Reusable Pad
+39,Heavy,Active,High,Yes,No,High,Tampon
+19,Medium,Active,Medium,No,Yes,High,Reusable Pad
+26,Medium,Moderate,Low,No,Yes,High,Reusable Pad
+35,Light,Moderate,Medium,Yes,Yes,Medium,Menstrual Cup
+26,Heavy,Active,High,Yes,Yes,Medium,Menstrual Cup
+21,Heavy,Sedentary,Low,Yes,Yes,Low,Reusable Pad
+22,Heavy,Sedentary,Medium,Yes,Yes,High,Reusable Pad
+24,Light,Active,Low,Yes,Yes,Medium,Pad
+33,Light,Sedentary,Medium,Yes,Yes,High,Reusable Pad
+20,Heavy,Sedentary,Medium,No,No,High,Reusable Pad
+19,Medium,Active,Low,Yes,No,Medium,Pad
+16,Medium,Moderate,Medium,Yes,No,High,Period Panty
+17,Light,Moderate,High,Yes,Yes,Low,Reusable Pad
+33,Medium,Active,High,No,No,High,Reusable Pad
+40,Light,Active,Low,Yes,No,Medium,Pad
+39,Medium,Moderate,Medium,No,Yes,Medium,Reusable Pad
+33,Heavy,Moderate,Medium,Yes,No,Low,Reusable Pad
+18,Light,Moderate,Low,No,Yes,High,Period Panty
+16,Heavy,Active,High,No,Yes,Medium,Reusable Pad
+40,Heavy,Sedentary,Medium,No,No,Low,Reusable Pad
+45,Light,Sedentary,High,No,Yes,Low,Reusable Pad
+36,Light,Moderate,High,Yes,No,High,Period Panty
+14,Heavy,Active,High,No,Yes,Low,Reusable Pad
+32,Medium,Moderate,Low,Yes,Yes,High,Reusable Pad
+17,Light,Active,High,Yes,Yes,High,Menstrual Cup
+37,Medium,Moderate,Medium,Yes,No,Medium,Period Panty
+18,Light,Sedentary,Low,Yes,Yes,Medium,Reusable Pad
+40,Medium,Active,Medium,No,No,Low,Reusable Pad
+20,Medium,Moderate,Low,No,No,High,Reusable Pad
+15,Light,Moderate,High,Yes,Yes,Low,Reusable Pad
+26,Light,Moderate,Medium,No,Yes,Low,Reusable Pad
+40,Light,Sedentary,Medium,Yes,No,Low,Period Panty
+15,Medium,Sedentary,Medium,Yes,No,High,Period Panty
+38,Heavy,Active,Medium,No,Yes,Medium,Menstrual Cup
+33,Light,Active,Medium,No,Yes,Medium,Menstrual Cup
+28,Medium,Active,Medium,Yes,No,Medium,Period Panty
+27,Medium,Sedentary,Low,Yes,Yes,Medium,Reusable Pad
+22,Light,Sedentary,Low,No,Yes,Low,Pad
+17,Light,Active,Medium,No,No,High,Period Panty
+33,Heavy,Moderate,Low,No,Yes,Medium,Reusable Pad
+32,Medium,Active,Low,No,Yes,Medium,Reusable Pad
+41,Light,Sedentary,Medium,No,Yes,High,Menstrual Cup
+45,Medium,Moderate,High,Yes,No,High,Reusable Pad
+33,Heavy,Moderate,High,Yes,Yes,Medium,Menstrual Cup
+34,Heavy,Sedentary,High,Yes,Yes,Low,Reusable Pad
+41,Heavy,Active,High,Yes,No,Medium,Tampon
+31,Medium,Moderate,Medium,Yes,No,Low,Period Panty
+19,Heavy,Active,Medium,No,No,High,Tampon
+22,Medium,Sedentary,High,Yes,No,Medium,Period Panty
+21,Heavy,Active,Low,No,No,High,Tampon
+34,Light,Active,High,Yes,No,High,Period Panty
+36,Light,Moderate,Medium,Yes,Yes,Medium,Reusable Pad
+25,Light,Sedentary,Low,Yes,No,Low,Pad
+34,Heavy,Sedentary,High,No,Yes,Low,Menstrual Cup
+23,Heavy,Moderate,Low,No,No,High,Pad
+41,Heavy,Moderate,High,No,Yes,High,Menstrual Cup
+32,Medium,Sedentary,Medium,No,No,Medium,Period Panty
+45,Heavy,Moderate,Low,Yes,Yes,Medium,Pad
+43,Medium,Active,Low,Yes,No,Low,Pad
+30,Medium,Active,Low,No,Yes,Low,Reusable Pad
+35,Light,Moderate,Low,No,No,Low,Reusable Pad
+18,Medium,Sedentary,Low,No,Yes,High,Reusable Pad
+22,Light,Sedentary,Medium,No,Yes,High,Reusable Pad
+41,Heavy,Sedentary,Low,Yes,No,Low,Pad
+40,Light,Moderate,Low,No,Yes,Low,Pad
+39,Heavy,Active,Medium,Yes,Yes,Medium,Menstrual Cup
+45,Heavy,Sedentary,High,Yes,No,Medium,Reusable Pad
+35,Light,Active,Medium,Yes,Yes,High,Reusable Pad
+17,Heavy,Active,High,Yes,No,Medium,Tampon
+15,Heavy,Moderate,Medium,No,Yes,Medium,Menstrual Cup
+35,Light,Active,High,Yes,No,Low,Reusable Pad
+35,Heavy,Moderate,High,Yes,No,High,Period Panty
+24,Light,Sedentary,High,No,Yes,Medium,Menstrual Cup
+15,Light,Sedentary,Medium,No,No,High,Period Panty
+43,Medium,Sedentary,High,Yes,No,Medium,Reusable Pad
+34,Medium,Sedentary,Medium,No,No,High,Period Panty
+37,Medium,Sedentary,Medium,No,No,High,Menstrual Cup
+18,Heavy,Moderate,Low,No,Yes,High,Reusable Pad
+33,Light,Sedentary,Medium,No,No,Medium,Reusable Pad
+40,Light,Active,Medium,No,No,Low,Menstrual Cup
+40,Medium,Active,Low,Yes,No,Medium,Pad
+14,Light,Active,High,No,Yes,Low,Menstrual Cup
+28,Heavy,Moderate,Medium,No,Yes,High,Menstrual Cup
+41,Medium,Moderate,Medium,Yes,Yes,High,Reusable Pad
+38,Medium,Active,Medium,Yes,Yes,Low,Menstrual Cup
+44,Heavy,Moderate,High,Yes,No,Medium,Period Panty
+26,Heavy,Moderate,High,No,Yes,Low,Menstrual Cup
+17,Medium,Sedentary,High,No,Yes,High,Reusable Pad
+35,Heavy,Sedentary,High,No,No,Low,Tampon
+36,Heavy,Sedentary,Low,Yes,Yes,Low,Reusable Pad
+14,Medium,Active,High,No,No,High,Tampon
+18,Light,Moderate,Medium,No,No,Medium,Reusable Pad
+17,Light,Moderate,High,Yes,No,Medium,Period Panty
+21,Heavy,Active,High,Yes,Yes,Medium,Menstrual Cup
+20,Heavy,Sedentary,Medium,Yes,Yes,Medium,Menstrual Cup
+35,Heavy,Moderate,Low,No,Yes,High,Reusable Pad
+21,Heavy,Moderate,High,Yes,Yes,High,Menstrual Cup
+23,Heavy,Active,High,No,Yes,Low,Menstrual Cup
+15,Heavy,Active,Medium,Yes,No,High,Tampon
+14,Medium,Active,High,No,No,Medium,Tampon
+38,Medium,Moderate,Low,Yes,Yes,Medium,Reusable Pad
+43,Medium,Sedentary,Medium,Yes,No,High,Period Panty
+35,Medium,Sedentary,Medium,Yes,No,Low,Period Panty
+20,Medium,Moderate,Low,Yes,Yes,Low,Reusable Pad
+37,Heavy,Moderate,Low,Yes,No,High,Reusable Pad
+25,Light,Moderate,High,No,No,Medium,Period Panty
+14,Light,Moderate,High,No,Yes,Low,Reusable Pad
+16,Light,Moderate,Medium,No,No,High,Period Panty
+13,Light,Moderate,Low,No,No,Medium,Reusable Pad
+15,Medium,Sedentary,High,Yes,No,High,Period Panty
+17,Medium,Active,Medium,No,Yes,Low,Menstrual Cup
+38,Medium,Moderate,High,No,Yes,Low,Reusable Pad
+45,Light,Sedentary,Low,Yes,No,Medium,Reusable Pad
+22,Heavy,Active,Low,No,No,Low,Tampon
+38,Heavy,Active,Medium,No,No,High,Tampon
+32,Medium,Sedentary,Medium,No,Yes,Medium,Reusable Pad
+14,Heavy,Moderate,Medium,Yes,Yes,High,Reusable Pad
+23,Heavy,Active,High,No,Yes,High,Menstrual Cup
+15,Heavy,Active,Low,Yes,Yes,Medium,Tampon
+33,Medium,Sedentary,Medium,Yes,No,High,Period Panty
+16,Heavy,Sedentary,High,Yes,No,High,Period Panty
+37,Medium,Sedentary,Medium,No,No,High,Menstrual Cup
+43,Light,Sedentary,Medium,No,Yes,Medium,Reusable Pad
+26,Heavy,Active,Medium,No,No,Medium,Tampon
+30,Medium,Sedentary,High,No,No,Medium,Tampon
+31,Light,Moderate,High,Yes,No,Medium,Period Panty
+43,Light,Sedentary,High,No,No,Low,Pad
+28,Light,Sedentary,High,Yes,Yes,Low,Menstrual Cup
+39,Medium,Active,Medium,Yes,Yes,Low,Menstrual Cup
+39,Heavy,Moderate,Medium,Yes,No,Medium,Period Panty
+16,Light,Active,High,Yes,Yes,Low,Reusable Pad
+24,Light,Moderate,Medium,Yes,No,Low,Reusable Pad
+32,Heavy,Active,Low,No,No,Medium,Tampon
+44,Light,Active,Medium,No,Yes,Low,Reusable Pad
+23,Heavy,Moderate,High,No,Yes,Low,Reusable Pad
+31,Heavy,Active,Low,Yes,No,Medium,Tampon
+45,Medium,Sedentary,Medium,Yes,Yes,Low,Reusable Pad
+33,Light,Sedentary,Medium,No,Yes,Medium,Reusable Pad
+34,Medium,Active,High,Yes,No,High,Period Panty
+28,Light,Active,Low,No,No,Low,Reusable Pad
+45,Heavy,Moderate,High,Yes,No,Medium,Reusable Pad
+27,Light,Moderate,Low,No,No,Medium,Reusable Pad
+26,Light,Active,High,Yes,No,High,Period Panty
+36,Light,Active,Low,Yes,Yes,High,Period Panty
+22,Light,Moderate,High,No,Yes,High,Menstrual Cup
+44,Light,Active,Medium,Yes,No,Low,Period Panty
+42,Heavy,Sedentary,High,No,No,High,Pad
+38,Medium,Sedentary,High,Yes,Yes,Low,Reusable Pad
+35,Heavy,Sedentary,High,Yes,Yes,Medium,Menstrual Cup
+31,Medium,Sedentary,Low,No,No,Medium,Reusable Pad
+37,Medium,Sedentary,High,Yes,No,Low,Reusable Pad
+38,Heavy,Sedentary,High,Yes,Yes,Low,Reusable Pad
+42,Heavy,Active,High,No,No,Low,Tampon
+28,Medium,Moderate,Low,No,Yes,High,Pad
+15,Heavy,Moderate,High,Yes,Yes,Low,Menstrual Cup
+19,Heavy,Sedentary,Medium,Yes,Yes,High,Menstrual Cup
+38,Medium,Sedentary,High,Yes,Yes,Low,Reusable Pad
+27,Heavy,Active,Medium,No,Yes,Medium,Menstrual Cup
+27,Medium,Moderate,Medium,Yes,Yes,High,Reusable Pad
+44,Light,Moderate,High,No,No,High,Period Panty
+39,Medium,Sedentary,Medium,No,Yes,High,Reusable Pad
+28,Light,Moderate,High,Yes,No,Low,Period Panty
+39,Heavy,Active,Low,No,Yes,Medium,Tampon
+26,Medium,Active,Low,No,No,Low,Pad
+16,Medium,Moderate,High,Yes,Yes,Low,Menstrual Cup
+43,Light,Moderate,Medium,Yes,Yes,Low,Menstrual Cup
+43,Light,Active,High,Yes,No,Low,Period Panty
+31,Medium,Moderate,High,No,No,Medium,Menstrual Cup
+45,Medium,Moderate,Low,No,No,Low,Reusable Pad
+33,Medium,Sedentary,High,Yes,Yes,Low,Reusable Pad
+39,Medium,Sedentary,Low,No,Yes,Medium,Pad
+44,Heavy,Active,High,No,No,Medium,Tampon
+44,Medium,Sedentary,High,No,Yes,Low,Reusable Pad
+24,Heavy,Active,Low,Yes,Yes,High,Tampon
+16,Light,Moderate,Low,Yes,Yes,High,Period Panty
+22,Light,Sedentary,High,No,No,Low,Reusable Pad
+43,Heavy,Moderate,Low,Yes,No,Low,Pad
+30,Heavy,Moderate,Low,No,Yes,Low,Pad
+22,Light,Sedentary,High,No,No,Medium,Period Panty
+18,Medium,Moderate,Medium,Yes,Yes,Medium,Menstrual Cup
+15,Light,Moderate,Medium,No,No,Low,Pad
+23,Light,Moderate,Medium,No,Yes,High,Menstrual Cup
+27,Light,Active,High,No,No,Low,Pad
+30,Heavy,Active,High,Yes,Yes,Medium,Menstrual Cup
+26,Heavy,Sedentary,High,No,Yes,Medium,Menstrual Cup
+28,Heavy,Moderate,High,No,No,High,Tampon
+18,Heavy,Active,Medium,Yes,Yes,Medium,Menstrual Cup
+17,Medium,Active,High,No,No,Low,Menstrual Cup
+41,Medium,Sedentary,Medium,No,No,Low,Reusable Pad
+37,Light,Active,Medium,Yes,Yes,Low,Reusable Pad
+22,Medium,Active,High,Yes,No,Medium,Period Panty
+19,Light,Sedentary,Medium,No,No,Medium,Pad
+21,Light,Sedentary,Medium,No,No,Low,Pad
+18,Medium,Active,Low,No,No,Low,Reusable Pad
+39,Medium,Sedentary,High,Yes,Yes,High,Reusable Pad
+23,Light,Moderate,Medium,No,No,Low,Pad
+23,Medium,Moderate,Medium,No,No,Low,Menstrual Cup
+29,Light,Active,High,No,Yes,Medium,Menstrual Cup
+21,Medium,Sedentary,Medium,No,No,Medium,Period Panty
+34,Medium,Active,High,Yes,No,Medium,Reusable Pad
+43,Medium,Sedentary,Medium,No,No,High,Period Panty
+28,Medium,Moderate,Medium,No,No,Low,Reusable Pad
+25,Heavy,Active,Low,Yes,No,High,Tampon
+26,Medium,Moderate,High,Yes,No,High,Period Panty
+21,Heavy,Moderate,Low,No,Yes,High,Reusable Pad
+37,Light,Moderate,High,No,No,High,Period Panty
+45,Heavy,Moderate,High,Yes,No,High,Reusable Pad
+19,Light,Active,High,No,Yes,High,Menstrual Cup
+38,Medium,Moderate,Low,Yes,Yes,Medium,Pad
+45,Heavy,Active,High,Yes,No,Medium,Tampon
+38,Medium,Active,High,Yes,No,Low,Period Panty
+19,Medium,Moderate,Low,Yes,Yes,Medium,Reusable Pad
+34,Medium,Sedentary,High,No,No,Medium,Pad
+41,Heavy,Active,Medium,No,Yes,Medium,Menstrual Cup
+20,Light,Moderate,High,Yes,Yes,High,Menstrual Cup
+24,Heavy,Sedentary,Medium,No,No,Low,Period Panty
+24,Light,Active,High,No,No,Low,Reusable Pad
+25,Medium,Active,Medium,No,Yes,High,Menstrual Cup
+26,Medium,Active,Low,Yes,Yes,Medium,Reusable Pad
+25,Medium,Sedentary,Medium,No,No,High,Period Panty
+38,Heavy,Sedentary,Medium,No,No,High,Tampon
+32,Heavy,Active,Low,Yes,No,Low,Tampon
+28,Medium,Sedentary,Low,No,Yes,High,Reusable Pad
+39,Heavy,Sedentary,High,No,No,Low,Period Panty
+24,Heavy,Sedentary,Medium,No,Yes,Low,Reusable Pad
+41,Heavy,Sedentary,Medium,Yes,No,Low,Reusable Pad
+37,Heavy,Active,High,No,No,High,Tampon
+44,Medium,Active,Medium,No,Yes,Low,Menstrual Cup
+27,Medium,Sedentary,Medium,Yes,No,Low,Period Panty
+44,Heavy,Active,Low,Yes,No,High,Tampon
+36,Heavy,Sedentary,High,No,Yes,Medium,Menstrual Cup
+28,Medium,Sedentary,Medium,No,No,Low,Period Panty
+20,Light,Sedentary,High,No,No,Low,Reusable Pad
+21,Light,Sedentary,Low,No,No,High,Period Panty
+23,Medium,Active,Medium,No,No,High,Pad
+21,Medium,Sedentary,Medium,Yes,Yes,Low,Menstrual Cup
+33,Light,Active,Medium,No,Yes,High,Reusable Pad
+39,Medium,Moderate,Low,Yes,No,High,Reusable Pad
+36,Medium,Moderate,Medium,Yes,Yes,High,Reusable Pad
+35,Light,Active,Medium,Yes,No,Low,Period Panty
+30,Medium,Moderate,Medium,Yes,No,Medium,Reusable Pad
+15,Light,Active,Medium,Yes,Yes,Low,Reusable Pad
+42,Light,Moderate,Low,Yes,No,Low,Reusable Pad
+18,Heavy,Moderate,Medium,Yes,No,High,Reusable Pad
+16,Medium,Active,Medium,Yes,No,High,Reusable Pad
+19,Light,Sedentary,Medium,Yes,Yes,High,Menstrual Cup
+41,Light,Sedentary,High,No,Yes,Medium,Menstrual Cup
+43,Light,Sedentary,Medium,Yes,Yes,Low,Reusable Pad
+36,Medium,Sedentary,Medium,Yes,Yes,Low,Menstrual Cup
+23,Medium,Moderate,High,Yes,Yes,Medium,Reusable Pad
+26,Light,Sedentary,Low,Yes,No,Medium,Reusable Pad
+33,Light,Sedentary,Medium,Yes,Yes,High,Reusable Pad
+14,Heavy,Moderate,Low,Yes,No,Medium,Pad
+28,Medium,Moderate,Low,Yes,No,High,Pad
+13,Medium,Moderate,Low,No,No,Medium,Pad
+43,Light,Sedentary,High,Yes,Yes,Medium,Menstrual Cup
+15,Light,Moderate,High,No,No,Medium,Period Panty
+18,Heavy,Active,High,Yes,No,Low,Tampon
+32,Light,Active,Low,Yes,No,Medium,Pad
+32,Heavy,Moderate,High,Yes,Yes,Low,Menstrual Cup
+40,Light,Moderate,High,Yes,No,High,Period Panty
+24,Light,Sedentary,High,Yes,Yes,Low,Reusable Pad
+35,Heavy,Active,High,No,Yes,Medium,Menstrual Cup
+30,Heavy,Sedentary,Low,No,No,Medium,Pad
+29,Heavy,Active,High,Yes,No,Medium,Tampon
+45,Medium,Sedentary,Medium,Yes,No,Low,Period Panty
+19,Heavy,Active,High,Yes,Yes,High,Menstrual Cup
+15,Light,Sedentary,Low,No,No,Medium,Pad
+24,Light,Active,High,No,Yes,Medium,Menstrual Cup
+39,Heavy,Moderate,Medium,Yes,No,Low,Reusable Pad
+24,Light,Active,Low,No,Yes,Medium,Reusable Pad
+32,Medium,Sedentary,High,No,Yes,Medium,Menstrual Cup
+31,Heavy,Moderate,High,Yes,No,Medium,Period Panty
+25,Heavy,Active,Low,Yes,Yes,Medium,Tampon
+14,Light,Active,Medium,Yes,No,Low,Period Panty
+32,Light,Sedentary,High,Yes,No,Medium,Reusable Pad
+22,Heavy,Moderate,Low,Yes,Yes,High,Reusable Pad
+36,Medium,Active,Low,Yes,Yes,High,Reusable Pad
+17,Heavy,Active,Low,No,Yes,Low,Tampon
+31,Medium,Moderate,Medium,No,No,Medium,Menstrual Cup
+27,Light,Sedentary,Low,Yes,Yes,Low,Pad
+41,Medium,Moderate,Medium,Yes,No,Low,Period Panty
+32,Medium,Moderate,Low,Yes,Yes,High,Reusable Pad
+15,Light,Moderate,Low,Yes,Yes,Medium,Reusable Pad
+45,Light,Active,Medium,No,Yes,Low,Reusable Pad
+41,Heavy,Active,High,Yes,Yes,Medium,Menstrual Cup
+21,Light,Sedentary,Low,Yes,Yes,Low,Reusable Pad
+36,Heavy,Active,High,Yes,No,Low,Tampon
+14,Light,Sedentary,High,No,Yes,Low,Reusable Pad
+20,Light,Moderate,Low,Yes,No,High,Period Panty
+38,Medium,Sedentary,Medium,No,Yes,Medium,Menstrual Cup
+24,Medium,Moderate,Medium,Yes,Yes,High,Menstrual Cup
+31,Medium,Moderate,High,No,Yes,Low,Reusable Pad
+37,Light,Moderate,Low,Yes,Yes,Medium,Reusable Pad
+43,Heavy,Moderate,Medium,No,No,Medium,Tampon
+14,Medium,Active,Low,Yes,No,Low,Reusable Pad
+35,Heavy,Sedentary,Low,Yes,Yes,High,Pad
+30,Heavy,Active,Low,Yes,No,Medium,Tampon
+24,Light,Sedentary,High,No,No,High,Period Panty
+14,Heavy,Active,Medium,Yes,Yes,Medium,Reusable Pad
+24,Medium,Sedentary,Low,Yes,Yes,High,Pad
+14,Heavy,Moderate,Low,No,Yes,Low,Reusable Pad
+24,Medium,Sedentary,Low,Yes,Yes,Low,Reusable Pad
+17,Medium,Active,High,No,Yes,Medium,Reusable Pad
+33,Light,Sedentary,High,No,No,High,Period Panty
+33,Light,Active,High,No,Yes,High,Menstrual Cup
+37,Medium,Active,High,No,Yes,Low,Menstrual Cup
+38,Heavy,Sedentary,Low,No,Yes,High,Pad
+44,Light,Moderate,High,Yes,Yes,Medium,Reusable Pad
+23,Heavy,Sedentary,High,No,No,Low,Menstrual Cup
+26,Light,Active,Low,No,No,Low,Pad
+16,Medium,Moderate,High,No,Yes,Medium,Reusable Pad
+37,Medium,Active,Medium,Yes,No,High,Reusable Pad
+23,Medium,Sedentary,Low,No,Yes,Medium,Reusable Pad
+19,Light,Moderate,Low,No,Yes,High,Period Panty
+17,Heavy,Sedentary,Medium,No,Yes,Medium,Menstrual Cup
+40,Light,Sedentary,Low,No,Yes,Low,Reusable Pad
+29,Heavy,Moderate,Medium,Yes,Yes,Low,Reusable Pad
+44,Light,Sedentary,Medium,Yes,No,Low,Period Panty
+43,Light,Sedentary,Low,Yes,Yes,High,Period Panty
+31,Light,Moderate,Low,No,No,Medium,Reusable Pad
+29,Light,Active,High,No,Yes,Medium,Reusable Pad
+36,Light,Moderate,Low,No,No,Medium,Reusable Pad
+27,Medium,Active,Low,Yes,Yes,Low,Reusable Pad
+39,Heavy,Sedentary,High,Yes,No,High,Period Panty
+43,Heavy,Sedentary,Medium,No,Yes,Medium,Menstrual Cup
+45,Heavy,Active,High,Yes,Yes,Medium,Menstrual Cup
+23,Light,Sedentary,Low,Yes,No,Low,Reusable Pad
+25,Heavy,Sedentary,High,No,No,High,Pad
+18,Medium,Active,Medium,No,No,High,Period Panty
+13,Heavy,Active,High,No,Yes,Medium,Menstrual Cup
+22,Heavy,Active,High,Yes,Yes,High,Menstrual Cup
+31,Heavy,Moderate,Medium,No,No,High,Period Panty
+43,Light,Sedentary,Medium,No,Yes,High,Reusable Pad
+15,Medium,Moderate,High,Yes,Yes,High,Reusable Pad
+30,Medium,Sedentary,Medium,No,No,Medium,Period Panty
+19,Light,Sedentary,Medium,No,No,Medium,Period Panty
+18,Light,Moderate,Low,No,No,High,Period Panty
+36,Light,Active,Low,Yes,No,High,Period Panty
+45,Medium,Sedentary,High,Yes,Yes,Low,Menstrual Cup
+16,Light,Sedentary,Medium,Yes,No,High,Period Panty
+25,Medium,Moderate,Medium,No,Yes,High,Menstrual Cup
+28,Medium,Moderate,High,No,Yes,Medium,Reusable Pad
+35,Light,Moderate,High,Yes,No,Low,Period Panty
+16,Light,Active,Low,Yes,Yes,High,Period Panty
+26,Medium,Active,Medium,Yes,Yes,Medium,Menstrual Cup
+24,Heavy,Sedentary,Low,No,No,High,Reusable Pad
+40,Medium,Moderate,Medium,No,Yes,Medium,Reusable Pad
+38,Heavy,Sedentary,Low,No,No,Medium,Pad
