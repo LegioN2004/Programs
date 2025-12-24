@@ -1,0 +1,22 @@
+<!doctype html><meta charset="utf-8" /><title>LaTeX→PDF</title>
+<textarea id="latex" rows="15" cols="80">
+\documentclass{article}\begin{document}Hi\end{document}</textarea
+><br />
+<button id="go">Convert</button>
+<script>
+    document.getElementById("go").onclick = async () => {
+        const latex = document.getElementById("latex").value;
+        const r = await fetch("/compile", {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: latex,
+        });
+        if (!r.ok) {
+            alert("Compile failed: " + (await r.text()));
+            return;
+        }
+        const b = await r.blob();
+        const u = URL.createObjectURL(b);
+        window.open(u, "_blank");
+    };
+</script>
