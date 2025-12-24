@@ -1,3 +1,5 @@
+// 1. [Build Array from Permutation](https://leetcode.com/problems/build-array-from-permutation/)
+
 package Arrays.Easy;
 
 import java.util.Scanner;
