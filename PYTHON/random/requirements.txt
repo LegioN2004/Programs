@@ -1,0 +1,53 @@
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+# Core packages
+numpy
+opencv-python==4.8.0.74
+onnx
+insightface==0.7.3
+psutil==5.9.5
+customtkinter==5.2.0
+pillow==10.0.0
+
+# GUI drag-and-drop package: platform-specific distributions
+tkinterdnd2==0.3.0; sys_platform != "darwin" and platform_machine != "arm64"
+tkinterdnd2-universal==1.7.3; sys_platform == "darwin" and platform_machine == "arm64"
+
+# ONNX runtime variants by platform
+onnxruntime==1.15.1; sys_platform == "darwin" and platform_machine != "arm64" and python_version != "3.9"
+onnxruntime-coreml==1.13.1; sys_platform == "darwin" and platform_machine != "arm64" and python_version == "3.9"
+onnxruntime-silicon==1.13.1; sys_platform == "darwin" and platform_machine == "arm64"
+onnxruntime-gpu; sys_platform != "darwin"
+
+# ML frameworks / utilities
+tensorflow
+opennsfw2==0.10.2
+protobuf==4.23.4
+tqdm==4.65.0
+gfpgan==1.3.8
+
+# Notes:
+# - Removed `tk==0.1.0` because tkinter is part of CPython (not a PyPI package).
+# - Quoted environment markers with double quotes for better compatibility.
+# - Consider splitting into per-platform requirement files if installs still fail.
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+numpy
+opencv-python==4.8.0.74
+onnx
+insightface==0.7.3
+psutil==5.9.5
+tk==0.1.0
+customtkinter==5.2.0
+tkinterdnd2==0.3.0; sys_platform != 'darwin' and platform_machine != 'arm64'
+tkinterdnd2-universal==1.7.3; sys_platform == 'darwin' and platform_machine == 'arm64'
+pillow==10.0.0
+onnxruntime==1.15.1; python_version != '3.9' and sys_platform == 'darwin' and platform_machine != 'arm64'
+onnxruntime-coreml==1.13.1; python_version == '3.9' and sys_platform == 'darwin' and platform_machine != 'arm64'
+onnxruntime-silicon==1.13.1; sys_platform == 'darwin' and platform_machine == 'arm64'
+onnxruntime-gpu; sys_platform != 'darwin'
+tensorflow
+opennsfw2==0.10.2
+protobuf==4.23.4
+tqdm==4.65.0
+gfpgan==1.3.8
