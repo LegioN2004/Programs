@@ -2,7 +2,7 @@
 
 #define max 30
 
-void main() {
+int main() {
   int i, j;       // for using in the for loops
   int n;          // for no of process the user wants to run.
   int bt[max];    // burst time

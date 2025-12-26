@@ -1,74 +1,59 @@
 #include <stdio.h>
-#include <stdio.h>
-void swap(int *a, int *b)
-{
-  int temp = *a;
-  *a = *b;
-#include <stdio.h>
 
-void swap(int *a, int *b)
+int main()
 {
-    int temp = *a;
-    *a = *b;
-    #include <stdio.h>
+    int n, i, j;
+    int bt[30], pr[30], wt[30], tat[30];
+    int temp;
+    float awt = 0, atat = 0;
 
-    void swap(int *a, int *b)
+    printf("Enter number of processes: ");
+    scanf("%d", &n);
+
+    printf("Enter burst times:\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &bt[i]);
+
+    printf("Enter priorities (lower number = higher priority):\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &pr[i]);
+
+    // Sort by priority
+    for (i = 0; i < n; i++)
     {
-        int temp = *a;
-        *a = *b;
-        *b = temp;
+        for (j = i + 1; j < n; j++)
+        {
+            if (pr[i] > pr[j])
+            {
+                temp = pr[i];
+                pr[i] = pr[j];
+                pr[j] = temp;
+
+                temp = bt[i];
+                bt[i] = bt[j];
+                bt[j] = temp;
+            }
+        }
     }
 
-    int main(void)
+    wt[0] = 0;
+    for (i = 1; i < n; i++)
+        wt[i] = wt[i - 1] + bt[i - 1];
+
+    for (i = 0; i < n; i++)
     {
-        int n;
-        printf("Enter Number of Processes: ");
-        if (scanf("%d", &n) != 1) {
-            fprintf(stderr, "Invalid input.\n");
-            return 1;
-        }
-
-        int b[n], p[n], index[n];
-        for (int i = 0; i < n; i++) {
-            /* Read burst and priority separately to avoid scanf confusion */
-            printf("Enter Burst Time for Process %d: ", i + 1);
-            while (scanf("%d", &b[i]) != 1) {
-                int c; while ((c = getchar()) != '\n' && c != EOF) ;
-                printf("Invalid. Enter Burst Time for Process %d: ", i + 1);
-            }
-
-            printf("Enter Priority Value for Process %d: ", i + 1);
-            while (scanf("%d", &p[i]) != 1) {
-                int c; while ((c = getchar()) != '\n' && c != EOF) ;
-                printf("Invalid. Enter Priority Value for Process %d: ", i + 1);
-            }
-
-            index[i] = i + 1;
-        }
-
-        for (int i = 0; i < n; i++) {
-            int a = p[i], m = i;
-            for (int j = i; j < n; j++) {
-                if (p[j] > a) { a = p[j]; m = j; }
-            }
-            swap(&p[i], &p[m]);
-            swap(&b[i], &b[m]);
-            swap(&index[i], &index[m]);
-        }
-
-        int t = 0;
-        printf("Order of process Execution is\n");
-        for (int i = 0; i < n; i++) {
-            printf("P%d is executed from %d to %d\n", index[i], t, t + b[i]);
-            t += b[i];
-        }
-
-        printf("\nProcess Id     Burst Time   Wait Time    TurnAround Time\n");
-        int wait_time = 0;
-        for (int i = 0; i < n; i++) {
-            printf("P%d          %d          %d          %d\n", index[i], b[i], wait_time, wait_time + b[i]);
-            wait_time += b[i];
-        }
-
-        return 0;
+        tat[i] = wt[i] + bt[i];
+        awt += wt[i];
+        atat += tat[i];
     }
+
+    printf("\nProcess  BT  Priority  WT  TAT\n");
+    for (i = 0; i < n; i++)
+        printf("P%d       %d     %d       %d   %d\n",
+               i + 1, bt[i], pr[i], wt[i], tat[i]);
+
+    printf("\nAverage Waiting Time = %.2f", awt / n);
+    printf("\nAverage Turnaround Time = %.2f\n", atat / n);
+
+    return 0;
+}
