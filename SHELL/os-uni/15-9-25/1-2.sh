@@ -1,3 +1,4 @@
+# Swaps two numbers using arithmetic operations (alternate)
 echo "enter numbers to swap: "
 read a
 read b

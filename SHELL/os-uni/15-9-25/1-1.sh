@@ -1,5 +1,8 @@
+# Swaps two numbers using arithmetic operations
 echo "enter numbers to swap: "
+echo "value of a: "
 read a
+echo "value of b: "
 read b
 
 a=$((a + b))

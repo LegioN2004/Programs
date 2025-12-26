@@ -1,8 +1,9 @@
+# Compares two numbers and writes result to a file
 echo enter values
 read a
-read b 
+read b
 
-    if [ $a -gt $b ] 
+    if [ $a -gt $b ]
     then
         echo "a is greater" > "/Users/milinda/Documents/random-backup/greater.txt"
     elif [ $b -gt $a ]

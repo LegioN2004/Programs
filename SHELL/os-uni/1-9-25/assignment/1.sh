@@ -1,9 +1,10 @@
+# Finds the greatest of three numbers and writes result to a file
 echo enter values
 read a
-read b 
-read c 
+read b
+read c
 
-if [ $a -eq $b ] && [ $b -eq $c ] 
+if [ $a -eq $b ] && [ $b -eq $c ]
 then
     echo "All the numbers are equal $a" > "/Users/milinda/Desktop/RESULT.txt"
 else

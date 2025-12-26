@@ -1,30 +1,31 @@
-echo "Enter how many prime numbers you want: "
-read N
+#!/bin/bash
+echo "Enter how many prime numbers you want:"
+read n
 
 count=0
 num=2
 output=""
 
-while [ $count -lt $N ]
+while [ $count -lt $n ]
 do
-    is_prime=1
+  flag=0
 
-    for (( i=2; i*i<=num; i++ ))
-    do
-        if (( num % i == 0 )); then
-            is_prime=0
-            break
-        fi
-    done
-
-    if (( is_prime == 1 )); then
-        output="$output$num "
-        ((count++))
+  for (( i=2; i<num; i++ ))
+  do
+    if [ $((num % i)) -eq 0 ]; then
+      flag=1
+      break
     fi
+  done
 
-    ((num++))
+  if [ $flag -eq 0 ]; then
+    output="$output$num "
+    count=$((count + 1))
+  fi
+
+  num=$((num + 1))
 done
 
+echo "$output"
 echo "$output" > "$HOME/Desktop/primes.txt"
 
-echo "saved to $HOME/Desktop/primes.txt"

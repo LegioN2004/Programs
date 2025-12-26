@@ -1,16 +1,16 @@
+# Prints all odd numbers in a given range and writes to file
 echo "Enter start of range:"
 read start
 echo "Enter end of range:"
 read end
 
-num=$start
-echo "" > "$HOME/Desktop/odd_numbers.txt"
-while [ $num -le $end ]
+echo "" > "$HOME/Desktop/odd_startbers.txt"
+while [ $start -le $end ]
 do
-  if [ $((num % 2)) -eq 1 ]; then
-    echo $num >> "$HOME/Desktop/odd_numbers.txt"
+  if [ $((start % 2)) -eq 1 ]; then
+    echo $start >> "$HOME/Desktop/odd_startbers.txt"
   fi
-  num=$((num+1))
+  start=$((start+1))
 done
 
 echo "saved hoi gol in output file"

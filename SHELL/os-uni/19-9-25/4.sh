@@ -1,3 +1,4 @@
+# Calculates sum of numbers from n to 1 and writes to file
 echo "Enter a number:"
 read n
 sum=0
