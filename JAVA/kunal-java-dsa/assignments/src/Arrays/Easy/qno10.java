@@ -4,21 +4,29 @@ package Arrays.Easy;
 
 public class qno10 {
     public static void main(String[] args) {
-        System.out.println(func("leetcode"));
+        System.out.println(func("anmt"));
     }
 
+    // abaoinrstionat
+    // pangram check koribo lage, make a bool array
     static boolean func(String sentence) {
         sentence = sentence.toLowerCase();
         boolean[] bool = new boolean[26];
-        int count;
+        // int count;
 
-        for(char c: sentence.toCharArray()){
-            if(c >= 'a' && c <= 'z'){
-                return true;
+        for (char c : sentence.toCharArray()) {
+            if (c >= 'a' && c <= 'z') {
+                bool[c - 'a'] = true;
             } else {
                 break;
             }
         }
-        return false;
+
+        for (boolean b : bool) {
+            if (!b) {
+                return false;
+            }
+        }
+        return true;
     }
 }
