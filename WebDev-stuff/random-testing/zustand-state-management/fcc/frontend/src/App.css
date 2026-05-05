@@ -1,0 +1,8 @@
+.App {
+    background: black;
+    min-height: 100vh;
+    width: full;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
