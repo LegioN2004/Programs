@@ -1,0 +1,55 @@
+
+
+%{
+#include <stdio.h>
+#include <stdlib.h>
+double a = 0.0, b = 0.0;
+char op = '\0';
+%}
+digit   [0-9]
+num     {digit}+(\.{digit}+)? 
+%%
+{num} {
+         if (a == 0.0 && op == '\0')
+             a = atof(yytext);
+         ELSE
+             b = atof(yytext);
+      }
+[\+\-\*\/] { op = yytext[0]; }
+[\n] {
+         switch(op) {
+             CASE '+': PRINTF("Result: %lf\n", a + b); break;
+             CASE '-': PRINTF("Result: %lf\n", a - b); break;
+             CASE '*': PRINTF("Result: %lf\n", a * b); break;
+             CASE '/': 
+                         if(b != 0)
+                             PRINTF("Result: %lf\n", a / b);
+                         ELSE
+                             PRINTF("Division by zero error\n");
+                         break;
+             default:  PRINTF("Unknown operator\n");
+         }
+         a = b = 0.0;
+         op = '\0';
+      }
+.          {  }
+%%
+int main(void) {
+    yylex();
+    return 0;
+}
+int yywrap()
+{
+ 
+ return 1;
+ }
+
+
+
+
+2 3 5 7 11
+
+
+
+
+3.14 0.5 2.36 11.11

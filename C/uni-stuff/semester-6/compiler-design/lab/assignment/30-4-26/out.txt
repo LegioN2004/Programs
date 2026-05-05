@@ -1,0 +1,767 @@
+%syntax: {#identifier: includesyntax:  operators: <identifier: stdio.identifier: hoperators: >#identifier: includesyntax:  operators: <identifier: stdlib.identifier: hoperators: >identifier: doublesyntax:  identifier: asyntax:  operators: =syntax:  floating: 0.0syntax: ,syntax:  identifier: bsyntax:  operators: =syntax:  floating: 0.0syntax: ;identifier: charsyntax:  identifier: opsyntax:  operators: =syntax:  '\0'syntax: ;%syntax: }identifier: digit[0operators: -9]identifier: numsyntax: {identifier: digitsyntax: }operators: +syntax: (\.syntax: {identifier: digitsyntax: }operators: +syntax: )?%%syntax: {identifier: numsyntax: }syntax:  syntax: {functions: if (identifier: asyntax:  operators: =operators: =syntax:  floating: 0.0syntax:  &&syntax:  identifier: opsyntax:  operators: =operators: =syntax:  '\0'syntax: )identifier: asyntax:  operators: =syntax:  functions: atof(identifier: yytextsyntax: )syntax: ;identifier: elseidentifier: bsyntax:  operators: =syntax:  functions: atof(identifier: yytextsyntax: )syntax: ;syntax: }[\operators: +\operators: -\operators: *\operators: /]syntax:  syntax: {syntax:  identifier: opsyntax:  operators: =syntax:  identifier: yytext[0]syntax: ;syntax:  syntax: }[\identifier: n]syntax:  syntax: {functions: switch(identifier: opsyntax: )syntax:  syntax: {identifier: casesyntax:  'operators: +':syntax:  functions: printf("identifier: Result:syntax:  %identifier: lf\identifier: n"syntax: ,syntax:  identifier: asyntax:  operators: +syntax:  identifier: bsyntax: )syntax: ;syntax:  identifier: breaksyntax: ;identifier: casesyntax:  'operators: -':syntax:  functions: printf("identifier: Result:syntax:  %identifier: lf\identifier: n"syntax: ,syntax:  identifier: asyntax:  operators: -syntax:  identifier: bsyntax: )syntax: ;syntax:  identifier: breaksyntax: ;identifier: casesyntax:  'operators: *':syntax:  functions: printf("identifier: Result:syntax:  %identifier: lf\identifier: n"syntax: ,syntax:  identifier: asyntax:  operators: *syntax:  identifier: bsyntax: )syntax: ;syntax:  identifier: breaksyntax: ;identifier: casesyntax:  'operators: /':functions: if(identifier: bsyntax:  !operators: =syntax:  0syntax: )functions: printf("identifier: Result:syntax:  %identifier: lf\identifier: n"syntax: ,syntax:  identifier: asyntax:  operators: /syntax:  identifier: bsyntax: )syntax: ;identifier: elsefunctions: printf("identifier: Divisionsyntax:  identifier: bysyntax:  identifier: zerosyntax:  identifier: error\identifier: n"syntax: )syntax: ;identifier: breaksyntax: ;identifier: default:functions: printf("identifier: Unknownsyntax:  identifier: operator\identifier: n"syntax: )syntax: ;syntax: }identifier: asyntax:  operators: =syntax:  identifier: bsyntax:  operators: =syntax:  floating: 0.0syntax: ;identifier: opsyntax:  operators: =syntax:  '\0'syntax: ;syntax: }.syntax: {syntax:  syntax:  syntax: }%%identifier: intsyntax:  functions: main(identifier: voidsyntax: )syntax:  syntax: {functions: yylex(syntax: )syntax: ;identifier: returnsyntax:  0syntax: ;syntax: }identifier: intsyntax:  functions: yywrap(syntax: )syntax: {identifier: returnsyntax:  1syntax: ;syntax: }2syntax:  3syntax:  5syntax:  7syntax:  11floating: 3.14syntax:  floating: 0.5syntax:  floating: 2.36syntax:  floating: 11.11%syntax: {
+#
+identifier: includesyntax:  
+operators: <
+
+identifier: stdio.
+identifier: hoperators: >
+#
+identifier: includesyntax:  
+operators: <
+
+identifier: stdlib.
+identifier: hoperators: >
+
+identifier: doublesyntax:  
+
+identifier: asyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ,
+syntax:  
+
+identifier: bsyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ;
+
+identifier: charsyntax:  
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+'\0'syntax: ;
+%syntax: }
+
+identifier: digit[0operators: -
+9]
+identifier: numsyntax: {
+
+identifier: digitsyntax: }
+operators: +
+syntax: (
+\.syntax: {
+
+identifier: digitsyntax: }
+operators: +
+syntax: )
+?%%syntax: {
+
+identifier: numsyntax: }
+syntax:  
+syntax: {
+
+functions: if (
+identifier: asyntax:  
+operators: =
+operators: =
+syntax:  
+floating: 0.0
+syntax:  
+&&syntax:  
+
+identifier: opsyntax:  
+operators: =
+operators: =
+syntax:  
+'\0'syntax: )
+
+identifier: asyntax:  
+operators: =
+syntax:  
+
+functions: atof(
+identifier: yytextsyntax: )
+syntax: ;
+
+identifier: else
+identifier: bsyntax:  
+operators: =
+syntax:  
+
+functions: atof(
+identifier: yytextsyntax: )
+syntax: ;
+syntax: }
+[\operators: +
+\operators: -
+\operators: *
+\operators: /
+]syntax:  
+syntax: {
+syntax:  
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+
+identifier: yytext[0]syntax: ;
+syntax:  
+syntax: }
+[\
+identifier: n]syntax:  
+syntax: {
+
+functions: switch(
+identifier: opsyntax: )
+syntax:  
+syntax: {
+
+identifier: casesyntax:  
+'operators: +
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: +
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: -
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: -
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: *
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: *
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: /
+':
+functions: if(
+identifier: bsyntax:  
+!operators: =
+syntax:  
+0syntax: )
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: /
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+
+identifier: else
+functions: printf("
+identifier: Divisionsyntax:  
+
+identifier: bysyntax:  
+
+identifier: zerosyntax:  
+
+identifier: error\
+identifier: n"syntax: )
+syntax: ;
+
+identifier: breaksyntax: ;
+
+identifier: default:
+functions: printf("
+identifier: Unknownsyntax:  
+
+identifier: operator\
+identifier: n"syntax: )
+syntax: ;
+syntax: }
+
+identifier: asyntax:  
+operators: =
+syntax:  
+
+identifier: bsyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ;
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+'\0'syntax: ;
+syntax: }
+.syntax: {
+syntax:  
+syntax:  
+syntax: }
+%%
+identifier: intsyntax:  
+
+functions: main(
+identifier: voidsyntax: )
+syntax:  
+syntax: {
+
+functions: yylex(syntax: )
+syntax: ;
+
+identifier: returnsyntax:  
+0syntax: ;
+syntax: }
+
+identifier: intsyntax:  
+
+functions: yywrap(syntax: )
+syntax: {
+
+identifier: returnsyntax:  
+1syntax: ;
+syntax: }
+2syntax:  
+3syntax:  
+5syntax:  
+7syntax:  
+11floating: 3.14
+syntax:  
+floating: 0.5
+syntax:  
+floating: 2.36
+syntax:  
+floating: 11.11
+%syntax: {
+#
+identifier: includesyntax:  
+operators: <
+
+identifier: stdio.
+identifier: hoperators: >
+#
+identifier: includesyntax:  
+operators: <
+
+identifier: stdlib.
+identifier: hoperators: >
+
+identifier: doublesyntax:  
+
+identifier: asyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ,
+syntax:  
+
+identifier: bsyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ;
+
+identifier: charsyntax:  
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+'\0'syntax: ;
+%syntax: }
+
+identifier: digit[0operators: -
+9]
+identifier: numsyntax: {
+
+identifier: digitsyntax: }
+operators: +
+syntax: (
+\.syntax: {
+
+identifier: digitsyntax: }
+operators: +
+syntax: )
+?%%syntax: {
+
+identifier: numsyntax: }
+syntax:  
+syntax: {
+
+functions: if (
+identifier: asyntax:  
+operators: =
+operators: =
+syntax:  
+floating: 0.0
+syntax:  
+&&syntax:  
+
+identifier: opsyntax:  
+operators: =
+operators: =
+syntax:  
+'\0'syntax: )
+
+identifier: asyntax:  
+operators: =
+syntax:  
+
+functions: atof(
+identifier: yytextsyntax: )
+syntax: ;
+
+identifier: else
+identifier: bsyntax:  
+operators: =
+syntax:  
+
+functions: atof(
+identifier: yytextsyntax: )
+syntax: ;
+syntax: }
+[\operators: +
+\operators: -
+\operators: *
+\operators: /
+]syntax:  
+syntax: {
+syntax:  
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+
+identifier: yytext[0]syntax: ;
+syntax:  
+syntax: }
+[\
+identifier: n]syntax:  
+syntax: {
+
+functions: switch(
+identifier: opsyntax: )
+syntax:  
+syntax: {
+
+identifier: casesyntax:  
+'operators: +
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: +
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: -
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: -
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: *
+':syntax:  
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: *
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+syntax:  
+
+identifier: breaksyntax: ;
+
+identifier: casesyntax:  
+'operators: /
+':
+functions: if(
+identifier: bsyntax:  
+!operators: =
+syntax:  
+0syntax: )
+
+functions: printf("
+identifier: Result:syntax:  
+%
+identifier: lf\
+identifier: n"syntax: ,
+syntax:  
+
+identifier: asyntax:  
+operators: /
+syntax:  
+
+identifier: bsyntax: )
+syntax: ;
+
+identifier: else
+functions: printf("
+identifier: Divisionsyntax:  
+
+identifier: bysyntax:  
+
+identifier: zerosyntax:  
+
+identifier: error\
+identifier: n"syntax: )
+syntax: ;
+
+identifier: breaksyntax: ;
+
+identifier: default:
+functions: printf("
+identifier: Unknownsyntax:  
+
+identifier: operator\
+identifier: n"syntax: )
+syntax: ;
+syntax: }
+
+identifier: asyntax:  
+operators: =
+syntax:  
+
+identifier: bsyntax:  
+operators: =
+syntax:  
+floating: 0.0
+syntax: ;
+
+identifier: opsyntax:  
+operators: =
+syntax:  
+'\0'syntax: ;
+syntax: }
+.syntax: {
+syntax:  
+syntax:  
+syntax: }
+%%
+identifier: intsyntax:  
+
+functions: main(
+identifier: voidsyntax: )
+syntax:  
+syntax: {
+
+functions: yylex(syntax: )
+syntax: ;
+
+identifier: returnsyntax:  
+0syntax: ;
+syntax: }
+
+identifier: intsyntax:  
+
+functions: yywrap(syntax: )
+syntax: {
+
+identifier: returnsyntax:  
+1syntax: ;
+syntax: }
+2syntax:  
+3syntax:  
+5syntax:  
+7syntax:  
+11floating: 3.14
+syntax:  
+floating: 0.5
+syntax:  
+floating: 2.36
+syntax:  
+floating: 11.11
+[COMMENT REMOVED]
+[OPERATOR] %
+[SYNTAX] {
+[IDENTIFIER] include
+[OPERATOR] <
+[IDENTIFIER] stdio
+[IDENTIFIER] h
+[OPERATOR] >
+[IDENTIFIER] include
+[OPERATOR] <
+[IDENTIFIER] stdlib
+[IDENTIFIER] h
+[OPERATOR] >
+[DATATYPE] double
+[IDENTIFIER] a
+[OPERATOR] =
+[FLOAT] 0.0
+[SYNTAX] ,
+[IDENTIFIER] b
+[OPERATOR] =
+[FLOAT] 0.0
+[SYNTAX] ;
+[DATATYPE] char
+[IDENTIFIER] op
+[OPERATOR] =
+[INTEGER] 0
+[SYNTAX] ;
+[OPERATOR] %
+[SYNTAX] }
+[IDENTIFIER] digit
+[INTEGER] 0
+[OPERATOR] -
+[INTEGER] 9
+[IDENTIFIER] num
+[SYNTAX] {
+[IDENTIFIER] digit
+[SYNTAX] }
+[OPERATOR] +
+[SYNTAX] (
+[SYNTAX] {
+[IDENTIFIER] digit
+[SYNTAX] }
+[OPERATOR] +
+[SYNTAX] )
+[OPERATOR] %
+[OPERATOR] %
+[SYNTAX] {
+[IDENTIFIER] num
+[SYNTAX] }
+[SYNTAX] {
+[FUNCTION] if (
+[IDENTIFIER] a
+[OPERATOR] ==
+[FLOAT] 0.0
+[OPERATOR] &&
+[IDENTIFIER] op
+[OPERATOR] ==
+[INTEGER] 0
+[SYNTAX] )
+[IDENTIFIER] a
+[OPERATOR] =
+[FUNCTION] atof(
+[IDENTIFIER] yytext
+[SYNTAX] )
+[SYNTAX] ;
+[REPLACED] else -> ELSE
+[IDENTIFIER] b
+[OPERATOR] =
+[FUNCTION] atof(
+[IDENTIFIER] yytext
+[SYNTAX] )
+[SYNTAX] ;
+[SYNTAX] }
+[OPERATOR] +
+[OPERATOR] -
+[OPERATOR] *
+[OPERATOR] /
+[SYNTAX] {
+[IDENTIFIER] op
+[OPERATOR] =
+[IDENTIFIER] yytext
+[INTEGER] 0
+[SYNTAX] ;
+[SYNTAX] }
+[IDENTIFIER] n
+[SYNTAX] {
+[FUNCTION] switch(
+[IDENTIFIER] op
+[SYNTAX] )
+[SYNTAX] {
+[REPLACED] case -> CASE
+[OPERATOR] +
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Result
+[OPERATOR] %
+[IDENTIFIER] lf
+[IDENTIFIER] n
+[SYNTAX] ,
+[IDENTIFIER] a
+[OPERATOR] +
+[IDENTIFIER] b
+[SYNTAX] )
+[SYNTAX] ;
+[KEYWORD] break
+[SYNTAX] ;
+[REPLACED] case -> CASE
+[OPERATOR] -
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Result
+[OPERATOR] %
+[IDENTIFIER] lf
+[IDENTIFIER] n
+[SYNTAX] ,
+[IDENTIFIER] a
+[OPERATOR] -
+[IDENTIFIER] b
+[SYNTAX] )
+[SYNTAX] ;
+[KEYWORD] break
+[SYNTAX] ;
+[REPLACED] case -> CASE
+[OPERATOR] *
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Result
+[OPERATOR] %
+[IDENTIFIER] lf
+[IDENTIFIER] n
+[SYNTAX] ,
+[IDENTIFIER] a
+[OPERATOR] *
+[IDENTIFIER] b
+[SYNTAX] )
+[SYNTAX] ;
+[KEYWORD] break
+[SYNTAX] ;
+[REPLACED] case -> CASE
+[OPERATOR] /
+[FUNCTION] if(
+[IDENTIFIER] b
+[OPERATOR] !=
+[INTEGER] 0
+[SYNTAX] )
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Result
+[OPERATOR] %
+[IDENTIFIER] lf
+[IDENTIFIER] n
+[SYNTAX] ,
+[IDENTIFIER] a
+[OPERATOR] /
+[IDENTIFIER] b
+[SYNTAX] )
+[SYNTAX] ;
+[REPLACED] else -> ELSE
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Division
+[IDENTIFIER] by
+[IDENTIFIER] zero
+[IDENTIFIER] error
+[IDENTIFIER] n
+[SYNTAX] )
+[SYNTAX] ;
+[KEYWORD] break
+[SYNTAX] ;
+[KEYWORD] default
+[REPLACED] printf -> PRINTF
+[IDENTIFIER] Unknown
+[IDENTIFIER] operator
+[IDENTIFIER] n
+[SYNTAX] )
+[SYNTAX] ;
+[SYNTAX] }
+[IDENTIFIER] a
+[OPERATOR] =
+[IDENTIFIER] b
+[OPERATOR] =
+[FLOAT] 0.0
+[SYNTAX] ;
+[IDENTIFIER] op
+[OPERATOR] =
+[INTEGER] 0
+[SYNTAX] ;
+[SYNTAX] }
+[SYNTAX] {
+[BLOCK COMMENT REMOVED]
+[SYNTAX] }
+[OPERATOR] %
+[OPERATOR] %
+[DATATYPE] int
+[FUNCTION] main(
+[DATATYPE] void
+[SYNTAX] )
+[SYNTAX] {
+[FUNCTION] yylex(
+[SYNTAX] )
+[SYNTAX] ;
+[KEYWORD] return
+[INTEGER] 0
+[SYNTAX] ;
+[SYNTAX] }
+[DATATYPE] int
+[FUNCTION] yywrap(
+[SYNTAX] )
+[SYNTAX] {
+[KEYWORD] return
+[INTEGER] 1
+[SYNTAX] ;
+[SYNTAX] }
+[COMMENT REMOVED]
+[PRIME] 2
+[PRIME] 3
+[PRIME] 5
+[PRIME] 7
+[PRIME] 11
+[COMMENT REMOVED]
+[FLOAT] 3.14
+[FLOAT] 0.5
+[FLOAT] 2.36
+[FLOAT] 11.11
+
+Done. Check OUTPUT.txt
