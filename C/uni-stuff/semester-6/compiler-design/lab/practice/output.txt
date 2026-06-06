@@ -1,8 +1,3 @@
-hello has-1-space-before-this 
-
-
-
-has-2-lines-change-before-this has-5-spaces-before-this
-2425 1234
-1234
-
+no of keywords: 3
+no of identfiers: 16
+no of digits: 14
