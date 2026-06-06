@@ -1,1 +1,4 @@
-Enter the string: accepted
+Enter the no of productions: Enter the productions: 
+Enter the non-terminal for first: first(
+) = { 
+, }
