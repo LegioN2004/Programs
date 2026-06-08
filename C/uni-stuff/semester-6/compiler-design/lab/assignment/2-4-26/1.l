@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-double num1 = 0, num2 = 0, result = 0;
+duble num1 = 0, num2 = 0, result = 0;
 char   op   = 0;
 int    count = 0; 
 %}

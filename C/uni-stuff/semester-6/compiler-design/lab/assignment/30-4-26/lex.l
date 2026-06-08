@@ -25,6 +25,7 @@ INTEGER     [0-9]+
                                     fprintf(out, "\n");
                                     printf("[COMMENT REMOVED]\n");
                                 }
+"/*"([^*]|\*)
 
 "/*"([^*]|\*+[^*/])*\*+"/"      {
                                     printf("[BLOCK COMMENT REMOVED]\n");
