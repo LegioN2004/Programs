@@ -4,14 +4,6 @@
 
 %%
 
--[0-9]+ {
-        printf("-ve number: %s\n", yytext);
-}
-
-[0-9]+ {
-        printf("+ve number: %s\n", yytext);
-}
-
 [a-zA-Z0-9_]+ {
     for(int i = 0; i < yyleng; i++){
         if((yytext[i] == 'a') && (yytext[i+1] == 'b') && (yytext[i+2] == 'c')){
@@ -23,12 +15,6 @@
         printf("%s\n", yytext);
 }
 
-[a-zA-Z0-9_]+ {
-    for(int i = 0; i < yyleng; i++){
-        if((yyleng =wl= 'm'))
-    }
-}
-
 [ \t\r] {}
 \n {}
 . {}
@@ -37,7 +23,7 @@
 int yywrap() { return 1; }
 
 int main() {
-    yyin = fopen("input.txt", "r");
+    printf("Enter abc containing string: ");
     yylex();
     return 0; 
 }

@@ -8,10 +8,19 @@ FILE *out;
 
 %%
 
-[\t ]+      { fputc(' ', out); }
+[ \t]+      {
+    fputc(' ', out);
+    printf(" ");
+}
 \r          { }
-[\n]+       { fputc('\n', out); }
-.           { fputc(yytext[0], out); }
+[\n]+       { 
+    fputc('\n', out);
+    printf("\n", yytext);
+}
+.           { 
+    fputc(yytext[0], out);
+    printf("%s", yytext);
+}
 
 %%
 
@@ -33,6 +42,7 @@ int main() {
     }
 
     yylex();
+    printf("\noutput also in output.txt\n");
     fclose(yyin);
     fclose(out);
     return 0;

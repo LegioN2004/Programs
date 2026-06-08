@@ -1,6 +1,9 @@
-35 spaces above this line
--2 spaces above this line
-    while 
+35
+2
+24 90
+hello
+hi   bye
+
+
 abc
-cabc
-goruabc
+nothing 

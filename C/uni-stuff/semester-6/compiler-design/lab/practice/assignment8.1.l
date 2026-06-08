@@ -6,13 +6,10 @@ FILE *out;
 %%
 
 "//"[^\n]*          {}
-
 "/*"([^*]|\*+[^*/])*\*+"/"  { }
 
-\n                  { fprintf(out, "\n"); }
-
-\r                  { }
-
+[\n]                  { fprintf(out, "\n"); }
+[\t\r] ;
 .                   { fprintf(out, "%s", yytext); }
 
 %%

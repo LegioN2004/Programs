@@ -1,3 +1,5 @@
+/* A simple lex specification to recognize verbs, vowels and integers */
+
 %{
 #include<stdio.h>
 %}
@@ -7,19 +9,20 @@
 
 %%
 
-[\t ]+ ;
-(?i:is|are|when) {
-    printf("%s is verb", yytext);
+[?i:aeiou]+ {
+    printf("%s is vowel\n", yytext);
 }
-(?i:aeiou)+ {
-    printf("%s is vowel", yytext);
+(?i:is|are|when|go) {
+    printf("%s is verb\n", yytext);
 }
 [0-9]+ {
-    printf("%s is integer", yytext);
+    printf("%s is integer\n", yytext);
 }
 [a-zA-Z]+ {
-    printf("%s is something else", yytext);
+    printf("%s is something else\n", yytext);
 }
+
+[ \t]+ ;
 . ;
 
 %%
