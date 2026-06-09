@@ -23,8 +23,8 @@ int|char|long|break|return|if|else|while|for|do|switch|case|default|continue|got
 }
 
 [ \t]+      { }
-\r          { }
-[\n]        { return 0; }
+\r          { return 0; }
+[\n]        { }
 
 .           { printf("something else: %s\n", yytext); }
 

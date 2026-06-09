@@ -1,25 +1,48 @@
+
+%{
 #include <stdio.h>
-
-
-
-
-
-
-
-int main() {
-  int a;
-  int b = 1.1;
-  int c = 1;
-  return 0;
-  for (int i = 0; i < 10; i++)
-    if () {
-    } else {
-    }
-  switch () {
-  case 0:
-    
-    aorsitnrast;
-  case 0:
-    aorsitnrast
-  }
+#include <stdlib.h>
+double a = 0.0, b = 0.0;
+char op = '\0';
+%}
+digit [0-9]
+num {digit}+(\.{digit}+)? 
+%%
+{num} {
+ if (a == 0.0 && op == '\0')
+ a = atof(yytext);
+ else
+ b = atof(yytext);
+ }
+[\+\-\*\/] { op = yytext[0]; }
+[\n] {
+ switch(op) {
+ case '+': printf("Result: %lf\n", a + b); break;
+ case '-': printf("Result: %lf\n", a - b); break;
+ case '*': printf("Result: %lf\n", a * b); break;
+ case '/': 
+ if(b != 0)
+ printf("Result: %lf\n", a / b);
+ else
+ printf("Division by zero error\n");
+ break;
+ default: printf("Unknown operator\n");
+ }
+ a = b = 0.0;
+ op = '\0';
+ }
+. {  }
+%%
+int main(void) {
+ yylex();
+ return 0;
 }
+int yywrap()
+{
+ 
+ return 1;
+ }
+
+2 3 5 7 11
+
+3.14 0.5 2.36 11.11

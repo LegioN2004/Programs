@@ -1,117 +1,118 @@
 %{
 #include <stdio.h>
-FILE *out;
-
-int isPrime(int n) {
-    if(n < 2) return 0;
-    for(int i = 2; i * i <= n; i++){
-        if(n % i == 0) return 0;
-    }
-    return 1;
-}
+// int words ;
+// int consonant ;
+// int vowel ;
+// FILE *out;
+// int isPrime(int n) {
+//     if(n < 2) return 0;
+//     for(int i = 2; i * i <= n; i++){
+//         if(n % i == 0) return 0;
+//     }
+//     return 1;
+// }
+// int prev = 0;
+int count = 1;
+char op = '\0';
+int num1 = 0, num2 = 0, result = 0;
 %}
 
 %%
-
-"//"[^\n]*                      {
-                                    fprintf(out, "\n");
-                                    printf("[COMMENT REMOVED] //\n");
-                                }
-
-
-"/*"([^*]|\*+[^*/])*\*+"/"      {
-                                    fprintf(out, "\n");
-                                    printf("[BLOCK COMMENT REMOVED]\n");
-                                }
-
-
-"printf"[ \t]*"("               {
-                                    fprintf(out, "PRINTF");
-                                    printf("[REPLACED] printf -> PRINTF\n");
-                                }
-
-
-"else"                          {
-                                    fprintf(out, "ELSE");
-                                    printf("[REPLACED] else -> ELSE\n");
-                                }
-
-
-"case"                          {
-                                    fprintf(out, "CASE");
-                                    printf("[REPLACED] case -> CASE\n");
-                                }
-
-int|char|float|double|string {
-                                    fprintf(out, "%s", yytext);
-                                    printf("datatype: %s\n", yytext);
-}
-
-return|if|else|"else if"|for|do|while|break|switch|case {
-                                    fprintf(out, "%s", yytext);
-                                    printf("keywords: %s\n", yytext);
-}
-
-[a-zA-Z0-9_]+"(" {
-                                    fprintf(out, "%s", yytext);
-                                    printf("functions: %s\n", yytext);
-}
-
-[(){};:,] {
-                                    fprintf(out, "%s", yytext);
-                                    printf("syntax: %s\n", yytext);
-}
-
-"&&"|"=="|"+="|"<="|">="|"||" {
-                                    fprintf(out, "%s", yytext);
-                                    printf("operator: %s\n", yytext);
-}
-
-[+\-\*/=&!] {
-                                    fprintf(out, "%s", yytext);
-                                    printf("operator: %s\n", yytext);
-}
-
-[0-9]+\.[0-9]+ {
-                                    fprintf(out, "%s", yytext);
-                                    printf("floating: %s\n", yytext);
-}
-
-[0-9]+ {
-    int n = atoi(yytext);
-    if(isPrime(n)){
-                                    fprintf(out, "%s", yytext);
-                                    printf("Prime: %s\n", yytext);
+[0-9]+(\.[0-9]+)* {
+    if(count == 1){
+        num1 = atoi(yytext);
+        count = 0;
     } else {
-                                    fprintf(out, "%s", yytext);
-                                    printf("integer: %s\n", yytext);
+        num2 = atoi(yytext);
+        if(op == '+') result = num1 + num2;
+        else if(op == '-') result = num1 - num2;
+        else if(op == '*') result = num1 * num2;
+        else if(op == '/'){
+            if (num2 == 0){
+                printf("Error: Division by zero!\n");
+                num1 = 0; num2 = 0; op = '\0'; count = 1;
+                return 0;
+            }
+            result = num1 / num2;
+        }
+        printf("result: %d", result);
+        num1 = 0; num2 = 0; op = '\0'; count = 1;
     }
 }
-
-[\t]+ { fprintf(out, "\t"); };
-
-\r ;
-
-[\n] { fprintf(out, "\n"); }
-
-. { fprintf(out, "%s", yytext); }
+[+\*\-/] {
+    op = yytext[0];
+}
+[ \t]+ { 
+}
+\r { }
+[\n]+ { 
+}
+. {
+    printf("%s", yytext);
+}
 
 %%
 
 int yywrap() { return 1; }
 
 int main() {
-    yyin = fopen("FILE.txt", "r");
-    out  = fopen("OUTPUT.txt", "w");
+    //
+    // [0-9]+ {
+    //     int num = atoi(yytext);
+    //     if(count == 1){
+    //         prev = num;
+    //         count = 0;
+    //     } else {
+    //         fprintf(out, "sum: %d, dif: %d", prev + num, prev - num);
+    //         prev = num;
+    //     }
+    // }
+    // "//"[^\n]* { printf("\n"); }
+    // "/*"([^*]|\*+[^*/])*\*+"/" { printf("\n"); }
+    // [a-zA-Z]+ {
+    //     words++;
+    //     char v[5] = {'a', 'e', 'i', 'o', 'u'};
+    //     for(int i = 0; yytext[i] != '\0' ; i++){
+    //         if(v[i] == yytext[i])
+    //             vowel++;
+    //         else
+    //             consonant++;
+    //     }
+    // }
+    // is|are {
+    //     printf("verb: %s\n", yytext);
+    // }
+    // [a-z] {
+    //     printf("lowercase: %s\n", yytext);
+    // }
+    // [A-Z] {
+    //     printf("uppercase: %s\n", yytext);
+    // }
+    // [0-9] {
+    //     printf("int: %s\n", yytext);
+    // }
+    // [0-9]+ {
+    //     printf("digit: %s\n", yytext);
+    // }
+    // ([0-9]+\.[0-9]+)|(\.[0-9]+)|([0-9]+\.) {
+    //     printf("float: %s\n", yytext);
+    // }
 
-    if (!yyin) { printf("Cannot open FILE.txt\n");  return 1; }
-    if (!out)  { printf("Cannot open OUTPUT.txt\n"); return 1; }
+    // yyin = fopen("input.txt", "r");
+    // out  = fopen("output.txt", "w");
+
+    // if (!yyin) { printf("Cannot open FILE.txt\n");  return 1; }
+    // if (!out)  { printf("Cannot open OUTPUT.txt\n"); return 1; }
 
     yylex();
+    printf("result: %d", result);
+    // printf("no of words: %d\n", words);
+    // printf("no of vowel: %d\n", vowel);
+    // printf("no of consonant: %d\n", consonant);
 
-    fclose(yyin);
-    fclose(out);
+    // fclose(yyin);
+    // fclose(out);
 
-    printf("\nDone. Check OUTPUT.txt\n");
+    // printf("\nDone. Check OUTPUT.txt\n");
     return 0;
 }
