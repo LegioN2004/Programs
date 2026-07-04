@@ -1,4 +1,3 @@
-Enter the no of productions: Enter the productions: 
-Enter the non-terminal for first: first(
-) = { 
-, }
+Enter no of prods: 
+Enter prods: 
+Enter prod to find nt for: first(B) = { ef$ } 
