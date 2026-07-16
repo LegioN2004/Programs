@@ -29,37 +29,37 @@ public class unionOfSortedArray {
      */
 
     static void optimal() {
-        List<Integer> nums1 = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-        List<Integer> nums2 = Arrays.asList(2, 3, 4, 4, 5, 11, 12);
+        List<Integer> a = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List<Integer> b = Arrays.asList(2, 3, 4, 4, 5, 11, 12);
 
         List<Integer> unionArray = new ArrayList<>(); // n
 
         int i = 0, j = 0;
-        while (i < nums1.size() && j < nums2.size()) {
-            if (nums1.get(i) <= nums2.get(j)) {
-                if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(nums1.get(i))) {
+        while (i < a.size() && j < b.size()) {
+            if (a.get(i) <= b.get(j)) {
+                if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(a.get(i))) {
                      // unionArray  last element  of the current  iteration  matching with  a.get(i) or  not, if not  insert that  element since  that means not  same and if  yes it means  same so just  iterate to  next for first  arr, i.e i++ unionArray.add(a.get(i));
-                    unionArray.add(nums1.get(i));
+                    unionArray.add(a.get(i));
                 }
                 i++;
             } else {
-                if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(nums2.get(j))) {
-                    unionArray.add(nums2.get(j));
+                if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(b.get(j))) {
+                    unionArray.add(b.get(j));
                 }
                 j++;
             }
         }
 
-        while (j < nums2.size()) {
-            if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(nums2.get(j))) {
-                unionArray.add(nums2.get(j));
+        while (j < b.size()) {
+            if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(b.get(j))) {
+                unionArray.add(b.get(j));
             }
             j++;
         }
 
-        while (i < nums1.size()) {
-            if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(nums1.get(i))) {
-                unionArray.add(nums1.get(i));
+        while (i < a.size()) {
+            if (unionArray.isEmpty() || !unionArray.get(unionArray.size() - 1).equals(a.get(i))) {
+                unionArray.add(a.get(i));
             }
             i++;
         }
