@@ -7,16 +7,9 @@ public class first {
         HashMap<String, Integer> empid = new HashMap<>();
 
         /*
-         * before java 7 you had to redefine this generic type again at the right side
-         * of the = that you initially declared in the left side, i.e new
-         * HashMap<String, Integer> . After java 7 it has been removed where we only
-         * need the diamond operator <> only.
-         *
-         * But why not Map. Bcz Map is an interface that java implements and it
-         * specifies what kind of methods the real map implementation have to support.
-         * There are different types of implementations of that map interface and the
-         * HashMap is just one of those implementations, the common one. It just how it
-         * works underneath that's a little different.
+            before java 7 you had to redefine this generic type again at the right side of the = that you initially declared in the left side, i.e new HashMap<String, Integer> . After java 7 it has been removed where we only need the diamond operator <> only.
+
+            But why not Map. Bcz Map is an interface that java implements and it specifies what kind of methods the real map implementation have to support.  There are different types of implementations of that map interface and the HashMap is just one of those implementations, the common one. It just how it works underneath that's a little different.
          */
 
         empid.put("john", 123451);
