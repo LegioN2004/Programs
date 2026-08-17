@@ -1,2 +1,2 @@
-second smallest: 3
-second biggest: 10
+0
+1
