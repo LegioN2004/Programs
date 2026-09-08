@@ -1,4 +1,0 @@
-input your attendence percentage: Attendence okay
-Enter pcm percentage: Enter cee marks: Enter jee percentile: Board marks Eligible
-CEE marks Eligible 
- Application accepted
