@@ -2,6 +2,13 @@
    "configurations": [
       {
          "type": "java",
+         "name": "majority_element",
+         "request": "launch",
+         "mainClass": "majority_element",
+         "projectName": "A2Z-DSA_e8a98c0e"
+      },
+      {
+         "type": "java",
          "name": "sort_array012",
          "request": "launch",
          "mainClass": "sort_array012",

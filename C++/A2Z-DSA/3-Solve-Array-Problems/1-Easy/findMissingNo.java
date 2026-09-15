@@ -1,10 +1,10 @@
 public class findMissingNo {
     public static void main(String[] args) {
-        int arr[] = { 1, 2, 4, 5 };
-        int n = 5;
-        // brute(arr, n);
-        // better(arr, n);
-        // optimalUsingSum(arr, n);
+        int arr[] = {8, 2, 4, 5, 3, 7, 1};
+        int n = 8;
+        brute(arr, n);
+        better(arr);
+        optimalUsingSum(arr, n);
         betterOptimalXor(arr, n);
         bestOptimalXor(arr, n);
     }
@@ -32,19 +32,16 @@ public class findMissingNo {
     }
 
     // this is done using hashing, we will use a hash array that will keep track of the elements that we have visited by first putting all of the hash array as 0 and then setting them as one once visited
-    private static void better(int arr[], int n) {
+    private static void better(int arr[]) {
+        int n = arr.length + 1;
         int[] hash = new int[n + 1];
 
-        for (int i = 0; i < hash.length; i++) {
-            hash[i] = 0;
-        }
-
         // int arr[] = { 1, 2, 4, 5 };
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < n - 1; i++) {
             hash[arr[i]] = 1;
         }
 
-        for (int i = 1; i <= hash.length; i++) {
+        for (int i = 1; i <= n; i++) {
             if (hash[i] == 0) {
                 System.out.println(i);
             }
