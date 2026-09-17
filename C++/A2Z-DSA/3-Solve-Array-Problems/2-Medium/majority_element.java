@@ -8,7 +8,7 @@ class majority_element {
     static int brute(int nums[]) {
 
         for (int i = 0; i < nums.length; i++) {
-        int count = 0;
+            int count = 0;
             for (int j = 0; j < nums.length; j++) {
                 if (nums[i] == nums[j]) {
                     count++;
@@ -21,7 +21,10 @@ class majority_element {
         return -1;
     }
 
+    // here keys are in sorted order
+    //
     static int better(int nums[]) {
+        // SC: O(n log n)
         Map<Integer, Integer> map = new HashMap<>();
 
         // { 2, 2, 3, 3, 1, 2, 2 }
@@ -33,10 +36,30 @@ class majority_element {
                 map.put(nums[i], 1);
             }
 
-            if (map.get(nums[i]) > (nums.length/2)) {
+            if (map.get(nums[i]) > (nums.length / 2)) {
                 return nums[i];
             }
         }
+        return -1;
+    }
+
+    static int optimal(int nums[]) {
+
+        int element = nums[0], count = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (element == nums[i]) {
+                count++;
+                element = nums[i];
+            } else {
+                count--;
+            }
+        }
+
+        if (count > (nums.length / 2)) {
+            return element;
+        }
+
         return -1;
     }
 
@@ -44,9 +67,9 @@ class majority_element {
         int[] nums = { 2, 2, 3, 3, 1, 2, 2 }; // n / 2 = 3
 
         // System.out.println(brute(nums));
-        System.out.println(better(nums));
+        // System.out.println(better(nums));
         // System.out.println(better(nums)[j]);
-        // System.out.println(optimal(nums)[j]);
+        System.out.println(optimal(nums));
     }
 
 }
