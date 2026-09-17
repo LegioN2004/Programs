@@ -1,2 +1,1 @@
-second smallest: 3
-second biggest: 10
+True
