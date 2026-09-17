@@ -32,7 +32,7 @@ Cargo.lock
 # Compiled binaries and executables
 *.exe
 !spec/*.exe
-*.out 
+*.out
 !spec/*.out
 *.exe~
 *.dll
@@ -344,3 +344,4 @@ WebDev-stuff/Kirat-cohort-0-1/10.1-Postgres/postgres1-app/src/password.ts
 zig-cache/
 **/.zig-cache/
 .zig-cache/
+main.tex
