@@ -2,6 +2,27 @@
    "configurations": [
       {
          "type": "java",
+         "name": "majority_element",
+         "request": "launch",
+         "mainClass": "majority_element",
+         "projectName": "A2Z-DSA_e8a98c0e"
+      },
+      {
+         "type": "java",
+         "name": "sort_array012",
+         "request": "launch",
+         "mainClass": "sort_array012",
+         "projectName": "A2Z-DSA_e8a98c0e"
+      },
+      {
+         "type": "java",
+         "name": "two_sumTUF",
+         "request": "launch",
+         "mainClass": "two_sumTUF",
+         "projectName": "A2Z-DSA_e8a98c0e"
+      },
+      {
+         "type": "java",
          "name": "Launch Current File",
          "request": "launch",
          "mainClass": "${file}"
@@ -13,9 +34,6 @@
          "program": "${workspaceRoot}/a.out",
          "windows": {
             "miDebuggerPath": "C:\\Users\\User\\scoop\\shims\\gdb.exe",
-            // "name": "(gdb) Launch",
-            // "type": "cppdbg",
-            // "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
             "args": [
                "-ggdb"
@@ -24,13 +42,10 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true,
-            "MIMode": "gdb",
+            "MIMode": "gdb"
          },
          "linux": {
             "miDebuggerPath": "/usr/bin/gdb",
-            // "name": "(gdb) Launch",
-            // "type": "cppdbg",
-            // "request": "launch",
             "program": "${fileDirname}\\${fileBasenameNoExtension}",
             "args": [
                "-ggdb"
@@ -39,7 +54,7 @@
             "cwd": "${fileDirname}",
             "environment": [],
             "externalConsole": true,
-            "MIMode": "gdb",
+            "MIMode": "gdb"
          },
          "setupCommands": [
             {
