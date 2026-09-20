@@ -43,20 +43,31 @@ class majority_element {
         return -1;
     }
 
+    // Moore's voting algorithm
     static int optimal(int nums[]) {
 
-        int element = nums[0], count = 0;
+        int element = 0, count = 0;
 
         for (int i = 0; i < nums.length; i++) {
-            if (element == nums[i]) {
-                count++;
+            if (count == 0) {
+                count = 1;
                 element = nums[i];
+            }
+            else if (element == nums[i]) {
+                count++;
             } else {
                 count--;
             }
         }
 
-        if (count > (nums.length / 2)) {
+        int count1 = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == element) {
+                count1++;
+            }
+        }
+        if (count1 > (nums.length / 2)) {
             return element;
         }
 
