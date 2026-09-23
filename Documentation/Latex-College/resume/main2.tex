@@ -1,0 +1,582 @@
+\documentclass[letterpaper,11pt]{article}
+
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+
+
+% serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+
+\urlstyle{same}
+
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+        }
+    }
+
+
+    \newcommand{\classesList}[4]{
+    \item\small{
+            {#1 #2 #3 #4 \vspace{-2pt}}
+        }
+    }
+
+
+    \newcommand{\resumeSubheading}[4]{
+        \vspace{-2pt}\item
+        \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{\large#1} & \textbf{\small #2} \\
+            \textit{\large#3} & \textit{\small #4} \\
+
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+    \newcommand{\resumeSubSubheading}[2]{
+    \item
+        \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+            \textit{\small#1} & \textit{\small #2} \\
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+
+
+    \newcommand{\resumeProjectHeading}[2]{
+    \item
+        \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+            \small#1 & \textbf{\small #2}\\
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+    \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+
+    \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+    \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+
+    \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+    \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+    \newcommand{\resumeItemListStart}{\begin{itemize}}
+    \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+    \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+
+%----------HEADING----------
+
+
+
+
+\begin{center}
+    {\Huge \scshape Milinda Barua} \\ \vspace{1pt}
+    Dibrugarh, Assam \\ \vspace{1pt}
+    \small \href{tel:+xxxxxxxxxxxx}{ \raisebox{-0.1\height}\ \underline{+91-1234567890} ~} \href{mailto:milindabarua04@gmail.com}{\raisebox{-0.1\height}\  \underline{milindabarua04@gmail.com}} ~
+    \href{https://linkedin.com/in/milinda-barua}{\raisebox{-0.2\height}\ \color{blue} \underline{LinkedIn}}  ~
+    \href{https://github.com/LegioN2004}{\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}} ~
+    \href{https://leetcode.com/u/LegioN2004/}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{LeetCode}} ~
+    \vspace{-8pt}
+\end{center}
+
+
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Dibrugarh University Institute of Engineering and Technology}{Aug 2023 - Aug 2027}
+{B-Tech CSE - SGPA 6th Sem - \textbf{8.41}}{Dibrugarh, Assam, India}
+\resumeSubHeadingListEnd
+\vspace{-13pt}
+
+
+\documentclass[letterpaper,11pt]{article}
+
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\RequirePackage{fontawesome}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+
+
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+\usepackage[sfdefault]{FiraSans}
+\usepackage[sfdefault]{roboto}
+\usepackage[sfdefault]{noto-sans}
+\usepackage[default]{sourcesanspro}
+
+
+% serif
+\usepackage{CormorantGaramond}
+\usepackage{charter}
+
+
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+
+\urlstyle{same}
+
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+
+% Sections formatting
+\titleformat{\section}{
+    \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+    \item\small{
+            {#1 \vspace{-2pt}}
+        }
+    }
+
+
+    \newcommand{\classesList}[4]{
+    \item\small{
+            {#1 #2 #3 #4 \vspace{-2pt}}
+        }
+    }
+
+
+    \newcommand{\resumeSubheading}[4]{
+        \vspace{-2pt}\item
+        \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+            \textbf{\large#1} & \textbf{\small #2} \\
+            \textit{\large#3} & \textit{\small #4} \\
+
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+    \newcommand{\resumeSubSubheading}[2]{
+    \item
+        \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+            \textit{\small#1} & \textit{\small #2} \\
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+
+
+    \newcommand{\resumeProjectHeading}[2]{
+    \item
+        \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+            \small#1 & \textbf{\small #2}\\
+        \end{tabular*}\vspace{-7pt}
+    }
+
+
+    \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+
+    \renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+    \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+
+    \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+    \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+    \newcommand{\resumeItemListStart}{\begin{itemize}}
+    \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+    \newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+\begin{document}
+
+
+%----------HEADING----------
+
+
+
+
+\begin{center}
+    {\Huge \scshape Milinda Barua} \\ \vspace{1pt}
+    Dibrugarh, Assam \\ \vspace{1pt}
+    \small \href{tel:+xxxxxxxxxxxx}{ \raisebox{-0.1\height}\ \underline{+91-6026987179} ~} \href{mailto:milindabarua04@gmail.com}{\raisebox{-0.1\height}\  \underline{milindabarua04@gmail.com}} ~
+    \href{https://linkedin.com/in/milinda-barua}{\raisebox{-0.2\height}\ \color{blue} \underline{LinkedIn}}  ~
+    \href{https://github.com/LegioN2004}{\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}} ~
+    \href{https://leetcode.com/u/LegioN2004/}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{LeetCode}} ~
+    \vspace{-8pt}
+\end{center}
+
+
+
+
+%-----------EDUCATION-----------
+\section{EDUCATION}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Dibrugarh University Institute of Engineering and Technology}{Aug 2023 - Aug 2027}
+{B-Tech CSE - SGPA 6th Sem - \textbf{8.41}}{Dibrugarh, Assam, India}
+\resumeSubHeadingListEnd
+\vspace{-13pt}
+
+
+%-----------PROJECTS-----------
+\section{PROJECTS}
+\vspace{-5pt}
+\resumeSubHeadingListStart
+
+\resumeProjectHeading
+{
+    \large{\underline{\textbf{Bionexa} - Healthcare Platform}}
+    $|$
+    \href{https://gitlab.com/legion2004/bionexa}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}}
+    $,$
+    \href{https://bionexa.milinda.me}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+}{Aug 2025 - Present}
+\resumeItemListStart
+\resumeItem{\normalsize{Building a full-stack healthcare platform unifying patient, doctor, pharmacy, ambulance, and blood-bank workflows with role-based access, using \textbf{React, TypeScript, Node.js, Express, PostgreSQL, and Drizzle ORM}.}}
+\resumeItem{\normalsize{Implemented medicine-first pharmacy discovery with a centralized medicine catalog, database-side geospatial distance search, persistent multi-pharmacy cart (\textbf{Zustand}), and \textbf{Razorpay} checkout with atomic inventory decrement.}}
+\resumeItem{\normalsize{Built real-time ambulance dispatch and pharmacy order tracking using \textbf{WebSockets} for targeted/broadcast events, avoiding backend polling for operational updates.}}
+\resumeItem{\normalsize{Designed blood-bank inventory and emergency request workflows across all 8 blood groups with location-based discovery, and enforced role-based authorization with \textbf{Clerk} and ownership checks across all backend routes.}}
+\resumeItemListEnd
+\vspace{-15pt}
+
+\resumeProjectHeading
+{
+    \large{\underline{\textbf{SecretWarden} - Local Secret Isolation Tool}}
+    $|$
+    \href{https://gitlab.com/legion2004/secretwarden}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}}
+}{Jun 2026 - Present}
+\resumeItemListStart
+\resumeItem{\normalsize{Developing a cross-platform \textbf{Rust} security tool that protects API keys from supply-chain attacks (malicious npm packages, compromised extensions) reading plaintext env files.}}
+\resumeItem{\normalsize{Built a daemon-based architecture with an \textbf{AES-256-GCM} encrypted vault (\textbf{Argon2id} key derivation), CLI-to-daemon IPC over Unix domain sockets via a custom JSON protocol on \textbf{Tokio}, and \textbf{zeroize}-based secure memory cleanup.}}
+\resumeItem{\normalsize{Implemented two secret-delivery paths: child-process environment injection using placeholder references, and a local HTTP reverse proxy that injects real credentials so secrets never enter the application process.}}
+\resumeItem{\normalsize{Added cross-platform daemon lifecycle management with native service registration on \textbf{launchd (macOS), systemd (Linux), and Task Scheduler (Windows)}.}}
+\resumeItemListEnd
+\vspace{-15pt}
+
+\resumeProjectHeading
+{
+    \textbf{\large{\underline{Tai Phake Visual Speech Recognition (Lip Reading) System}}}
+    $|$
+    \href{https://github.com/legion2004/lip-reading-tutorial}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}}
+} {Aug 2026 - Present}
+\resumeItemListStart
+\resumeItem{\normalsize{Final-year B.Tech project building a \textbf{visual speech recognition system for Tai Phake}, an endangered indigenous language of Assam, using deep learning on video data.}}
+\resumeItem{\normalsize{Implemented a \textbf{CNN-LSTM based English lip-reading pipeline} (linked) as technical groundwork, covering video preprocessing, frame extraction, and temporal sequence modeling.}}
+\resumeItem{\normalsize{Collecting and annotating a native Tai Phake speaker video dataset (digits, words, phrases) to adapt the pipeline to the target language.}}
+\resumeItem{\normalsize{Planning speaker-independent evaluation and hyperparameter tuning, aiming to contribute a reusable dataset for low-resource visual speech recognition research.}}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+\vspace{-15pt}
+
+
+%-----------EXPERIENCE-----------
+\section{INTERNSHIP}
+\resumeSubHeadingListStart
+\resumeSubheading
+{
+    {IIT Guwahati - TIDF}
+    $|$
+    \href{https://drive.google.com/file/d/1Ak6hB07Qfrgp3_EcpAHgavbcDv3Oin62/view?usp=sharing}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+}{Jun 2025 - Jul 2025}{Full-Stack Development}{Guwahati, Assam, India}
+\resumeSubheading
+{
+    {IIT Guwahati - TIDF}
+    $|$
+    \href{https://drive.google.com/file/d/1_4CVOv8zPcVE4MJH7O08ZSnjdJEu9j8z/view?usp=sharing}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+}{Jan 2026 - Feb 2026}{Full-Stack Development, AWS EC2 deployment, made database changes}{Guwahati, Assam, India}
+
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{EXTRACURRICULAR}
+\resumeSubHeadingListStart
+\resumeSubheading{GDG on Campus(prev GDSC), Dibrugarh University\href{https://gdg.community.dev/gdg-on-campus-dibrugarh-university-dibrugarh-india/}{\raisebox{-0.1\height}\faExternalLink}}{Aug 2024 -- Aug 2025}{\underline{Organizer(Leader)}}{}
+\resumeItemListStart
+\resumeItem{\normalsize{\textbf{Led and managed} 4 core teams and \textbf{hosted 5 events} with them helping over 200+ students network and learn}}
+\resumeItem{\normalsize{email of selection.\href{https://www.linkedin.com/in/milinda-barua/overlay/1739075889047/single-media-viewer/?profileId=ACoAAEPBtm4B6hu2mxVjWHK1bhmW2EnUnVz3F6k}{\raisebox{-0.1\height}\faExternalLink}}}
+\resumeItemListEnd
+\resumeSubheading{Google Developers Students Club(GDSC), Dibrugarh University{\raisebox{-0.1\height}\faExternalLink}}{Oct 2023 - Apr 2024}{\underline{Technical Team Co-leader}}{}
+\resumeItemListStart
+\resumeItem{\normalsize{\textbf{Managed} small teams for an Google Cloud Study Jam event, \textbf{created} technical documentation and \textbf{managed} them with 3 Co-leaders of the respective teams}}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-11pt}
+
+%-----------CERTIFICATIONS---------------
+\section{CERTIFICATIONS}
+
+$\sbullet[.75] \hspace{0.1cm}$ \href{https://drive.google.com/file/d/1EH_jUK-UUidX4LybD7Xez974SCDGPA1C/view?usp=sharing}{0-1 Full Stack Web Development Course link} \hspace{1.6cm}
+$\sbullet[.75] \hspace{0.1cm}$ {\href{https://www.cloudskillsboost.google/public_profiles/d88db451-eb32-437f-8c4a-39f9006e991e}{GCP badges link}} \hspace{2.59cm} \\
+
+\end{document}
+
+% %-----------PROJECTS-----------
+% \section{PROJECTS}
+% \vspace{-5pt}
+% \resumeSubHeadingListStart
+
+% \resumeProjectHeading
+% {
+%     \large{\underline{\textbf{Bionexa} - Healthcare Platform}}
+%     $|$
+%     \href{https://gitlab.com/legion2004/bionexa}
+%     {\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}}
+%     $,$
+%     \href{https://bionexa.milinda.me}
+%     {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+% }{Aug 2025 - Present}
+% \resumeItemListStart
+% \resumeItem{\normalsize{Building a full-stack healthcare platform unifying patient, doctor, pharmacy, ambulance, and blood-bank workflows with role-based access, using \textbf{React, TypeScript, Node.js, Express, PostgreSQL, and Drizzle ORM}.}}
+% \resumeItem{\normalsize{Implemented medicine-first pharmacy discovery with a centralized medicine catalog, database-side geospatial distance search, persistent multi-pharmacy cart (\textbf{Zustand}), and \textbf{Razorpay} checkout with atomic inventory decrement.}}
+% \resumeItem{\normalsize{Built real-time ambulance dispatch and pharmacy order tracking using \textbf{WebSockets} for targeted/broadcast events, avoiding backend polling for operational updates.}}
+% \resumeItem{\normalsize{Designed blood-bank inventory and emergency request workflows across all 8 blood groups with location-based discovery, and enforced role-based authorization with \textbf{Clerk} and ownership checks across all backend routes.}}
+% \resumeItemListEnd
+% \vspace{-15pt}
+
+% \resumeProjectHeading
+% {
+%     \large{\underline{\textbf{SecretWarden} - Local Secret Isolation Tool}}
+%     $|$
+%     \href{https://gitlab.com/legion2004/secretwarden}
+%     {\raisebox{-0.2\height}\ \color{blue} \underline{GitHub}}
+% }{Jun 2026 - Present}
+% \resumeItemListStart
+% \resumeItem{\normalsize{Developing a cross-platform \textbf{Rust} security tool that protects API keys from supply-chain attacks (malicious npm packages, compromised extensions) reading plaintext env files.}}
+% \resumeItem{\normalsize{Built a daemon-based architecture with an \textbf{AES-256-GCM} encrypted vault (\textbf{Argon2id} key derivation), CLI-to-daemon IPC over Unix domain sockets via a custom JSON protocol on \textbf{Tokio}, and \textbf{zeroize}-based secure memory cleanup.}}
+% \resumeItem{\normalsize{Implemented two secret-delivery paths: child-process environment injection using placeholder references, and a local HTTP reverse proxy that injects real credentials so secrets never enter the application process.}}
+% \resumeItem{\normalsize{Added cross-platform daemon lifecycle management with native service registration on \textbf{launchd (macOS), systemd (Linux), and Task Scheduler (Windows)}.}}
+% \resumeItemListEnd
+% \vspace{-15pt}
+
+% \resumeProjectHeading
+% {
+%     \textbf{\large{\underline{Visual Speech Recognition (Lip Reading) System}}}
+% } {Aug 2026 - Present}
+% \resumeItemListStart
+% \resumeItem{\normalsize{Final-year B.Tech project building a \textbf{visual speech recognition system for Tai Phake}, an endangered indigenous language of Assam, using deep learning on video data.}}
+% \resumeItem{\normalsize{Collecting and annotating a custom video dataset of digits, words, and phrases from native Tai Phake speakers under controlled recording conditions.}}
+% \resumeItem{\normalsize{Designing a pipeline covering \textbf{video preprocessing, frame extraction, spatial feature extraction, temporal modeling, and classification} using \textbf{CNN-LSTM/BiLSTM} architectures.}}
+% \resumeItem{\normalsize{Planning speaker-independent evaluation and hyperparameter tuning to assess generalization, aiming to contribute a reusable dataset for low-resource visual speech recognition research.}}
+% \resumeItemListEnd
+
+% \resumeSubHeadingListEnd
+% \vspace{-15pt}
+
+
+%-----------EXPERIENCE-----------
+\section{INTERNSHIP}
+\resumeSubHeadingListStart
+\resumeSubheading
+{
+    {IIT Guwahati - TIDF}
+    $|$
+    \href{https://drive.google.com/file/d/1Ak6hB07Qfrgp3_EcpAHgavbcDv3Oin62/view?usp=sharing}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+}{Jun 2025 - Jul 2025}{Full-Stack Development}{Guwahati, Assam, India}
+\resumeSubheading
+{
+    {IIT Guwahati - TIDF}
+    $|$
+    \href{https://drive.google.com/file/d/1_4CVOv8zPcVE4MJH7O08ZSnjdJEu9j8z/view?usp=sharing}
+    {\raisebox{-0.2\height}\ \color{blue} \underline{Link}}
+}{Jan 2026 - Feb 2026}{Full-Stack Development, AWS EC2 deployment, made database changes}{Guwahati, Assam, India}
+
+\resumeSubHeadingListEnd
+\vspace{-12pt}
+
+
+%-----------INVOLVEMENT---------------
+\section{EXTRACURRICULAR}
+\resumeSubHeadingListStart
+\resumeSubheading{GDG on Campus(prev GDSC), Dibrugarh University\href{https://gdg.community.dev/gdg-on-campus-dibrugarh-university-dibrugarh-india/}{\raisebox{-0.1\height}\faExternalLink}}{Aug 2024 -- Aug 2025}{\underline{Organizer(Leader)}}{}
+\resumeItemListStart
+\resumeItem{\normalsize{\textbf{Led and managed} 4 core teams and \textbf{hosted 5 events} with them helping over 200+ students network and learn}}
+\resumeItem{\normalsize{email of selection.\href{https://www.linkedin.com/in/milinda-barua/overlay/1739075889047/single-media-viewer/?profileId=ACoAAEPBtm4B6hu2mxVjWHK1bhmW2EnUnVz3F6k}{\raisebox{-0.1\height}\faExternalLink}}}
+\resumeItemListEnd
+\resumeSubheading{Google Developers Students Club(GDSC), Dibrugarh University{\raisebox{-0.1\height}\faExternalLink}}{Oct 2023 - Apr 2024}{\underline{Technical Team Co-leader}}{}
+\resumeItemListStart
+\resumeItem{\normalsize{\textbf{Managed} small teams for an Google Cloud Study Jam event, \textbf{created} technical documentation and \textbf{managed} them with 3 Co-leaders of the respective teams}}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-11pt}
+
+%-----------CERTIFICATIONS---------------
+\section{CERTIFICATIONS}
+
+$\sbullet[.75] \hspace{0.1cm}$ \href{https://drive.google.com/file/d/1EH_jUK-UUidX4LybD7Xez974SCDGPA1C/view?usp=sharing}{0-1 Full Stack Web Development Course link} \hspace{1.6cm}
+$\sbullet[.75] \hspace{0.1cm}$ {\href{https://www.cloudskillsboost.google/public_profiles/d88db451-eb32-437f-8c4a-39f9006e991e}{GCP badges link}} \hspace{2.59cm} \\
+
+\end{document}
