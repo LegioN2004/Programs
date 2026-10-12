@@ -3,20 +3,29 @@ import java.util.Arrays;
 public class secondSmallestLargestElement {
 
     static void optimal() {
-        int arr[] = { 2, 2, 5, 11, 11, 3, 3, 10, 10 };
+        int arr[] = { 2, 2, 11, 11, 3, 3, 10, 10 };
+
+        if (arr.length < 2) return;
+
         int big = Integer.MIN_VALUE;
-        int small = Integer.MAX_VALUE;
         int secBig = Integer.MIN_VALUE;
+
+        int small = Integer.MAX_VALUE;
         int secSmall = Integer.MAX_VALUE;
 
+
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] > big)
+            if (arr[i] > big){
+                secBig = big;
                 big = arr[i];
-            if (arr[i] < small)
-                small = arr[i];
-            if (arr[i] > secBig && arr[i] != big)
+            } else if (arr[i] > secBig && arr[i] != big)
                 secBig = arr[i];
-            if (arr[i] < secSmall && arr[i] != small)
+
+            if (arr[i] < small){
+                secSmall = small;
+                small = arr[i];
+            }
+            else if (arr[i] < secSmall && arr[i] != small)
                 secSmall = arr[i];
         }
 

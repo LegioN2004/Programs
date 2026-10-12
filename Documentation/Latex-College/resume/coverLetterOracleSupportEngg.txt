@@ -1,0 +1,24 @@
+Milinda Barua
+milindabarua04@gmail.com
+26 September 2026
+
+To,
+The Hiring Manager
+Oracle
+
+Dear Hiring Manager,
+
+I am a Computer Science student interested in solving technical problems, understanding how software systems work, and helping turn complex issues into clear and practical solutions. I am excited to apply for the Support Engineer 1 position at Oracle because the role combines technical troubleshooting, problem solving, collaboration, and continuous learning—areas I want to develop further as an engineer.
+
+Through my projects and internships, I have gained experience working across different parts of software systems and debugging issues as they arise. While building Bionexa, a healthcare platform, I worked with backend APIs, PostgreSQL, payment processing, inventory workflows, and WebSocket-based communication. Working on a system with multiple interconnected components taught me to trace problems across the frontend, backend, database, and real-time services rather than looking at issues in isolation. I also worked on debugging database and application-level issues, validating data flows, and understanding how changes in one part of the system can affect another.
+
+My work on SecretWarden in Rust has further strengthened my interest in systems and technical problem solving. I have worked with ownership, asynchronous processes, Unix sockets, inter-process communication, and security boundaries, which has required me to understand problems at a lower level and investigate their root causes instead of relying only on surface-level fixes. These experiences have made me comfortable learning unfamiliar technologies, reproducing issues, reading documentation, and working through problems systematically.
+
+What interests me about Oracle is the scale and breadth of its software and cloud ecosystem. The opportunity to support real customers, understand their technical environments, troubleshoot issues, document solutions, and work with experienced engineers would allow me to build strong foundations in production support and enterprise software. I am also interested in Oracle's use of automation and AI-assisted tooling to improve how technical issues are identified and resolved.
+
+I would be excited to bring my curiosity, technical foundation, debugging mindset, and willingness to learn to Oracle. I look forward to the opportunity to contribute to the support team while developing a deeper understanding of Oracle's products and the challenges faced by its customers.
+
+Enclosed is my resume, which provides further details about my education, projects, and experience. I look forward to the opportunity to discuss how I can contribute to Oracle.
+
+Sincerely,
+Milinda Barua
