@@ -17,7 +17,7 @@ class Vehicle {
 class Bike extends Vehicle {
     int cc;
 
-    Bike(String brand) {
+    Bike(String brand, int cc) {
         super(brand);
         this.cc = cc;
         System.out.println("--------- Inside bike ------");
@@ -25,17 +25,17 @@ class Bike extends Vehicle {
         System.out.println(cc);
     }
 
-    @Override 
+    @Override
     void run() {
         System.out.println("hello bike");
     }
 
 }
 
-public class main2 {
+public class Main2 {
 
     public static void main(String[] args) {
-        Bike first = new Bike("Honda AT");
+        Bike first = new Bike("Honda AT", 1200);
 
         first.brand = "hello";
         first.cc = 1000;
