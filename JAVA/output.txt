@@ -1,0 +1,1 @@
+Second largest element is: 5
