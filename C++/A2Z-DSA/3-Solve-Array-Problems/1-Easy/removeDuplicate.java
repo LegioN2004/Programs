@@ -3,7 +3,7 @@ import java.util.Set;
 
 public class removeDuplicate {
 
-    // TC: O(n log(n) + n) SC: O(n) bcz heap
+    // TC: O(nlog(n) + n) | SC: O(n) bcz heap
     // if all elements were unique, then it would take n space
     public static int brute(int[] nums) {
         if (nums.length == 0)
