@@ -7,6 +7,10 @@
 ---
 
 ## Video 01: What is NodeJS?
+
+- **Link:** [YouTube - Video 01](https://www.youtube.com/watch?v=ohIAiuHMKMI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=1)
+- **Duration:** 07:45
+
 - **Core Definition:** Node.js is an open-source, cross-platform JavaScript Runtime Environment built on Google Chrome's open-source V8 JavaScript Engine.
 - **What Node.js is NOT:** It is neither a programming language (the language is JavaScript), nor a framework, nor a library.
 - **The Browser Sandbox Limitation:** Historically, JavaScript only executed inside browsers (Chrome, Firefox, Safari) within a locked sandbox that prevented access to the operating system, file system, and machine resources.
@@ -17,6 +21,10 @@
 ---
 
 ## Video 02: Node JS Installation
+
+- **Link:** [YouTube - Video 02](https://www.youtube.com/watch?v=N6PjgN9licA&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=2)
+- **Duration:** 06:02
+
 - **Official Source:** Downloading installers and packages from `nodejs.org`.
 - **LTS vs. Current Releases:**
   - **LTS (Long Term Support):** Recommended for all production backends; guarantees long-term stability, bug fixes, and critical security patches.
@@ -34,6 +42,10 @@
 ---
 
 ## Video 03: Hello World NodeJS
+
+- **Link:** [YouTube - Video 03](https://www.youtube.com/watch?v=XhCs5cTYW_8&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=3)
+- **Duration:** 09:45
+
 - **Script Execution:** Creating a JavaScript file (`hello.js` / `index.js`) and running it via the command line: `node hello.js`.
 - **Browser vs. Node Environment Difference (DOM Removal):**
   - Demonstrating that browser-specific objects and UI methods (e.g., `window`, `document`, `alert()`) throw `ReferenceError: alert is not defined` in Node.js.
@@ -48,6 +60,10 @@
 ---
 
 ## Video 04: Modules in NodeJS
+
+- **Link:** [YouTube - Video 04](https://www.youtube.com/watch?v=FSRo41TaHFU&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=4)
+- **Duration:** 15:25
+
 - **Modular Programming:** Decomposing monolithic codebases into isolated, reusable, and maintainable files.
 - **CommonJS (CJS) Module System:** The standard default module format in Node.js.
 - **Exporting Modules:**
@@ -64,6 +80,10 @@
 ---
 
 ## Video 05: File Handling in NodeJS
+
+- **Link:** [YouTube - Video 05](https://www.youtube.com/watch?v=YazJFb_i4A0&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=5)
+- **Duration:** 18:17
+
 - **Native `fs` (File System) Module:** Built-in module for disk I/O operations (`const fs = require('fs')`).
 - **Synchronous (Blocking) vs. Asynchronous (Non-Blocking) I/O:**
   - **Writing Files:**
@@ -84,6 +104,10 @@
 ---
 
 ## Video 06: How NodeJS Works? (Architecture & Event Loop)
+
+- **Link:** [YouTube - Video 06](https://www.youtube.com/watch?v=y0aTs56DJWk&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=6)
+- **Duration:** 14:23
+
 - **Single-Threaded Non-Blocking Architecture:** How Node.js handles high concurrency using a single JavaScript main thread.
 - **Request Lifecycle:**
   1. Incoming client requests enter the **Event Queue**.
@@ -101,6 +125,10 @@
 ---
 
 ## Video 07: Building HTTP Server in NodeJS
+
+- **Link:** [YouTube - Video 07](https://www.youtube.com/watch?v=ZQsrcayZcSk&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=7)
+- **Duration:** 17:56
+
 - **Native `http` Module:** Creating web servers without external packages (`const http = require('http')`).
 - **Server Creation & Lifecycle:**
   - `const server = http.createServer((req, res) => { ... });`
@@ -115,6 +143,10 @@
 ---
 
 ## Video 08: Handling URLs in NodeJS
+
+- **Link:** [YouTube - Video 08](https://www.youtube.com/watch?v=Nt-AsZh5woE&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=8)
+- **Duration:** 20:37
+
 - **Anatomy of a Uniform Resource Locator (URL):**
   - Protocol (`http://`, `https://`)
   - Domain / Host (`localhost:8000`, `api.example.com`)
@@ -131,6 +163,10 @@
 ---
 
 ## Video 09: HTTP METHODS
+
+- **Link:** [YouTube - Video 09](https://www.youtube.com/watch?v=kREAjKyPbSI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=9)
+- **Duration:** 13:38
+
 - **RESTful HTTP Verbs & Semantics:**
   - **GET:** Retrieves a resource. Must be safe and idempotent (must never modify server state).
   - **POST:** Submits data to the server to create a new resource. Non-idempotent.
@@ -143,6 +179,10 @@
 ---
 
 ## Video 10: Getting Started with Express and NodeJS
+
+- **Link:** [YouTube - Video 10](https://www.youtube.com/watch?v=N2-FyBBxOZA&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=10)
+- **Duration:** 11:28
+
 - **Why Express.js?** Native `http` requires tedious manual boilerplate: manual URL parsing, query string parsing, body chunk stream accumulation, and nested `if/else` route branching. Express is a minimalist, fast, unopinionated routing framework built on top of native `http`.
 - **Installation:** `npm install express`.
 - **Basic Server Initialization:**
@@ -163,6 +203,10 @@
 ---
 
 ## Video 11: How Versioning Works in NodeJS? (SemVer)
+
+- **Link:** [YouTube - Video 11](https://www.youtube.com/watch?v=ORmB_ABimjM&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=11)
+- **Duration:** 21:10
+
 - **Semantic Versioning (SemVer) Format:** `MAJOR.MINOR.PATCH` (e.g., `4.18.2`).
   - **MAJOR:** Breaking changes; incompatible API updates.
   - **MINOR:** Backward-compatible new features and additions.
@@ -178,6 +222,10 @@
 ---
 
 ## Video 12: What is REST API?
+
+- **Link:** [YouTube - Video 12](https://www.youtube.com/watch?v=cJAyEOZQUQY&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=12)
+- **Duration:** 15:41
+
 - **REST (Representational State Transfer) Architectural Principles:**
   - **Client-Server Separation:** Complete decoupling of the client user interface from server data storage and business logic.
   - **Statelessness:** Every request must contain all necessary authentication credentials and context; the server does not store client session states between calls.
@@ -188,6 +236,10 @@
 ---
 
 ## Video 13: Building REST API's using Node and Express.js
+
+- **Link:** [YouTube - Video 13](https://www.youtube.com/watch?v=uNCrMvkPUAE&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=13)
+- **Duration:** 20:27
+
 - **CRUD Resource Design (Mock Data Prototype):**
   - `GET /api/users` – Retrieve list of all users.
   - `GET /api/users/:id` – Retrieve a specific user using path parameters (`req.params.id`).
@@ -206,6 +258,10 @@
 ---
 
 ## Video 14: Introduction to POSTMAN for REST API's
+
+- **Link:** [YouTube - Video 14](https://www.youtube.com/watch?v=7OzNVIxPLH0&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=14)
+- **Duration:** 14:49
+
 - **Why Postman is Required:** Web browser address bars can only perform `GET` requests; testing `POST`, `PUT`, `PATCH`, and `DELETE` requests requires a dedicated HTTP client.
 - **Configuring Requests:**
   - Selecting HTTP verbs (`GET`, `POST`, `PATCH`, `DELETE`).
@@ -217,6 +273,10 @@
 ---
 
 ## Video 15: Express Middleware
+
+- **Link:** [YouTube - Video 15](https://www.youtube.com/watch?v=n2c0mf1sza4&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=15)
+- **Duration:** 19:50
+
 - **The Middleware Pattern:** Functions that execute sequentially during the request-response lifecycle before control reaches the final route handler.
 - **Middleware Signature:** `(req, res, next) => { ... }`.
 - **The `next()` Function:** Passes execution control to the next middleware in line. Failing to call `next()` or send a response hangs the client request indefinitely.
@@ -228,6 +288,10 @@
 ---
 
 ## Video 16: What are HTTP Headers in API
+
+- **Link:** [YouTube - Video 16](https://www.youtube.com/watch?v=mhg3Vwsb88M&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=16)
+- **Duration:** 17:38
+
 - **HTTP Headers Overview:** Key-value metadata pairs transmitted in HTTP requests and responses (analogous to the postal envelope carrying delivery details for a letter).
 - **Request Headers vs. Response Headers:**
   - Request Headers: Sent by client to convey device, language, and content expectations (`User-Agent`, `Accept`, `Authorization`).
@@ -241,6 +305,10 @@
 ---
 
 ## Video 17: HTTP Status Codes & nodemon
+
+- **Link:** [YouTube - Video 17](https://www.youtube.com/watch?v=fLGw2GK884s&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=17)
+- **Duration:** 15:36
+
 - **Standardized Status Code Ranges:**
   - `1xx` – Informational.
   - `2xx` – Success: `200 OK` (Standard success), `201 Created` (Resource successfully created via POST).
@@ -257,6 +325,10 @@
 ---
 
 ## Video 18: Getting Started with MongoDB
+
+- **Link:** [YouTube - Video 18](https://www.youtube.com/watch?v=oH0VoYiA8_s&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=18)
+- **Duration:** 08:01
+
 - **NoSQL Document Database Fundamentals:**
   - Comparing Relational DBs (Databases $\rightarrow$ Tables $\rightarrow$ Rows/Columns) with NoSQL Document DBs (Databases $\rightarrow$ Collections $\rightarrow$ Documents).
 - **JSON / BSON Data Storage:** Why MongoDB stores data in Binary JSON (BSON) for speed, efficiency, and rich data type support.
@@ -273,6 +345,10 @@
 ---
 
 ## Video 19: Connecting NodeJS with MongoDB (Mongoose + Express)
+
+- **Link:** [YouTube - Video 19](https://www.youtube.com/watch?v=xrglM8U0Zv8&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=19)
+- **Duration:** 19:18
+
 - **Object Data Modeling (ODM):** Using Mongoose (`npm install mongoose`) to enforce structured schemas and manage MongoDB interactions.
 - **Database Connection:** Connecting asynchronously via `mongoose.connect('mongodb://127.0.0.1:27017/app-1')`.
 - **Defining Schemas & Models:**
@@ -296,6 +372,10 @@
 ---
 
 ## Video 20: Model View Controller (MVC) in NodeJS
+
+- **Link:** [YouTube - Video 20](https://www.youtube.com/watch?v=JLtXoru-ipo&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=20)
+- **Duration:** 23:01
+
 - **Architectural Refactoring:** Decoupling a bloated monolithic `index.js` into clean, maintainable layers of concern:
   - `models/`: Mongoose schemas and database models (e.g., `user.js`).
   - `controllers/`: Core request handling and business logic (e.g., `handleGetAllUsers`, `handleCreateNewUser`).
@@ -307,6 +387,10 @@
 ---
 
 ## Video 21: Create a Custom URL Shortener using Node.JS and MongoDB
+
+- **Link:** [YouTube - Video 21](https://www.youtube.com/watch?v=4WvX9dBjiJo&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=21)
+- **Duration:** 23:10
+
 - **Real-World Backend Architecture Project:** Building a production URL shortening engine.
 - **Data Modeling (`URL` Schema):**
   - `shortId`: Unique, indexed 8-character string identifier.
@@ -320,6 +404,10 @@
 ---
 
 ## Video 23: Building Node.js Authentication from Scratch (Stateful Sessions)
+
+- **Link:** [YouTube - Video 23](https://www.youtube.com/watch?v=OWeruyqhiTo&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=23)
+- **Duration:** 39:09
+
 - **Authentication Fundamentals:** Verifying user identity via email and password credentials.
 - **Stateful (Session-Based) Architecture:**
   - Server maintains an in-memory session map or cache: `sessionId` $\rightarrow$ `userObject`.
@@ -334,6 +422,10 @@
 ---
 
 ## Video 24: JWT Authentication in NodeJS (Stateless)
+
+- **Link:** [YouTube - Video 24](https://www.youtube.com/watch?v=mGrVmEex6_g&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=24)
+- **Duration:** 14:30
+
 - **Stateless Authentication Architecture:** The server does not store session states in memory. Any server instance in a cluster can verify incoming tokens independently.
 - **Anatomy of a JSON Web Token (JWT):**
   - **Header:** Signing algorithm (`HS256`) and token type (`JWT`).
@@ -346,6 +438,10 @@
 ---
 
 ## Video 25: What are Cookies in NodeJS?
+
+- **Link:** [YouTube - Video 25](https://www.youtube.com/watch?v=kMErso06vHo&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=25)
+- **Duration:** 30:35
+
 - **Cookies vs. Authorization Headers:**
   - **Cookies:** Stored automatically by web browsers; automatically attached to every subsequent request matching the target domain.
   - **Authorization Headers (`Bearer <token>`):** Standard for mobile apps and single-page applications (React); requires manual attachment via client-side request interceptors.
@@ -357,6 +453,10 @@
 ---
 
 ## Video 26: Authorization in NodeJS (Role-Based Access Control - RBAC)
+
+- **Link:** [YouTube - Video 26](https://www.youtube.com/watch?v=1uxWtBFOrkk&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=26)
+- **Duration:** 19:33
+
 - **Authentication vs. Authorization:**
   - Authentication: Identity verification (*"Who are you?"*).
   - Authorization: Permission check (*"Are you allowed to perform this action?"*).
@@ -376,6 +476,10 @@
 ---
 
 ## Video 28: Uploading Files with NodeJS and Multer
+
+- **Link:** [YouTube - Video 28](https://www.youtube.com/watch?v=WqJ0P8JnftI&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=28)
+- **Duration:** 14:11
+
 - **Multipart Data Handling:** Why standard body parsers fail on file streams, requiring `enctype="multipart/form-data"`.
 - **Multer Middleware Setup (`npm install multer`):**
   - Custom storage engine configuration using `multer.diskStorage`:
@@ -394,6 +498,10 @@
 ---
 
 ## Video 29: Project Setup & Secure Password Hashing (Blogging App Backend)
+
+- **Link:** [YouTube - Video 29](https://www.youtube.com/watch?v=6z6CR29gtds&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=29)
+- **Duration:** 39:36
+
 - **Enterprise Password Security:** Never storing plaintext passwords in databases.
 - **Salted Password Hashing using Native `crypto` Module:**
   - Generating random 16-byte cryptographic salts: `crypto.randomBytes(16).toString('hex')`.
@@ -414,6 +522,10 @@
 ---
 
 ## Video 30: Authentication & Mongoose Relational Data Modeling (Blogging App Backend)
+
+- **Link:** [YouTube - Video 30](https://www.youtube.com/watch?v=X1AGH8Byj9Y&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=30)
+- **Duration:** 38:21
+
 - **Relational Referencing in MongoDB:**
   ```javascript
   const blogSchema = new mongoose.Schema({
@@ -429,6 +541,10 @@
 ---
 
 ## Video 32: Deploy NodeJS Application on AWS (EC2 & Ubuntu)
+
+- **Link:** [YouTube - Video 32](https://www.youtube.com/watch?v=_U0pTlpyMGg&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=32)
+- **Duration:** 19:51
+
 - **AWS Cloud Setup:**
   - Launching an AWS EC2 instance running Ubuntu Server LTS.
   - Creating and downloading an SSH Key Pair (`.pem`).
@@ -441,6 +557,10 @@
 ---
 
 ## Video 33: WebSocket in NodeJS | Socket.IO (Real-Time Messaging)
+
+- **Link:** [YouTube - Video 33](https://www.youtube.com/watch?v=UUddpbgPEJM&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=33)
+- **Duration:** 32:27
+
 - **HTTP Polling vs. WebSockets:**
   - HTTP Polling: Client repeatedly opens and closes HTTP connections with heavy header overhead.
   - WebSockets: Persistent, full-duplex, bi-directional TCP connection established via an initial HTTP handshake.
@@ -461,6 +581,10 @@
 ---
 
 ## Video 34: NodeJS Streams
+
+- **Link:** [YouTube - Video 34](https://www.youtube.com/watch?v=64LJJhT6Ybo&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=34)
+- **Duration:** 15:26
+
 - **Memory Management in High-Scale Systems:**
   - Reading large files (e.g., 500MB+) via `fs.readFile` loads the entire file into server RAM at once, causing memory spikes and server crashes under concurrent traffic (demonstrated live with `express-status-monitor`).
 - **Streaming Architecture:**
@@ -479,6 +603,10 @@
 ---
 
 ## Video 35: Scaling NodeJs Applications Using the Cluster Module
+
+- **Link:** [YouTube - Video 35](https://www.youtube.com/watch?v=JoPZ9gEvpz8&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=35)
+- **Duration:** 12:38
+
 - **The Single-Core Bottleneck:** Node.js executes on a single CPU core by default, leaving multi-core servers (4, 8, 16+ cores) underutilized.
 - **The Native `cluster` Module:**
   - Detecting available physical CPU cores: `const totalCPUs = os.cpus().length;`
@@ -491,6 +619,10 @@
 ---
 
 ## Video 36: What is Nginx? (Reverse Proxy Architecture)
+
+- **Link:** [YouTube - Video 36](https://www.youtube.com/watch?v=b_B1BEShfBc&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=36)
+- **Duration:** 11:45
+
 - **Nginx Fundamentals:** An asynchronous, event-driven, high-performance web server, reverse proxy, and load balancer.
 - **Forward Proxy vs. Reverse Proxy (Essential System Design Concept):**
   - **Forward Proxy:** Sits between clients and the internet; masks client identities, handles client-side caching, and bypasses local network restrictions.
@@ -499,6 +631,10 @@
 ---
 
 ## Video 37: Install and Setup Nginx (Linux Service & Configuration)
+
+- **Link:** [YouTube - Video 37](https://www.youtube.com/watch?v=Qmld1te08Ns&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=37)
+- **Duration:** 13:16
+
 - **Linux Installation:** Installing Nginx via package manager (`sudo apt install nginx`) or running inside a Linux Docker container.
 - **Service Management Commands:**
   - `systemctl start nginx`
@@ -511,6 +647,10 @@
 ---
 
 ## Video 38: Serve Static Content with Nginx
+
+- **Link:** [YouTube - Video 38](https://www.youtube.com/watch?v=YkuhqIDUi2A&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=38)
+- **Duration:** 15:01
+
 - **Static File Offloading:** Why routing static asset requests (images, CSS, JS bundles) through Node’s single-threaded event loop wastes CPU cycles; Nginx uses the Linux kernel’s zero-copy `sendfile` system call to stream files straight from disk to the network card.
 - **Nginx Location Blocks:**
   ```nginx
@@ -532,6 +672,10 @@
 ---
 
 ## Video 39: Full Node.js Deployment - NGINX, SSL With Lets Encrypt
+
+- **Link:** [YouTube - Video 39](https://www.youtube.com/watch?v=ofBFl4M4BFk&list=PLinedj3B30sDby4Al-i13hQJGQoRQDfPo&index=39)
+- **Duration:** 31:25
+
 - **Nginx Reverse Proxy Configuration for Node.js:**
   - Forwarding public internet traffic from Port 80 to an internal Node.js port (e.g., 8000):
     ```nginx
