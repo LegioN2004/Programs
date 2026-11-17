@@ -1,0 +1,48 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,booktabs,hyperref,enumitem}
+\title{Neural Network and Deep Learning\\Assignment Question 6}
+\author{}\date{}
+\begin{document}\maketitle
+\section*{6. Ethical, Societal and Sustainability Implications}
+Deep learning systems are socio-technical systems: their effects depend on data, objectives, deployment context, human decisions, and institutions, not only on architecture or accuracy. A responsible system therefore evaluates performance across groups, documents limitations, protects data, and provides meaningful human oversight.
+
+\subsection*{Ethical and societal issues}
+\begin{description}[leftmargin=2.7cm]
+\item[Algorithmic bias] Historical labels can encode unequal treatment, and under-represented groups may receive worse predictions. The 2018 revelation that a commercial recruiting tool preferred male candidates illustrated how historical hiring data can reproduce workplace inequality. Facial-analysis systems have also shown demographic performance gaps. Mitigations include representative data, subgroup metrics, reweighting, threshold review, independent audits, and a genuine appeal process.
+\item[Privacy] Training data may contain faces, messages, health records, location, or other sensitive information. Memorisation can allow a model to reveal training examples. Data minimisation, consent, de-identification, access controls, retention limits, differential privacy, and federated learning reduce risk, but de-identification is not automatically irreversible.
+\item[Security] Attackers can poison training data, extract information, evade classifiers with adversarial inputs, or steal a model. Threat modelling, signed datasets, rate limits, secure storage, red-team testing, monitoring, and incident response should be part of deployment.
+\item[Transparency and accountability] A probability is not an explanation, and post-hoc explanations can be misleading. Model cards, dataset documentation, decision logs, uncertainty estimates, interpretable features where feasible, named owners, and a way to challenge decisions make responsibility visible. Human review must have authority to override an unsafe result.
+\item[Employment and access] Automation can remove repetitive tasks, change required skills, and concentrate benefits among organisations with data and compute. It may also create safer or more valuable work. Consultation, retraining, accessible design, and impact assessment are preferable to treating displacement as an invisible externality.
+\item[High-stakes decisions] In healthcare, policing, credit, education, and employment, an error can cause physical, financial, or civil-rights harm. Accuracy alone is inadequate: false-positive and false-negative costs, calibration, fairness, consent, and legal duties must be considered. A human rubber-stamping a model is not meaningful oversight.
+\end{description}
+\subsection*{Case studies and evidence}
+Amazon abandoned an experimental hiring system after reports that historical résumés caused it to penalise signals associated with women; this illustrates proxy discrimination and the danger of treating historical labels as ground truth. ProPublica's 2016 COMPAS analysis raised concerns about differing false-positive rates across racial groups in recidivism-risk scores; the debate also demonstrates that fairness criteria can conflict and must be specified. The \emph{Gender Shades} study by Buolamwini and Gebru (2018) reported large intersectional accuracy gaps in commercial facial-analysis systems, especially for darker-skinned women. These cases support subgroup testing, documentation, and affected-person recourse rather than a single aggregate accuracy number.
+
+Privacy threats include membership inference, model inversion, and training-data extraction. Differentially private stochastic gradient descent adds calibrated noise and tracks a privacy budget $\varepsilon$; smaller $\varepsilon$ generally gives stronger protection at some utility cost. Federated learning keeps raw examples on devices but still requires secure aggregation, update protection, and analysis of leakage from gradients. Under the GDPR, lawful basis, purpose limitation, data minimisation, access/erasure rights, and safeguards for automated decisions matter; compliance is a governance obligation, not a claim that a model is private.
+
+Model Cards (Mitchell et al., 2019) and Dataset Cards make intended use, evaluation groups, and limitations explicit. Explainable-AI tools can expose useful features but are often post-hoc approximations, not causal explanations. For autonomous vehicles and medical AI, liability must be assigned across developers, deployers, operators, and institutions; a human who merely accepts every model recommendation is not meaningful accountability.
+
+\subsection*{Environmental sustainability}
+Training and serving models consume electricity for GPUs, CPUs, memory, networking, cooling, and data-centre infrastructure. The carbon impact depends on total energy, the electricity mix, hardware manufacture, experiment repetition, and model lifetime. A useful accounting identity is
+\[
+\text{carbon emissions (kg CO$_2$e)}=\text{energy (kWh)}\times\text{grid intensity (kg CO$_2$e/kWh)}.
+\]
+Large model training can require substantial energy, while repeated inference at global scale may dominate lifetime cost. Water consumption for cooling and electronic waste from rapid hardware replacement are additional concerns. Claims should report measurement boundaries, hardware, runtime, region, and whether offsets are included.
+
+Practical reductions include using a smaller model, transfer learning, pruning, quantisation, distillation, early stopping, efficient data pipelines, caching, batching inference, and hyperparameter search budgets. Carbon-aware scheduling can use lower-carbon electricity, but it does not eliminate local water or hardware impacts. The most sustainable computation is computation that is not needed: define the social value and minimum acceptable accuracy before scaling a model.
+Strubell et al. (2019) documented the energy and carbon implications of large NLP experiments and highlighted that compute access is unevenly concentrated. Carbon accounting should report $\text{kWh}\times$ grid intensity, region, hardware lifetime, cooling boundary, and repeated experiments. Hardware manufacture and e-waste mean operational electricity is only part of the footprint.
+
+\subsection*{Responsible development checklist}
+\begin{enumerate}
+\item Define purpose, affected people, prohibited uses, and the harm of each error before collecting data.
+\item Obtain lawful, informed data rights; minimise collection and document provenance, consent, licences, and known gaps.
+\item Split data by time or person where appropriate to prevent leakage. Report accuracy, calibration, uncertainty, and error rates for relevant subgroups.
+\item Test robustness, privacy, security, distribution shift, and accessibility. Have domain experts and affected communities review the design.
+\item Deploy gradually with monitoring, drift alarms, human escalation, rollback, and incident response. Keep audit records and assign an accountable owner.
+\item Measure energy and emissions during development and operation, publish the methodology, and choose the smallest model that meets the requirement.
+\end{enumerate}
+
+\subsection*{Conclusion}
+Neural networks can improve diagnosis, accessibility, scientific discovery, and productivity, but technical capability does not establish social acceptability. Fairness, privacy, security, transparency, accountability, labour effects, and environmental cost must be treated as design requirements. A model should be deployed only when its expected benefits outweigh its documented risks, affected people have recourse, and the organisation can monitor and correct failures.
+\end{document}

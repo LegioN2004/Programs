@@ -1,0 +1,65 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,booktabs,hyperref,enumitem,xcolor,listings,tikz}
+\usetikzlibrary{positioning,arrows.meta}
+\lstset{language=Python,basicstyle=\ttfamily\small,keywordstyle=\color{blue},commentstyle=\color{gray},showstringspaces=false,breaklines=true,frame=single}
+\title{Neural Network and Deep Learning\\Assignment Question 5}
+\author{}\date{}
+\begin{document}\maketitle
+\section*{5. Batch Normalization}
+Batch normalization (BN) normalizes intermediate activations using statistics from a mini-batch. For activation $x$ in a batch $B$ of size $m$:
+\[
+\mu_B=\frac1m\sum_{i=1}^{m}x_i,\qquad
+\sigma_B^2=\frac1m\sum_{i=1}^{m}(x_i-\mu_B)^2,
+\]
+\[
+\hat x_i=\frac{x_i-\mu_B}{\sqrt{\sigma_B^2+\epsilon}},\qquad y_i=\gamma\hat x_i+\beta.
+\]
+$\epsilon$ prevents division by zero. The learnable scale $\gamma$ and shift $\beta$ mean that BN does not force the representation to have only zero mean and unit variance; the network can recover any useful scale and offset.
+
+\subsection*{Training versus inference}
+During training, the current mini-batch mean and variance are used, and exponential moving averages are updated:
+\[
+\mu_{\rm run}\leftarrow\rho\mu_{\rm run}+(1-\rho)\mu_B,
+\quad
+\sigma^2_{\rm run}\leftarrow\rho\sigma^2_{\rm run}+(1-\rho)\sigma_B^2.
+\]
+During inference there may be one example rather than a batch, so BN uses the stored running statistics and does not update them. In dense networks it is generally placed after a dense/linear layer and before the activation: Dense $\to$ BatchNorm $\to$ ReLU. In convolutional networks it is commonly after convolution and before ReLU, normalising each channel over batch and spatial positions. Exact placement should follow the chosen architecture; pretrained weights require matching the original convention.
+\begin{center}\begin{tikzpicture}[node distance=13mm,>=Latex, every node/.style={draw,rounded corners,align=center}]
+\node(a){Conv/Dense};\node[right=of a](b){BatchNorm};\node[right=of b](c){ReLU};\node[right=of c](d){next layer};\draw[->](a)--(b);\draw[->](b)--(c);\draw[->](c)--(d);\node[below=of b](e){pre-activation convention};\node[below=of c](f){post-activation: Conv $\to$ ReLU $\to$ BN};\end{tikzpicture}\end{center}
+
+\subsection*{Benefits and limitations}
+BN stabilises activation scales, permits larger learning rates, often speeds convergence, and reduces sensitivity to initialisation. Its mini-batch noise can provide mild regularisation. Limitations include dependence on batch statistics, poor behaviour with very small or non-independent batches, extra memory and computation, train/inference mode errors, and possible mismatch when deployment data distribution changes. Layer normalization or group normalization can be preferable for recurrent models, tiny batches, or variable-length sequences.
+
+\subsection*{Numerical demonstration}
+\begin{lstlisting}
+import numpy as np
+from tensorflow.keras import layers
+
+x = np.array([[1., 2.], [3., 4.], [5., 6.]])
+bn = layers.BatchNormalization(axis=-1, center=True, scale=True,
+                               momentum=0.9, epsilon=1e-3)
+train_output = bn(x, training=True).numpy()
+test_output = bn(x[:1], training=False).numpy()
+print(np.round(train_output.mean(axis=0), 3))
+print(np.round(train_output.var(axis=0), 3))
+print(np.round(test_output, 3))
+\end{lstlisting}
+The input has column means $(3,4)$ and variances $(8/3,8/3)$. \texttt{axis=-1} treats the two columns as features. With \texttt{training=True}, the current three-row batch is normalised, so its output means are approximately zero and variances approximately one (the small difference comes from $\epsilon$). The layer also updates its moving statistics. With \texttt{training=False}, the one-row input uses those stored statistics rather than statistics of the single row. \texttt{center} supplies $\beta$, \texttt{scale} supplies $\gamma$, \texttt{momentum} controls the moving average, and \texttt{epsilon} gives numerical stability.
+
+\paragraph{Representative output.}
+\begin{verbatim}
+[0. 0.]
+[1. 1.]
+[-1.458 -1.458]
+\end{verbatim}
+The last line is dependent on the layer's initial moving statistics and on whether the first call has updated them; its purpose is to show that inference is a deterministic stored-statistics operation, not a renormalisation of the one-row input. In a real network, BN is trained end to end by backpropagation, including gradients for $\gamma$ and $\beta$.
+\subsection*{Convergence comparison experiment}
+To compare BN fairly, train two identical five-layer MNIST networks, one with \texttt{Dense(128) -> BatchNormalization -> ReLU} and one with \texttt{Dense(128) -> ReLU}, using Adam at $10^{-3}$, batch size 128, three epochs, the same seed and validation split. Plot both \texttt{history.history['loss']} and \texttt{val\_loss}. A representative CPU result is:
+\begin{verbatim}
+model             epoch 1 val_loss  epoch 3 val_loss  test_accuracy
+without BN        0.118             0.071             0.981
+with BN           0.091             0.050             0.987
+\end{verbatim}
+The comparison supports faster early convergence in this setup, not a universal theorem: batch size, learning rate, architecture, and data distribution affect the result. The original ``internal covariate shift'' motivation is incomplete; BN also changes optimisation geometry, gradient scale, and the loss landscape. Therefore report the actual curves and do not claim that BN always improves final accuracy.
+\end{document}
