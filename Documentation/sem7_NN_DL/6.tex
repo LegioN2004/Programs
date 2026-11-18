@@ -1,48 +1,163 @@
 \documentclass[12pt,a4paper]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath,booktabs,hyperref,enumitem}
-\title{Neural Network and Deep Learning\\Assignment Question 6}
-\author{}\date{}
-\begin{document}\maketitle
-\section*{6. Ethical, Societal and Sustainability Implications}
-Deep learning systems are socio-technical systems: their effects depend on data, objectives, deployment context, human decisions, and institutions, not only on architecture or accuracy. A responsible system therefore evaluates performance across groups, documents limitations, protects data, and provides meaningful human oversight.
+\usepackage{amsmath,amssymb,booktabs,hyperref,enumitem,xcolor}
+\hypersetup{colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue}
 
-\subsection*{Ethical and societal issues}
-\begin{description}[leftmargin=2.7cm]
-\item[Algorithmic bias] Historical labels can encode unequal treatment, and under-represented groups may receive worse predictions. The 2018 revelation that a commercial recruiting tool preferred male candidates illustrated how historical hiring data can reproduce workplace inequality. Facial-analysis systems have also shown demographic performance gaps. Mitigations include representative data, subgroup metrics, reweighting, threshold review, independent audits, and a genuine appeal process.
-\item[Privacy] Training data may contain faces, messages, health records, location, or other sensitive information. Memorisation can allow a model to reveal training examples. Data minimisation, consent, de-identification, access controls, retention limits, differential privacy, and federated learning reduce risk, but de-identification is not automatically irreversible.
-\item[Security] Attackers can poison training data, extract information, evade classifiers with adversarial inputs, or steal a model. Threat modelling, signed datasets, rate limits, secure storage, red-team testing, monitoring, and incident response should be part of deployment.
-\item[Transparency and accountability] A probability is not an explanation, and post-hoc explanations can be misleading. Model cards, dataset documentation, decision logs, uncertainty estimates, interpretable features where feasible, named owners, and a way to challenge decisions make responsibility visible. Human review must have authority to override an unsafe result.
-\item[Employment and access] Automation can remove repetitive tasks, change required skills, and concentrate benefits among organisations with data and compute. It may also create safer or more valuable work. Consultation, retraining, accessible design, and impact assessment are preferable to treating displacement as an invisible externality.
-\item[High-stakes decisions] In healthcare, policing, credit, education, and employment, an error can cause physical, financial, or civil-rights harm. Accuracy alone is inadequate: false-positive and false-negative costs, calibration, fairness, consent, and legal duties must be considered. A human rubber-stamping a model is not meaningful oversight.
-\end{description}
-\subsection*{Case studies and evidence}
-Amazon abandoned an experimental hiring system after reports that historical résumés caused it to penalise signals associated with women; this illustrates proxy discrimination and the danger of treating historical labels as ground truth. ProPublica's 2016 COMPAS analysis raised concerns about differing false-positive rates across racial groups in recidivism-risk scores; the debate also demonstrates that fairness criteria can conflict and must be specified. The \emph{Gender Shades} study by Buolamwini and Gebru (2018) reported large intersectional accuracy gaps in commercial facial-analysis systems, especially for darker-skinned women. These cases support subgroup testing, documentation, and affected-person recourse rather than a single aggregate accuracy number.
+\begin{document}
 
-Privacy threats include membership inference, model inversion, and training-data extraction. Differentially private stochastic gradient descent adds calibrated noise and tracks a privacy budget $\varepsilon$; smaller $\varepsilon$ generally gives stronger protection at some utility cost. Federated learning keeps raw examples on devices but still requires secure aggregation, update protection, and analysis of leakage from gradients. Under the GDPR, lawful basis, purpose limitation, data minimisation, access/erasure rights, and safeguards for automated decisions matter; compliance is a governance obligation, not a claim that a model is private.
+{\noindent\LARGE\textbf{Question 6: Ethical, Societal and Sustainability Implications}}\par
+\vspace{0.8em}
+\noindent Discuss the ethical, societal, and environmental sustainability implications of neural network and deep learning applications. Explain issues such as algorithmic bias, privacy, data security, transparency, accountability, employment impact, computational resource consumption, and carbon footprint. Support your discussion with relevant real-world examples.
+\par\vspace{1.2em}
 
-Model Cards (Mitchell et al., 2019) and Dataset Cards make intended use, evaluation groups, and limitations explicit. Explainable-AI tools can expose useful features but are often post-hoc approximations, not causal explanations. For autonomous vehicles and medical AI, liability must be assigned across developers, deployers, operators, and institutions; a human who merely accepts every model recommendation is not meaningful accountability.
+\section{Introduction: Deep Learning as a Socio-Technical System}
+Deep learning systems are fundamentally \textbf{socio-technical systems}. Their practical impacts, benefits, and failure modes are not governed solely by mathematical loss functions or benchmark accuracies, but by the real-world data distributions on which they are trained, the organizational objectives directing their development, the societal contexts in which they are deployed, and the legal frameworks governing accountability. As deep neural networks transition from research benchmarks into critical infrastructure—governing healthcare diagnostics, judicial risk assessments, credit allocation, employment screening, and autonomous transportation—their ethical, societal, and environmental consequences have become central engineering concerns.
 
-\subsection*{Environmental sustainability}
-Training and serving models consume electricity for GPUs, CPUs, memory, networking, cooling, and data-centre infrastructure. The carbon impact depends on total energy, the electricity mix, hardware manufacture, experiment repetition, and model lifetime. A useful accounting identity is
-\[
-\text{carbon emissions (kg CO$_2$e)}=\text{energy (kWh)}\times\text{grid intensity (kg CO$_2$e/kWh)}.
-\]
-Large model training can require substantial energy, while repeated inference at global scale may dominate lifetime cost. Water consumption for cooling and electronic waste from rapid hardware replacement are additional concerns. Claims should report measurement boundaries, hardware, runtime, region, and whether offsets are included.
+\section{Ethical and Societal Implications}
 
-Practical reductions include using a smaller model, transfer learning, pruning, quantisation, distillation, early stopping, efficient data pipelines, caching, batching inference, and hyperparameter search budgets. Carbon-aware scheduling can use lower-carbon electricity, but it does not eliminate local water or hardware impacts. The most sustainable computation is computation that is not needed: define the social value and minimum acceptable accuracy before scaling a model.
-Strubell et al. (2019) documented the energy and carbon implications of large NLP experiments and highlighted that compute access is unevenly concentrated. Carbon accounting should report $\text{kWh}\times$ grid intensity, region, hardware lifetime, cooling boundary, and repeated experiments. Hardware manufacture and e-waste mean operational electricity is only part of the footprint.
+\subsection{Algorithmic Bias and Disparate Impact}
+Machine learning models generalize patterns present within historical training data. When historical data reflects systemic inequities, demographic under-representation, or historical human prejudices, neural networks do not merely inherit these biases—they frequently amplify and automate them at scale.
 
-\subsection*{Responsible development checklist}
-\begin{enumerate}
-\item Define purpose, affected people, prohibited uses, and the harm of each error before collecting data.
-\item Obtain lawful, informed data rights; minimise collection and document provenance, consent, licences, and known gaps.
-\item Split data by time or person where appropriate to prevent leakage. Report accuracy, calibration, uncertainty, and error rates for relevant subgroups.
-\item Test robustness, privacy, security, distribution shift, and accessibility. Have domain experts and affected communities review the design.
-\item Deploy gradually with monitoring, drift alarms, human escalation, rollback, and incident response. Keep audit records and assign an accountable owner.
-\item Measure energy and emissions during development and operation, publish the methodology, and choose the smallest model that meets the requirement.
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Sources of Bias:}
+    \begin{enumerate}
+        \item \textit{Representation Bias:} Datasets that fail to represent target populations proportionally (e.g., computer vision datasets predominantly composed of lighter-skinned subjects).
+        \item \textit{Measurement and Historical Bias:} Ground-truth labels that reflect historical disparities rather than objective merit (e.g., historical arrest records reflecting policing intensity rather than actual crime rates).
+        \item \textit{Proxy Discrimination:} Variables that correlate strongly with protected attributes (e.g., postal zip code or school name serving as a statistical proxy for race or socio-economic class).
+    \end{enumerate}
+    \item \textbf{Real-World Case Study 1: Amazon Automated Resume Screening Tool (2018):} Amazon developed an internal AI recruiting engine trained on resumes submitted over a ten-year period. Because the historical technology workforce was overwhelmingly male, the neural model learned to penalize candidate resumes containing the word ``women's'' (e.g., ``women's chess club captain'') and downgraded graduates from all-women colleges, explicitly reproducing historical gender disparities. The project was subsequently disbanded.
+    \item \textbf{Real-World Case Study 2: COMPAS Recidivism Risk Assessment:} ProPublica's 2016 investigation into the Correctional Offender Management Profiling for Alternative Sanctions (COMPAS) algorithm demonstrated significant racial disparities in prediction errors. Black defendants were falsely categorized as high-risk recidivists at nearly twice the rate of white defendants (false-positive rate of 44.9\% vs. 23.5\%), while white violent recidivists were misclassified as low-risk twice as often as Black recidivists (false-negative rate of 47.7\% vs. 28.0\%). This highlighted the mathematical impossibility of simultaneously satisfying multiple fairness criteria (e.g., predictive parity vs. error rate balance across groups with different base rates).
+    \item \textbf{Real-World Case Study 3: The Gender Shades Study (Buolamwini \& Gebru, 2018):} An intersectional audit of commercial facial analysis models from major technology vendors revealed dramatic error disparities. While error rates for lighter-skinned males were below 0.8\%, error rates for darker-skinned females reached up to 34.7\%. This seminal research led to voluntary commercial moratoria and spurred regulatory scrutiny worldwide.
+    \item \textbf{Engineering Mitigations:} Balanced dataset curation; re-sampling and cost-sensitive re-weighting; adversarial debiasing (training a primary classifier alongside an adversary that attempts to predict protected attributes from hidden representations); disaggregated evaluation across intersectional subgroups; and multi-stakeholder algorithmic impact assessments.
+\end{itemize}
+
+\subsection{Privacy and Data Protection}
+Deep neural networks have billions of parameters capable of memorizing unintended training artifacts, including Personally Identifiable Information (PII), medical histories, private correspondence, and confidential intellectual property.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Privacy Attacks on Deep Models:}
+    \begin{enumerate}
+        \item \textit{Training Data Memorization and Extraction:} Carlini et al. demonstrated that large sequence and language models verbatim memorize and can be prompted to emit sensitive training data, such as telephone numbers, credit card numbers, and cryptographic keys.
+        \item \textit{Membership Inference Attacks:} By querying a model and analyzing the confidence distribution or output entropy, an adversary can determine with high statistical probability whether a specific individual's record was part of the private training set.
+        \item \textit{Model Inversion Attacks:} Utilizing optimization techniques against model outputs to reconstruct recognizable input features (e.g., reconstructing recognizable facial images from a face-recognition classification model).
+    \end{enumerate}
+    \item \textbf{Technical Countermeasures:}
+    \begin{itemize}
+        \item \textit{Differentially Private Stochastic Gradient Descent (DP-SGD):} Clips per-sample gradient $L_2$ norms to threshold $C$ and injects calibrated Gaussian noise during backpropagation:
+        \[
+        \tilde{g}_t = \frac{1}{|B|} \left( \sum_{i \in B} \frac{g_i}{\max\left(1, \frac{\|g_i\|_2}{C}\right)} + \mathcal{N}\left(0, \sigma^2 C^2 \mathbf{I}\right) \right)
+        \]
+        This provides rigorous mathematical privacy guarantees parameterized by $(\epsilon, \delta)$-differential privacy at a modest cost to validation accuracy.
+        \item \textit{Federated Learning:} Decentralizes model training across edge devices (e.g., mobile phones or hospital nodes). Raw data remains localized, and only parameter updates are communicated to a central server using Secure Multi-Party Computation (SMPC) or homomorphic encryption.
+    \end{itemize}
+    \item \textbf{Legal Frameworks:} Compliance with global privacy legislation including the European Union's General Data Protection Regulation (GDPR) mandates strict data minimization (Article 5), purpose limitation, the right to erasure (``right to be forgotten'', requiring emerging machine unlearning techniques), and safeguards against automated decision-making (Article 22).
+\end{itemize}
+
+\subsection{Data Security and Adversarial Vulnerabilities}
+Deep neural networks are highly sensitive to intentional adversarial manipulation that can induce catastrophic failures in safety-critical domains.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Adversarial Perturbations (Evasion Attacks):} Imperceptible input perturbations crafted to maximize prediction loss. The Fast Gradient Sign Method (FGSM, Goodfellow et al.) computes:
+    \[
+    x_{\text{adv}} = x + \epsilon \cdot \operatorname{sign}\left(\nabla_x \mathcal{L}(\theta, x, y)\right)
+    \]
+    Multi-step Projected Gradient Descent (PGD) represents an even stronger attack. Physical-world manifestations—such as carefully placed stickers on traffic stop signs causing computer vision systems in autonomous vehicles to misclassify them as 45 mph speed limit signs—expose profound safety hazards.
+    \item \textbf{Data Poisoning and Backdoors:} Attackers inject corrupted training samples with subtle triggers (e.g., an imperceptible watermark). The model performs normally on clean validation benchmarks but executes malicious classifications whenever the trigger is present in deployment.
+    \item \textbf{Model Stealing and Extraction:} Reverse-engineering proprietary weights or decision boundaries through repeated black-box API queries.
+\end{itemize}
+
+\subsection{Transparency, Explainability, and Accountability}
+Deep neural networks are non-linear, high-dimensional ``black boxes.'' In high-stakes applications—including clinical triage, loan approvals, and judicial sentencing—the inability to inspect causal reasoning raises severe legal and ethical hurdles.
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Limits of Post-Hoc Explainability:} Techniques such as Saliency Maps, Grad-CAM, LIME (Local Interpretable Model-agnostic Explanations), and SHAP (SHapley Additive exPlanations) provide post-hoc local approximations. However, research has shown that saliency maps often act as edge detectors insensitive to model weights, and adversarial manipulations can modify explanations without changing model predictions. Explainability must not be conflated with genuine causal accountability.
+    \item \textbf{Documentation Standards:} Adoption of \textbf{Model Cards for Model Reporting} (Mitchell et al., 2019) and \textbf{Datasheets for Datasets} (Gebru et al.) provides explicit transparency regarding intended use cases, training distributions, disaggregated performance metrics, ethical caveats, and known failure modes.
+    \item \textbf{Legal Liability in Autonomous Systems:} When an autonomous vehicle or an AI diagnostic tool makes a fatal error (e.g., the 2018 Uber autonomous test vehicle collision in Tempe, Arizona), accountability must be legally distributed across hardware manufacturers, sensor providers, software engineers, deployers, and safety operators. Meaningful human oversight requires human operators to possess both the domain expertise and the actual technical authority to override automated decisions.
+\end{itemize}
+
+\subsection{Employment and Economic Impacts}
+The automation of complex cognitive tasks threatens widespread economic displacement across knowledge work (translation, routine legal analysis, medical scribing, entry-level programming) alongside manual work (logistics, automated driving).
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Labor Polarization:} While deep learning enhances productivity for high-skill engineers and domain experts, it risks displacing intermediate repetitive cognitive roles, exacerbating income inequality.
+    \item \textbf{Capital and Compute Concentration:} Because cutting-edge frontier models require tens of millions of dollars in compute infrastructure, technological capability and intellectual property are heavily concentrated in a small oligopoly of multi-national technology corporations, disenfranchising academia and smaller organizations.
+\end{itemize}
+
+\section{Computational Resources and Environmental Sustainability}
+
+\subsection{The Scaling Trajectory and Energy Consumption}
+The rapid capabilities of modern deep learning have been driven heavily by the empirical scaling hypothesis: increasing model parameter counts, dataset sizes, and compute budgets by orders of magnitude. 
+
+Between 2012 and 2018, the compute required for milestone AI models increased by an estimated $300,000\times$, doubling roughly every 3.4 months (far outpacing Moore's law). Training a state-of-the-art transformer model involves billions of floating-point operations executed across thousands of specialized accelerators (GPUs/TPUs) running continuously for weeks or months.
+
+\subsection{Quantitative Carbon Accounting}
+The environmental carbon footprint of training and serving deep learning architectures is quantified through rigorous energy and grid accounting:
+\begin{equation}
+\text{Emissions (kg CO}_2\text{e)} = \text{Energy Consumption (kWh)} \times \text{Carbon Intensity of Grid (kg CO}_2\text{e/kWh)} \times \text{PUE}
+\end{equation}
+Where:
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Energy Consumption ($E$):} Calculated from the hardware's thermal design power (TDP):
+    \[
+    E = \sum_{j} \frac{P_j \times t}{1000} \quad \text{[kWh]}
+    \]
+    where $P_j$ is the operational power draw of accelerator $j$ (Watts) and $t$ is total training time (hours).
+    \item \textbf{PUE (Power Usage Effectiveness):} The ratio of total data center power consumption (including liquid cooling, air circulation, power conversion) to IT equipment power. Modern hyper-scale data centers achieve PUE $\approx 1.1 - 1.2$, whereas typical commercial facilities operate at $1.5 - 1.8$.
+    \item \textbf{Carbon Intensity of Grid ($I$):} The emissions factor of the local electrical grid, varying dramatically from renewable hydro/nuclear grids ($\approx 0.02 - 0.05\text{ kg CO}_2\text{e/kWh}$ in regions like Quebec or Sweden) to coal-dominant grids ($\approx 0.70 - 0.90\text{ kg CO}_2\text{e/kWh}$ in parts of the Midwestern US or Australia).
+\end{itemize}
+
+\subsection{Empirical Evidence and Case Studies}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{The Strubell et al. Landmark Study (2019):} In \textit{``Energy and Policy Considerations for Deep Learning in NLP''}, researchers at UMass Amherst quantified the lifecycle carbon footprint of training large natural language models. They revealed that training a single Transformer model with neural architecture search (NAS) emitted an estimated \textbf{626,155 lbs of $\text{CO}_2\text{equivalent}$} ($284\text{ metric tons CO}_2\text{e}$). For perspective, this is equivalent to:
+    \begin{itemize}
+        \item Nearly \textbf{5 times} the lifetime emissions of an average passenger car (including vehicle manufacture).
+        \item Approximately \textbf{57 times} the annual carbon footprint of an average human being.
+    \end{itemize}
+    \item \textbf{Frontier Large Language Models (Patterson et al., 2021):} Training OpenAI's GPT-3 (175 billion parameters) consumed an estimated $1,287\text{ MWh}$ of electricity, generating approximately $502\text{ metric tons of CO}_2\text{e}$.
+    \item \textbf{Embodied Carbon and Water Footprint:} Operational electricity is only one dimension. The \textit{embodied carbon} embedded in silicon semiconductor fabrication, rare-earth mining, and global hardware supply chains represents up to 50\% of lifetime data center emissions. Furthermore, data centers consume hundreds of millions of liters of potable water annually for evaporative cooling towers, straining local municipal water systems.
+\end{itemize}
+
+\subsection{Sustainable and Green AI Paradigms}
+Schwartz et al. (2020) advocated for a cultural transition from \textbf{``Red AI''} (buying state-of-the-art accuracy at any computational and environmental cost) to \textbf{``Green AI''} (optimizing for efficiency, FLOP reduction, and ecological sustainability).
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Model Compression Techniques:}
+    \begin{itemize}
+        \item \textit{Weight Pruning:} Eliminating redundant network parameters (structured and unstructured pruning), removing up to 80--90\% of parameters with negligible accuracy degradation.
+        \item \textit{Quantization:} Converting 32-bit floating-point weights and activations to 8-bit integers (INT8) or 4-bit representations (FP4), slashing memory bandwidth and energy per multiply-accumulate (MAC) operation by $4\times$ to $8\times$.
+        \item \textit{Knowledge Distillation:} Training compact ``student'' networks to emulate large, over-parameterized ``teacher'' ensembles, drastically reducing downstream inference energy.
+    \end{itemize}
+    \item \textbf{Architectural Efficiency:} Designing lightweight backbones incorporating depthwise separable convolutions (e.g., MobileNet) or neural architecture search targeting latency and energy constraints (e.g., EfficientNet).
+    \item \textbf{Carbon-Aware Workload Scheduling:} Dynamically scheduling long-running offline batch training jobs to execute in geographic locations and times of day when renewable generation (solar, wind) is peaking on the regional electrical grid.
 \end{enumerate}
 
-\subsection*{Conclusion}
-Neural networks can improve diagnosis, accessibility, scientific discovery, and productivity, but technical capability does not establish social acceptability. Fairness, privacy, security, transparency, accountability, labour effects, and environmental cost must be treated as design requirements. A model should be deployed only when its expected benefits outweigh its documented risks, affected people have recourse, and the organisation can monitor and correct failures.
+\section{Summary of Ethical, Societal, and Environmental Governance}
+Table~\ref{tab:governance} summarizes the key dimensions, associated risks, and concrete engineering mitigations required for responsible deep learning systems.
+
+\begin{table}[h!]
+\centering
+\small
+\begin{tabular}{p{3.2cm}p{4.5cm}p{6.8cm}}
+\toprule
+\textbf{Dimension} & \textbf{Core Failure Modes} & \textbf{Engineering \& Policy Mitigations} \\
+\midrule
+\textbf{Algorithmic Bias} & Disparate impact, demographic stereotyping, unequal error rates & Intersectional subgroup testing, representation auditing, adversarial debiasing, Model Cards. \\
+\addlinespace
+\textbf{Privacy} & Training data memorization, membership inference, PII leakage & DP-SGD ($\epsilon,\delta$-privacy), federated learning, data minimization, cryptographic SMPC. \\
+\addlinespace
+\textbf{Security} & Adversarial evasion (FGSM/PGD), data poisoning, backdoor triggers & Adversarial training, certified robustness verification, signed data provenance, rate-limiting. \\
+\addlinespace
+\textbf{Accountability} & Opaque black-box reasoning, unallocated liability, false trust & Model Cards, post-hoc explanations (SHAP/Grad-CAM), meaningful human-in-the-loop override authority. \\
+\addlinespace
+\textbf{Labor \& Economy} & Cognitive task displacement, wealth and compute concentration & Reskilling initiatives, democratized open-access models, human-augmenting AI system design. \\
+\addlinespace
+\textbf{Environmental Sustainability} & Gigantic carbon emissions, water consumption, e-waste, Red AI & Green AI metrics (FLOPs, Joules), INT8 quantization, pruning, distillation, carbon-aware scheduling. \\
+\bottomrule
+\end{tabular}
+\caption{Comprehensive framework for responsible, fair, and sustainable deep learning engineering.}
+\label{tab:governance}
+\end{table}
+
+\section{Conclusion}
+Technical competency and high validation accuracy do not equate to ethical, social, or environmental viability. As neural networks and deep learning architectures continue to scale and govern human lives, deep learning practitioners bear the fundamental ethical responsibility to integrate fairness, privacy, security, transparency, and environmental sustainability directly into the machine learning design and deployment lifecycle.
+
 \end{document}

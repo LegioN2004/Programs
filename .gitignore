@@ -21,6 +21,7 @@ target/
 *.pdf
 *.gz
 *.aux
+*.toc
 
 
 # Ignore generated files and directories for Rust
@@ -344,7 +345,6 @@ WebDev-stuff/Kirat-cohort-0-1/10.1-Postgres/postgres1-app/src/password.ts
 zig-cache/
 **/.zig-cache/
 .zig-cache/
-main.tex
 PYTHON/university/7th-sem/lip-reading/data/alignments/s1/bbaf2n.align
 PYTHON/university/7th-sem/lip-reading/data/alignments/s1/bbaf3s.align
 PYTHON/university/7th-sem/lip-reading/data/alignments/s1/bbaf4p.align
