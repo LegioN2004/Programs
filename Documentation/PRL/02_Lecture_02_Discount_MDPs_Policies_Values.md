@@ -153,7 +153,12 @@ Because the ice is slippery (`is_slippery=True`), when the agent selects action 
 * **Terminal absorbing condition:** Once the agent enters any Hole ($5, 7, 11, 12$) or the Goal ($15$), the episode terminates ($P(s|s, a) = 1$ with $r = 0$).
 
 #### 4. Reward Function ($R$):
-$$R(s, a, s') = \begin{cases} +1, & \text{if } s' = 15 \text{ (Goal reached)} \\ 0, & \text{for all other transitions (including falling into Holes)} \end{cases}$$
+$$
+R(s, a, s') = \begin{cases}
++1, & \text{if } s' = 15 \text{ (Goal reached)} \\
+0, & \text{for all other transitions (including falling into Holes)}
+\end{cases}
+$$
 
 #### 5. Discount Factor ($\gamma$):
 A scalar parameter $\gamma \in [0, 1)$ (typically $\gamma = 0.9$ or $0.99$) that ensures finite convergence and penalizes prolonged wandering.
@@ -187,7 +192,14 @@ When the agent chooses $a = \text{Right}$:
 3. **Perpendicular 2 (Down, prob 1/3):** Slides down into **Hole 5**!
 
 #### Transition Probability Distribution:
-$$P(s' \mid s = 1, a = \text{Right}) = \begin{cases} 1/3, & s' = 2 \text{ (Right)} \\ 1/3, & s' = 1 \text{ (Up: wall bounce)} \\ 1/3, & s' = 5 \text{ (Down: Hole!)} \\ 0, & \text{otherwise} \end{cases}$$
+$$
+P(s' \mid s = 1, a = \text{Right}) = \begin{cases}
+\frac{1}{3}, & s' = 2 \text{ (Right)} \\
+\frac{1}{3}, & s' = 1 \text{ (Up: wall bounce)} \\
+\frac{1}{3}, & s' = 5 \text{ (Down: Hole)} \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 $$\boxed{\text{Probability of falling into Hole 5} = \frac{1}{3} \approx 33.33\%}$$
 
@@ -201,7 +213,14 @@ When the agent chooses $a = \text{Up}$:
 3. **Perpendicular 2 (Right, prob 1/3):** Slides right to **State 2**.
 
 #### Transition Probability Distribution:
-$$P(s' \mid s = 1, a = \text{Up}) = \begin{cases} 1/3, & s' = 0 \text{ (Left)} \\ 1/3, & s' = 1 \text{ (Up: wall bounce)} \\ 1/3, & s' = 2 \text{ (Right)} \\ 0, & s' = 5 \text{ (Down)} \end{cases}$$
+$$
+P(s' \mid s = 1, a = \text{Up}) = \begin{cases}
+\frac{1}{3}, & s' = 0 \text{ (Left)} \\
+\frac{1}{3}, & s' = 1 \text{ (Up: wall bounce)} \\
+\frac{1}{3}, & s' = 2 \text{ (Right)} \\
+0, & s' = 5 \text{ (Down: Hole)}
+\end{cases}
+$$
 
 #### Why does $a = \text{Up}$ guarantee 0% chance of falling into Hole 5?
 * Down (where Hole 5 sits) is the **opposite** (reverse) direction to Up ($180^\circ$ away), **not a perpendicular direction** ($90^\circ$).

@@ -64,7 +64,7 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 ### (c) Stability of the target mapping
 
 * **Supervised Learning:**
-  * The target mapping $f: X 	o Y$ is stationary and stable.
+  * The target mapping $f: X \to Y$ is stationary and stable.
   * The correct label for a given input remains constant throughout training.
   * *Example:* An image of a stop sign always corresponds to the label "Stop Sign", regardless of when it is sampled.
 
@@ -81,7 +81,7 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 | :--- | :--- | :--- |
 | **(a) Answer Key** | Explicit, predefined ground-truth labels ($Y$) provided for every input. | No answer key; agent receives only scalar evaluative reward feedback ($R_{t+1}$). |
 | **(b) Environmental Reactivity** | Non-reactive; model predictions do not alter the training data distribution. | Reactive; agent actions directly alter the environment state ($S_{t+1}$) and future observations. |
-| **(c) Target Mapping** | Stationary and fixed ($X 	o Y$ mapping does not drift). | Non-stationary; targets shift as the agent's policy and future action choices improve. |
+| **(c) Target Mapping** | Stationary and fixed ($X \to Y$ mapping does not drift). | Non-stationary; targets shift as the agent's policy and future action choices improve. |
 
 ---
 
@@ -96,7 +96,7 @@ Using the Lecture 01 reward function for the autonomous delivery drone (+1000 fo
 
 **First, understand the concept:** The **cumulative return** ($G_0$) is the total reward an agent accumulates over the entire duration of an episode, starting from time step $t = 0$. Because the problem specifies the *undiscounted* return, the discount factor is $\gamma = 1$, which means we simply sum up every single reward received step by step without decaying them:
 
-$$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
+$$G_0 = \sum_{t=1}^{T} R_t = R_{\text{flight time}} + R_{\text{terminal}}$$
 
 ---
 
@@ -104,21 +104,21 @@ $$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
 
 #### Episode A: Successful Delivery at $t = 145$ seconds
 1. **Flight time penalty:** The drone flies for $145$ seconds, receiving $-1$ point per second:
-   $$R_{	ext{flight}} = 145 	imes (-1) = -145$$
+   $$R_{\text{flight}} = 145 \times (-1) = -145$$
 2. **Terminal delivery bonus:** The drone drops the package successfully on the porch:
-   $$R_{	ext{terminal}} = +1000$$
+   $$R_{\text{terminal}} = +1000$$
 3. **Cumulative Return $G_0$:**
    $$G_0 = -145 + 1000$$
-   $$oxed{G_0 = +855}$$
+   $$\boxed{G_0 = +855}$$
 
 #### Episode B: Rotor Stall and Crash at $t = 60$ seconds
 1. **Flight time penalty:** The drone flies for $60$ seconds, receiving $-1$ point per second:
-   $$R_{	ext{flight}} = 60 	imes (-1) = -60$$
+   $$R_{\text{flight}} = 60 \times (-1) = -60$$
 2. **Terminal crash penalty:** The drone crashes into a tree:
-   $$R_{	ext{terminal}} = -1000$$
+   $$R_{\text{terminal}} = -1000$$
 3. **Cumulative Return $G_0$:**
    $$G_0 = -60 + (-1000)$$
-   $$oxed{G_0 = -1060}$$
+   $$\boxed{G_0 = -1060}$$
 
 ---
 
@@ -146,12 +146,12 @@ In the Lecture 01 self-driving example, the agent receives +1 for every time ste
 
 ### (a) Undiscounted total return $G_0$
 * **Steps 1 to 84:** The car stays safely in its lane, earning $+1$ per step:
-  $$\sum_{t=1}^{84} R_t = 84 	imes (+1) = +84$$
+  $$\sum_{t=1}^{84} R_t = 84 \times (+1) = +84$$
 * **Step 85:** The car crashes, incurring the collision penalty:
   $$R_{85} = -100$$
 * **Total Return Calculation:**
   $$G_0 = 84 + (-100) = 84 - 100$$
-  $$oxed{G_0 = -16}$$
+  $$\boxed{G_0 = -16}$$
 
 ---
 
@@ -161,7 +161,7 @@ In the Lecture 01 self-driving example, the agent receives +1 for every time ste
 If the agent receives $+1$ for every step it remains in its lane and $0$ upon reaching its destination, **an optimal agent will deliberately refuse to reach its destination!**
 * **Why?** 
   * If it reaches the destination at step $T$, the episode terminates, and it receives no further rewards ($G_0 = T$).
-  * If it instead drives around the block, loops in circles, or sits idling inside its lane forever, it accumulates $+1$ at every single time step indefinitely ($G_0 	o \infty$).
+  * If it instead drives around the block, loops in circles, or sits idling inside its lane forever, it accumulates $+1$ at every single time step indefinitely ($G_0 \to \infty$).
   * Therefore, the destination acts as an *unwanted penalty* that cuts off its infinite stream of free points!
 
 #### 2. How must the per-step reward sign be modified?
@@ -240,7 +240,7 @@ Applying this formal criterion to the chess-playing robot:
 ### Prompt:
 In the standard RL loop, at discrete time step $t$, the agent observes $S_t$ and selects $A_t$, after which the environment emits $R_{t+1}$ and $S_{t+1}$.
 (a) Why is the reward resulting from action $A_t$ in state $S_t$ indexed as $R_{t+1}$ rather than $R_t$?
-(b) Given a 4-step episodic trajectory $S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, S_3, A_3, R_4, S_4 (	ext{Terminal})$ with rewards $R_1 = 2, R_2 = -1, R_3 = 4$, and $R_4 = 10$, compute the undiscounted returns $G_0, G_1, G_2$, and $G_3$.
+(b) Given a 4-step episodic trajectory $S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, S_3, A_3, R_4, S_4 (\text{Terminal})$ with rewards $R_1 = 2, R_2 = -1, R_3 = 4$, and $R_4 = 10$, compute the undiscounted returns $G_0, G_1, G_2$, and $G_3$.
 
 ### Response:
 
@@ -268,19 +268,19 @@ Given: $R_1 = 2,\; R_2 = -1,\; R_3 = 4,\; R_4 = 10$, with terminal state at $t =
 
 1. **Calculate $G_3$:**
    $$G_3 = R_4 = 10$$
-   $$oxed{G_3 = 10}$$
+   $$\boxed{G_3 = 10}$$
 
 2. **Calculate $G_2$:**
    $$G_2 = R_3 + G_3 = 4 + 10 = 14$$
-   $$oxed{G_2 = 14}$$
+   $$\boxed{G_2 = 14}$$
 
 3. **Calculate $G_1$:**
    $$G_1 = R_2 + G_2 = -1 + 14 = 13$$
-   $$oxed{G_1 = 13}$$
+   $$\boxed{G_1 = 13}$$
 
 4. **Calculate $G_0$:**
    $$G_0 = R_1 + G_1 = 2 + 13 = 15$$
-   $$oxed{G_0 = 15}$$
+   $$\boxed{G_0 = 15}$$
 
 ---
 
@@ -293,7 +293,10 @@ Given: $R_1 = 2,\; R_2 = -1,\; R_3 = 4,\; R_4 = 10$, with terminal state at $t =
 | **$t = 1$** | $R_2 + R_3 + R_4$ | $-1 + 4 + 10$ | **$13$** |
 | **$t = 0$** | $R_1 + R_2 + R_3 + R_4$ | $2 + (-1) + 4 + 10$ | **$15$** |
 
+
+
 ---
+
 
 # Section 2: Lecture 02 — The Discount Factor, MDPs, Policies & Value Functions
 
@@ -450,7 +453,12 @@ Because the ice is slippery (`is_slippery=True`), when the agent selects action 
 * **Terminal absorbing condition:** Once the agent enters any Hole ($5, 7, 11, 12$) or the Goal ($15$), the episode terminates ($P(s|s, a) = 1$ with $r = 0$).
 
 #### 4. Reward Function ($R$):
-$$R(s, a, s') = \begin{cases} +1, & \text{if } s' = 15 \text{ (Goal reached)} \\ 0, & \text{for all other transitions (including falling into Holes)} \end{cases}$$
+$$
+R(s, a, s') = \begin{cases}
++1, & \text{if } s' = 15 \text{ (Goal reached)} \\
+0, & \text{for all other transitions (including falling into Holes)}
+\end{cases}
+$$
 
 #### 5. Discount Factor ($\gamma$):
 A scalar parameter $\gamma \in [0, 1)$ (typically $\gamma = 0.9$ or $0.99$) that ensures finite convergence and penalizes prolonged wandering.
@@ -484,7 +492,14 @@ When the agent chooses $a = \text{Right}$:
 3. **Perpendicular 2 (Down, prob 1/3):** Slides down into **Hole 5**!
 
 #### Transition Probability Distribution:
-$$P(s' \mid s = 1, a = \text{Right}) = \begin{cases} 1/3, & s' = 2 \text{ (Right)} \\ 1/3, & s' = 1 \text{ (Up: wall bounce)} \\ 1/3, & s' = 5 \text{ (Down: Hole!)} \\ 0, & \text{otherwise} \end{cases}$$
+$$
+P(s' \mid s = 1, a = \text{Right}) = \begin{cases}
+\frac{1}{3}, & s' = 2 \text{ (Right)} \\
+\frac{1}{3}, & s' = 1 \text{ (Up: wall bounce)} \\
+\frac{1}{3}, & s' = 5 \text{ (Down: Hole)} \\
+0, & \text{otherwise}
+\end{cases}
+$$
 
 $$\boxed{\text{Probability of falling into Hole 5} = \frac{1}{3} \approx 33.33\%}$$
 
@@ -498,7 +513,14 @@ When the agent chooses $a = \text{Up}$:
 3. **Perpendicular 2 (Right, prob 1/3):** Slides right to **State 2**.
 
 #### Transition Probability Distribution:
-$$P(s' \mid s = 1, a = \text{Up}) = \begin{cases} 1/3, & s' = 0 \text{ (Left)} \\ 1/3, & s' = 1 \text{ (Up: wall bounce)} \\ 1/3, & s' = 2 \text{ (Right)} \\ 0, & s' = 5 \text{ (Down)} \end{cases}$$
+$$
+P(s' \mid s = 1, a = \text{Up}) = \begin{cases}
+\frac{1}{3}, & s' = 0 \text{ (Left)} \\
+\frac{1}{3}, & s' = 1 \text{ (Up: wall bounce)} \\
+\frac{1}{3}, & s' = 2 \text{ (Right)} \\
+0, & s' = 5 \text{ (Down: Hole)}
+\end{cases}
+$$
 
 #### Why does $a = \text{Up}$ guarantee 0% chance of falling into Hole 5?
 * Down (where Hole 5 sits) is the **opposite** (reverse) direction to Up ($180^\circ$ away), **not a perpendicular direction** ($90^\circ$).
@@ -570,7 +592,10 @@ $$\boxed{4^{11} = 4,194,304 \text{ distinct policies}}$$
 | **Game Theory** | Inadequate for bluffing or Rock-Paper-Scissors. | Essential for mixed Nash equilibria. |
 | **Total on 11 States** | $4^{11} = 4,194,304$ | Infinitely many (continuous probability simplex). |
 
+
+
 ---
+
 
 # Section 3: Lecture 03 — Value Functions and the Bellman Equation
 
@@ -776,7 +801,10 @@ $$\boxed{V(s) = R(s, \pi(s)) + \gamma V\big(f(s, \pi(s))\big)}$$
 or simply:
 $$\boxed{V(s) = R_{t+1} + \gamma V(S_{t+1})}$$
 
+
+
 ---
+
 
 # Section 4: Lecture 04 — Numerical Calculation of the Bellman Expectation Equation
 
@@ -1004,7 +1032,10 @@ This occurs under **boundary wall reflection**:
   $$P(s'=14 \mid 14, a)[r + \gamma V_{\text{old}}(14)]$$
 * In that scenario, $V_{\text{old}}(14) = 0.70$ would be multiplied by $\gamma = 0.9$ and the wall-bounce probability.
 
+
+
 ---
+
 
 # Section 5: Module 2, Lecture 1 — Tabular Methods & Dynamic Programming
 
@@ -1814,7 +1845,12 @@ Compare Exploring Starts (MC-ES) and on-policy $\varepsilon$-greedy MC control a
 * **On-Policy $\varepsilon$-Greedy Control:**
   * **NO, it uses an $\varepsilon$-soft improvement operator.**
   * The policy update shifts the $\varepsilon$-soft distribution toward the greedy action:
-    $$\pi(a \mid s) \leftarrow \begin{cases} 1 - \varepsilon + \frac{\varepsilon}{|A|}, & a = \arg\max_{a'} Q(s, a') \\ \frac{\varepsilon}{|A|}, & a \neq \arg\max_{a'} Q(s, a') \end{cases}$$
+    $$
+\pi(a \mid s) \leftarrow \begin{cases}
+1 - \varepsilon + \frac{\varepsilon}{|A|}, & a = \arg\max_{a'} Q(s, a') \\
+\frac{\varepsilon}{|A|}, & a \neq \arg\max_{a'} Q(s, a')
+\end{cases}
+$$
   * The policy itself must remain stochastic forever to ensure continual exploration.
 
 ---
@@ -2084,7 +2120,12 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
   * Look closely at the Q-Learning update target:
     $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
   * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
-    $$\pi_{\text{target}}(a \mid s) = \begin{cases} 1, & a = \arg\max_{a'} Q(s, a') \\ 0, & \text{otherwise} \end{cases}$$
+    $$
+\pi_{\text{target}}(a \mid s) = \begin{cases}
+1, & a = \arg\max_{a'} Q(s, a') \\
+0, & \text{otherwise}
+\end{cases}
+$$
 * **Notice the mismatch:** 
   $$\mu = \varepsilon\text{-greedy} \quad \neq \quad \pi = \text{purely greedy}$$
 * Even though the behaviour policy $\mu_t$ updates its weights as $Q_t$ evolves, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).
@@ -2445,7 +2486,10 @@ $$Q^*(s, a) = R(s, a) + \gamma \max_{a'} Q^*(s', a')$$
 | **State $B$** | **$0.900$** | **$0.729$** | **Right** |
 | **State $A$** | **$0.810$** | **$0.729$** | **Right** |
 
+
+
 ---
+
 
 # Section 10: Module 4 (Part 1) — From Q-Learning to Deep Q-Networks (DQN)
 
@@ -2727,7 +2771,12 @@ $$y = r + \gamma(1 - 1) \max_{a'} Q(s', a') = r + 0 = \mathbf{1.0}$$
 
 #### The Mathematically Correct Target:
 $$d_{\text{term}} = \mathbf{terminated} \quad (\text{Ignore truncation for bootstrapping!})$$
-$$y = \begin{cases} r, & \text{if terminated = True (Crashed)} \\ r + \gamma \max_{a'} Q(s', a'), & \text{if truncated = True (Healthy, clock ran out)} \end{cases}$$
+$$
+y = \begin{cases}
+r, & \text{if terminated = True (Crashed)} \\
+r + \gamma \max_{a'} Q(s', a'), & \text{if truncated = True (Healthy, clock ran out)}
+\end{cases}
+$$
 
 ---
 
@@ -3038,3 +3087,7 @@ $$\theta \leftarrow \theta - \alpha \sum_t G_t \nabla_\theta \log \pi_\theta(a_t
   $$\boxed{\text{The policy actively minimizes expected return, learning the worst possible behavior!}}$$
 * Instead of learning to balance the pole or win the game, the agent learns to crash immediately, seeking out lowest possible rewards.
 * **The Fix:** Always write `loss = -torch.sum(log_probs * returns)` to invert the gradient for descent optimizers!
+
+
+
+---

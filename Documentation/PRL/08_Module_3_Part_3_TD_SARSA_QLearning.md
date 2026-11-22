@@ -227,7 +227,12 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
   * Look closely at the Q-Learning update target:
     $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
   * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
-    $$\pi_{\text{target}}(a \mid s) = \begin{cases} 1, & a = \arg\max_{a'} Q(s, a') \\ 0, & \text{otherwise} \end{cases}$$
+    $$
+\pi_{\text{target}}(a \mid s) = \begin{cases}
+1, & a = \arg\max_{a'} Q(s, a') \\
+0, & \text{otherwise}
+\end{cases}
+$$
 * **Notice the mismatch:** 
   $$\mu = \varepsilon\text{-greedy} \quad \neq \quad \pi = \text{purely greedy}$$
 * Even though the behaviour policy $\mu_t$ updates its weights as $Q_t$ evolves, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).

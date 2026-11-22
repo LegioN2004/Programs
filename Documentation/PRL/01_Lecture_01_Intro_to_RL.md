@@ -45,7 +45,7 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 ### (c) Stability of the target mapping
 
 * **Supervised Learning:**
-  * The target mapping $f: X 	o Y$ is stationary and stable.
+  * The target mapping $f: X \to Y$ is stationary and stable.
   * The correct label for a given input remains constant throughout training.
   * *Example:* An image of a stop sign always corresponds to the label "Stop Sign", regardless of when it is sampled.
 
@@ -62,7 +62,7 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 | :--- | :--- | :--- |
 | **(a) Answer Key** | Explicit, predefined ground-truth labels ($Y$) provided for every input. | No answer key; agent receives only scalar evaluative reward feedback ($R_{t+1}$). |
 | **(b) Environmental Reactivity** | Non-reactive; model predictions do not alter the training data distribution. | Reactive; agent actions directly alter the environment state ($S_{t+1}$) and future observations. |
-| **(c) Target Mapping** | Stationary and fixed ($X 	o Y$ mapping does not drift). | Non-stationary; targets shift as the agent's policy and future action choices improve. |
+| **(c) Target Mapping** | Stationary and fixed ($X \to Y$ mapping does not drift). | Non-stationary; targets shift as the agent's policy and future action choices improve. |
 
 ---
 
@@ -77,7 +77,7 @@ Using the Lecture 01 reward function for the autonomous delivery drone (+1000 fo
 
 **First, understand the concept:** The **cumulative return** ($G_0$) is the total reward an agent accumulates over the entire duration of an episode, starting from time step $t = 0$. Because the problem specifies the *undiscounted* return, the discount factor is $\gamma = 1$, which means we simply sum up every single reward received step by step without decaying them:
 
-$$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
+$$G_0 = \sum_{t=1}^{T} R_t = R_{\text{flight time}} + R_{\text{terminal}}$$
 
 ---
 
@@ -85,21 +85,21 @@ $$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
 
 #### Episode A: Successful Delivery at $t = 145$ seconds
 1. **Flight time penalty:** The drone flies for $145$ seconds, receiving $-1$ point per second:
-   $$R_{	ext{flight}} = 145 	imes (-1) = -145$$
+   $$R_{\text{flight}} = 145 \times (-1) = -145$$
 2. **Terminal delivery bonus:** The drone drops the package successfully on the porch:
-   $$R_{	ext{terminal}} = +1000$$
+   $$R_{\text{terminal}} = +1000$$
 3. **Cumulative Return $G_0$:**
    $$G_0 = -145 + 1000$$
-   $$oxed{G_0 = +855}$$
+   $$\boxed{G_0 = +855}$$
 
 #### Episode B: Rotor Stall and Crash at $t = 60$ seconds
 1. **Flight time penalty:** The drone flies for $60$ seconds, receiving $-1$ point per second:
-   $$R_{	ext{flight}} = 60 	imes (-1) = -60$$
+   $$R_{\text{flight}} = 60 \times (-1) = -60$$
 2. **Terminal crash penalty:** The drone crashes into a tree:
-   $$R_{	ext{terminal}} = -1000$$
+   $$R_{\text{terminal}} = -1000$$
 3. **Cumulative Return $G_0$:**
    $$G_0 = -60 + (-1000)$$
-   $$oxed{G_0 = -1060}$$
+   $$\boxed{G_0 = -1060}$$
 
 ---
 
@@ -127,12 +127,12 @@ In the Lecture 01 self-driving example, the agent receives +1 for every time ste
 
 ### (a) Undiscounted total return $G_0$
 * **Steps 1 to 84:** The car stays safely in its lane, earning $+1$ per step:
-  $$\sum_{t=1}^{84} R_t = 84 	imes (+1) = +84$$
+  $$\sum_{t=1}^{84} R_t = 84 \times (+1) = +84$$
 * **Step 85:** The car crashes, incurring the collision penalty:
   $$R_{85} = -100$$
 * **Total Return Calculation:**
   $$G_0 = 84 + (-100) = 84 - 100$$
-  $$oxed{G_0 = -16}$$
+  $$\boxed{G_0 = -16}$$
 
 ---
 
@@ -142,7 +142,7 @@ In the Lecture 01 self-driving example, the agent receives +1 for every time ste
 If the agent receives $+1$ for every step it remains in its lane and $0$ upon reaching its destination, **an optimal agent will deliberately refuse to reach its destination!**
 * **Why?** 
   * If it reaches the destination at step $T$, the episode terminates, and it receives no further rewards ($G_0 = T$).
-  * If it instead drives around the block, loops in circles, or sits idling inside its lane forever, it accumulates $+1$ at every single time step indefinitely ($G_0 	o \infty$).
+  * If it instead drives around the block, loops in circles, or sits idling inside its lane forever, it accumulates $+1$ at every single time step indefinitely ($G_0 \to \infty$).
   * Therefore, the destination acts as an *unwanted penalty* that cuts off its infinite stream of free points!
 
 #### 2. How must the per-step reward sign be modified?
@@ -221,7 +221,7 @@ Applying this formal criterion to the chess-playing robot:
 ### Prompt:
 In the standard RL loop, at discrete time step $t$, the agent observes $S_t$ and selects $A_t$, after which the environment emits $R_{t+1}$ and $S_{t+1}$.
 (a) Why is the reward resulting from action $A_t$ in state $S_t$ indexed as $R_{t+1}$ rather than $R_t$?
-(b) Given a 4-step episodic trajectory $S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, S_3, A_3, R_4, S_4 (	ext{Terminal})$ with rewards $R_1 = 2, R_2 = -1, R_3 = 4$, and $R_4 = 10$, compute the undiscounted returns $G_0, G_1, G_2$, and $G_3$.
+(b) Given a 4-step episodic trajectory $S_0, A_0, R_1, S_1, A_1, R_2, S_2, A_2, R_3, S_3, A_3, R_4, S_4 (\text{Terminal})$ with rewards $R_1 = 2, R_2 = -1, R_3 = 4$, and $R_4 = 10$, compute the undiscounted returns $G_0, G_1, G_2$, and $G_3$.
 
 ### Response:
 
@@ -249,19 +249,19 @@ Given: $R_1 = 2,\; R_2 = -1,\; R_3 = 4,\; R_4 = 10$, with terminal state at $t =
 
 1. **Calculate $G_3$:**
    $$G_3 = R_4 = 10$$
-   $$oxed{G_3 = 10}$$
+   $$\boxed{G_3 = 10}$$
 
 2. **Calculate $G_2$:**
    $$G_2 = R_3 + G_3 = 4 + 10 = 14$$
-   $$oxed{G_2 = 14}$$
+   $$\boxed{G_2 = 14}$$
 
 3. **Calculate $G_1$:**
    $$G_1 = R_2 + G_2 = -1 + 14 = 13$$
-   $$oxed{G_1 = 13}$$
+   $$\boxed{G_1 = 13}$$
 
 4. **Calculate $G_0$:**
    $$G_0 = R_1 + G_1 = 2 + 13 = 15$$
-   $$oxed{G_0 = 15}$$
+   $$\boxed{G_0 = 15}$$
 
 ---
 

@@ -278,7 +278,12 @@ $$y = r + \gamma(1 - 1) \max_{a'} Q(s', a') = r + 0 = \mathbf{1.0}$$
 
 #### The Mathematically Correct Target:
 $$d_{\text{term}} = \mathbf{terminated} \quad (\text{Ignore truncation for bootstrapping!})$$
-$$y = \begin{cases} r, & \text{if terminated = True (Crashed)} \\ r + \gamma \max_{a'} Q(s', a'), & \text{if truncated = True (Healthy, clock ran out)} \end{cases}$$
+$$
+y = \begin{cases}
+r, & \text{if terminated = True (Crashed)} \\
+r + \gamma \max_{a'} Q(s', a'), & \text{if truncated = True (Healthy, clock ran out)}
+\end{cases}
+$$
 
 ---
 
