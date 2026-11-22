@@ -158,15 +158,15 @@ $$L(\theta) = -\sum_{t=0}^{T-1} \ln\big(\pi_\theta(a_t \mid s_t)\big) \cdot G_t$
 ### (a) Verify Backward Return Accumulation ($\gamma = 1$)
 
 Using backward recursion $G_t = R_{t+1} + G_{t+1}$ with terminal state $G_3 = 0$:
-1. **At $t = 3$ (Terminal):**
+1. **At** $t = 3$ **(Terminal):**
    $$\boxed{G_3 = 0}$$
-2. **At $t = 2$ ($S_2 \to S_3$ with $R_3 = -1$):**
+2. **At** $t = 2$ ($S_2 \to S_3$ **with** $R_3 = -1$):
    $$G_2 = R_3 + G_3 = -1 + 0 = \mathbf{-1}$$
    $$\boxed{G_2 = -1}$$
-3. **At $t = 1$ ($S_1 \to S_2$ with $R_2 = -100$):**
+3. **At** $t = 1$ ($S_1 \to S_2$ **with** $R_2 = -100$):
    $$G_1 = R_2 + G_2 = -100 + (-1) = \mathbf{-101}$$
    $$\boxed{G_1 = -101}$$
-4. **At $t = 0$ ($S_0 \to S_1$ with $R_1 = -1$):**
+4. **At** $t = 0$ ($S_0 \to S_1$ **with** $R_1 = -1$):
    $$G_0 = R_1 + G_1 = -1 + (-101) = \mathbf{-102}$$
    $$\boxed{G_0 = -102}$$
 
@@ -209,8 +209,8 @@ $$\theta \leftarrow \theta + \alpha \sum_{t=0}^2 G_t \nabla_\theta \ln P_t$$
 
 #### Physical & Mathematical Effect:
 * Notice that all returns are negative: $G_0 = -102 < 0$, $G_1 = -101 < 0$, and $G_2 = -1 < 0$.
-* When $G_t < 0$, the update adds a **negative gradient**, which pushes the network weights in the direction that **DECREASES $\ln P_t$**.
-* Therefore, the optimizer **actively reduces the selection probabilities $P_0, P_1, P_2$** of actions $a_0, a_1, a_2$.
+* When $G_t < 0$, the update adds a **negative gradient**, which pushes the network weights in the direction that **DECREASES** $\ln P_t$.
+* Therefore, the optimizer **actively reduces the selection probabilities** $P_0, P_1, P_2$ of actions $a_0, a_1, a_2$.
 * The catastrophic crash penalty at step 1 ($G_1 = -101, G_0 = -102$) exerts immense downward pressure, teaching the policy to avoid selecting Action 1 in $S_0$ and Action 2 in $S_1$ in future episodes!
 
 ---
@@ -254,14 +254,14 @@ $$\mathbb{E}_{a_t \sim \pi_\theta}\big[\nabla_\theta \log \pi_\theta(a_t \mid s_
 
 ### Numerical Return Standardization for $G = [10.0, 20.0, 30.0]$
 
-1. **Mean ($\mu_G$):**
+1. **Mean** ($\mu_G$):
    $$\mu_G = \frac{10.0 + 20.0 + 30.0}{3} = \frac{60.0}{3} = \mathbf{20.0}$$
 
-2. **Sample Standard Deviation ($\sigma_G$ with $N-1 = 2$ degrees of freedom):**
+2. **Sample Standard Deviation** ($\sigma_G$ **with** $N-1 = 2$ **degrees of freedom):**
    $$s^2 = \frac{(10 - 20)^2 + (20 - 20)^2 + (30 - 20)^2}{3 - 1} = \frac{(-10)^2 + 0^2 + (10)^2}{2} = \frac{100 + 100}{2} = 100.0$$
    $$\sigma_G = \sqrt{100.0} = \mathbf{10.0}$$
 
-3. **Standardized Returns $\tilde{G}_i = \frac{G_i - \mu_G}{\sigma_G}$:**
+3. **Standardized Returns** $\tilde{G}_i = \frac{G_i - \mu_G}{\sigma_G}$:
    * $\tilde{G}_1 = \frac{10.0 - 20.0}{10.0} = \frac{-10.0}{10.0} = \mathbf{-1.0}$
    * $\tilde{G}_2 = \frac{20.0 - 20.0}{10.0} = \frac{0.0}{10.0} = \mathbf{0.0}$
    * $\tilde{G}_3 = \frac{30.0 - 20.0}{10.0} = \frac{+10.0}{10.0} = \mathbf{+1.0}$

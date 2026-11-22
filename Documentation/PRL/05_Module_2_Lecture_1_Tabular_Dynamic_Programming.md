@@ -152,7 +152,7 @@ $$V_2(S_2) = 0.25 \times (0 + 0.225 + 0.225 + 1.0)$$
 $$V_2(S_2) = 0.25 \times 1.450$$
 $$\boxed{V_2(S_2) = 0.3625}$$
 
-*(Notice that $V_2(S_2) = 0.3625$ matches $V_2(S_1) = 0.3625$ exactly, confirming the perfect diagonal symmetry of the grid!)*
+(Notice that $V_2(S_2) = 0.3625$ matches $V_2(S_1) = 0.3625$ exactly, confirming the perfect diagonal symmetry of the grid!)
 
 ---
 
@@ -213,7 +213,7 @@ Take the natural logarithm ($\ln$) of both sides:
 $$\ln\big((0.9)^k\big) \le \ln(0.01)$$
 $$k \cdot \ln(0.9) \le \ln(0.01)$$
 
-*Note: Since $\ln(0.9)$ is negative, dividing by $\ln(0.9)$ flips the inequality sign:*
+**Note:** Since $\ln(0.9)$ is negative, dividing by $\ln(0.9)$ flips the inequality sign:
 $$k \ge \frac{\ln(0.01)}{\ln(0.9)}$$
 
 Substitute numerical values:
@@ -249,7 +249,7 @@ Starting from the evaluated random policy values on Slide 23 ($V(S_0) \approx 0.
 
 ### Response:
 
-**First, understand Policy Improvement:** Once we evaluate a policy, we ask: *"At each state, if I could greedily choose the single best action based on one-step lookahead $q(s, a) = r + \gamma V(s')$, which action wins?"* Switching to those winning actions creates an improved policy.
+**First, understand Policy Improvement:** Once we evaluate a policy, we ask: "At each state, if I could greedily choose the single best action based on one-step lookahead $q(s, a) = r + \gamma V(s')$, which action wins?" Switching to those winning actions creates an improved policy.
 
 ---
 

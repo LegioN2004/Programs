@@ -547,19 +547,19 @@ Define a policy mathematically. What is the difference between a deterministic p
 
 ### Response:
 
-**First, understand what a policy is:** In simple terms, a **policy** is the agent's brain or rulebook. It tells the agent: *"Whenever you find yourself in state $s$, here is the action you should take."*
+**First, understand what a policy is:** In simple terms, a **policy** is the agent's brain or rulebook. It tells the agent: "Whenever you find yourself in state $s$, here is the action you should take."
 
 ---
 
 ### 1. Mathematical Definitions and Differences
 
-* **Deterministic Policy ($\pi : S \to A$):**
+* **Deterministic Policy** ($\pi : S \to A$):
   * A direct functional mapping from each state to a single, definite action:
     $$a = \pi(s)$$
   * Given state $s$, there is no randomness; the agent always executes action $a$ with 100% probability.
   * *Example:* "If in State 14, always pick action Right."
 
-* **Stochastic Policy ($\pi(a \mid s) = \Pr(A_t = a \mid S_t = s)$):**
+* **Stochastic Policy** ($\pi(a \mid s) = \Pr(A_t = a \mid S_t = s)$):
   * A conditional probability distribution over the set of actions given state $s$:
     $$\pi(a \mid s) \ge 0, \quad \sum_{a \in A} \pi(a \mid s) = 1 \quad \forall s \in S$$
   * Given state $s$, the agent rolls dice according to the assigned probabilities.
@@ -1191,7 +1191,7 @@ $$V_2(S_2) = 0.25 \times (0 + 0.225 + 0.225 + 1.0)$$
 $$V_2(S_2) = 0.25 \times 1.450$$
 $$\boxed{V_2(S_2) = 0.3625}$$
 
-*(Notice that $V_2(S_2) = 0.3625$ matches $V_2(S_1) = 0.3625$ exactly, confirming the perfect diagonal symmetry of the grid!)*
+(Notice that $V_2(S_2) = 0.3625$ matches $V_2(S_1) = 0.3625$ exactly, confirming the perfect diagonal symmetry of the grid!)
 
 ---
 
@@ -1252,7 +1252,7 @@ Take the natural logarithm ($\ln$) of both sides:
 $$\ln\big((0.9)^k\big) \le \ln(0.01)$$
 $$k \cdot \ln(0.9) \le \ln(0.01)$$
 
-*Note: Since $\ln(0.9)$ is negative, dividing by $\ln(0.9)$ flips the inequality sign:*
+**Note:** Since $\ln(0.9)$ is negative, dividing by $\ln(0.9)$ flips the inequality sign:
 $$k \ge \frac{\ln(0.01)}{\ln(0.9)}$$
 
 Substitute numerical values:
@@ -1288,7 +1288,7 @@ Starting from the evaluated random policy values on Slide 23 ($V(S_0) \approx 0.
 
 ### Response:
 
-**First, understand Policy Improvement:** Once we evaluate a policy, we ask: *"At each state, if I could greedily choose the single best action based on one-step lookahead $q(s, a) = r + \gamma V(s')$, which action wins?"* Switching to those winning actions creates an improved policy.
+**First, understand Policy Improvement:** Once we evaluate a policy, we ask: "At each state, if I could greedily choose the single best action based on one-step lookahead $q(s, a) = r + \gamma V(s')$, which action wins?" Switching to those winning actions creates an improved policy.
 
 ---
 
@@ -1664,19 +1664,19 @@ Discount factor: $\gamma = 0.5$.
 Using the backward recursion:
 $$G_t = R_{t+1} + \gamma G_{t+1}, \quad \text{with } G_4 = 0$$
 
-1. **At $t = 3$ ($S_3 \to T$):**
+1. **At** $t = 3$ ($S_3 \to T$):
    $$G_3 = R_4 + 0.5 \times G_4 = 10 + 0.5(0) = \mathbf{10.0}$$
    $$\boxed{G_3 = 10.0}$$
 
-2. **At $t = 2$ ($S_1 \to S_3$):**
+2. **At** $t = 2$ ($S_1 \to S_3$):
    $$G_2 = R_3 + 0.5 \times G_3 = 4 + 0.5(10.0) = 4 + 5.0 = \mathbf{9.0}$$
    $$\boxed{G_2 = 9.0}$$
 
-3. **At $t = 1$ ($S_2 \to S_1$):**
+3. **At** $t = 1$ ($S_2 \to S_1$):
    $$G_1 = R_2 + 0.5 \times G_2 = 1 + 0.5(9.0) = 1 + 4.5 = \mathbf{5.5}$$
    $$\boxed{G_1 = 5.5}$$
 
-4. **At $t = 0$ ($S_1 \to S_2$):**
+4. **At** $t = 0$ ($S_1 \to S_2$):
    $$G_0 = R_1 + 0.5 \times G_1 = 2 + 0.5(5.5) = 2 + 2.75 = \mathbf{4.75}$$
    $$\boxed{G_0 = 4.75}$$
 
@@ -1708,8 +1708,8 @@ $$\boxed{\hat{V}_{\text{EV}}(S_1) = 6.875}$$
 | $G_2$ | $14.0$ | **$9.0$** |
 | $G_1$ | $15.0$ | **$5.5$** |
 | $G_0$ | $17.0$ | **$4.75$** |
-| **$\hat{V}_{\text{FV}}(S_1)$** | **$17.0$** | **$4.75$** |
-| **$\hat{V}_{\text{EV}}(S_1)$** | **$15.5$** | **$6.875$** |
+| $\hat{V}_{\text{FV}}(S_1)$ | $17.0$ | **$4.75$** |
+| $\hat{V}_{\text{EV}}(S_1)$ | $15.5$ | **$6.875$** |
 
 ---
 
@@ -2042,11 +2042,11 @@ Given setup:
    $$\text{Target}_{\text{SARSA}} = R_{t+1} + \gamma Q(S', A_{t+1}) = -2.0 + 0.8 \times (4.0) = -2.0 + 3.2 = \mathbf{1.2}$$
    $$\boxed{\text{Target}_{\text{SARSA}} = 1.2}$$
 
-2. **TD Error $\delta_{\text{SARSA}}$:**
+2. **TD Error** $\delta_{\text{SARSA}}$:
    $$\delta_{\text{SARSA}} = 1.2 - Q(S_t, A_t) = 1.2 - 5.0 = \mathbf{-3.8}$$
    $$\boxed{\delta_{\text{SARSA}} = -3.8}$$
 
-3. **Updated $Q_{\text{SARSA}}(S_t, A_t)$:**
+3. **Updated** $Q_{\text{SARSA}}(S_t, A_t)$:
    $$Q(S_t, A_t) \leftarrow 5.0 + 0.25 \times (-3.8) = 5.0 - 0.95 = \mathbf{4.05}$$
    $$\boxed{Q_{\text{SARSA}}(S_t, A_t) = 4.05}$$
 
@@ -2058,11 +2058,11 @@ Given setup:
    $$\text{Target}_{\text{QL}} = R_{t+1} + \gamma \max_{a'} Q(S', a') = -2.0 + 0.8 \times \max(4.0, 12.0, 8.0) = -2.0 + 0.8(12.0) = -2.0 + 9.6 = \mathbf{7.6}$$
    $$\boxed{\text{Target}_{\text{QL}} = 7.6}$$
 
-2. **TD Error $\delta_{\text{QL}}$:**
+2. **TD Error** $\delta_{\text{QL}}$:
    $$\delta_{\text{QL}} = 7.6 - Q(S_t, A_t) = 7.6 - 5.0 = \mathbf{+2.6}$$
    $$\boxed{\delta_{\text{QL}} = +2.6}$$
 
-3. **Updated $Q_{\text{QL}}(S_t, A_t)$:**
+3. **Updated** $Q_{\text{QL}}(S_t, A_t)$:
    $$Q(S_t, A_t) \leftarrow 5.0 + 0.25 \times (+2.6) = 5.0 + 0.65 = \mathbf{5.65}$$
    $$\boxed{Q_{\text{QL}}(S_t, A_t) = 5.65}$$
 
@@ -2309,7 +2309,7 @@ In the walkthrough, State $C$ first acquires a positive Q-value at the end of Ep
 
 #### Episode 1:
 * The agent walks: $S_1 \to S_2 \to S_3 \to \dots \to S_N \to \text{Goal}$.
-* **Transitions along the chain ($S_i \to S_{i+1}$):**
+* **Transitions along the chain** ($S_i \to S_{i+1}$):
   * Immediate reward $R = 0$.
   * Successor value $Q(S_{i+1}, a) = 0$.
   * TD Target $= 0 + \gamma(0) = 0$.
@@ -2340,7 +2340,7 @@ In the walkthrough, State $C$ first acquires a positive Q-value at the end of Ep
 * Monte Carlo does **not bootstrap**.
 * Instead, MC waits for the episode to finish, observes the terminal reward $+1$, and computes the discounted return **backwards across the entire trajectory at once**:
   $$G_t = \gamma^{T-t-1} R_{\text{goal}}$$
-* Therefore, in a **single episode ($N = 1$)** that reaches the Goal, Monte Carlo immediately updates **every single state along the trajectory ($S_1, S_2, \dots, S_N$) simultaneously** with positive non-zero returns:
+* Therefore, in a **single episode** ($N = 1$) that reaches the Goal, Monte Carlo immediately updates **every single state along the trajectory** ($S_1, S_2, \dots, S_N$) **simultaneously** with positive non-zero returns:
   $$V(S_N) \leftarrow \gamma^0(1) = 1.0, \quad V(S_{N-1}) \leftarrow \gamma^1, \quad \dots \quad V(S_1) \leftarrow \gamma^{N-1}$$
 
 ---
@@ -2952,15 +2952,15 @@ $$L(\theta) = -\sum_{t=0}^{T-1} \ln\big(\pi_\theta(a_t \mid s_t)\big) \cdot G_t$
 ### (a) Verify Backward Return Accumulation ($\gamma = 1$)
 
 Using backward recursion $G_t = R_{t+1} + G_{t+1}$ with terminal state $G_3 = 0$:
-1. **At $t = 3$ (Terminal):**
+1. **At** $t = 3$ **(Terminal):**
    $$\boxed{G_3 = 0}$$
-2. **At $t = 2$ ($S_2 \to S_3$ with $R_3 = -1$):**
+2. **At** $t = 2$ ($S_2 \to S_3$ **with** $R_3 = -1$):
    $$G_2 = R_3 + G_3 = -1 + 0 = \mathbf{-1}$$
    $$\boxed{G_2 = -1}$$
-3. **At $t = 1$ ($S_1 \to S_2$ with $R_2 = -100$):**
+3. **At** $t = 1$ ($S_1 \to S_2$ **with** $R_2 = -100$):
    $$G_1 = R_2 + G_2 = -100 + (-1) = \mathbf{-101}$$
    $$\boxed{G_1 = -101}$$
-4. **At $t = 0$ ($S_0 \to S_1$ with $R_1 = -1$):**
+4. **At** $t = 0$ ($S_0 \to S_1$ **with** $R_1 = -1$):
    $$G_0 = R_1 + G_1 = -1 + (-101) = \mathbf{-102}$$
    $$\boxed{G_0 = -102}$$
 
@@ -3003,8 +3003,8 @@ $$\theta \leftarrow \theta + \alpha \sum_{t=0}^2 G_t \nabla_\theta \ln P_t$$
 
 #### Physical & Mathematical Effect:
 * Notice that all returns are negative: $G_0 = -102 < 0$, $G_1 = -101 < 0$, and $G_2 = -1 < 0$.
-* When $G_t < 0$, the update adds a **negative gradient**, which pushes the network weights in the direction that **DECREASES $\ln P_t$**.
-* Therefore, the optimizer **actively reduces the selection probabilities $P_0, P_1, P_2$** of actions $a_0, a_1, a_2$.
+* When $G_t < 0$, the update adds a **negative gradient**, which pushes the network weights in the direction that **DECREASES** $\ln P_t$.
+* Therefore, the optimizer **actively reduces the selection probabilities** $P_0, P_1, P_2$ of actions $a_0, a_1, a_2$.
 * The catastrophic crash penalty at step 1 ($G_1 = -101, G_0 = -102$) exerts immense downward pressure, teaching the policy to avoid selecting Action 1 in $S_0$ and Action 2 in $S_1$ in future episodes!
 
 ---
@@ -3048,14 +3048,14 @@ $$\mathbb{E}_{a_t \sim \pi_\theta}\big[\nabla_\theta \log \pi_\theta(a_t \mid s_
 
 ### Numerical Return Standardization for $G = [10.0, 20.0, 30.0]$
 
-1. **Mean ($\mu_G$):**
+1. **Mean** ($\mu_G$):
    $$\mu_G = \frac{10.0 + 20.0 + 30.0}{3} = \frac{60.0}{3} = \mathbf{20.0}$$
 
-2. **Sample Standard Deviation ($\sigma_G$ with $N-1 = 2$ degrees of freedom):**
+2. **Sample Standard Deviation** ($\sigma_G$ **with** $N-1 = 2$ **degrees of freedom):**
    $$s^2 = \frac{(10 - 20)^2 + (20 - 20)^2 + (30 - 20)^2}{3 - 1} = \frac{(-10)^2 + 0^2 + (10)^2}{2} = \frac{100 + 100}{2} = 100.0$$
    $$\sigma_G = \sqrt{100.0} = \mathbf{10.0}$$
 
-3. **Standardized Returns $\tilde{G}_i = \frac{G_i - \mu_G}{\sigma_G}$:**
+3. **Standardized Returns** $\tilde{G}_i = \frac{G_i - \mu_G}{\sigma_G}$:
    * $\tilde{G}_1 = \frac{10.0 - 20.0}{10.0} = \frac{-10.0}{10.0} = \mathbf{-1.0}$
    * $\tilde{G}_2 = \frac{20.0 - 20.0}{10.0} = \frac{0.0}{10.0} = \mathbf{0.0}$
    * $\tilde{G}_3 = \frac{30.0 - 20.0}{10.0} = \frac{+10.0}{10.0} = \mathbf{+1.0}$

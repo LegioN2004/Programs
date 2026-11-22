@@ -90,7 +90,7 @@ In the walkthrough, State $C$ first acquires a positive Q-value at the end of Ep
 
 #### Episode 1:
 * The agent walks: $S_1 \to S_2 \to S_3 \to \dots \to S_N \to \text{Goal}$.
-* **Transitions along the chain ($S_i \to S_{i+1}$):**
+* **Transitions along the chain** ($S_i \to S_{i+1}$):
   * Immediate reward $R = 0$.
   * Successor value $Q(S_{i+1}, a) = 0$.
   * TD Target $= 0 + \gamma(0) = 0$.
@@ -121,7 +121,7 @@ In the walkthrough, State $C$ first acquires a positive Q-value at the end of Ep
 * Monte Carlo does **not bootstrap**.
 * Instead, MC waits for the episode to finish, observes the terminal reward $+1$, and computes the discounted return **backwards across the entire trajectory at once**:
   $$G_t = \gamma^{T-t-1} R_{\text{goal}}$$
-* Therefore, in a **single episode ($N = 1$)** that reaches the Goal, Monte Carlo immediately updates **every single state along the trajectory ($S_1, S_2, \dots, S_N$) simultaneously** with positive non-zero returns:
+* Therefore, in a **single episode** ($N = 1$) that reaches the Goal, Monte Carlo immediately updates **every single state along the trajectory** ($S_1, S_2, \dots, S_N$) **simultaneously** with positive non-zero returns:
   $$V(S_N) \leftarrow \gamma^0(1) = 1.0, \quad V(S_{N-1}) \leftarrow \gamma^1, \quad \dots \quad V(S_1) \leftarrow \gamma^{N-1}$$
 
 ---

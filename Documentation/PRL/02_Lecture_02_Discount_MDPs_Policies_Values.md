@@ -247,19 +247,19 @@ Define a policy mathematically. What is the difference between a deterministic p
 
 ### Response:
 
-**First, understand what a policy is:** In simple terms, a **policy** is the agent's brain or rulebook. It tells the agent: *"Whenever you find yourself in state $s$, here is the action you should take."*
+**First, understand what a policy is:** In simple terms, a **policy** is the agent's brain or rulebook. It tells the agent: "Whenever you find yourself in state $s$, here is the action you should take."
 
 ---
 
 ### 1. Mathematical Definitions and Differences
 
-* **Deterministic Policy ($\pi : S \to A$):**
+* **Deterministic Policy** ($\pi : S \to A$):
   * A direct functional mapping from each state to a single, definite action:
     $$a = \pi(s)$$
   * Given state $s$, there is no randomness; the agent always executes action $a$ with 100% probability.
   * *Example:* "If in State 14, always pick action Right."
 
-* **Stochastic Policy ($\pi(a \mid s) = \Pr(A_t = a \mid S_t = s)$):**
+* **Stochastic Policy** ($\pi(a \mid s) = \Pr(A_t = a \mid S_t = s)$):
   * A conditional probability distribution over the set of actions given state $s$:
     $$\pi(a \mid s) \ge 0, \quad \sum_{a \in A} \pi(a \mid s) = 1 \quad \forall s \in S$$
   * Given state $s$, the agent rolls dice according to the assigned probabilities.

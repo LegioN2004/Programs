@@ -149,11 +149,11 @@ Given setup:
    $$\text{Target}_{\text{SARSA}} = R_{t+1} + \gamma Q(S', A_{t+1}) = -2.0 + 0.8 \times (4.0) = -2.0 + 3.2 = \mathbf{1.2}$$
    $$\boxed{\text{Target}_{\text{SARSA}} = 1.2}$$
 
-2. **TD Error $\delta_{\text{SARSA}}$:**
+2. **TD Error** $\delta_{\text{SARSA}}$:
    $$\delta_{\text{SARSA}} = 1.2 - Q(S_t, A_t) = 1.2 - 5.0 = \mathbf{-3.8}$$
    $$\boxed{\delta_{\text{SARSA}} = -3.8}$$
 
-3. **Updated $Q_{\text{SARSA}}(S_t, A_t)$:**
+3. **Updated** $Q_{\text{SARSA}}(S_t, A_t)$:
    $$Q(S_t, A_t) \leftarrow 5.0 + 0.25 \times (-3.8) = 5.0 - 0.95 = \mathbf{4.05}$$
    $$\boxed{Q_{\text{SARSA}}(S_t, A_t) = 4.05}$$
 
@@ -165,11 +165,11 @@ Given setup:
    $$\text{Target}_{\text{QL}} = R_{t+1} + \gamma \max_{a'} Q(S', a') = -2.0 + 0.8 \times \max(4.0, 12.0, 8.0) = -2.0 + 0.8(12.0) = -2.0 + 9.6 = \mathbf{7.6}$$
    $$\boxed{\text{Target}_{\text{QL}} = 7.6}$$
 
-2. **TD Error $\delta_{\text{QL}}$:**
+2. **TD Error** $\delta_{\text{QL}}$:
    $$\delta_{\text{QL}} = 7.6 - Q(S_t, A_t) = 7.6 - 5.0 = \mathbf{+2.6}$$
    $$\boxed{\delta_{\text{QL}} = +2.6}$$
 
-3. **Updated $Q_{\text{QL}}(S_t, A_t)$:**
+3. **Updated** $Q_{\text{QL}}(S_t, A_t)$:
    $$Q(S_t, A_t) \leftarrow 5.0 + 0.25 \times (+2.6) = 5.0 + 0.65 = \mathbf{5.65}$$
    $$\boxed{Q_{\text{QL}}(S_t, A_t) = 5.65}$$
 
