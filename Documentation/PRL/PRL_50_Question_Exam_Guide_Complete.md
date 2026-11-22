@@ -711,8 +711,8 @@ $$\boxed{Q(14, \text{Up}) = 0.475}$$
 
 ### Prompt:
 Write the complete Bellman Expectation Equation for $V_\pi(s)$:
-$$V_\pi(s) = \sum_a \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma V_\pi(s')]$$
-Explain the physical and probabilistic meaning of each of the three nested components when read from right to left: (1) The Payout $[r + \gamma V_\pi(s')]$, (2) The Environment's Chaos $\sum_{s', r} P(s', r \mid s, a)[\dots]$, and (3) The Agent's Choice $\sum_a \pi(a \mid s)[\dots]$.
+$$V_\pi(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma V_\pi(s')]$$
+Explain the physical and probabilistic meaning of each of the three nested components when read from right to left: (1) The Payout $[r + \gamma V_\pi(s')]$, (2) The Environment's Chaos $\sum_{s', r} P(s', r \mid s, a)[\dots]$, and (3) The Agent's Choice $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$.
 
 ### Response:
 
@@ -721,9 +721,9 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 ---
 
 ```
-  (3) Agent's Choice      (2) Environment's Chaos        (1) The Payout
-  ==================      =======================        ==============
-  \sum_a \pi(a | s)   *   \sum_{s', r} P(s', r | s, a) * [r + \gamma V_\pi(s')]
+  (3) Agent's Choice                (2) Environment's Chaos        (1) The Payout
+  ==================                =======================        ==============
+  \sum_{a \in A} \pi(a | s)     *   \sum_{s', r} P(s', r | s, a) * [r + \gamma V_\pi(s')]
 ```
 
 ---
@@ -745,7 +745,7 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 
 ---
 
-### 3. Component 3 (Leftmost): The Agent's Choice $\sum_a \pi(a \mid s)[\dots]$
+### 3. Component 3 (Leftmost): The Agent's Choice $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$
 * **Physical Meaning:** The agent may not pick the same action every time; it might follow a stochastic policy (like 80% Right, 20% Left).
 * This component takes the **expected value over the agent's decision randomness**: it weights the quality of each action $Q_\pi(s, a)$ by the probability $\pi(a \mid s)$ that the agent actually selects that action.
 * **Result:** Averaging over all available actions yields the overall state value $V_\pi(s)$.
@@ -758,7 +758,7 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 | :--- | :--- | :--- | :--- |
 | **(1) The Payout** | $r + \gamma V_\pi(s')$ | Immediate reward + future discounted worth. | None (Deterministic single outcome). |
 | **(2) Environment's Chaos** | $\sum_{s', r} P(s', r \mid s, a)[\dots]$ | Action-Value $Q_\pi(s, a)$. | Nature / Environment dynamics ($P$). |
-| **(3) Agent's Choice** | $\sum_a \pi(a \mid s)[\dots]$ | Overall State-Value $V_\pi(s)$. | Agent's policy ($\pi$). |
+| **(3) Agent's Choice** | $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$ | Overall State-Value $V_\pi(s)$. | Agent's policy ($\pi$). |
 
 ---
 
@@ -862,6 +862,9 @@ $$V_{\text{new}}(14) = 0.8 \times (0.808) + 0.2 \times (0.4545)$$
 $$V_{\text{new}}(14) = 0.6464 + 0.0909$$
 $$\boxed{V_{\text{new}}(14) = 0.7373 \approx 0.737}$$
 
+> [!NOTE]
+> **Slide Rounding Precision Note:** Lecture 04 Slide 8 plugs in the rounded 3-decimal value $Q(14, \text{Left}) = 0.455$, yielding $V_{\text{new}}(14) = 0.8(0.808) + 0.2(0.455) = 0.6464 + 0.0910 = 0.7374 \approx 0.737$. Both the unrounded exact calculation ($0.7373$) and intermediate-rounded calculation ($0.7374$) round to the identical final value of **$0.737$**.
+
 #### Bellman Residual $\Delta$:
 Given $V_{\text{old}}(14) = 0.70$:
 $$\Delta = |V_{\text{new}}(14) - V_{\text{old}}(14)| = |0.7373 - 0.7000|$$
@@ -876,7 +879,7 @@ $$\boxed{\Delta = 0.0373}$$
 | $Q(14, \text{Right})$ | $0.7(1) + 0.3(0.9 \times 0.40)$ | $0.8080$ | **$0.808$** |
 | $Q(14, \text{Left})$ | $0.7(0.9 \times 0.55) + 0.3(0.9 \times 0.40)$ | $0.4545$ | **$0.455$** |
 | $V_{\text{new}}(14)$ | $0.8(0.808) + 0.2(0.4545)$ | $0.7373$ | **$0.737$** |
-| Bellman Residual $\Delta$ | $\|0.7373 - 0.70\|$ | $0.0373$ | **$0.037$** |
+| Bellman Residual $\Delta$ | $|0.7373 - 0.70|$ | $0.0373$ | **$0.037$** |
 
 ---
 
@@ -1751,7 +1754,7 @@ Compare First-Visit MC and Every-Visit MC in terms of: (a) finite-sample bias, (
 ### (d) Variance Decay Rate with Respect to $N$
 * Both estimators have a variance that decays at the standard parametric rate of:
   $$\text{Var}(\hat{V}) = \mathcal{O}\left(\frac{1}{N}\right)$$
-* **Practical variance difference:** In practice, Every-Visit MC often achieves slightly **lower variance** than First-Visit MC because it averages over more data points per episode, making it popular in continuous control extensions.
+* **Practical variance difference:** In practice, Every-Visit MC often achieves slightly **lower variance** than First-Visit MC because it averages over more data points per episode, making it popular in practice when episode lengths are long or data is scarce.
 
 ---
 
@@ -1882,7 +1885,7 @@ $$
 
 | Dimension | Exploring Starts (MC-ES) | On-Policy $\varepsilon$-Greedy Control |
 | :--- | :--- | :--- |
-| **(a) Improvement Operator** | Strictly greedy: $\pi(s) \leftarrow \arg\max_a Q(s, a)$. | $\varepsilon$-soft update: weights greedy action by $1 - \varepsilon + \frac{\varepsilon}{\|A\|}$. |
+| **(a) Improvement Operator** | Strictly greedy: $\pi(s) \leftarrow \arg\max_a Q(s, a)$. | $\varepsilon$-soft update: weights greedy action by $1 - \varepsilon + \frac{\varepsilon}{|A|}$. |
 | **(b) Real-World Feasibility** | **Impossible:** Requires arbitrary environmental state-action teleportation. | **Feasible:** Starts from standard states; explores organically. |
 | **(c) Convergence Guarantee** | Converges to true optimal policy $\pi^*$. | Converges to best $\varepsilon$-soft policy $\pi_\varepsilon^*$ (Suboptimal unless GLIE decayed). |
 
@@ -2531,7 +2534,7 @@ Give three distinct reasons from `DQNSlides.pdf` (Slide 6) why a tabular represe
 
 | Limitation | Tabular Q-Learning | Deep Q-Networks (DQN) |
 | :--- | :--- | :--- |
-| **Memory Requirement** | $\mathcal{O}(\|S\| \cdot \|A\|)$ (Explodes to gigabytes/terabytes). | Fixed neural weights $\mathcal{O}(\|\theta\|)$ (Few megabytes). |
+| **Memory Requirement** | $\mathcal{O}(|S| \cdot |A|)$ (Explodes to gigabytes/terabytes). | Fixed neural weights $\mathcal{O}(|\theta|)$ (Few megabytes). |
 | **Continuous Inputs** | Requires fragile, lossy discretization. | Directly ingests continuous vectors $\mathbf{s} \in \mathbb{R}^d$. |
 | **Generalization** | **Zero:** Each table entry is isolated. | **High:** Similar inputs share neural activations. |
 
@@ -2542,7 +2545,7 @@ Give three distinct reasons from `DQNSlides.pdf` (Slide 6) why a tabular represe
 ### Prompt:
 For CartPole-v1 (4 continuous state features, 2 discrete actions), the architecture is:
 $$\text{Input } \mathbb{R}^4 \to \text{Dense}(64) + \text{ReLU} \to \text{Dense}(64) + \text{ReLU} \to \mathbb{R}^2$$
-(a) Calculate the exact number of trainable parameters (weights and biases) in each of the three linear layers and the total parameter count $\|\theta\|$ of the network.
+(a) Calculate the exact number of trainable parameters (weights and biases) in each of the three linear layers and the total parameter count $|\theta|$ of the network.
 (b) Answer the question on Slide 26: "Why are there two outputs rather than one, and why do we NOT apply a Softmax layer to the outputs of a DQN?"
 
 ### Response:
@@ -2578,10 +2581,10 @@ $$\text{Params}_3 = 128 + 2 = \mathbf{130}$$
 
 ---
 
-#### Total Trainable Parameters $\|\theta\|$:
-$$\|\theta\| = \text{Params}_1 + \text{Params}_2 + \text{Params}_3$$
-$$\|\theta\| = 320 + 4160 + 130$$
-$$\boxed{\|\theta\| = 4610 \text{ trainable parameters}}$$
+#### Total Trainable Parameters $|\theta|$:
+$$|\theta| = \text{Params}_1 + \text{Params}_2 + \text{Params}_3$$
+$$|\theta| = 320 + 4160 + 130$$
+$$\boxed{|\theta| = 4610 \text{ trainable parameters}}$$
 
 ---
 
@@ -2861,7 +2864,7 @@ Compare Value-Based methods (e.g., DQN) and Policy-Based methods (e.g., REINFORC
 ### Prompt:
 Starting from $J(\theta) = E_{\tau \sim \pi_\theta}[R(\tau)] = \int P(\tau; \theta) R(\tau) d\tau$:
 (a) Explain why $\nabla_\theta$ cannot simply be moved inside the expectation as in supervised learning, and apply the Log-Derivative Identity ($\nabla_\theta f(\theta) = f(\theta) \nabla_\theta \log f(\theta)$) to derive $\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta}[\nabla_\theta \log P(\tau; \theta) R(\tau)]$.
-(b) Given $P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) P(s_{t+1} \mid s_t, a_t)$, take the natural logarithm and apply $\nabla_\theta$ to prove step by step that both $\rho_0(s_0)$ and $P(s_{t+1} \mid s_t, a_t)$ vanish identically, establishing the model-free property.
+(b) Given $P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) \mathcal{P}(s_{t+1} \mid s_t, a_t)$, take the natural logarithm and apply $\nabla_\theta$ to prove step by step that both $\rho_0(s_0)$ and $\mathcal{P}(s_{t+1} \mid s_t, a_t)$ vanish identically, establishing the model-free property.
 
 ### Response:
 
@@ -2901,21 +2904,21 @@ $$\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\big[\nabla_
 ### (b) Proof that Environmental Dynamics Vanish (The Model-Free Property)
 
 A trajectory $\tau = (s_0, a_0, s_1, a_1, \dots, s_T)$ has probability:
-$$P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) P(s_{t+1} \mid s_t, a_t)$$
+$$P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 #### Step 1: Take the natural logarithm ($\ln$ or $\log$):
 The log turns the product into a sum of logs:
-$$\log P(\tau; \theta) = \log \rho_0(s_0) + \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \sum_{t=0}^{T-1} \log P(s_{t+1} \mid s_t, a_t)$$
+$$\log P(\tau; \theta) = \log \rho_0(s_0) + \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \sum_{t=0}^{T-1} \log \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 #### Step 2: Apply the gradient operator $\nabla_\theta$:
 Differentiate term by term with respect to the network weights $\theta$:
-$$\nabla_\theta \log P(\tau; \theta) = \nabla_\theta \log \rho_0(s_0) + \nabla_\theta \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \nabla_\theta \sum_{t=0}^{T-1} \log P(s_{t+1} \mid s_t, a_t)$$
+$$\nabla_\theta \log P(\tau; \theta) = \nabla_\theta \log \rho_0(s_0) + \nabla_\theta \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \nabla_\theta \sum_{t=0}^{T-1} \log \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 Now analyze each term:
-1. $\rho_0(s_0)$ is the initial state distribution of the environment. It does **not depend on $\theta$**:
+1. $\rho_0(s_0)$ is the initial state distribution of the environment. It does **not depend on** $\theta$:
    $$\nabla_\theta \log \rho_0(s_0) = \mathbf{0}$$
-2. $P(s_{t+1} \mid s_t, a_t)$ is the environment transition dynamics (physics/nature). It does **not depend on $\theta$**:
-   $$\nabla_\theta \log P(s_{t+1} \mid s_t, a_t) = \mathbf{0}$$
+2. $\mathcal{P}(s_{t+1} \mid s_t, a_t)$ is the environment transition dynamics (physics/nature). It does **not depend on** $\theta$:
+   $$\nabla_\theta \log \mathcal{P}(s_{t+1} \mid s_t, a_t) = \mathbf{0}$$
 
 #### Step 3: Conclusion:
 Both environmental terms vanish identically!
@@ -2925,7 +2928,7 @@ Substitute this back into the policy gradient:
 $$\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[ \left(\sum_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t \mid s_t)\right) R(\tau) \right]}$$
 
 #### Why is this profound?
-We can compute the exact gradient of expected return in a completely unknown, black-box environment **without knowing the transition probabilities $P$ or initial state distribution $\rho_0$!** This proves mathematically that Policy Gradient is a **strictly model-free** algorithm.
+We can compute the exact gradient of expected return in a completely unknown, black-box environment **without knowing the transition probabilities $\mathcal{P}$ or initial state distribution $\rho_0$!** This proves mathematically that Policy Gradient is a **strictly model-free** algorithm.
 
 ---
 

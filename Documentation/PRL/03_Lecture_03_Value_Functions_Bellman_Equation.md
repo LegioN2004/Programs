@@ -112,8 +112,8 @@ $$\boxed{Q(14, \text{Up}) = 0.475}$$
 
 ### Prompt:
 Write the complete Bellman Expectation Equation for $V_\pi(s)$:
-$$V_\pi(s) = \sum_a \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma V_\pi(s')]$$
-Explain the physical and probabilistic meaning of each of the three nested components when read from right to left: (1) The Payout $[r + \gamma V_\pi(s')]$, (2) The Environment's Chaos $\sum_{s', r} P(s', r \mid s, a)[\dots]$, and (3) The Agent's Choice $\sum_a \pi(a \mid s)[\dots]$.
+$$V_\pi(s) = \sum_{a \in \mathcal{A}} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma V_\pi(s')]$$
+Explain the physical and probabilistic meaning of each of the three nested components when read from right to left: (1) The Payout $[r + \gamma V_\pi(s')]$, (2) The Environment's Chaos $\sum_{s', r} P(s', r \mid s, a)[\dots]$, and (3) The Agent's Choice $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$.
 
 ### Response:
 
@@ -122,9 +122,9 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 ---
 
 ```
-  (3) Agent's Choice      (2) Environment's Chaos        (1) The Payout
-  ==================      =======================        ==============
-  \sum_a \pi(a | s)   *   \sum_{s', r} P(s', r | s, a) * [r + \gamma V_\pi(s')]
+  (3) Agent's Choice                (2) Environment's Chaos        (1) The Payout
+  ==================                =======================        ==============
+  \sum_{a \in A} \pi(a | s)     *   \sum_{s', r} P(s', r | s, a) * [r + \gamma V_\pi(s')]
 ```
 
 ---
@@ -146,7 +146,7 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 
 ---
 
-### 3. Component 3 (Leftmost): The Agent's Choice $\sum_a \pi(a \mid s)[\dots]$
+### 3. Component 3 (Leftmost): The Agent's Choice $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$
 * **Physical Meaning:** The agent may not pick the same action every time; it might follow a stochastic policy (like 80% Right, 20% Left).
 * This component takes the **expected value over the agent's decision randomness**: it weights the quality of each action $Q_\pi(s, a)$ by the probability $\pi(a \mid s)$ that the agent actually selects that action.
 * **Result:** Averaging over all available actions yields the overall state value $V_\pi(s)$.
@@ -159,7 +159,7 @@ Explain the physical and probabilistic meaning of each of the three nested compo
 | :--- | :--- | :--- | :--- |
 | **(1) The Payout** | $r + \gamma V_\pi(s')$ | Immediate reward + future discounted worth. | None (Deterministic single outcome). |
 | **(2) Environment's Chaos** | $\sum_{s', r} P(s', r \mid s, a)[\dots]$ | Action-Value $Q_\pi(s, a)$. | Nature / Environment dynamics ($P$). |
-| **(3) Agent's Choice** | $\sum_a \pi(a \mid s)[\dots]$ | Overall State-Value $V_\pi(s)$. | Agent's policy ($\pi$). |
+| **(3) Agent's Choice** | $\sum_{a \in \mathcal{A}} \pi(a \mid s)[\dots]$ | Overall State-Value $V_\pi(s)$. | Agent's policy ($\pi$). |
 
 ---
 

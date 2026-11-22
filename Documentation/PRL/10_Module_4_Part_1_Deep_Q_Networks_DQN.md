@@ -38,7 +38,7 @@ Give three distinct reasons from `DQNSlides.pdf` (Slide 6) why a tabular represe
 
 | Limitation | Tabular Q-Learning | Deep Q-Networks (DQN) |
 | :--- | :--- | :--- |
-| **Memory Requirement** | $\mathcal{O}(\|S\| \cdot \|A\|)$ (Explodes to gigabytes/terabytes). | Fixed neural weights $\mathcal{O}(\|\theta\|)$ (Few megabytes). |
+| **Memory Requirement** | $\mathcal{O}(|S| \cdot |A|)$ (Explodes to gigabytes/terabytes). | Fixed neural weights $\mathcal{O}(|\theta|)$ (Few megabytes). |
 | **Continuous Inputs** | Requires fragile, lossy discretization. | Directly ingests continuous vectors $\mathbf{s} \in \mathbb{R}^d$. |
 | **Generalization** | **Zero:** Each table entry is isolated. | **High:** Similar inputs share neural activations. |
 
@@ -49,7 +49,7 @@ Give three distinct reasons from `DQNSlides.pdf` (Slide 6) why a tabular represe
 ### Prompt:
 For CartPole-v1 (4 continuous state features, 2 discrete actions), the architecture is:
 $$\text{Input } \mathbb{R}^4 \to \text{Dense}(64) + \text{ReLU} \to \text{Dense}(64) + \text{ReLU} \to \mathbb{R}^2$$
-(a) Calculate the exact number of trainable parameters (weights and biases) in each of the three linear layers and the total parameter count $\|\theta\|$ of the network.
+(a) Calculate the exact number of trainable parameters (weights and biases) in each of the three linear layers and the total parameter count $|\theta|$ of the network.
 (b) Answer the question on Slide 26: "Why are there two outputs rather than one, and why do we NOT apply a Softmax layer to the outputs of a DQN?"
 
 ### Response:
@@ -85,10 +85,10 @@ $$\text{Params}_3 = 128 + 2 = \mathbf{130}$$
 
 ---
 
-#### Total Trainable Parameters $\|\theta\|$:
-$$\|\theta\| = \text{Params}_1 + \text{Params}_2 + \text{Params}_3$$
-$$\|\theta\| = 320 + 4160 + 130$$
-$$\boxed{\|\theta\| = 4610 \text{ trainable parameters}}$$
+#### Total Trainable Parameters $|\theta|$:
+$$|\theta| = \text{Params}_1 + \text{Params}_2 + \text{Params}_3$$
+$$|\theta| = 320 + 4160 + 130$$
+$$\boxed{|\theta| = 4610 \text{ trainable parameters}}$$
 
 ---
 

@@ -109,7 +109,7 @@ Compare First-Visit MC and Every-Visit MC in terms of: (a) finite-sample bias, (
 ### (d) Variance Decay Rate with Respect to $N$
 * Both estimators have a variance that decays at the standard parametric rate of:
   $$\text{Var}(\hat{V}) = \mathcal{O}\left(\frac{1}{N}\right)$$
-* **Practical variance difference:** In practice, Every-Visit MC often achieves slightly **lower variance** than First-Visit MC because it averages over more data points per episode, making it popular in continuous control extensions.
+* **Practical variance difference:** In practice, Every-Visit MC often achieves slightly **lower variance** than First-Visit MC because it averages over more data points per episode, making it popular in practice when episode lengths are long or data is scarce.
 
 ---
 
@@ -240,6 +240,6 @@ $$
 
 | Dimension | Exploring Starts (MC-ES) | On-Policy $\varepsilon$-Greedy Control |
 | :--- | :--- | :--- |
-| **(a) Improvement Operator** | Strictly greedy: $\pi(s) \leftarrow \arg\max_a Q(s, a)$. | $\varepsilon$-soft update: weights greedy action by $1 - \varepsilon + \frac{\varepsilon}{\|A\|}$. |
+| **(a) Improvement Operator** | Strictly greedy: $\pi(s) \leftarrow \arg\max_a Q(s, a)$. | $\varepsilon$-soft update: weights greedy action by $1 - \varepsilon + \frac{\varepsilon}{|A|}$. |
 | **(b) Real-World Feasibility** | **Impossible:** Requires arbitrary environmental state-action teleportation. | **Feasible:** Starts from standard states; explores organically. |
 | **(c) Convergence Guarantee** | Converges to true optimal policy $\pi^*$. | Converges to best $\varepsilon$-soft policy $\pi_\varepsilon^*$ (Suboptimal unless GLIE decayed). |

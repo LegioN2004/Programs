@@ -54,6 +54,9 @@ $$V_{\text{new}}(14) = 0.8 \times (0.808) + 0.2 \times (0.4545)$$
 $$V_{\text{new}}(14) = 0.6464 + 0.0909$$
 $$\boxed{V_{\text{new}}(14) = 0.7373 \approx 0.737}$$
 
+> [!NOTE]
+> **Slide Rounding Precision Note:** Lecture 04 Slide 8 plugs in the rounded 3-decimal value $Q(14, \text{Left}) = 0.455$, yielding $V_{\text{new}}(14) = 0.8(0.808) + 0.2(0.455) = 0.6464 + 0.0910 = 0.7374 \approx 0.737$. Both the unrounded exact calculation ($0.7373$) and intermediate-rounded calculation ($0.7374$) round to the identical final value of **$0.737$**.
+
 #### Bellman Residual $\Delta$:
 Given $V_{\text{old}}(14) = 0.70$:
 $$\Delta = |V_{\text{new}}(14) - V_{\text{old}}(14)| = |0.7373 - 0.7000|$$
@@ -68,7 +71,7 @@ $$\boxed{\Delta = 0.0373}$$
 | $Q(14, \text{Right})$ | $0.7(1) + 0.3(0.9 \times 0.40)$ | $0.8080$ | **$0.808$** |
 | $Q(14, \text{Left})$ | $0.7(0.9 \times 0.55) + 0.3(0.9 \times 0.40)$ | $0.4545$ | **$0.455$** |
 | $V_{\text{new}}(14)$ | $0.8(0.808) + 0.2(0.4545)$ | $0.7373$ | **$0.737$** |
-| Bellman Residual $\Delta$ | $\|0.7373 - 0.70\|$ | $0.0373$ | **$0.037$** |
+| Bellman Residual $\Delta$ | $|0.7373 - 0.70|$ | $0.0373$ | **$0.037$** |
 
 ---
 

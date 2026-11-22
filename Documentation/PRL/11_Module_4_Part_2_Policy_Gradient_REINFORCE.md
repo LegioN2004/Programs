@@ -67,7 +67,7 @@ Compare Value-Based methods (e.g., DQN) and Policy-Based methods (e.g., REINFORC
 ### Prompt:
 Starting from $J(\theta) = E_{\tau \sim \pi_\theta}[R(\tau)] = \int P(\tau; \theta) R(\tau) d\tau$:
 (a) Explain why $\nabla_\theta$ cannot simply be moved inside the expectation as in supervised learning, and apply the Log-Derivative Identity ($\nabla_\theta f(\theta) = f(\theta) \nabla_\theta \log f(\theta)$) to derive $\nabla_\theta J(\theta) = E_{\tau \sim \pi_\theta}[\nabla_\theta \log P(\tau; \theta) R(\tau)]$.
-(b) Given $P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) P(s_{t+1} \mid s_t, a_t)$, take the natural logarithm and apply $\nabla_\theta$ to prove step by step that both $\rho_0(s_0)$ and $P(s_{t+1} \mid s_t, a_t)$ vanish identically, establishing the model-free property.
+(b) Given $P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) \mathcal{P}(s_{t+1} \mid s_t, a_t)$, take the natural logarithm and apply $\nabla_\theta$ to prove step by step that both $\rho_0(s_0)$ and $\mathcal{P}(s_{t+1} \mid s_t, a_t)$ vanish identically, establishing the model-free property.
 
 ### Response:
 
@@ -107,21 +107,21 @@ $$\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\big[\nabla_
 ### (b) Proof that Environmental Dynamics Vanish (The Model-Free Property)
 
 A trajectory $\tau = (s_0, a_0, s_1, a_1, \dots, s_T)$ has probability:
-$$P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) P(s_{t+1} \mid s_t, a_t)$$
+$$P(\tau; \theta) = \rho_0(s_0) \prod_{t=0}^{T-1} \pi_\theta(a_t \mid s_t) \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 #### Step 1: Take the natural logarithm ($\ln$ or $\log$):
 The log turns the product into a sum of logs:
-$$\log P(\tau; \theta) = \log \rho_0(s_0) + \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \sum_{t=0}^{T-1} \log P(s_{t+1} \mid s_t, a_t)$$
+$$\log P(\tau; \theta) = \log \rho_0(s_0) + \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \sum_{t=0}^{T-1} \log \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 #### Step 2: Apply the gradient operator $\nabla_\theta$:
 Differentiate term by term with respect to the network weights $\theta$:
-$$\nabla_\theta \log P(\tau; \theta) = \nabla_\theta \log \rho_0(s_0) + \nabla_\theta \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \nabla_\theta \sum_{t=0}^{T-1} \log P(s_{t+1} \mid s_t, a_t)$$
+$$\nabla_\theta \log P(\tau; \theta) = \nabla_\theta \log \rho_0(s_0) + \nabla_\theta \sum_{t=0}^{T-1} \log \pi_\theta(a_t \mid s_t) + \nabla_\theta \sum_{t=0}^{T-1} \log \mathcal{P}(s_{t+1} \mid s_t, a_t)$$
 
 Now analyze each term:
-1. $\rho_0(s_0)$ is the initial state distribution of the environment. It does **not depend on $\theta$**:
+1. $\rho_0(s_0)$ is the initial state distribution of the environment. It does **not depend on** $\theta$:
    $$\nabla_\theta \log \rho_0(s_0) = \mathbf{0}$$
-2. $P(s_{t+1} \mid s_t, a_t)$ is the environment transition dynamics (physics/nature). It does **not depend on $\theta$**:
-   $$\nabla_\theta \log P(s_{t+1} \mid s_t, a_t) = \mathbf{0}$$
+2. $\mathcal{P}(s_{t+1} \mid s_t, a_t)$ is the environment transition dynamics (physics/nature). It does **not depend on** $\theta$:
+   $$\nabla_\theta \log \mathcal{P}(s_{t+1} \mid s_t, a_t) = \mathbf{0}$$
 
 #### Step 3: Conclusion:
 Both environmental terms vanish identically!
@@ -131,7 +131,7 @@ Substitute this back into the policy gradient:
 $$\boxed{\nabla_\theta J(\theta) = \mathbb{E}_{\tau \sim \pi_\theta}\left[ \left(\sum_{t=0}^{T-1} \nabla_\theta \log \pi_\theta(a_t \mid s_t)\right) R(\tau) \right]}$$
 
 #### Why is this profound?
-We can compute the exact gradient of expected return in a completely unknown, black-box environment **without knowing the transition probabilities $P$ or initial state distribution $\rho_0$!** This proves mathematically that Policy Gradient is a **strictly model-free** algorithm.
+We can compute the exact gradient of expected return in a completely unknown, black-box environment **without knowing the transition probabilities $\mathcal{P}$ or initial state distribution $\rho_0$!** This proves mathematically that Policy Gradient is a **strictly model-free** algorithm.
 
 ---
 
