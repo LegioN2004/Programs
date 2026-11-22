@@ -59,11 +59,6 @@ On FrozenLake, all frozen ice tiles ($0, 13, 14$) give an immediate reward of $r
 
 ---
 
-### Exam-Ready Conclusion
-State values reflect future discounted returns, not immediate tile rewards. $V(11) = 0$ because Hole 11 is terminal with zero future payout. $V(14) > V(13) > V(0)$ because State 14 is one step from Goal 15 (minimal discount, high success rate), State 13 is two steps away, and State 0 is at least six steps away through a treacherous path of holes.
-
----
-
 ## Q12. [Bank Q24] Hand-Computing $Q(14, \text{Up})$
 
 ### Prompt:
@@ -206,9 +201,3 @@ If both the policy $\pi$ and environment $P$ are deterministic:
 $$\boxed{V(s) = R(s, \pi(s)) + \gamma V\big(f(s, \pi(s))\big)}$$
 or simply:
 $$\boxed{V(s) = R_{t+1} + \gamma V(S_{t+1})}$$
-
----
-
-### Exam-Ready Summary
-* Under deterministic ice, $Q(14, \text{Right}) = 1.0$ because the agent reaches the goal with 100% certainty.
-* When both policy and environment are deterministic, **both summations collapse**, transforming the Bellman Expectation Equation from a double expectation into a simple recursive algebraic relationship: $V(s) = R(s, a) + \gamma V(s')$.

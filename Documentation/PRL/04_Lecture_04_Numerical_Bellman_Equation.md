@@ -127,11 +127,6 @@ $$\text{Error in } V(14) = 0.7508 - 0.7373 = \mathbf{+0.0135}$$
 
 ---
 
-### Exam Tip
-Keep your probabilities straight by asking: *"Who controls this?"* If the agent controls it, it's $\pi$ (outer sum). If physics/nature controls it, it's $P$ (inner sum).
-
----
-
 ## Q17. [Bank Q35] Full Numerical Bellman Backup at State 13
 
 ### Prompt:
@@ -228,8 +223,3 @@ This occurs under **boundary wall reflection**:
 * Whenever $s' = 14$, the Bellman equation must evaluate:
   $$P(s'=14 \mid 14, a)[r + \gamma V_{\text{old}}(14)]$$
 * In that scenario, $V_{\text{old}}(14) = 0.70$ would be multiplied by $\gamma = 0.9$ and the wall-bounce probability.
-
----
-
-### Exam-Ready Conclusion
-In synchronous policy evaluation, $V_{\text{old}}(s)$ only appears on the right-hand side if the state has a self-loop transition ($s' = s$). Because none of the transitions from State 14 on Slides 6–8 led back to State 14, $V_{\text{old}}(14)$ was not multiplied on the RHS. It would only appear if an action or perpendicular slip bounced off the bottom boundary wall back into State 14.

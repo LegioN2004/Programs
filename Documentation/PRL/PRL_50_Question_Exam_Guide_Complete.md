@@ -1,9 +1,9 @@
 # CSE-ELV-701: Practical Reinforcement Learning
-## High-Yield 50-Question Exam Problem Bank (Comprehensive Solutions Guide)
+## High-Yield 50-Question Problem Bank (Comprehensive Solutions Guide)
 
 *Department of Computer Science & Engineering*  
 *Curated from the 110-Question Master Problem Bank*  
-*Theme: Easy-to-understand, intuitive explanations paired with rigorous, exam-ready mathematical solutions.*
+*Theme: Direct, easy-to-understand explanations with intuitive breakdowns and step-by-step mathematical solutions.*
 
 ---
 
@@ -85,20 +85,6 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 
 ---
 
-### Exam-Ready Answer (Write this in your exam)
-Supervised learning operates under the **Teacher Model**, where a fixed dataset pairs inputs with explicit predefined labels (answer keys). The environment is non-reactive, and the target mapping remains stationary throughout training.
-
-Reinforcement learning operates under an **interactive trial-and-error paradigm**. There is no predefined answer key; the agent receives only scalar reward signals evaluating its decisions. The environment is reactive, meaning the agent's current action directly dictates the subsequent state ($S_{t+1}$) and future data distribution. Finally, the target mapping is non-stationary because the value of an action evolves dynamically as the agent's policy improves over time.
-
----
-
-### Remember it in one line
-* **Supervised Learning:** Learn from an instructor who grades your homework with an answer key.
-* **Reinforcement Learning:** Learn to ride a bicycle by balancing, falling over, and adjusting from physical feedback.
-* **Keywords to remember:** **Answer Key — Environmental Reaction — Target Stability.**
-
----
-
 ## Q2. [Bank Q4] Numerical Trajectory Scoring on the Delivery Drone
 
 ### Prompt:
@@ -142,13 +128,6 @@ $$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Episode A** | 145 s | $-145$ | Successful Delivery | $+1000$ | **$+855$** |
 | **Episode B** | 60 s | $-60$ | Tree Crash | $-1000$ | **$-1060$** |
-
----
-
-### Exam-Ready Conclusion
-* In **Episode A**, despite battling strong headwinds for 145 seconds, the drone achieves a strongly positive cumulative return ($G_0 = +855$) because the terminal delivery reward ($+1000$) vastly outweighs the cumulative time penalty ($-145$).
-* In **Episode B**, even though flight time was shorter, the catastrophe penalty of crashing ($-1000$) yields a severe negative return ($G_0 = -1060$).
-* This demonstrates why RL agents naturally learn that completing the mission safely is paramount, while minimizing flight time acts as a secondary optimization pressure.
 
 ---
 
@@ -199,11 +178,6 @@ To make the agent reach the destination efficiently, we must **change the sign o
 | :--- | :---: | :---: | :--- | :--- |
 | **Flawed Setup** | $+1$ | $0$ | Car drives in infinite circles inside the lane; never terminates. | **Reward Hacking** (Catastrophic) |
 | **Corrected Setup** | $-1$ | $+100$ (or $0$) | Car takes the shortest, safest route to destination to avoid time penalties. | **Optimal Driving** |
-
----
-
-### Remember it in one line
-Never reward an agent just for "staying alive" in a task with a goal; otherwise, it will stall forever. Reward the goal, and penalize time with a negative per-step cost.
 
 ---
 
@@ -258,16 +232,6 @@ Applying this formal criterion to the chess-playing robot:
 |  - Opponent & Chessboard    (Physical external reality)     |
 +-------------------------------------------------------------+
 ```
-
----
-
-### Exam-Ready Answer (Write this in your exam)
-In the formal RL framework, the boundary between Agent and Environment is determined by the **"100% mathematical certainty of control"** criterion. The Agent is defined strictly as the abstract decision-making algorithm (the policy). 
-
-The metal arm, servo motors, gears, and camera belong to the Environment because:
-1. Physical actuators are subject to mechanical friction, motor stalls, gear slippage, and electrical voltage drops, which the software cannot control with absolute certainty.
-2. The camera is a sensory transducer subject to optical noise and ambient lighting variations; it generates observations of the environment rather than making decisions.
-3. The Agent only emits an *intention* (the action $A_t$), while the physical arm, camera, and chessboard execute and respond to that action under the physical laws of nature.
 
 ---
 
@@ -331,14 +295,6 @@ Given: $R_1 = 2,\; R_2 = -1,\; R_3 = 4,\; R_4 = 10$, with terminal state at $t =
 
 ---
 
-### Exam Tip
-Always remember: $G_t$ starts with $R_{t+1}$, never $R_t$. You receive $R_{t+1}$ after taking action $A_t$ in state $S_t$.
-
-
-
----
-
-
 # Section 2: Lecture 02 — The Discount Factor, MDPs, Policies & Value Functions
 
 ---
@@ -395,11 +351,6 @@ $$\boxed{G_t = 6.125 = \frac{49}{8}}$$
 
 ---
 
-### Remember it in one line
-Multiply each subsequent reward by an extra factor of $\gamma$, then add them all together: $4 - 1 + 2.5 + 0.625 = 6.125$.
-
----
-
 ## Q7. [Bank Q13] Myopic ($\gamma = 0$) vs. Far-Sighted ($\gamma \to 1$) Decision Threshold
 
 ### Prompt:
@@ -449,12 +400,6 @@ $$\gamma > \sqrt{\frac{2}{3}} = \frac{\sqrt{6}}{3} \approx 0.8165$$
 | $0 \le \gamma < \sqrt{2/3} \approx 0.8165$ | **Path 1** ($10 > 15\gamma^2$) | Impatient; future $+15$ is discounted too heavily. |
 | $\gamma = \sqrt{2/3} \approx 0.8165$ | **Indifferent** ($10 = 10$) | Both paths yield identical present discounted value. |
 | $\sqrt{2/3} < \gamma \le 1.0$ | **Path 2** ($15\gamma^2 > 10$) | Patient / Far-sighted; willing to wait for the $+15$ jackpot. |
-
----
-
-### Exam-Ready Conclusion
-* A myopic agent ($\gamma = 0$) chooses **Path 1** because it only values the immediate reward $R_1 = 10 > 0$.
-* The exact analytical threshold is $\boxed{\gamma^* = \sqrt{\frac{2}{3}} \approx 0.8165}$. For any $\gamma > \sqrt{2/3}$, the agent strictly prefers Path 2.
 
 ---
 
@@ -509,11 +454,6 @@ $$R(s, a, s') = \begin{cases} +1, & \text{if } s' = 15 \text{ (Goal reached)} \\
 
 #### 5. Discount Factor ($\gamma$):
 A scalar parameter $\gamma \in [0, 1)$ (typically $\gamma = 0.9$ or $0.99$) that ensures finite convergence and penalizes prolonged wandering.
-
----
-
-### Remember it in one line
-$S = \{0\dots 15\}$, $A = \{0:\text{Left}, 1:\text{Down}, 2:\text{Right}, 3:\text{Up}\}$, $P = \frac{1}{3}$ intended and $\frac{1}{3}$ each perpendicular, $R = +1$ only at Goal 15, $\gamma \in (0, 1)$.
 
 ---
 
@@ -578,11 +518,6 @@ $$P(s' \mid s = 1, a = \text{Up}) = \begin{cases} 1/3, & s' = 0 \text{ (Left)} \
 
 ---
 
-### Exam Tip
-Aiming into the wall to let perpendicular slip slide you safely along the wall is a classic optimal RL tactic on FrozenLake known as "wall hugging."
-
----
-
 ## Q10. [Bank Q18] Deterministic vs. Stochastic Policies
 
 ### Prompt:
@@ -636,14 +571,6 @@ $$\boxed{4^{11} = 4,194,304 \text{ distinct policies}}$$
 | **Total on 11 States** | $4^{11} = 4,194,304$ | Infinitely many (continuous probability simplex). |
 
 ---
-
-### Exam-Ready Conclusion
-A deterministic policy maps each state directly to a single action ($\pi: S \to A$), whereas a stochastic policy defines a probability distribution over actions ($\sum_a \pi(a \mid s) = 1$). On the 11 non-terminal states of FrozenLake with 4 actions, there are exactly $4^{11} = \mathbf{4,194,304}$ distinct deterministic policies.
-
-
-
----
-
 
 # Section 3: Lecture 03 — Value Functions and the Bellman Equation
 
@@ -703,11 +630,6 @@ On FrozenLake, all frozen ice tiles ($0, 13, 14$) give an immediate reward of $r
         v
 [State 15: GOAL +1 ]
 ```
-
----
-
-### Exam-Ready Conclusion
-State values reflect future discounted returns, not immediate tile rewards. $V(11) = 0$ because Hole 11 is terminal with zero future payout. $V(14) > V(13) > V(0)$ because State 14 is one step from Goal 15 (minimal discount, high success rate), State 13 is two steps away, and State 0 is at least six steps away through a treacherous path of holes.
 
 ---
 
@@ -856,15 +778,6 @@ $$\boxed{V(s) = R_{t+1} + \gamma V(S_{t+1})}$$
 
 ---
 
-### Exam-Ready Summary
-* Under deterministic ice, $Q(14, \text{Right}) = 1.0$ because the agent reaches the goal with 100% certainty.
-* When both policy and environment are deterministic, **both summations collapse**, transforming the Bellman Expectation Equation from a double expectation into a simple recursive algebraic relationship: $V(s) = R(s, a) + \gamma V(s')$.
-
-
-
----
-
-
 # Section 4: Lecture 04 — Numerical Calculation of the Bellman Expectation Equation
 
 ---
@@ -994,11 +907,6 @@ $$\text{Error in } V(14) = 0.7508 - 0.7373 = \mathbf{+0.0135}$$
 
 ---
 
-### Exam Tip
-Keep your probabilities straight by asking: *"Who controls this?"* If the agent controls it, it's $\pi$ (outer sum). If physics/nature controls it, it's $P$ (inner sum).
-
----
-
 ## Q17. [Bank Q35] Full Numerical Bellman Backup at State 13
 
 ### Prompt:
@@ -1098,14 +1006,6 @@ This occurs under **boundary wall reflection**:
 
 ---
 
-### Exam-Ready Conclusion
-In synchronous policy evaluation, $V_{\text{old}}(s)$ only appears on the right-hand side if the state has a self-loop transition ($s' = s$). Because none of the transitions from State 14 on Slides 6–8 led back to State 14, $V_{\text{old}}(14)$ was not multiplied on the RHS. It would only appear if an action or perpendicular slip bounced off the bottom boundary wall back into State 14.
-
-
-
----
-
-
 # Section 5: Module 2, Lecture 1 — Tabular Methods & Dynamic Programming
 
 ---
@@ -1143,11 +1043,6 @@ Compare Model-Based RL and Model-Free RL across all five properties from Slide 7
 | **3. Planning** | **Yes:** Can perform mental simulations, tree search, and one-step lookahead without acting. | **No:** Cannot plan ahead in memory; must physically sample trajectories in the environment. |
 | **4. Interaction** | Can learn with zero or minimal real-world interaction (by computing over the model). | Requires continuous trial-and-error interaction with the actual environment. |
 | **5. Representative Algorithms** | Dynamic Programming (Policy Iteration, Value Iteration), Dyna-Q, AlphaZero, MCTS. | Monte Carlo (MC), TD(0), SARSA, Q-Learning, DQN, REINFORCE, PPO. |
-
----
-
-### Exam-Ready Conclusion
-Model-Based RL requires an explicit model of transition dynamics $P$ and rewards $R$, enabling offline mathematical planning (like Policy and Value Iteration) analogous to reading a city street map. Model-Free RL operates with zero knowledge of $P$ and $R$, relying entirely on trial-and-error experience samples (like SARSA and Q-Learning), analogous to navigating an unfamiliar city by memory.
 
 ---
 
@@ -2206,11 +2101,6 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
 
 ---
 
-### Exam-Ready Conclusion
-The student's confusion arises from mistaking non-stationarity for on-policy learning. An algorithm is classified as on-policy if and only if the policy generating behavior ($\mu$) is the exact same policy being evaluated in the update target ($\pi$). In Q-learning, the behavior policy is $\varepsilon$-greedy while the target policy is purely greedy ($\varepsilon = 0$). Because $\mu \neq \pi$, Q-learning remains strictly off-policy, regardless of whether $\mu$ updates its probabilities over time.
-
----
-
 ## Q37. [Bank Q79] Cliff-Walking Gridworld — Conservative SARSA vs. Optimistic Q-Learning
 
 ### Prompt:
@@ -2556,16 +2446,6 @@ $$Q^*(s, a) = R(s, a) + \gamma \max_{a'} Q^*(s', a')$$
 | **State $A$** | **$0.810$** | **$0.729$** | **Right** |
 
 ---
-
-### Exam Tip
-Notice the elegant pattern of powers of $\gamma = 0.9$:
-* Moving Right toward the Goal yields $\gamma^0 = 1.000$, $\gamma^1 = 0.900$, and $\gamma^2 = 0.810$.
-* Moving Left away from the Goal incurs an extra round-trip discount factor of $\gamma^2 = 0.81$ relative to moving directly!
-
-
-
----
-
 
 # Section 10: Module 4 (Part 1) — From Q-Learning to Deep Q-Networks (DQN)
 
@@ -3158,8 +3038,3 @@ $$\theta \leftarrow \theta - \alpha \sum_t G_t \nabla_\theta \log \pi_\theta(a_t
   $$\boxed{\text{The policy actively minimizes expected return, learning the worst possible behavior!}}$$
 * Instead of learning to balance the pole or win the game, the agent learns to crash immediately, seeking out lowest possible rewards.
 * **The Fix:** Always write `loss = -torch.sum(log_probs * returns)` to invert the gradient for descent optimizers!
-
-
-
----
-

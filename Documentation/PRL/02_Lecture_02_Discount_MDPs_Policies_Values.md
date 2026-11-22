@@ -54,11 +54,6 @@ $$\boxed{G_t = 6.125 = \frac{49}{8}}$$
 
 ---
 
-### Remember it in one line
-Multiply each subsequent reward by an extra factor of $\gamma$, then add them all together: $4 - 1 + 2.5 + 0.625 = 6.125$.
-
----
-
 ## Q7. [Bank Q13] Myopic ($\gamma = 0$) vs. Far-Sighted ($\gamma \to 1$) Decision Threshold
 
 ### Prompt:
@@ -108,12 +103,6 @@ $$\gamma > \sqrt{\frac{2}{3}} = \frac{\sqrt{6}}{3} \approx 0.8165$$
 | $0 \le \gamma < \sqrt{2/3} \approx 0.8165$ | **Path 1** ($10 > 15\gamma^2$) | Impatient; future $+15$ is discounted too heavily. |
 | $\gamma = \sqrt{2/3} \approx 0.8165$ | **Indifferent** ($10 = 10$) | Both paths yield identical present discounted value. |
 | $\sqrt{2/3} < \gamma \le 1.0$ | **Path 2** ($15\gamma^2 > 10$) | Patient / Far-sighted; willing to wait for the $+15$ jackpot. |
-
----
-
-### Exam-Ready Conclusion
-* A myopic agent ($\gamma = 0$) chooses **Path 1** because it only values the immediate reward $R_1 = 10 > 0$.
-* The exact analytical threshold is $\boxed{\gamma^* = \sqrt{\frac{2}{3}} \approx 0.8165}$. For any $\gamma > \sqrt{2/3}$, the agent strictly prefers Path 2.
 
 ---
 
@@ -168,11 +157,6 @@ $$R(s, a, s') = \begin{cases} +1, & \text{if } s' = 15 \text{ (Goal reached)} \\
 
 #### 5. Discount Factor ($\gamma$):
 A scalar parameter $\gamma \in [0, 1)$ (typically $\gamma = 0.9$ or $0.99$) that ensures finite convergence and penalizes prolonged wandering.
-
----
-
-### Remember it in one line
-$S = \{0\dots 15\}$, $A = \{0:\text{Left}, 1:\text{Down}, 2:\text{Right}, 3:\text{Up}\}$, $P = \frac{1}{3}$ intended and $\frac{1}{3}$ each perpendicular, $R = +1$ only at Goal 15, $\gamma \in (0, 1)$.
 
 ---
 
@@ -237,11 +221,6 @@ $$P(s' \mid s = 1, a = \text{Up}) = \begin{cases} 1/3, & s' = 0 \text{ (Left)} \
 
 ---
 
-### Exam Tip
-Aiming into the wall to let perpendicular slip slide you safely along the wall is a classic optimal RL tactic on FrozenLake known as "wall hugging."
-
----
-
 ## Q10. [Bank Q18] Deterministic vs. Stochastic Policies
 
 ### Prompt:
@@ -293,8 +272,3 @@ $$\boxed{4^{11} = 4,194,304 \text{ distinct policies}}$$
 | **Exploration** | Cannot explore without external noise ($\varepsilon$-greedy). | Naturally explores via randomized sampling. |
 | **Game Theory** | Inadequate for bluffing or Rock-Paper-Scissors. | Essential for mixed Nash equilibria. |
 | **Total on 11 States** | $4^{11} = 4,194,304$ | Infinitely many (continuous probability simplex). |
-
----
-
-### Exam-Ready Conclusion
-A deterministic policy maps each state directly to a single action ($\pi: S \to A$), whereas a stochastic policy defines a probability distribution over actions ($\sum_a \pi(a \mid s) = 1$). On the 11 non-terminal states of FrozenLake with 4 actions, there are exactly $4^{11} = \mathbf{4,194,304}$ distinct deterministic policies.

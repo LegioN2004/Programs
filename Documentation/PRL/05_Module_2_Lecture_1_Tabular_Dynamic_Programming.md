@@ -38,11 +38,6 @@ Compare Model-Based RL and Model-Free RL across all five properties from Slide 7
 
 ---
 
-### Exam-Ready Conclusion
-Model-Based RL requires an explicit model of transition dynamics $P$ and rewards $R$, enabling offline mathematical planning (like Policy and Value Iteration) analogous to reading a city street map. Model-Free RL operates with zero knowledge of $P$ and $R$, relying entirely on trial-and-error experience samples (like SARSA and Q-Learning), analogous to navigating an unfamiliar city by memory.
-
----
-
 ## Q20. [Bank Q42] Why Direct Matrix Inversion is Replaced by Iterative Policy Evaluation
 
 ### Prompt:

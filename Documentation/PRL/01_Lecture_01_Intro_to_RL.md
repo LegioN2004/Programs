@@ -66,20 +66,6 @@ Contrast the "Teacher Model" of supervised learning with the trial-and-error par
 
 ---
 
-### Exam-Ready Answer (Write this in your exam)
-Supervised learning operates under the **Teacher Model**, where a fixed dataset pairs inputs with explicit predefined labels (answer keys). The environment is non-reactive, and the target mapping remains stationary throughout training.
-
-Reinforcement learning operates under an **interactive trial-and-error paradigm**. There is no predefined answer key; the agent receives only scalar reward signals evaluating its decisions. The environment is reactive, meaning the agent's current action directly dictates the subsequent state ($S_{t+1}$) and future data distribution. Finally, the target mapping is non-stationary because the value of an action evolves dynamically as the agent's policy improves over time.
-
----
-
-### Remember it in one line
-* **Supervised Learning:** Learn from an instructor who grades your homework with an answer key.
-* **Reinforcement Learning:** Learn to ride a bicycle by balancing, falling over, and adjusting from physical feedback.
-* **Keywords to remember:** **Answer Key — Environmental Reaction — Target Stability.**
-
----
-
 ## Q2. [Bank Q4] Numerical Trajectory Scoring on the Delivery Drone
 
 ### Prompt:
@@ -123,13 +109,6 @@ $$G_0 = \sum_{t=1}^{T} R_t = R_{	ext{flight time}} + R_{	ext{terminal}}$$
 | :--- | :---: | :---: | :---: | :---: | :---: |
 | **Episode A** | 145 s | $-145$ | Successful Delivery | $+1000$ | **$+855$** |
 | **Episode B** | 60 s | $-60$ | Tree Crash | $-1000$ | **$-1060$** |
-
----
-
-### Exam-Ready Conclusion
-* In **Episode A**, despite battling strong headwinds for 145 seconds, the drone achieves a strongly positive cumulative return ($G_0 = +855$) because the terminal delivery reward ($+1000$) vastly outweighs the cumulative time penalty ($-145$).
-* In **Episode B**, even though flight time was shorter, the catastrophe penalty of crashing ($-1000$) yields a severe negative return ($G_0 = -1060$).
-* This demonstrates why RL agents naturally learn that completing the mission safely is paramount, while minimizing flight time acts as a secondary optimization pressure.
 
 ---
 
@@ -180,11 +159,6 @@ To make the agent reach the destination efficiently, we must **change the sign o
 | :--- | :---: | :---: | :--- | :--- |
 | **Flawed Setup** | $+1$ | $0$ | Car drives in infinite circles inside the lane; never terminates. | **Reward Hacking** (Catastrophic) |
 | **Corrected Setup** | $-1$ | $+100$ (or $0$) | Car takes the shortest, safest route to destination to avoid time penalties. | **Optimal Driving** |
-
----
-
-### Remember it in one line
-Never reward an agent just for "staying alive" in a task with a goal; otherwise, it will stall forever. Reward the goal, and penalize time with a negative per-step cost.
 
 ---
 
@@ -239,16 +213,6 @@ Applying this formal criterion to the chess-playing robot:
 |  - Opponent & Chessboard    (Physical external reality)     |
 +-------------------------------------------------------------+
 ```
-
----
-
-### Exam-Ready Answer (Write this in your exam)
-In the formal RL framework, the boundary between Agent and Environment is determined by the **"100% mathematical certainty of control"** criterion. The Agent is defined strictly as the abstract decision-making algorithm (the policy). 
-
-The metal arm, servo motors, gears, and camera belong to the Environment because:
-1. Physical actuators are subject to mechanical friction, motor stalls, gear slippage, and electrical voltage drops, which the software cannot control with absolute certainty.
-2. The camera is a sensory transducer subject to optical noise and ambient lighting variations; it generates observations of the environment rather than making decisions.
-3. The Agent only emits an *intention* (the action $A_t$), while the physical arm, camera, and chessboard execute and respond to that action under the physical laws of nature.
 
 ---
 
@@ -309,8 +273,3 @@ Given: $R_1 = 2,\; R_2 = -1,\; R_3 = 4,\; R_4 = 10$, with terminal state at $t =
 | **$t = 2$** | $R_3 + R_4$ | $4 + 10$ | **$14$** |
 | **$t = 1$** | $R_2 + R_3 + R_4$ | $-1 + 4 + 10$ | **$13$** |
 | **$t = 0$** | $R_1 + R_2 + R_3 + R_4$ | $2 + (-1) + 4 + 10$ | **$15$** |
-
----
-
-### Exam Tip
-Always remember: $G_t$ starts with $R_{t+1}$, never $R_t$. You receive $R_{t+1}$ after taking action $A_t$ in state $S_t$.

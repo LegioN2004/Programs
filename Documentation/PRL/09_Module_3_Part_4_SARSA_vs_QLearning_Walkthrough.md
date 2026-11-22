@@ -266,10 +266,3 @@ $$Q^*(s, a) = R(s, a) + \gamma \max_{a'} Q^*(s', a')$$
 | **State $C$** | **$1.000$** | **$0.810$** | **Right** |
 | **State $B$** | **$0.900$** | **$0.729$** | **Right** |
 | **State $A$** | **$0.810$** | **$0.729$** | **Right** |
-
----
-
-### Exam Tip
-Notice the elegant pattern of powers of $\gamma = 0.9$:
-* Moving Right toward the Goal yields $\gamma^0 = 1.000$, $\gamma^1 = 0.900$, and $\gamma^2 = 0.810$.
-* Moving Left away from the Goal incurs an extra round-trip discount factor of $\gamma^2 = 0.81$ relative to moving directly!

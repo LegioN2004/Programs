@@ -1,16 +1,16 @@
 # Practical Reinforcement Learning (CSE-ELV-701)
-## High-Yield 50-Question Exam Guide & Complete Solution Bank
+## High-Yield 50-Question Problem Bank & Complete Solution Guide
 
-Welcome to the comprehensive, exam-ready solution guide for **CSE-ELV-701: Practical Reinforcement Learning**. 
+Welcome to the comprehensive solution guide for **CSE-ELV-701: Practical Reinforcement Learning**. 
 
-This repository contains fully worked, student-friendly, and mathematically rigorous answers for all **50 anchor questions** curated from the 110-question master problem bank across all 11 lecture modules.
+This repository contains fully worked, intuitive, and mathematically thorough answers for all **50 anchor questions** curated from the 110-question master problem bank across all 11 lecture modules.
 
 ---
 
-### Key Features of this Guide:
+### Guide Format:
 * **Intuitive Explanations:** Every problem begins with a *"First, understand the concept"* section explaining the physical intuition in plain English with everyday analogies.
 * **Step-by-Step Math:** Every derivation, Bellman backup, expectation, and matrix equation is laid out step-by-step with boxed answers.
-* **Exam-Ready Format:** Ready-to-write summaries, comparison tables, and quick *"Remember it in one line"* mnemonics designed for rapid exam revision.
+* **Core Understanding:** Focuses directly on the concepts, sub-parts $(a), (b), (c)$, calculations, and comparisons without extra filler.
 
 ---
 

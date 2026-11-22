@@ -244,11 +244,6 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
 
 ---
 
-### Exam-Ready Conclusion
-The student's confusion arises from mistaking non-stationarity for on-policy learning. An algorithm is classified as on-policy if and only if the policy generating behavior ($\mu$) is the exact same policy being evaluated in the update target ($\pi$). In Q-learning, the behavior policy is $\varepsilon$-greedy while the target policy is purely greedy ($\varepsilon = 0$). Because $\mu \neq \pi$, Q-learning remains strictly off-policy, regardless of whether $\mu$ updates its probabilities over time.
-
----
-
 ## Q37. [Bank Q79] Cliff-Walking Gridworld — Conservative SARSA vs. Optimistic Q-Learning
 
 ### Prompt:
