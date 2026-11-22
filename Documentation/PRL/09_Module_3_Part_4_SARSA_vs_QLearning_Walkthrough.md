@@ -24,13 +24,13 @@ Substitute $|A| = 2$ and $\varepsilon = 0.2$ into the formula:
 $$\pi(a^* \mid s) = 1 - \varepsilon + \frac{\varepsilon}{|A|}$$
 $$\pi(a^* \mid s) = 1 - 0.2 + \frac{0.2}{2}$$
 $$\pi(a^* \mid s) = 0.8 + 0.1$$
-$$\boxed{\pi(a^* \mid s) = 0.90 \quad (90\%)}$$
+$$\boxed{\pi(a^* \mid s) = 0.90} \quad (90\%)$$
 
 #### 2. For the Suboptimal (Exploratory) Action $a \neq a^*$:
 Substitute into the exploratory formula:
 $$\pi(a \mid s) = \frac{\varepsilon}{|A|}$$
 $$\pi(a \mid s) = \frac{0.2}{2}$$
-$$\boxed{\pi(a \mid s) = 0.10 \quad (10\%)}$$
+$$\boxed{\pi(a \mid s) = 0.10} \quad (10\%)$$
 
 **Conclusion:** The behaviour policy assigns exactly **90%** probability to the greedy action and **10%** probability to the exploratory action.
 
@@ -39,8 +39,8 @@ $$\boxed{\pi(a \mid s) = 0.10 \quad (10\%)}$$
 ### Step 2: Deriving the 50/50 Tie Rule When $Q(s, \text{Left}) = Q(s, \text{Right})$
 * When both actions have identical $Q$-values (e.g., both are 0.0), neither action is uniquely greedy.
 * By definition, the agent breaks ties uniformly at random:
-  $$\pi(\text{Left} \mid s) = \frac{1}{|A|} = \frac{1}{2} = 50\%$$
-  $$\pi(\text{Right} \mid s) = \frac{1}{|A|} = \frac{1}{2} = 50\%$$
+  $$\pi(\text{Left} \mid s) = \frac{1}{|A|} = \frac{1}{2} = 0.50 \quad (50\%)$$
+  $$\pi(\text{Right} \mid s) = \frac{1}{|A|} = \frac{1}{2} = 0.50 \quad (50\%)$$
 * This represents the **50/50 Tie Rule**.
 
 ---
@@ -53,11 +53,11 @@ Recall that Q-Learning is an **off-policy** algorithm:
 
 Substitute $\varepsilon = 0$ into the formula:
 * For the greedy action $a^*$:
-  $$\pi_{\text{target}}(a^* \mid s) = 1 - 0 + \frac{0}{2} = \mathbf{1.0 \quad (100\%)}$$
+  $$\pi_{\text{target}}(a^* \mid s) = 1 - 0 + \frac{0}{2} = \mathbf{1.0} \quad (100\%)$$
 * For the non-greedy action $a$:
-  $$\pi_{\text{target}}(a \mid s) = \frac{0}{2} = \mathbf{0.0 \quad (0\%)}$$
+  $$\pi_{\text{target}}(a \mid s) = \frac{0}{2} = \mathbf{0.0} \quad (0\%)$$
 
-$$\boxed{\text{Q-Learning Target Policy Split} = 100\% \text{ Greedy} \;/\; 0\% \text{ Non-Greedy}}$$
+$$\boxed{\text{Q-Learning Target Policy Split: } 1.0 \text{ Greedy} \;/\; 0.0 \text{ Non-Greedy}} \quad (100\% / 0\%)$$
 
 ---
 
@@ -169,7 +169,7 @@ $$\boxed{Q_{\text{SARSA}}(B, \text{Right}) = 0.0}$$
 #### Resulting SARSA Behaviour Policy at State $B$:
 * $Q(B, \text{Left}) = 0.0$ and $Q(B, \text{Right}) = 0.0$.
 * Because values are tied at 0.0, the 50/50 tie rule applies:
-  $$\boxed{\pi_{\text{SARSA}}(\text{Right} \mid B) = 50\%, \quad \pi_{\text{SARSA}}(\text{Left} \mid B) = 50\%}$$
+  $$\boxed{\pi_{\text{SARSA}}(\text{Right} \mid B) = 0.50, \quad \pi_{\text{SARSA}}(\text{Left} \mid B) = 0.50} \quad (50\% / 50\%)$$
 * **Impact:** SARSA learned *nothing* from this transition because it evaluated the bad exploratory left move!
 
 ---
@@ -189,9 +189,9 @@ $$\boxed{Q_{\text{QL}}(B, \text{Right}) = 0.225}$$
 Now, $Q(B, \text{Right}) = 0.225 > Q(B, \text{Left}) = 0.0$. The symmetry is broken! Action Right is the unique greedy action.
 
 1. **Target Policy ($\pi$ with $\varepsilon = 0$):**
-   $$\boxed{\pi_{\text{target}}(\text{Right} \mid B) = 100\%, \quad \pi_{\text{target}}(\text{Left} \mid B) = 0\%}$$
+   $$\boxed{\pi_{\text{target}}(\text{Right} \mid B) = 1.0, \quad \pi_{\text{target}}(\text{Left} \mid B) = 0.0} \quad (100\% / 0\%)$$
 2. **Behaviour Policy ($\mu$ with $\varepsilon = 0.2$, 90/10 split rule):**
-   $$\boxed{\mu(\text{Right} \mid B) = 90\%, \quad \mu(\text{Left} \mid B) = 10\%}$$
+   $$\boxed{\mu(\text{Right} \mid B) = 0.90, \quad \mu(\text{Left} \mid B) = 0.10} \quad (90\% / 10\%)$$
 
 ---
 

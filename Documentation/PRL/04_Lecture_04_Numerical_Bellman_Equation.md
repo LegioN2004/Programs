@@ -111,8 +111,8 @@ $$\boxed{V_{\text{wrong}}(14) = 0.7508} \quad (\text{Correct was } 0.7373)$$
 
 ### 3. Quantify Numerical Error Introduced
 
-$$\text{Error in } Q(\text{Right}) = 0.8720 - 0.8080 = +0.0640 \text{ (+7.9\%)}$$
-$$\text{Error in } Q(\text{Left}) = 0.4680 - 0.4545 = +0.0135 \text{ (+3.0\%)}$$
+$$\text{Error in } Q(\text{Right}) = 0.8720 - 0.8080 = +0.0640$$ (+7.9%)
+$$\text{Error in } Q(\text{Left}) = 0.4680 - 0.4545 = +0.0135$$ (+3.0%)
 $$\text{Error in } V(14) = 0.7508 - 0.7373 = \mathbf{+0.0135}$$
 
 ---

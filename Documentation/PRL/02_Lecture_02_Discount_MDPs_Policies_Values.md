@@ -201,7 +201,7 @@ P(s' \mid s = 1, a = \text{Right}) = \begin{cases}
 \end{cases}
 $$
 
-$$\boxed{\text{Probability of falling into Hole 5} = \frac{1}{3} \approx 33.33\%}$$
+$$\boxed{\text{Probability of falling into Hole 5} = \frac{1}{3} \approx 0.3333} \quad (33.33\%)$$
 
 ---
 
@@ -226,7 +226,7 @@ $$
 * Down (where Hole 5 sits) is the **opposite** (reverse) direction to Up ($180^\circ$ away), **not a perpendicular direction** ($90^\circ$).
 * The FrozenLake slippery physics engine *only* slips perpendicular to the chosen action ($\pm 90^\circ$). It never slips backwards ($180^\circ$).
 * Therefore, by aiming straight into the top wall ($a = \text{Up}$):
-  * $P(\text{Hole 5} \mid 1, \text{Up}) = 0\%$.
+  * $P(\text{Hole 5} \mid 1, \text{Up}) = 0$ (0%).
   * There is still a $\frac{1}{3}$ (33.33%) chance of sliding sideways into **State 2**, making progress towards the goal without risking death!
 
 ---
