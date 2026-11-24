@@ -1141,10 +1141,18 @@ $$V_{k+1}(s) = \sum_{a} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma
 
 * **Low computational cost per sweep:**
   * For sparse transition matrices (where each state only connects to a few neighbors, say $b$ branching factor), each sweep takes only:
-    $$\mathcal{O}(|S| \cdot |A| \cdot b)$$
+
+    $$
+    \mathcal{O}(|S| \cdot |A| \cdot b)
+    $$
+
 * **Rapid geometric convergence:**
   * Because the Bellman operator is a contraction mapping with factor $\gamma < 1$, the error shrinks exponentially:
-    $$\|V_k - V^\pi\|_\infty \le \gamma^k \|V_0 - V^\pi\|_\infty$$
+
+    $$
+    \Vert V_k - V^\pi \Vert_\infty \le \gamma^k \Vert V_0 - V^\pi \Vert_\infty
+    $$
+
   * After just a modest number of sweeps $k$ (e.g., $k \approx 20$ to $50$), the values are accurate to several decimal places!
   * Total cost is $\mathcal{O}(k \cdot |S|)$, which scales linearly with the number of states rather than cubically.
 
@@ -1233,9 +1241,9 @@ $$\boxed{V_2(S_2) = 0.3625}$$
 ## Q22. [Bank Q46] Bellman Operator $T^\pi$ Contraction & Number of Sweeps to Convergence
 
 ### Prompt:
-Under standard discounted finite-MDP assumptions, the Bellman operator $T^\pi$ satisfies $\|T^\pi V - T^\pi W\|_\infty \le \gamma \|V - W\|_\infty$.
+Under standard discounted finite-MDP assumptions, the Bellman operator $T^\pi$ satisfies $\Vert T^\pi V - T^\pi W \Vert_\infty \le \gamma \Vert V - W \Vert_\infty$.
 (a) State the theorem that guarantees a unique fixed point $V^\pi$ from this inequality.
-(b) If the initial error is $\|V_0 - V^\pi\|_\infty \le 1.0$ and $\gamma = 0.9$, what is the maximum error bound after $k = 5$ sweeps, and what is the minimum number of sweeps $k$ required to guarantee $\|V_k - V^\pi\|_\infty \le 0.01$?
+(b) If the initial error is $\Vert V_0 - V^\pi \Vert_\infty \le 1.0$ and $\gamma = 0.9$, what is the maximum error bound after $k = 5$ sweeps, and what is the minimum number of sweeps $k$ required to guarantee $\Vert V_k - V^\pi \Vert_\infty \le 0.01$?
 
 ### Response:
 
@@ -1247,28 +1255,44 @@ Under standard discounted finite-MDP assumptions, the Bellman operator $T^\pi$ s
 The theorem is the **Banach Fixed-Point Theorem** (also known as the **Contraction Mapping Theorem**).
 
 #### Theorem Statement:
-In a complete metric space (such as $\mathbb{R}^{|S|}$ equipped with the supremum norm $\|\cdot\|_\infty$), any contraction mapping $T$ with contraction factor $\gamma \in [0, 1)$ has a **unique fixed point** $V^*$ such that:
+In a complete metric space (such as $\mathbb{R}^{|S|}$ equipped with the supremum norm $\Vert \cdot \Vert_\infty$), any contraction mapping $T$ with contraction factor $\gamma \in [0, 1)$ has a **unique fixed point** $V^*$ such that:
 1. $T V^* = V^*$
 2. For any arbitrary starting vector $V_0$, the sequence $V_{k+1} = T V_k$ converges to $V^*$ at a linear rate:
-   $$\lim_{k \to \infty} V_k = V^*$$
+
+   $$
+   \lim_{k \to \infty} V_k = V^*
+   $$
 
 ---
 
-### (b) Numerical Calculations with $\|V_0 - V^\pi\|_\infty \le 1.0$ and $\gamma = 0.9$
+### (b) Numerical Calculations with $\Vert V_0 - V^\pi \Vert_\infty \le 1.0$ and $\gamma = 0.9$
 
 #### Contraction Error Bound Formula:
-$$\|V_k - V^\pi\|_\infty \le \gamma^k \|V_0 - V^\pi\|_\infty$$
+
+$$
+\Vert V_k - V^\pi \Vert_\infty \le \gamma^k \Vert V_0 - V^\pi \Vert_\infty
+$$
 
 #### 1. Maximum Error Bound after $k = 5$ sweeps:
-$$\|V_5 - V^\pi\|_\infty \le (0.9)^5 \times 1.0$$
+
+$$
+\Vert V_5 - V^\pi \Vert_\infty \le (0.9)^5 \times 1.0
+$$
+
 $$(0.9)^5 = 0.59049$$
-$$\boxed{\|V_5 - V^\pi\|_\infty \le 0.5905}$$
+
+$$
+\boxed{\Vert V_5 - V^\pi \Vert_\infty \le 0.5905}
+$$
 
 ---
 
 #### 2. Minimum Sweeps $k$ to Guarantee Error $\le 0.01$:
 We need:
-$$\gamma^k \|V_0 - V^\pi\|_\infty \le 0.01$$
+
+$$
+\gamma^k \Vert V_0 - V^\pi \Vert_\infty \le 0.01
+$$
 $$(0.9)^k \times 1.0 \le 0.01$$
 $$(0.9)^k \le 0.01$$
 
