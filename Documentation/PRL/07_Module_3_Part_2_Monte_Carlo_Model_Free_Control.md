@@ -84,11 +84,9 @@ Compare First-Visit MC and Every-Visit MC in terms of: (a) finite-sample bias, (
 
 ### (a) Finite-Sample Bias
 * **First-Visit MC is strictly UNBIASED:**
-  * For any finite number of episodes $N$, the expected value of the sample average equals the true value function:
-    $$E[\hat{V}_{\text{FV}}(s)] = V^\pi(s)$$
+  * For any finite number of episodes $N$, the expected value of the sample average equals the true value function: $E[\hat{V}_{\text{FV}}(s)] = V^\pi(s)$.
 * **Every-Visit MC is BIASED for finite samples:**
-  * When an episode contains repeated visits to the same state, the expected value of the estimator does not equal the true state value:
-    $$E[\hat{V}_{\text{EV}}(s)] \neq V^\pi(s)$$
+  * When an episode contains repeated visits to the same state, the expected value of the estimator does not equal the true state value: $E[\hat{V}_{\text{EV}}(s)] \neq V^\pi(s)$.
 
 ---
 
@@ -196,9 +194,7 @@ Compare Exploring Starts (MC-ES) and on-policy $\varepsilon$-greedy MC control a
 
 ### (a) Whether the Improvement Operator Remains Strictly Greedy ($\arg\max$)
 * **Exploring Starts (MC-ES):**
-  * **YES, strictly greedy.**
-  * The policy update operator is:
-    $$\pi(s) \leftarrow \arg\max_a Q(s, a)$$
+  * **YES, strictly greedy:** The policy update operator is $\pi(s) \leftarrow \arg\max_a Q(s, a)$.
   * Because exploration is guaranteed by starting in every $(s, a)$ at $t=0$, the policy itself can remain 100% deterministic and strictly greedy during the episode.
 * **On-Policy $\varepsilon$-Greedy Control:**
   * **NO, it uses an $\varepsilon$-soft improvement operator.**

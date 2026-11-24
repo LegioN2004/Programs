@@ -140,10 +140,8 @@ $$
   * $\gamma V_\pi(s')$: Discounted future value of continuing from tile $s'$ onward.
 * **Probabilistic Meaning:** A single deterministic realization of the return, conditioned on reaching state $s'$ with reward $r$.
 * **FrozenLake Example (Landing at State 14 $\to$ Goal 15 vs. State 10):**
-  * If the agent lands on **Goal 15** ($s'=15$): The immediate reward is $r = +1.0$. Because Goal 15 is terminal, its future value is $V_\pi(15) = 0$. The payout is:
-    $$1.0 + \gamma(0) = \mathbf{1.0}$$
-  * If the agent slips into **State 10** ($s'=10$): The immediate reward is $r = 0$, but State 10 has remaining worth $V_\pi(10) = 0.40$. With discount $\gamma = 0.9$, the payout is:
-    $$0 + 0.9(0.40) = \mathbf{0.36}$$
+  * If the agent lands on **Goal 15** ($s'=15$): The immediate reward is $r = +1.0$. Because Goal 15 is terminal, its future value is $V_\pi(15) = 0$. The payout is: $1.0 + \gamma(0) = \mathbf{1.0}$.
+  * If the agent slips into **State 10** ($s'=10$): The immediate reward is $r = 0$, but State 10 has remaining worth $V_\pi(10) = 0.40$. With discount $\gamma = 0.9$, the payout is: $0 + 0.9(0.40) = \mathbf{0.36}$.
 
 ---
 
@@ -156,8 +154,7 @@ $$
   * Even though the agent chose to move **Right** toward Goal 15, the ice is slippery:
     * 80% chance of reaching Goal 15 ($r=1, V=0 \implies \text{Payout} = 1.0$)
     * 20% chance of slipping into State 10 ($r=0, V=0.40 \implies \text{Payout} = 0.36$)
-  * Averaging over nature's ice physics computes the expected action-value:
-    $$Q_\pi(14, \text{Right}) = 0.8(1.0) + 0.2(0.36) = 0.80 + 0.072 = \mathbf{0.872} \approx 0.88$$
+  * Averaging over nature's ice physics computes the expected action-value: $Q_\pi(14, \text{Right}) = 0.8(1.0) + 0.2(0.36) = 0.80 + 0.072 = \mathbf{0.872} \approx 0.88$.
 
 ---
 
@@ -169,8 +166,7 @@ $$
   * Suppose the agent follows a stochastic policy at State 14:
     * $\pi(\text{Right} \mid 14) = 0.8$ (80% confidence aiming for Goal, where $Q_\pi(14, \text{Right}) \approx 0.88$)
     * $\pi(\text{Left} \mid 14) = 0.2$ (20% cautious safety exploration, where $Q_\pi(14, \text{Left}) \approx 0.45$)
-  * Averaging over the agent's policy choices gives the final state value:
-    $$V_\pi(14) = 0.8 \times Q_\pi(14, \text{Right}) + 0.2 \times Q_\pi(14, \text{Left}) = 0.8(0.88) + 0.2(0.45) = 0.704 + 0.090 = \mathbf{0.794}$$
+  * Averaging over the agent's policy choices gives the final state value: $V_\pi(14) = 0.8 \times Q_\pi(14, \text{Right}) + 0.2 \times Q_\pi(14, \text{Left}) = 0.8(0.88) + 0.2(0.45) = 0.704 + 0.090 = \mathbf{0.794}$.
 
 ---
 
@@ -203,9 +199,7 @@ Answer the two theoretical questions from Lecture 03 Slide 19:
 * **If the ice is perfectly deterministic (no slipping):**
   * The transition probability to Goal 15 becomes $1.0$ (100%).
   * The slip probability to State 10 becomes $0.0$.
-  * Therefore:
-    $$Q(14, \text{Right}) = 1.0 \times [1 + \gamma V(15)] = 1.0 \times [1 + 0]$$
-    $$\boxed{Q(14, \text{Right}) = 1.0}$$
+  * Therefore: $Q(14, \text{Right}) = 1.0 \times [1 + \gamma V(15)] = 1.0 \times [1 + 0] = \mathbf{1.0}$.
 
 ---
 

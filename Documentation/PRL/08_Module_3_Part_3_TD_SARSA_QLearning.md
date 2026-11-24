@@ -224,9 +224,7 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
 #### 2. In Q-Learning:
 * **Behaviour Policy $\mu$:** $\varepsilon\text{-greedy}(Q)$ (it explores with $\varepsilon > 0$).
 * **Target Policy $\pi$:** Purely greedy ($\varepsilon = 0$).
-  * Look closely at the Q-Learning update target:
-    $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
-  * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
+* **Target Formula:** In the Q-Learning update target $\text{Target} = R + \gamma \max_{a'} Q(S', a')$, the $\max_{a'}$ operator corresponds to a target policy that chooses the optimal greedy action with 100% probability:
 
 $$
 \pi_{\text{target}}(a \mid s) = \begin{cases}
@@ -234,9 +232,8 @@ $$
 0, & \text{otherwise}
 \end{cases}
 $$
-* **Notice the mismatch:** 
-  $$\mu = \varepsilon\text{-greedy} \quad \neq \quad \pi = \text{purely greedy}$$
-* Even though the behaviour policy $\mu_t$ updates its weights as $Q_t$ evolves, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).
+
+* **Notice the mismatch:** Because $\mu = \varepsilon\text{-greedy} \neq \pi = \text{purely greedy}$, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).
 * Therefore, **Q-Learning is provably, strictly Off-Policy**.
 
 ---
@@ -305,10 +302,8 @@ In the classic Cliff-Walking gridworld (Slide 65 of `TD.pdf`), the shortest path
 #### 2. During Evaluation (with $\varepsilon = 0$ purely greedy testing):
 * **Q-Learning achieves HIGHER return (Wins Evaluation):**
   * When exploration is turned off ($\varepsilon = 0$), the agent never rolls random mistakes.
-  * Q-Learning executes the mathematically shortest path along the cliff edge with zero crashes, achieving the optimal return:
-    $$G_{\text{optimal}} = -13$$
-  * SARSA continues to take its roundabout safe detour through the top rows, earning a lower return:
-    $$G_{\text{SARSA}} = -17$$
+  * Q-Learning executes the mathematically shortest path along the cliff edge with zero crashes, achieving the optimal return: $G_{\text{optimal}} = -13$.
+  * SARSA continues to take its roundabout safe detour through the top rows, earning a lower return: $G_{\text{SARSA}} = -17$.
 
 ---
 

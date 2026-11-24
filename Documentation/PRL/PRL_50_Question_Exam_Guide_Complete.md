@@ -554,14 +554,12 @@ Define a policy mathematically. What is the difference between a deterministic p
 ### 1. Mathematical Definitions and Differences
 
 * **Deterministic Policy** ($\pi : S \to A$):
-  * A direct functional mapping from each state to a single, definite action:
-    $$a = \pi(s)$$
+  * A direct functional mapping from each state to a single, definite action: $a = \pi(s)$.
   * Given state $s$, there is no randomness; the agent always executes action $a$ with 100% probability.
   * *Example:* "If in State 14, always pick action Right."
 
 * **Stochastic Policy** ($\pi(a \mid s) = \Pr(A_t = a \mid S_t = s)$):
-  * A conditional probability distribution over the set of actions given state $s$:
-    $$\pi(a \mid s) \ge 0, \quad \sum_{a \in A} \pi(a \mid s) = 1 \quad \forall s \in S$$
+  * A conditional probability distribution over the set of actions given state $s$: $\pi(a \mid s) \ge 0, \quad \sum_{a \in A} \pi(a \mid s) = 1 \quad \forall s \in S$.
   * Given state $s$, the agent rolls dice according to the assigned probabilities.
   * *Example:* "If in State 14, choose Right with 80% probability, and Left with 20% probability."
 
@@ -739,10 +737,8 @@ $$
   * $\gamma V_\pi(s')$: Discounted future value of continuing from tile $s'$ onward.
 * **Probabilistic Meaning:** A single deterministic realization of the return, conditioned on reaching state $s'$ with reward $r$.
 * **FrozenLake Example (Landing at State 14 $\to$ Goal 15 vs. State 10):**
-  * If the agent lands on **Goal 15** ($s'=15$): The immediate reward is $r = +1.0$. Because Goal 15 is terminal, its future value is $V_\pi(15) = 0$. The payout is:
-    $$1.0 + \gamma(0) = \mathbf{1.0}$$
-  * If the agent slips into **State 10** ($s'=10$): The immediate reward is $r = 0$, but State 10 has remaining worth $V_\pi(10) = 0.40$. With discount $\gamma = 0.9$, the payout is:
-    $$0 + 0.9(0.40) = \mathbf{0.36}$$
+  * If the agent lands on **Goal 15** ($s'=15$): The immediate reward is $r = +1.0$. Because Goal 15 is terminal, its future value is $V_\pi(15) = 0$. The payout is: $1.0 + \gamma(0) = \mathbf{1.0}$.
+  * If the agent slips into **State 10** ($s'=10$): The immediate reward is $r = 0$, but State 10 has remaining worth $V_\pi(10) = 0.40$. With discount $\gamma = 0.9$, the payout is: $0 + 0.9(0.40) = \mathbf{0.36}$.
 
 ---
 
@@ -755,8 +751,7 @@ $$
   * Even though the agent chose to move **Right** toward Goal 15, the ice is slippery:
     * 80% chance of reaching Goal 15 ($r=1, V=0 \implies \text{Payout} = 1.0$)
     * 20% chance of slipping into State 10 ($r=0, V=0.40 \implies \text{Payout} = 0.36$)
-  * Averaging over nature's ice physics computes the expected action-value:
-    $$Q_\pi(14, \text{Right}) = 0.8(1.0) + 0.2(0.36) = 0.80 + 0.072 = \mathbf{0.872} \approx 0.88$$
+  * Averaging over nature's ice physics computes the expected action-value: $Q_\pi(14, \text{Right}) = 0.8(1.0) + 0.2(0.36) = 0.80 + 0.072 = \mathbf{0.872} \approx 0.88$.
 
 ---
 
@@ -768,8 +763,7 @@ $$
   * Suppose the agent follows a stochastic policy at State 14:
     * $\pi(\text{Right} \mid 14) = 0.8$ (80% confidence aiming for Goal, where $Q_\pi(14, \text{Right}) \approx 0.88$)
     * $\pi(\text{Left} \mid 14) = 0.2$ (20% cautious safety exploration, where $Q_\pi(14, \text{Left}) \approx 0.45$)
-  * Averaging over the agent's policy choices gives the final state value:
-    $$V_\pi(14) = 0.8 \times Q_\pi(14, \text{Right}) + 0.2 \times Q_\pi(14, \text{Left}) = 0.8(0.88) + 0.2(0.45) = 0.704 + 0.090 = \mathbf{0.794}$$
+  * Averaging over the agent's policy choices gives the final state value: $V_\pi(14) = 0.8 \times Q_\pi(14, \text{Right}) + 0.2 \times Q_\pi(14, \text{Left}) = 0.8(0.88) + 0.2(0.45) = 0.704 + 0.090 = \mathbf{0.794}$.
 
 ---
 
@@ -802,9 +796,7 @@ Answer the two theoretical questions from Lecture 03 Slide 19:
 * **If the ice is perfectly deterministic (no slipping):**
   * The transition probability to Goal 15 becomes $1.0$ (100%).
   * The slip probability to State 10 becomes $0.0$.
-  * Therefore:
-    $$Q(14, \text{Right}) = 1.0 \times [1 + \gamma V(15)] = 1.0 \times [1 + 0]$$
-    $$\boxed{Q(14, \text{Right}) = 1.0}$$
+  * Therefore: $Q(14, \text{Right}) = 1.0 \times [1 + \gamma V(15)] = 1.0 \times [1 + 0] = \mathbf{1.0}$.
 
 ---
 
@@ -1794,11 +1786,9 @@ Compare First-Visit MC and Every-Visit MC in terms of: (a) finite-sample bias, (
 
 ### (a) Finite-Sample Bias
 * **First-Visit MC is strictly UNBIASED:**
-  * For any finite number of episodes $N$, the expected value of the sample average equals the true value function:
-    $$E[\hat{V}_{\text{FV}}(s)] = V^\pi(s)$$
+  * For any finite number of episodes $N$, the expected value of the sample average equals the true value function: $E[\hat{V}_{\text{FV}}(s)] = V^\pi(s)$.
 * **Every-Visit MC is BIASED for finite samples:**
-  * When an episode contains repeated visits to the same state, the expected value of the estimator does not equal the true state value:
-    $$E[\hat{V}_{\text{EV}}(s)] \neq V^\pi(s)$$
+  * When an episode contains repeated visits to the same state, the expected value of the estimator does not equal the true state value: $E[\hat{V}_{\text{EV}}(s)] \neq V^\pi(s)$.
 
 ---
 
@@ -1906,9 +1896,7 @@ Compare Exploring Starts (MC-ES) and on-policy $\varepsilon$-greedy MC control a
 
 ### (a) Whether the Improvement Operator Remains Strictly Greedy ($\arg\max$)
 * **Exploring Starts (MC-ES):**
-  * **YES, strictly greedy.**
-  * The policy update operator is:
-    $$\pi(s) \leftarrow \arg\max_a Q(s, a)$$
+  * **YES, strictly greedy:** The policy update operator is $\pi(s) \leftarrow \arg\max_a Q(s, a)$.
   * Because exploration is guaranteed by starting in every $(s, a)$ at $t=0$, the policy itself can remain 100% deterministic and strictly greedy during the episode.
 * **On-Policy $\varepsilon$-Greedy Control:**
   * **NO, it uses an $\varepsilon$-soft improvement operator.**
@@ -2186,9 +2174,7 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
 #### 2. In Q-Learning:
 * **Behaviour Policy $\mu$:** $\varepsilon\text{-greedy}(Q)$ (it explores with $\varepsilon > 0$).
 * **Target Policy $\pi$:** Purely greedy ($\varepsilon = 0$).
-  * Look closely at the Q-Learning update target:
-    $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
-  * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
+* **Target Formula:** In the Q-Learning update target $\text{Target} = R + \gamma \max_{a'} Q(S', a')$, the $\max_{a'}$ operator corresponds to a target policy that chooses the optimal greedy action with 100% probability:
 
 $$
 \pi_{\text{target}}(a \mid s) = \begin{cases}
@@ -2196,9 +2182,8 @@ $$
 0, & \text{otherwise}
 \end{cases}
 $$
-* **Notice the mismatch:** 
-  $$\mu = \varepsilon\text{-greedy} \quad \neq \quad \pi = \text{purely greedy}$$
-* Even though the behaviour policy $\mu_t$ updates its weights as $Q_t$ evolves, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).
+
+* **Notice the mismatch:** Because $\mu = \varepsilon\text{-greedy} \neq \pi = \text{purely greedy}$, at *every single time step* the policy generating the data ($\varepsilon$-greedy) is mathematically different from the policy being learned (pure greedy).
 * Therefore, **Q-Learning is provably, strictly Off-Policy**.
 
 ---
@@ -2267,10 +2252,8 @@ In the classic Cliff-Walking gridworld (Slide 65 of `TD.pdf`), the shortest path
 #### 2. During Evaluation (with $\varepsilon = 0$ purely greedy testing):
 * **Q-Learning achieves HIGHER return (Wins Evaluation):**
   * When exploration is turned off ($\varepsilon = 0$), the agent never rolls random mistakes.
-  * Q-Learning executes the mathematically shortest path along the cliff edge with zero crashes, achieving the optimal return:
-    $$G_{\text{optimal}} = -13$$
-  * SARSA continues to take its roundabout safe detour through the top rows, earning a lower return:
-    $$G_{\text{SARSA}} = -17$$
+  * Q-Learning executes the mathematically shortest path along the cliff edge with zero crashes, achieving the optimal return: $G_{\text{optimal}} = -13$.
+  * SARSA continues to take its roundabout safe detour through the top rows, earning a lower return: $G_{\text{SARSA}} = -17$.
 
 ---
 
@@ -2899,8 +2882,7 @@ Compare Value-Based methods (e.g., DQN) and Policy-Based methods (e.g., REINFORC
 * **Policy-Based (REINFORCE):** Can learn arbitrary **stochastic policies** directly.
 * **Why Rock-Paper-Scissors requires a stochastic policy:**
   * In zero-sum imperfect information games like Rock-Paper-Scissors, any deterministic policy is 100% exploitable! (If you always play Rock, your opponent always plays Paper and you lose every game).
-  * The unique Nash Equilibrium is a stochastic mixed strategy:
-    $$\pi(\text{Rock}) = \frac{1}{3}, \quad \pi(\text{Paper}) = \frac{1}{3}, \quad \pi(\text{Scissors}) = \frac{1}{3}$$
+  * The unique Nash Equilibrium is a stochastic mixed strategy: $\pi(\text{Rock}) = \frac{1}{3}, \; \pi(\text{Paper}) = \frac{1}{3}, \; \pi(\text{Scissors}) = \frac{1}{3}$.
   * A policy gradient method can converge naturally to this exact mixed probability distribution; a DQN cannot.
 
 #### (d) Convergence Properties

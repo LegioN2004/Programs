@@ -35,8 +35,7 @@ Compare Value-Based methods (e.g., DQN) and Policy-Based methods (e.g., REINFORC
 * **Policy-Based (REINFORCE):** Can learn arbitrary **stochastic policies** directly.
 * **Why Rock-Paper-Scissors requires a stochastic policy:**
   * In zero-sum imperfect information games like Rock-Paper-Scissors, any deterministic policy is 100% exploitable! (If you always play Rock, your opponent always plays Paper and you lose every game).
-  * The unique Nash Equilibrium is a stochastic mixed strategy:
-    $$\pi(\text{Rock}) = \frac{1}{3}, \quad \pi(\text{Paper}) = \frac{1}{3}, \quad \pi(\text{Scissors}) = \frac{1}{3}$$
+  * The unique Nash Equilibrium is a stochastic mixed strategy: $\pi(\text{Rock}) = \frac{1}{3}, \; \pi(\text{Paper}) = \frac{1}{3}, \; \pi(\text{Scissors}) = \frac{1}{3}$.
   * A policy gradient method can converge naturally to this exact mixed probability distribution; a DQN cannot.
 
 #### (d) Convergence Properties
