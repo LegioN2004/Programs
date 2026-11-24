@@ -178,9 +178,25 @@ $$\boxed{V_2(S_2) = 0.3625}$$
 ## Q22. [Bank Q46] Bellman Operator $T^\pi$ Contraction & Number of Sweeps to Convergence
 
 ### Prompt:
-Under standard discounted finite-MDP assumptions, the Bellman operator $T^\pi$ satisfies $\Vert T^\pi V - T^\pi W \Vert_\infty \le \gamma \Vert V - W \Vert_\infty$.
+Under standard discounted finite-MDP assumptions, the Bellman operator $T^\pi$ satisfies the contraction property:
+
+$$
+\Vert T^\pi V - T^\pi W \Vert_\infty \le \gamma \Vert V - W \Vert_\infty
+$$
+
 (a) State the theorem that guarantees a unique fixed point $V^\pi$ from this inequality.
-(b) If the initial error is $\Vert V_0 - V^\pi \Vert_\infty \le 1.0$ and $\gamma = 0.9$, what is the maximum error bound after $k = 5$ sweeps, and what is the minimum number of sweeps $k$ required to guarantee $\Vert V_k - V^\pi \Vert_\infty \le 0.01$?
+
+(b) If the initial error satisfies:
+
+$$
+\Vert V_0 - V^\pi \Vert_\infty \le 1.0
+$$
+
+with $\gamma = 0.9$, what is the maximum error bound after $k = 5$ sweeps, and what is the minimum number of sweeps $k$ required to guarantee:
+
+$$
+\Vert V_k - V^\pi \Vert_\infty \le 0.01 \text{ ?}
+$$
 
 ### Response:
 
@@ -202,7 +218,7 @@ In a complete metric space (such as $\mathbb{R}^{|S|}$ equipped with the supremu
 
 ---
 
-### (b) Numerical Calculations with $\Vert V_0 - V^\pi \Vert_\infty \le 1.0$ and $\gamma = 0.9$
+### (b) Numerical Calculations ($\gamma = 0.9$, Initial Error Bound $\le 1.0$)
 
 #### Contraction Error Bound Formula:
 
