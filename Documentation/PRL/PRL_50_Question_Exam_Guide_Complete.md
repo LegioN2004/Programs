@@ -1344,7 +1344,7 @@ $$\boxed{k = 44 \text{ sweeps}}$$
 Starting from the evaluated random policy values on Slide 23 ($V(S_0) \approx 0.05, V(S_1) = V(S_2) \approx 0.36, V(S_3) = 0$):
 (a) Compute all four action-values $q^\pi(s, a)$ for $a \in \{\text{Up}, \text{Down}, \text{Left}, \text{Right}\}$ at both $S_0$ and $S_1$.
 (b) Determine the greedy policy $\pi'(s) \in \arg\max_a q^\pi(s, a)$ for $S_0, S_1, S_2$.
-(c) Evaluate this new deterministic policy $\pi'$ to find $V^*(S_0), V^*(S_1), V^*(S_2), V^*(S_3)$ and verify that Policy Iteration terminates on the next improvement step (`policy_stable = true`).
+(c) Evaluate this new deterministic policy $\pi'$ to find $V^\ast(S_0), V^\ast(S_1), V^\ast(S_2), V^\ast(S_3)$ and verify that Policy Iteration terminates on the next improvement step (`policy_stable = true`).
 
 ### Response:
 
@@ -1376,27 +1376,28 @@ Recall: $V(S_0) = 0.05, V(S_1) = 0.36, V(S_2) = 0.36, V(S_3) = 0, \gamma = 0.9$.
 
 ---
 
-### (c) Evaluate the new deterministic policy $\pi^*$ and verify termination
+### (c) Evaluate the new deterministic policy $\pi^\ast$ and verify termination
 
 Under the new policy $\pi'$:
-* From $S_1$: Takes Down $\to S_3$ (Goal):
-  $$V^*(S_1) = 1 + \gamma V^*(S_3) = 1 + 0 = \mathbf{1.0}$$
-* From $S_2$: Takes Right $\to S_3$ (Goal):
-  $$V^*(S_2) = 1 + \gamma V^*(S_3) = 1 + 0 = \mathbf{1.0}$$
-* From $S_0$: Takes Right $\to S_1$:
-  $$V^*(S_0) = 0 + \gamma V^*(S_1) = 0.9(1.0) = \mathbf{0.9}$$
-* From $S_3$: Terminal Goal:
-  $$V^*(S_3) = \mathbf{0.0}$$
+
+* **From $S_1$ (Takes Down $\to S_3$ Goal):** $V^\ast(S_1) = 1 + \gamma V^\ast(S_3) = 1 + 0 = \mathbf{1.0}$
+* **From $S_2$ (Takes Right $\to S_3$ Goal):** $V^\ast(S_2) = 1 + \gamma V^\ast(S_3) = 1 + 0 = \mathbf{1.0}$
+* **From $S_0$ (Takes Right $\to S_1$):** $V^\ast(S_0) = 0 + \gamma V^\ast(S_1) = 0.9(1.0) = \mathbf{0.9}$
+* **From $S_3$ (Terminal Goal):** $V^\ast(S_3) = \mathbf{0.0}$
 
 #### Verify Policy Stability on the next iteration:
-Recompute greedy actions under $V^* = [0.9, 1.0, 1.0, 0]$:
+Recompute greedy actions under $V^\ast = [0.9, 1.0, 1.0, 0]$:
 * At $S_1$: $q(S_1, \text{Down}) = 1.0 > q(S_1, \text{Up/Right}) = 0.9 \implies$ **Down wins (No change)**.
 * At $S_2$: $q(S_2, \text{Right}) = 1.0 > q(S_2, \text{Down/Left}) = 0.9 \implies$ **Right wins (No change)**.
 * At $S_0$: $q(S_0, \text{Right}) = 0.9(1.0) = 0.9 \implies$ **Right wins (No change)**.
 
 Because the policy does not change at any state:
-$$\boxed{\text{policy\_stable = True}}$$
-Policy Iteration terminates successfully having found the provably optimal policy $\pi^*$.
+
+$$
+\boxed{\text{policy\textunderscore stable} = \text{True}}
+$$
+
+Policy Iteration terminates successfully having found the provably optimal policy $\pi^\ast$.
 
 
 
