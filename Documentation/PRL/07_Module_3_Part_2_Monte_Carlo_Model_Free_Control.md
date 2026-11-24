@@ -203,7 +203,8 @@ Compare Exploring Starts (MC-ES) and on-policy $\varepsilon$-greedy MC control a
 * **On-Policy $\varepsilon$-Greedy Control:**
   * **NO, it uses an $\varepsilon$-soft improvement operator.**
   * The policy update shifts the $\varepsilon$-soft distribution toward the greedy action:
-    $$
+
+$$
 \pi(a \mid s) \leftarrow \begin{cases}
 1 - \varepsilon + \frac{\varepsilon}{|A|}, & a = \arg\max_{a'} Q(s, a') \\
 \frac{\varepsilon}{|A|}, & a \neq \arg\max_{a'} Q(s, a')

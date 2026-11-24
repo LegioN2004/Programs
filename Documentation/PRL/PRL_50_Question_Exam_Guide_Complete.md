@@ -1139,22 +1139,22 @@ Instead of an expensive one-shot inversion, **Iterative Policy Evaluation** turn
 
 $$V_{k+1}(s) = \sum_{a} \pi(a \mid s) \sum_{s', r} P(s', r \mid s, a)[r + \gamma V_k(s')]$$
 
-* **Low computational cost per sweep:**
-  * For sparse transition matrices (where each state only connects to a few neighbors, say $b$ branching factor), each sweep takes only:
+#### 1. Low Computational Cost Per Sweep:
+For sparse transition matrices (where each state only connects to a few neighbors, say $b$ branching factor), each sweep takes only:
 
-    $$
-    \mathcal{O}(|S| \cdot |A| \cdot b)
-    $$
+$$
+\mathcal{O}(|S| \cdot |A| \cdot b)
+$$
 
-* **Rapid geometric convergence:**
-  * Because the Bellman operator is a contraction mapping with factor $\gamma < 1$, the error shrinks exponentially:
+#### 2. Rapid Geometric Convergence:
+Because the Bellman operator is a contraction mapping with factor $\gamma < 1$, the error shrinks exponentially:
 
-    $$
-    \Vert V_k - V^\pi \Vert_\infty \le \gamma^k \Vert V_0 - V^\pi \Vert_\infty
-    $$
+$$
+\Vert V_k - V^\pi \Vert_\infty \le \gamma^k \Vert V_0 - V^\pi \Vert_\infty
+$$
 
-  * After just a modest number of sweeps $k$ (e.g., $k \approx 20$ to $50$), the values are accurate to several decimal places!
-  * Total cost is $\mathcal{O}(k \cdot |S|)$, which scales linearly with the number of states rather than cubically.
+* After just a modest number of sweeps $k$ (e.g., $k \approx 20$ to $50$), the values are accurate to several decimal places!
+* Total cost is $\mathcal{O}(k \cdot |S|)$, which scales linearly with the number of states rather than cubically.
 
 ---
 
@@ -1272,12 +1272,16 @@ The theorem is the **Banach Fixed-Point Theorem** (also known as the **Contracti
 
 #### Theorem Statement:
 In a complete metric space (such as $\mathbb{R}^{|S|}$ equipped with the supremum norm $\Vert \cdot \Vert_\infty$), any contraction mapping $T$ with contraction factor $\gamma \in [0, 1)$ has a **unique fixed point** $V^*$ such that:
-1. $T V^* = V^*$
-2. For any arbitrary starting vector $V_0$, the sequence $V_{k+1} = T V_k$ converges to $V^*$ at a linear rate:
 
-   $$
-   \lim_{k \to \infty} V_k = V^*
-   $$
+1. **Fixed-Point Identity:**
+$$T V^* = V^*$$
+
+2. **Guaranteed Linear Convergence:**
+For any arbitrary starting vector $V_0$, the sequence $V_{k+1} = T V_k$ converges to $V^*$ at a linear rate:
+
+$$
+\lim_{k \to \infty} V_k = V^*
+$$
 
 ---
 
@@ -1909,7 +1913,8 @@ Compare Exploring Starts (MC-ES) and on-policy $\varepsilon$-greedy MC control a
 * **On-Policy $\varepsilon$-Greedy Control:**
   * **NO, it uses an $\varepsilon$-soft improvement operator.**
   * The policy update shifts the $\varepsilon$-soft distribution toward the greedy action:
-    $$
+
+$$
 \pi(a \mid s) \leftarrow \begin{cases}
 1 - \varepsilon + \frac{\varepsilon}{|A|}, & a = \arg\max_{a'} Q(s, a') \\
 \frac{\varepsilon}{|A|}, & a \neq \arg\max_{a'} Q(s, a')
@@ -2184,7 +2189,8 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
   * Look closely at the Q-Learning update target:
     $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
   * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
-    $$
+
+$$
 \pi_{\text{target}}(a \mid s) = \begin{cases}
 1, & a = \arg\max_{a'} Q(s, a') \\
 0, & \text{otherwise}

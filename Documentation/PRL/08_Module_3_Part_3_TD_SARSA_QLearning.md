@@ -227,7 +227,8 @@ $$\text{On-Policy: } \mu = \pi \qquad \text{vs.} \qquad \text{Off-Policy: } \mu 
   * Look closely at the Q-Learning update target:
     $$\text{Target} = R + \gamma \max_{a'} Q(S', a')$$
   * The $\max_{a'}$ operator corresponds to a policy that chooses the optimal greedy action with 100% probability:
-    $$
+
+$$
 \pi_{\text{target}}(a \mid s) = \begin{cases}
 1, & a = \arg\max_{a'} Q(s, a') \\
 0, & \text{otherwise}
